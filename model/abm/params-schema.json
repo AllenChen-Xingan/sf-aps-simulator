@@ -971,6 +971,78 @@
 ]
 },
 {
+"name": "lrsp_until",
+"label_en": "Local road safety plan valid until (months after 2026-07; negative = already expired)",
+"unit": "months",
+"kind": "uniform",
+"low": -6.0,
+"high": 54.0,
+"default": 24.0,
+"applies_to": [
+"M-A",
+"M-B1",
+"M-B2",
+"M-C1",
+"M-C2",
+"M-D"
+],
+"phase": "projection"
+},
+{
+"name": "q_lrsp",
+"label_en": "A plan update succeeds",
+"unit": "probability",
+"kind": "uniform",
+"low": 0.2,
+"high": 0.9,
+"default": 0.6,
+"applies_to": [
+"M-A",
+"M-B1",
+"M-B2",
+"M-C1",
+"M-C2",
+"M-D"
+],
+"phase": "projection"
+},
+{
+"name": "t_lrsp",
+"label_en": "Months to complete a plan update",
+"unit": "months",
+"kind": "uniform",
+"low": 3.0,
+"high": 18.0,
+"default": 9.0,
+"applies_to": [
+"M-A",
+"M-B1",
+"M-B2",
+"M-C1",
+"M-C2",
+"M-D"
+],
+"phase": "projection"
+},
+{
+"name": "c_xing",
+"label_en": "Cost of a signalized crossing upgrade (SI19PB) per site",
+"unit": "USD/site",
+"kind": "uniform",
+"low": 15000,
+"high": 80000,
+"default": 40000,
+"applies_to": [
+"M-A",
+"M-B1",
+"M-B2",
+"M-C1",
+"M-C2",
+"M-D"
+],
+"phase": "projection"
+},
+{
 "name": "t_ext",
 "label_en": "Length of the one allowed 5-year extension",
 "unit": "months",

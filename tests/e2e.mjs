@@ -25,6 +25,14 @@ try {
     await page.goto(URL0);
     await page.waitForSelector('#robust tbody tr', { state: 'attached' });
     if (scheme === 'light') {
+      // Before any run: the relationship map is drawn, and actor cards open and close by keyboard.
+      ok('map drawn before running', (await page.$$('.stage .net path.edge')).length >= 19 && (await page.$$('.stage .net path.edge.broken')).length === 4);
+      await page.focus('.stage .node[aria-label^="SFMTA funding staff"]'); await page.keyboard.press('Enter');
+      ok('actor card opens by keyboard', /only actor in the model that makes a choice/.test(await page.textContent('.stage .card')) && await page.evaluate(() => document.activeElement.tagName === 'H4'));
+      await page.screenshot({ path: path.join(shots, 'card-open.png') });
+      await page.keyboard.press('Escape');
+      ok('Escape closes card and returns focus', await page.$eval('.stage .card', c => c.hidden) && await page.evaluate(() => document.activeElement.getAttribute('role') === 'button'));
+      ok('links available as a text list', (await page.$$('.stage .rel-list li')).length >= 19);
       const t0 = Date.now();
       await page.waitForSelector('#model-status.ok', { timeout: 180000 });
       ok('in-browser model loads', true, `${((Date.now() - t0) / 1000).toFixed(1)} s`);
@@ -32,6 +40,7 @@ try {
       await page.selectOption('#speed', '10');
       await page.click('#run');
       await page.waitForFunction(() => document.querySelectorAll('#log > li').length >= 5, null, { timeout: 30000 });
+      ok('log lines name their link', (await page.$$('#log .loglink')).length > 0);
       ok('animation plays and log fills', true);
       ok('announcer speaks', (await page.textContent('#announcer')).length > 10, (await page.textContent('#announcer')).slice(0, 120));
       await page.waitForFunction(() => !document.querySelector('#step') || document.querySelector('#step').disabled, null, { timeout: 60000 });
@@ -80,7 +89,9 @@ try {
     ok('recorded run labelled while loading', /your settings were not used/.test(await pg.textContent('#run-summary')));
     await pg.waitForSelector('#model-status.ok', { timeout: 120000 });
     ok('label persists after model is ready', /Recorded run/.test(await pg.textContent('#run-summary')));
-    ok('comparisons hidden before load, shown after', await pg.$('#robust tbody tr td[colspan]') === null);
+    const sameV = await pg.evaluate(() => /same model\./.test(document.querySelector('#version-line').textContent));
+    const hiddenNow = await pg.$('#robust tbody tr td[colspan]') !== null;
+    ok('after load, comparisons shown only if the result set matches the loaded model', sameV ? !hiddenNow : hiddenNow, sameV ? 'same model: shown' : 'different model: hidden');
     await ctx.close();
   }
   const m = await browser.newContext({ viewport: { width: 390, height: 844 }, colorScheme: 'light', reducedMotion: 'reduce' });

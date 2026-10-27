@@ -532,19 +532,62 @@ class Sim:
             self._setaside(cyc)
 
     def _setaside(self, cyc):
+        """Pedestrian-crossing set-aside, total built from components (codex 02 round 13 #1):
+        per site the eligible crossing items (new countdown heads SI18PB if missing, new LPI SI22PB if
+        possible, otherwise a signalized crossing upgrade SI19PB) plus APS as extra work. APS must stay
+        <= 20% of the summed project total; the total must stay <= $400k (HSIP <= $360k at 90%)."""
+        p = self.p
         u = self.unit_cost()
-        n = max(1, int(80000 // u))
         cands = sorted([s for s in self.sites if s['state'] == 'C' and not s.get('in_app')],
-                       key=lambda s: RANK.get(s['rank'], 1))[:n]
-        if not cands:
-            return
+                       key=lambda s: (RANK.get(s['rank'], 1), s['key']))
+        chosen, items, aps = [], 0.0, 0.0
         for s in cands:
+            x = (p['c_cd'] if s.get('ccd') else 0.0) + (p['c_lpi'] if s.get('clpi') else 0.0)
+            if x == 0.0:
+                x = p['c_xing']                      # SI19PB: install / upgrade signalized crossing
+            a = u + s['adders']
+            ni, na = items + x, aps + a
+            if ni + na > 400000.0 or na > 0.2 * (ni + na):
+                continue
+            chosen.append(s)
+            items, aps = ni, na
+        if not chosen:
+            self.ev('A2', 'HSIP', 'submit', detail=f'{cyc} set-aside not formed: APS would exceed 20% of the project')
+            return
+        total = items + aps
+        assert aps <= 0.2 * total + 1e-6 and total <= 400000.0 + 1e-6
+        for s in chosen:
             s['in_app'] = True
-        self.apps.append({'cycle': cyc, 'sites': cands, 'bcr': None, 'cost': 400000.0, 'mode': 'setaside',
+        self.apps.append({'cycle': cyc, 'sites': chosen, 'bcr': None, 'cost': total, 'mode': 'setaside',
                           'review': mi(f'{HSIP_CYCLES[cyc]}-11'), 'approve': mi(f'{HSIP_CYCLES[cyc] + 1}-04')})
-        self.ev('A2', 'HSIP', 'submit', cands, detail=f'{cyc} pedestrian-crossing set-aside, APS as <=20% extra work')
+        self.ev('A2', 'HSIP', 'submit', chosen, detail=f'{cyc} pedestrian-crossing set-aside: items ${items:,.0f} + APS ${aps:,.0f}')
+
+    def _lrsp_valid(self):
+        """Plan valid until lrsp_until; when it lapses an update starts, finishes t_lrsp months later
+        and succeeds with q_lrsp; a success makes the plan valid for another 60 months. The deadline for
+        finishing an update is an assumption: it must be done by the review date (not verified)."""
+        p, t = self.p, self.now
+        if not hasattr(self, 'lrsp_until'):
+            self.lrsp_until = self.t0 + int(round(p['lrsp_until']))
+            self.lrsp_upd = None
+        while True:
+            if t <= self.lrsp_until:
+                return True
+            if self.lrsp_upd is None:                     # update starts the month the plan lapses
+                ok = self.rng.random() < p['q_lrsp']
+                self.lrsp_upd = (self.lrsp_until + int(round(p['t_lrsp'])), ok)
+            done, ok = self.lrsp_upd
+            if t < done:
+                return False
+            self.lrsp_upd = None
+            if not ok:
+                self.lrsp_until = done                    # failed: try again from that month
+                continue
+            self.lrsp_until = done + 60
 
     def _agency_flagged(self):
+        if not self._lrsp_valid():
+            return True                      # local road safety plan not valid at review
         if self.rng.random() < self.p['rho_flag']:
             return True
         for pr in self.projects:

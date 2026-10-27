@@ -1,6 +1,8 @@
 // SF APS Funding Simulator — page logic. No framework, no build step.
 // The model itself runs in assets/worker.js (Pyodide); this file only draws and plays its output.
 
+import { NODES, ALIAS, CARDS, TYPES, RELATIONS, REFORMS, relationFor, humanize, IMPORTANT, nodeName } from './story.js';
+
 const $ = (s, el = document) => el.querySelector(s);
 const SVGNS = 'http://www.w3.org/2000/svg';
 const svg = (tag, attrs = {}, parent) => {
@@ -34,45 +36,6 @@ const MECHS = {
   'M-C1': 'Cost pressure: rising unit costs discourage applications and shrink batches.',
   'M-C2': 'Technical: a share of intersections cannot be done in-house at all.',
 };
-const NODES = {
-  C3: { label: 'Residents who ask', x: 85, y: 70, kind: 'actor' },
-  C2: { label: 'Advocates', x: 80, y: 200, kind: 'actor' },
-  D1: { label: 'Enforcement', x: 80, y: 330, kind: 'actor' },
-  A1: { label: 'SFMTA APS engineers', x: 285, y: 70, kind: 'actor' },
-  MDC: { label: 'Disability Council', x: 285, y: 200, kind: 'venue' },
-  A2: { label: 'SFMTA grants staff', x: 470, y: 200, kind: 'actor' },
-  DIR: { label: 'SFMTA Director', x: 470, y: 330, kind: 'actor' },
-  HSIP: { label: 'HSIP (federal)', x: 670, y: 50, kind: 'venue' },
-  PROPL: { label: 'Prop L (county)', x: 670, y: 140, kind: 'venue' },
-  GF: { label: 'General Fund', x: 670, y: 230, kind: 'venue' },
-  SS4A: { label: 'SS4A (federal)', x: 670, y: 320, kind: 'venue' },
-  CT: { label: 'Caltrans', x: 880, y: 50, kind: 'actor' },
-  SFCTA: { label: 'SFCTA Board', x: 880, y: 140, kind: 'actor' },
-  A3: { label: 'Signal Shop crews', x: 880, y: 250, kind: 'actor' },
-  PARENT: { label: 'Signal projects', x: 880, y: 350, kind: 'venue' },
-};
-const ALIAS = { LOCAL: 'GF' };
-// Links the rules allow, drawn faintly from the start. The key one is dashed until it happens.
-const STATIC_EDGES = [['C3', 'A1'], ['C2', 'MDC'], ['A2', 'C2'], ['A2', 'HSIP'], ['A2', 'PROPL'], ['A2', 'GF'],
-  ['HSIP', 'CT'], ['PROPL', 'SFCTA'], ['CT', 'A2'], ['SFCTA', 'A2'], ['A2', 'A3'], ['PARENT', 'A2'], ['D1', 'A2'], ['A3', 'A2']];
-const KEY_EDGE = ['A1', 'A2'];
-const VERB = {
-  request: 'request', classify: 'files', press: 'raise the backlog', deflect: 'deflects', start_prep: 'starts application',
-  submit: 'submits', miss_deadline: 'misses deadline', approve: 'approves', reject: 'rejects', allocate: 'allocates',
-  batch_fund: 'funds sites', install: 'installs', topup: 'tops up', handoff: 'hands off', enforce_up: 'escalates',
-  owner_quit: 'owner leaves', owner_filled: 'owner hired', eligibility_fail: 'ineligible', red_flag: 'red flag',
-  contract_out: 'contracts out', return_funds: 'funds returned', extend: 'extension', scope_add: 'adds to scope',
-  reroute: 'reroutes', overrun_revert: 'overrun', partner_delay: 'partner delay', prep_abort: 'drops application',
-  pathway_switch: 'switches route', rule_apply: 'applies design rule', skip_rule: 'skips design rule', pause: 'pauses',
-};
-const FAIL = {
-  'F-a': 'a package did not reach the minimum benefit–cost ratio of 5.0', 'F-b': 'an application fell below the cycle cut-off',
-  'F-c': 'an unresolved red flag made SFMTA ineligible', 'F-d': 'a delivery milestone was missed',
-  'F-e': 'Caltrans denied in-house work, so the job is contracted out', 'F-f': 'a cost overrun was not covered',
-  'F-g': 'the partner project slipped or was cancelled', 'F-h': 'the named owner left',
-  'F-j': 'the Prop L amendment was rejected or delayed', 'F-k': 'the Director’s reallocation did not go to APS',
-  'F-m': 'advocacy went quiet',
-};
 const LANES = [
   ['C', 'Candidate', 'can be done in-house, needs money'],
   ['N', 'Needs a full upgrade', 'needs a new signal, needs money'],
@@ -81,43 +44,7 @@ const LANES = [
   ['Fs', 'Waiting on a signal project', ''],
   ['I', 'Installed', ''],
 ];
-const IMPORTANT = new Set(['approve', 'reject', 'allocate', 'submit', 'miss_deadline', 'deflect', 'pathway_switch',
-  'enforce_up', 'owner_quit', 'return_funds', 'start_prep', 'eligibility_fail', 'contract_out', 'red_flag']);
-
-const nodeName = id => (NODES[ALIAS[id] || id] || { label: id }).label;
 const count = n => `${n} intersection${n === 1 ? '' : 's'}`;
-
-function describe(e) {
-  const n = e.intersections ? e.intersections.length : 0;
-  const a = nodeName(e.actor), t = nodeName(e.target), d = e.detail ? ` (${e.detail})` : '';
-  if (e.action.startsWith('failure:')) return `Setback: ${FAIL[e.action.slice(8)] || e.action.slice(8)}${d}.`;
-  switch (e.action) {
-    case 'press': return 'Advocates raise the APS backlog at the Disability Council.';
-    case 'deflect': return `${a} reply that there is no money for APS${d}.`;
-    case 'start_prep': return `${a} start preparing an APS application to ${t}.`;
-    case 'submit': return n ? `${a} submit an application to ${t} covering ${count(n)}${d}.` : `${a}: application to ${t}${d}.`;
-    case 'miss_deadline': return `${a} miss the ${t} deadline; no application filed.`;
-    case 'approve': return n ? `${a} approve funding for ${count(n)}${d}.` : `${a} approve${d}.`;
-    case 'reject': return `${a} reject the application${n ? ` covering ${count(n)}` : ''}${d}.`;
-    case 'allocate': return `${a} allocate money for ${n ? count(n) : 'APS'}${d}.`;
-    case 'batch_fund': return `${count(n)} move to funded.`;
-    case 'handoff': return `${count(n)} handed to city crews after the HSIP design phase.`;
-    case 'install': return `${count(n)} installed${e.detail ? ` (${e.detail})` : ''}.`;
-    case 'topup': return `${a} cover a cost overrun${d}.`;
-    case 'enforce_up': return `External pressure escalates${d}.`;
-    case 'owner_quit': return 'The named owner of APS funding leaves; the post is vacant.';
-    case 'owner_filled': return 'A new owner of APS funding is in post.';
-    case 'pathway_switch': return `Signpost crossed: the pathway switches to its next step${d}.`;
-    case 'rule_apply': return `Design rule applied: APS added to hardware work at ${count(n)}${d}.`;
-    case 'skip_rule': return `Hardware work done without APS at ${count(n)}${d}.`;
-    case 'pause': return `${a} pause${d}.`;
-    case 'scope_add': return `${count(n)} added to the scope of planned projects.`;
-    case 'reroute': return `${count(n)} rerouted after a parent project slipped.`;
-    case 'overrun_revert': return `${count(n)} back to the waiting list after a cost overrun.`;
-    case 'return_funds': return `HSIP funds returned for ${count(n)}; back to the waiting list.`;
-    default: return `${a} → ${t}: ${VERB[e.action] || e.action}${n ? `, ${count(n)}` : ''}${d}.`;
-  }
-}
 
 // Horizontally scrollable tables must be reachable by keyboard (WCAG 2.1.1).
 function scrollRegions(root = document) {
@@ -240,43 +167,67 @@ function buildControls() {
 }
 
 // ---------------------------------------------------------------- stage (network + lanes)
+let stageSeq = 0;
 class Stage {
-  constructor(host, title) {
+  constructor(host, title, pathway) {
+    this.uid = 'st' + (++stageSeq);
+    this.pathway = pathway;
     this.root = document.createElement('section');
     this.root.className = 'stage';
     this.root.setAttribute('aria-label', title);
     this.root.innerHTML = `<h3>${title}</h3>
       <figure class="net-fig"><div class="net"></div>
-        <figcaption>Red: what happens this month. Dashed: grants staff taking up the request list — not yet.</figcaption></figure>
+        <figcaption>Select any box to see who it is and what it does. Hover or focus a box to name its links.
+        Red dashed: the link that is usually missing — funding staff submitting an application.</figcaption></figure>
+      <div class="card" hidden></div>
+      <ul class="legend" aria-label="Kinds of links (focus one to highlight it)"></ul>
+      <details class="rel-text"><summary>All links as a list</summary><ul class="rel-list"></ul></details>
       <figure class="lanes-fig"><div class="lanes"></div>
         <figcaption>Each dot is one requested intersection; ringed dots have the most injury crashes.</figcaption></figure>
       <div class="visually-hidden"><table class="counts"><caption>Intersections by status, <span class="cmonth">start</span></caption>
         <thead><tr><th scope="col">Status</th><th scope="col">Count</th></tr></thead><tbody></tbody></table></div>`;
     host.appendChild(this.root);
-    scrollRegions(this.root);
     this.drawNetwork();
+    this.drawLegend();
     this.drawLanes();
+    this.setPathway(pathway);
   }
 
   drawNetwork() {
-    const s = svg('svg', { viewBox: '0 0 960 400', role: 'img', 'aria-label': 'Network of actors and funding venues. Changes are described in the event log below.' }, $('.net', this.root));
+    const s = svg('svg', { viewBox: '0 0 970 400', role: 'group', 'aria-label': 'Network of actors and funding sources. Each box is a button that opens a description.' }, $('.net', this.root));
     this.edgeLayer = svg('g', {}, s);
+    this.reformLayer = svg('g', {}, s);
     this.labelLayer = svg('g', {}, s);
     const nodes = svg('g', {}, s);
-    this.edges = {};
-    for (const [a, b] of STATIC_EDGES) this.edge(a, b);
-    const k = this.edge(...KEY_EDGE); k.line.classList.add('key'); k.line.setAttribute('stroke-dasharray', '6 5');
+    this.rels = {};
+    for (const r of RELATIONS) this.rels[r.id] = this.path(r, this.edgeLayer, 'edge t-' + r.type + (r.broken ? ' broken' : ''));
     this.nodeEls = {};
     for (const [id, n] of Object.entries(NODES)) {
-      const g = svg('g', { class: 'node ' + n.kind, transform: `translate(${n.x},${n.y})` }, nodes);
+      const g = svg('g', { class: 'node ' + n.kind, transform: `translate(${n.x},${n.y})`, tabindex: '0', role: 'button',
+        'aria-label': `${n.label}: show who this is and what it does` }, nodes);
       const r = svg('rect', { y: -16, height: 32, rx: n.kind === 'venue' ? 4 : 16 }, g);
       const t = svg('text', { 'text-anchor': 'middle', dy: '0.35em' }, g); t.textContent = n.label;
       this.sizeNode(r, t, n.label);
       this.nodeEls[id] = g;
+      g.addEventListener('click', () => this.openCard(id));
+      g.addEventListener('keydown', ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); this.openCard(id); } });
+      g.addEventListener('mouseenter', () => this.peek(id, true)); g.addEventListener('mouseleave', () => this.peek(id, false));
+      g.addEventListener('focus', () => this.peek(id, true)); g.addEventListener('blur', () => this.peek(id, false));
     }
   }
 
-  // Box width follows the text (measured once the SVG is in the page; estimate until then).
+  // Curved path between two nodes; bend picks the side so two links between the same pair do not overlap.
+  path(r, layer, cls) {
+    const A = NODES[r.from], B = NODES[r.to];
+    const mx = (A.x + B.x) / 2, my = (A.y + B.y) / 2;
+    const dx = B.x - A.x, dy = B.y - A.y, len = Math.hypot(dx, dy) || 1;
+    const k = 22 * (r.bend || 0.6);
+    const cx = mx - dy / len * k, cy = my + dx / len * k;
+    const line = svg('path', { d: `M${A.x},${A.y} Q${cx},${cy} ${B.x},${B.y}`, class: cls }, layer);
+    const label = svg('text', { x: cx, y: cy - 5, 'text-anchor': 'middle', class: 'elabel' }, this.labelLayer);
+    return { line, label, rel: r, used: false };
+  }
+
   sizeNode(r, t, label) {
     const fit = () => {
       let w = 0; try { w = t.getComputedTextLength(); } catch { /* not rendered yet */ }
@@ -287,23 +238,63 @@ class Stage {
     fit(); requestAnimationFrame(fit);
   }
 
-  edge(a, b) {
-    a = ALIAS[a] || a; b = ALIAS[b] || b;
-    if (!NODES[a] || !NODES[b] || a === b) return null;
-    const key = [a, b].sort().join('|');
-    if (this.edges[key]) return this.edges[key];
-    const A = NODES[a], B = NODES[b];
-    const mx = (A.x + B.x) / 2, my = (A.y + B.y) / 2;
-    const dx = B.x - A.x, dy = B.y - A.y, len = Math.hypot(dx, dy) || 1;
-    const cx = mx - dy / len * 18, cy = my + dx / len * 18;
-    const line = svg('path', { d: `M${A.x},${A.y} Q${cx},${cy} ${B.x},${B.y}`, class: 'edge' }, this.edgeLayer);
-    const label = svg('text', { x: cx, y: cy - 4, 'text-anchor': 'middle', class: 'elabel' }, this.labelLayer);
-    return (this.edges[key] = { line, label, used: false });
+  allLinks() { return [...Object.values(this.rels), ...(this.reformLinks || [])]; }
+
+  // Hover / focus a node: name its links.
+  peek(id, on) {
+    for (const l of this.allLinks()) {
+      const touches = l.rel.from === id || l.rel.to === id;
+      l.line.classList.toggle('peek', on && touches);
+      if (!this.running || reduceMotion()) l.label.textContent = on && touches ? l.rel.label : '';
+    }
+  }
+
+  drawLegend() {
+    const ul = $('.legend', this.root);
+    for (const [type, name] of Object.entries(TYPES)) {
+      const li = document.createElement('li');
+      li.tabIndex = 0;
+      li.innerHTML = `<span class="sw t-${type}${type === 'apply' ? ' broken' : ''}" aria-hidden="true"></span>${name}`;
+      const hi = on => { for (const l of this.allLinks()) l.line.classList.toggle('peek', on && (l.rel.type === type)); };
+      li.addEventListener('mouseenter', () => hi(true)); li.addEventListener('mouseleave', () => hi(false));
+      li.addEventListener('focus', () => hi(true)); li.addEventListener('blur', () => hi(false));
+      ul.appendChild(li);
+    }
+  }
+
+  setPathway(pw) {
+    this.pathway = pw;
+    this.reformLayer.replaceChildren();
+    for (const l of this.reformLinks || []) l.label.remove();
+    this.reformLinks = (REFORMS[pw] || []).map(r => this.path({ ...r, type: 'reform' }, this.reformLayer, 'edge t-reform'));
+    const ul = $('.rel-list', this.root); ul.replaceChildren();
+    const item = (r, extra = '') => { const li = document.createElement('li'); li.textContent = `${nodeName(r.from)} → ${nodeName(r.to)}: ${r.label}${extra}`; ul.appendChild(li); };
+    for (const r of RELATIONS) item(r, r.broken ? ' (allowed by the rules, but often does not happen — the missing link)' : '');
+    for (const r of REFORMS[pw] || []) item(r, ' (added by this pathway)');
+  }
+
+  openCard(id) {
+    const c = CARDS[id], n = NODES[id], card = $('.card', this.root);
+    const links = RELATIONS.filter(r => c.rel.includes(r.id)).map(r => `<li>${nodeName(r.from)} → ${nodeName(r.to)}: ${r.label}${r.broken ? ' <em>(often missing)</em>' : ''}</li>`);
+    const reform = (REFORMS[this.pathway] || []).filter(r => r.from === id || r.to === id).map(r => `<li class="reform">${nodeName(r.from)} → ${nodeName(r.to)}: ${r.label} <em>(added by ${this.pathway})</em></li>`);
+    const hid = this.uid + '-card-h';
+    card.setAttribute('role', 'region'); card.setAttribute('aria-labelledby', hid);
+    card.innerHTML = `<div class="card-head"><h4 id="${hid}" tabindex="-1">${n.label}${n.kind === 'venue' ? ' <span class="kind">funding source or venue</span>' : ''}</h4>
+      <button type="button" class="close" aria-label="Close description of ${n.label}">Close</button></div>
+      <dl><dt>Who</dt><dd>${c.who}</dd><dt>In the model</dt><dd>${c.does}</dd><dt>Holds</dt><dd>${c.holds}</dd></dl>
+      <p class="links-h">Links</p><ul>${links.join('')}${reform.join('')}</ul>`;
+    card.hidden = false;
+    for (const [k, g] of Object.entries(this.nodeEls)) g.classList.toggle('selected', k === id);
+    this.cardFor = id;
+    const close = () => { card.hidden = true; this.nodeEls[id].classList.remove('selected'); this.nodeEls[id].focus(); };
+    $('.close', card).addEventListener('click', close);
+    card.onkeydown = ev => { if (ev.key === 'Escape') close(); };
+    $('h4', card).focus();
   }
 
   drawLanes() {
     const W = 960, rowH = 58, top = 6;
-    const s = svg('svg', { viewBox: `0 0 ${W} ${top + rowH * LANES.length}`, role: 'img', 'aria-label': 'Intersections by status. Counts are in the table below.' }, $('.lanes', this.root));
+    const s = svg('svg', { viewBox: `0 0 ${W} ${top + rowH * LANES.length}`, role: 'img', 'aria-label': 'Intersections by status. Counts are in the table that follows.' }, $('.lanes', this.root));
     this.laneGeom = {};
     LANES.forEach(([id, name, sub], i) => {
       const y = top + i * rowH;
@@ -317,15 +308,20 @@ class Stage {
     this.dots = {};
   }
 
-  reset(run) {
-    this.run = run;
-    for (const e of Object.values(this.edges)) { e.used = false; e.line.classList.remove('hot', 'used'); e.label.textContent = ''; }
-    for (const g of Object.values(this.nodeEls)) g.classList.remove('hot');
+  // Before a run: show the starting list so the page is not empty.
+  preview(initialStates, high) {
+    this.high = new Set(high || []);
     this.dotLayer.replaceChildren(); this.dots = {};
-    this.status = { ...run.initial_states };
-    this.high = new Set(run._high || []);
+    this.status = { ...initialStates };
     for (const k of Object.keys(this.status)) this.addDot(k);
     this.layout();
+  }
+
+  reset(run) {
+    this.run = run; this.running = true;
+    for (const l of this.allLinks()) { l.used = false; l.line.classList.remove('hot', 'used'); l.label.textContent = ''; }
+    for (const g of Object.values(this.nodeEls)) g.classList.remove('hot');
+    this.preview(run.initial_states, run._high);
   }
 
   addDot(k) {
@@ -343,8 +339,7 @@ class Stage {
       const g = this.laneGeom[id];
       per[id].forEach((k, i) => {
         const col = i % cols, row = Math.floor(i / cols);
-        const x = x0 + col * gap, y = g.y + 12 + (row % 3) * 13;
-        this.dots[k].setAttribute('transform', `translate(${x},${y})`);
+        this.dots[k].setAttribute('transform', `translate(${x0 + col * gap},${g.y + 12 + (row % 3) * 13})`);
       });
       g.count.textContent = per[id].length;
     }
@@ -357,32 +352,36 @@ class Stage {
   }
 
   applyMonth(events, month) {
-    for (const e of Object.values(this.edges)) { e.line.classList.remove('hot'); if (!reduceMotion()) e.label.textContent = ''; }
+    for (const l of this.allLinks()) { l.line.classList.remove('hot'); l.label.textContent = ''; }
     for (const g of Object.values(this.nodeEls)) g.classList.remove('hot');
-    const labels = {};
+    const shown = new Set();
     for (const e of events) {
       if (e.action === 'request') for (const k of e.intersections) if (!(k in this.status)) { this.status[k] = null; this.addDot(k); }
       for (const c of e.state_changes || []) this.status[c.key] = c.to;
       if (e.action === 'classify') for (const k of e.intersections) this.status[k] = e.detail;
-      const ed = this.edge(e.actor, e.target);
-      if (ed) {
-        ed.used = true; ed.line.classList.add('hot', 'used');
-        const key = [ALIAS[e.actor] || e.actor, ALIAS[e.target] || e.target].sort().join('|');
-        if (!['request', 'classify'].includes(e.action))   // routine monthly filing: light the link, no label
-          (labels[key] = labels[key] || new Set()).add(VERB[e.action] || (e.action.startsWith('failure') ? 'setback' : e.action));
-        for (const id of [e.actor, e.target]) { const g = this.nodeEls[ALIAS[id] || id]; if (g) g.classList.add('hot'); }
+      const rid = relationFor(e), l = rid && this.rels[rid];
+      if (!l) continue;
+      l.used = true; l.line.classList.add('hot', 'used');
+      if (l.rel.broken) l.line.classList.add('mended');
+      if (!['request', 'classify'].includes(e.action) && !shown.has(rid)) {   // routine filing lights the link without text
+        shown.add(rid); l.label.textContent = shortVerb(e);
       }
-      if (e.action === 'start_prep') {
-        const k = this.edges[[...KEY_EDGE].sort().join('|')];
-        k.used = true; k.line.classList.add('hot', 'used'); k.line.removeAttribute('stroke-dasharray');
-        k.label.textContent = 'list → application';
-      }
+      for (const id of [l.rel.from, l.rel.to]) this.nodeEls[id].classList.add('hot');
     }
-    for (const [key, set] of Object.entries(labels)) this.edges[key].label.textContent = [...set].slice(0, 2).join(', ');
     for (const k of Object.keys(this.status)) if (this.status[k] === null) delete this.status[k];
     this.layout();
     $('.cmonth', this.root).textContent = monthLong(month);
   }
+}
+
+// Short text shown next to a lit link.
+function shortVerb(e) {
+  if (e.action.startsWith('failure:')) return 'setback';
+  return ({ press: 'pressure', deflect: '"no money"', start_prep: 'starts application', submit: /not submitted|below 5/.test(e.detail || '') ? 'package too weak' : 'submits',
+    miss_deadline: 'misses deadline', approve: 'approved', reject: 'rejected', allocate: 'money', batch_fund: 'funded sites', handoff: 'to crews',
+    install: 'installed', topup: 'top-up', enforce_up: 'escalates', rule_apply: 'APS with hardware', skip_rule: 'no budget left',
+    eligibility_fail: 'ineligible', return_funds: 'funds returned', contract_out: 'contractor', red_flag: 'red flag', extend: 'extension',
+    scope_add: 'added to project', reroute: 'rerouted', prep_abort: 'dropped' })[e.action] || e.action.replace(/_/g, ' ');
 }
 
 // ---------------------------------------------------------------- player
@@ -400,24 +399,31 @@ function highSet(run) {
 function logMonth(month, perRun) {
   const log = $('#log');
   const lines = [], spoken = [];
+  const linkOf = e => { const r = RELATIONS.find(x => x.id === relationFor(e)); return r ? `${nodeName(r.from)} → ${nodeName(r.to)}` : ''; };
   perRun.forEach(({ tag, events }) => {
-    const req = events.filter(e => e.action === 'request').length;
-    const inst = events.filter(e => e.action === 'install').reduce((a, e) => a + e.intersections.length, 0);
     const pre = tag ? tag + ': ' : '';
-    if (req) lines.push(pre + `${req} new request${req > 1 ? 's' : ''} filed by residents.`);
+    const req = events.filter(e => e.action === 'request').length;
+    if (req) lines.push([pre + `${req} new request${req > 1 ? 's' : ''} from residents joined the list.`, 'Residents who ask → SFMTA APS engineers']);
+    const inst = {};
     for (const e of events) {
-      if (['request', 'classify', 'install', 'batch_fund'].includes(e.action)) continue;
-      const txt = pre + describe(e);
-      lines.push(txt);
+      if (['request', 'classify'].includes(e.action)) continue;
+      if (e.action === 'install') { const k = e.actor === 'PARENT' ? 'ride' : 'crew'; inst[k] = (inst[k] || 0) + e.intersections.length; continue; }
+      const txt = pre + humanize(e);
+      lines.push([txt, linkOf(e)]);
       if (IMPORTANT.has(e.action) || e.action.startsWith('failure:')) spoken.push(txt);
     }
-    if (inst) { const t = pre + `${count(inst)} installed.`; lines.push(t); spoken.push(t); }
+    if (inst.crew) { const t = pre + `City crews installed APS at ${count(inst.crew)}.`; lines.push([t, 'SFMTA funding staff → Signal Shop crews']); spoken.push(t); }
+    if (inst.ride) { const t = pre + `${count(inst.ride)} got APS along with signal work.`; lines.push([t, 'Signal projects → Signal Shop crews']); spoken.push(t); }
   });
   if (!lines.length) return;
   const li = document.createElement('li');
-  li.innerHTML = `<span class="lm">${monthShort(month)}</span> `;
+  li.innerHTML = `<span class="lm">${monthLong(month)}</span>`;
   const ul = document.createElement('ul');
-  for (const l of lines) { const x = document.createElement('li'); x.textContent = l; ul.appendChild(x); }
+  for (const [l, link] of lines) {
+    const x = document.createElement('li'); x.textContent = l;
+    if (link) { const s = document.createElement('span'); s.className = 'loglink'; s.textContent = ' Link: ' + link; x.appendChild(s); }
+    ul.appendChild(x);
+  }
   li.appendChild(ul);
   log.prepend(li);
   if (spoken.length) $('#announcer').textContent = `${monthLong(month)}: ` + spoken.join(' ');
@@ -458,7 +464,7 @@ function startPlayback(runs) {
   const host = $('#stages'); host.replaceChildren();
   host.classList.toggle('two', runs.length > 1);
   const rec = r => r._source === 'recorded' ? ' (recorded run, default settings)' : '';
-  player.stages = runs.map((r, i) => new Stage(host, (runs.length > 1 ? `Scenario ${i ? 'B' : 'A'}: ` : '') + `${r.request.pathway} · ${PATHWAYS[r.request.pathway][0]}${rec(r)}`));
+  player.stages = runs.map((r, i) => new Stage(host, (runs.length > 1 ? `Scenario ${i ? 'B' : 'A'}: ` : '') + `${r.request.pathway} · ${PATHWAYS[r.request.pathway][0]}${rec(r)}`, r.request.pathway));
   player.stages.forEach((s, i) => s.reset(runs[i]));
   $('#log').replaceChildren();
   player.t = -1; player.paused = false;
@@ -680,6 +686,17 @@ async function getRun(req) {
 function attachHigh(run, inputsHigh) { run._high = inputsHigh; return run; }
 
 let highKeys = [];
+// Before any run: draw the relationship map and the starting list for the chosen pathway(s).
+function showPreview() {
+  const host = $('#stages'); host.replaceChildren();
+  const pws = [$('#pw-A').value]; if ($('#compare').checked) pws.push($('#pw-B').value);
+  host.classList.toggle('two', pws.length > 1);
+  player.stages = pws.map((pw, i) => {
+    const st = new Stage(host, (pws.length > 1 ? `Scenario ${i ? 'B' : 'A'}: ` : '') + `${pw} · ${PATHWAYS[pw][0]} — before running`, pw);
+    st.preview(state.initialStates || {}, highKeys);
+    return st;
+  });
+}
 async function onRun() {
   const btn = $('#run'); btn.disabled = true; btn.textContent = 'Running…';
   try {
@@ -707,8 +724,15 @@ async function boot() {
     const sev = r => { const c = r.crashes || {}; let v = 0; for (const g of ['pb', 'nonpb']) for (const k of ['KA', 'B', 'C']) v += (c[`${g}_${k}_w5`] || 0) * CC[k]; return v; };
     const sorted = [...inp.pending76].sort((a, b) => sev(b) - sev(a) || a.key.localeCompare(b.key));
     highKeys = sorted.slice(0, Math.ceil(sorted.length / 4)).map(r => r.key);
+    state.initialStates = Object.fromEntries(inp.pending76.map(r => [r.key, r.state]));
   } catch { /* rings are optional */ }
   buildControls();
+  showPreview();
+  for (const id of ['#pw-A', '#pw-B', '#compare']) $(id).addEventListener('change', () => {
+    clearTimeout(player.timer); player.runs = [];           // a new choice goes back to the map until Run is pressed
+    $('#pause').disabled = true; $('#step').disabled = true; $('#restart').disabled = true; $('#clock').textContent = '';
+    showPreview();
+  });
   const mv = $('#mech-view');
   for (const k of state.meta.mechanisms) mv.add(new Option(k + ' · ' + MECHS[k].split(':')[0], k));
   mv.value = 'M-D';

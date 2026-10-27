@@ -5,422 +5,422 @@
   {
    "pathway": "PW0",
    "mechanism": "M-A",
-   "coverage_10y_p10": 18.0,
-   "coverage_10y_p50": 27.6,
-   "coverage_10y_p90": 50.2,
-   "P_money_flows_5y_mean": 0.5179999999999999,
+   "coverage_10y_p10": 18.2,
+   "coverage_10y_p50": 28.4,
+   "coverage_10y_p90": 49.32000000000003,
+   "P_money_flows_5y_mean": 0.528,
    "share_better_than_PW0": null,
-   "max_regret": 65.60000000000001
+   "max_regret": 59.60000000000001
   },
   {
    "pathway": "PW0",
    "mechanism": "M-B1",
    "coverage_10y_p10": 18.98,
-   "coverage_10y_p50": 28.8,
-   "coverage_10y_p90": 53.06000000000002,
-   "P_money_flows_5y_mean": 0.6126666666666667,
+   "coverage_10y_p50": 30.700000000000003,
+   "coverage_10y_p90": 50.42,
+   "P_money_flows_5y_mean": 0.6266666666666667,
    "share_better_than_PW0": null,
-   "max_regret": 68.0
+   "max_regret": 58.199999999999996
   },
   {
    "pathway": "PW0",
    "mechanism": "M-B2",
    "coverage_10y_p10": 18.98,
-   "coverage_10y_p50": 28.8,
-   "coverage_10y_p90": 53.06000000000002,
-   "P_money_flows_5y_mean": 0.6126666666666667,
+   "coverage_10y_p50": 30.700000000000003,
+   "coverage_10y_p90": 50.42,
+   "P_money_flows_5y_mean": 0.6266666666666667,
    "share_better_than_PW0": null,
-   "max_regret": 68.0
+   "max_regret": 58.199999999999996
   },
   {
    "pathway": "PW0",
    "mechanism": "M-C1",
-   "coverage_10y_p10": 17.96,
-   "coverage_10y_p50": 26.4,
-   "coverage_10y_p90": 42.84,
-   "P_money_flows_5y_mean": 0.4846666666666667,
+   "coverage_10y_p10": 17.78,
+   "coverage_10y_p50": 27.0,
+   "coverage_10y_p90": 44.26000000000002,
+   "P_money_flows_5y_mean": 0.512,
    "share_better_than_PW0": null,
-   "max_regret": 50.400000000000006
+   "max_regret": 58.2
   },
   {
    "pathway": "PW0",
    "mechanism": "M-C2",
-   "coverage_10y_p10": 18.8,
-   "coverage_10y_p50": 27.6,
-   "coverage_10y_p90": 47.620000000000005,
-   "P_money_flows_5y_mean": 0.6286666666666666,
+   "coverage_10y_p10": 18.98,
+   "coverage_10y_p50": 29.6,
+   "coverage_10y_p90": 44.6,
+   "P_money_flows_5y_mean": 0.6353333333333333,
    "share_better_than_PW0": null,
-   "max_regret": 63.400000000000006
+   "max_regret": 59.800000000000004
   },
   {
    "pathway": "PW0",
    "mechanism": "M-D",
-   "coverage_10y_p10": 16.78,
-   "coverage_10y_p50": 25.0,
-   "coverage_10y_p90": 41.82,
-   "P_money_flows_5y_mean": 0.4266666666666667,
+   "coverage_10y_p10": 17.4,
+   "coverage_10y_p50": 26.0,
+   "coverage_10y_p90": 43.24000000000001,
+   "P_money_flows_5y_mean": 0.45466666666666666,
    "share_better_than_PW0": null,
-   "max_regret": 44.4
+   "max_regret": 61.2
   },
   {
    "pathway": "PW1",
    "mechanism": "M-A",
    "coverage_10y_p10": 21.8,
-   "coverage_10y_p50": 33.1,
-   "coverage_10y_p90": 55.6,
-   "P_money_flows_5y_mean": 0.8186666666666668,
-   "share_better_than_PW0": 0.79,
-   "max_regret": 56.800000000000004
+   "coverage_10y_p50": 33.8,
+   "coverage_10y_p90": 50.64000000000001,
+   "P_money_flows_5y_mean": 0.8246666666666667,
+   "share_better_than_PW0": 0.77,
+   "max_regret": 49.60000000000001
   },
   {
    "pathway": "PW1",
    "mechanism": "M-B1",
-   "coverage_10y_p10": 22.4,
-   "coverage_10y_p50": 33.6,
-   "coverage_10y_p90": 56.8,
-   "P_money_flows_5y_mean": 0.8493333333333334,
-   "share_better_than_PW0": 0.7866666666666666,
-   "max_regret": 51.99999999999999
+   "coverage_10y_p10": 22.38,
+   "coverage_10y_p50": 35.1,
+   "coverage_10y_p90": 52.0,
+   "P_money_flows_5y_mean": 0.8566666666666667,
+   "share_better_than_PW0": 0.7266666666666667,
+   "max_regret": 50.2
   },
   {
    "pathway": "PW1",
    "mechanism": "M-B2",
-   "coverage_10y_p10": 22.4,
-   "coverage_10y_p50": 33.6,
-   "coverage_10y_p90": 56.8,
-   "P_money_flows_5y_mean": 0.8493333333333334,
-   "share_better_than_PW0": 0.7866666666666666,
-   "max_regret": 51.99999999999999
+   "coverage_10y_p10": 22.38,
+   "coverage_10y_p50": 35.1,
+   "coverage_10y_p90": 52.0,
+   "P_money_flows_5y_mean": 0.8566666666666667,
+   "share_better_than_PW0": 0.7266666666666667,
+   "max_regret": 50.2
   },
   {
    "pathway": "PW1",
    "mechanism": "M-C1",
-   "coverage_10y_p10": 20.580000000000002,
-   "coverage_10y_p50": 29.8,
-   "coverage_10y_p90": 47.02,
-   "P_money_flows_5y_mean": 0.8033333333333333,
-   "share_better_than_PW0": 0.7466666666666667,
-   "max_regret": 42.800000000000004
+   "coverage_10y_p10": 20.18,
+   "coverage_10y_p50": 30.8,
+   "coverage_10y_p90": 46.6,
+   "P_money_flows_5y_mean": 0.8019999999999999,
+   "share_better_than_PW0": 0.7533333333333333,
+   "max_regret": 34.0
   },
   {
    "pathway": "PW1",
    "mechanism": "M-C2",
-   "coverage_10y_p10": 21.18,
-   "coverage_10y_p50": 31.4,
-   "coverage_10y_p90": 50.48000000000002,
-   "P_money_flows_5y_mean": 0.8566666666666667,
-   "share_better_than_PW0": 0.7766666666666666,
-   "max_regret": 44.800000000000004
+   "coverage_10y_p10": 21.38,
+   "coverage_10y_p50": 33.2,
+   "coverage_10y_p90": 47.2,
+   "P_money_flows_5y_mean": 0.838,
+   "share_better_than_PW0": 0.7433333333333333,
+   "max_regret": 50.0
   },
   {
    "pathway": "PW1",
    "mechanism": "M-D",
    "coverage_10y_p10": 19.4,
-   "coverage_10y_p50": 27.700000000000003,
-   "coverage_10y_p90": 42.48000000000002,
-   "P_money_flows_5y_mean": 0.7813333333333332,
-   "share_better_than_PW0": 0.7566666666666667,
-   "max_regret": 37.4
+   "coverage_10y_p50": 29.2,
+   "coverage_10y_p90": 44.220000000000006,
+   "P_money_flows_5y_mean": 0.77,
+   "share_better_than_PW0": 0.7466666666666667,
+   "max_regret": 40.8
   },
   {
    "pathway": "PW2",
    "mechanism": "M-A",
-   "coverage_10y_p10": 20.580000000000002,
-   "coverage_10y_p50": 32.9,
-   "coverage_10y_p90": 54.82,
-   "P_money_flows_5y_mean": 0.7613333333333333,
-   "share_better_than_PW0": 0.7333333333333333,
-   "max_regret": 38.599999999999994
+   "coverage_10y_p10": 22.0,
+   "coverage_10y_p50": 34.5,
+   "coverage_10y_p90": 50.90000000000002,
+   "P_money_flows_5y_mean": 0.7813333333333332,
+   "share_better_than_PW0": 0.7166666666666667,
+   "max_regret": 45.8
   },
   {
    "pathway": "PW2",
    "mechanism": "M-B1",
-   "coverage_10y_p10": 22.18,
-   "coverage_10y_p50": 34.2,
-   "coverage_10y_p90": 55.6,
-   "P_money_flows_5y_mean": 0.7986666666666665,
-   "share_better_than_PW0": 0.7066666666666667,
-   "max_regret": 42.4
+   "coverage_10y_p10": 22.2,
+   "coverage_10y_p50": 34.4,
+   "coverage_10y_p90": 51.64000000000001,
+   "P_money_flows_5y_mean": 0.8053333333333335,
+   "share_better_than_PW0": 0.6733333333333333,
+   "max_regret": 46.800000000000004
   },
   {
    "pathway": "PW2",
    "mechanism": "M-B2",
-   "coverage_10y_p10": 22.18,
-   "coverage_10y_p50": 34.2,
-   "coverage_10y_p90": 55.6,
-   "P_money_flows_5y_mean": 0.7986666666666665,
-   "share_better_than_PW0": 0.7066666666666667,
-   "max_regret": 42.4
+   "coverage_10y_p10": 22.2,
+   "coverage_10y_p50": 34.4,
+   "coverage_10y_p90": 51.64000000000001,
+   "P_money_flows_5y_mean": 0.8053333333333335,
+   "share_better_than_PW0": 0.6733333333333333,
+   "max_regret": 46.800000000000004
   },
   {
    "pathway": "PW2",
    "mechanism": "M-C1",
-   "coverage_10y_p10": 19.76,
-   "coverage_10y_p50": 31.1,
-   "coverage_10y_p90": 46.82,
-   "P_money_flows_5y_mean": 0.7293333333333334,
-   "share_better_than_PW0": 0.7033333333333334,
-   "max_regret": 43.800000000000004
+   "coverage_10y_p10": 20.6,
+   "coverage_10y_p50": 31.2,
+   "coverage_10y_p90": 45.84,
+   "P_money_flows_5y_mean": 0.7593333333333334,
+   "share_better_than_PW0": 0.6833333333333333,
+   "max_regret": 36.2
   },
   {
    "pathway": "PW2",
    "mechanism": "M-C2",
-   "coverage_10y_p10": 20.580000000000002,
-   "coverage_10y_p50": 30.4,
-   "coverage_10y_p90": 51.8,
-   "P_money_flows_5y_mean": 0.8213333333333332,
-   "share_better_than_PW0": 0.72,
-   "max_regret": 31.200000000000003
+   "coverage_10y_p10": 20.78,
+   "coverage_10y_p50": 33.0,
+   "coverage_10y_p90": 47.6,
+   "P_money_flows_5y_mean": 0.8173333333333332,
+   "share_better_than_PW0": 0.6466666666666666,
+   "max_regret": 43.0
   },
   {
    "pathway": "PW2",
    "mechanism": "M-D",
-   "coverage_10y_p10": 19.14,
-   "coverage_10y_p50": 29.2,
-   "coverage_10y_p90": 44.84,
-   "P_money_flows_5y_mean": 0.7060000000000001,
-   "share_better_than_PW0": 0.69,
-   "max_regret": 29.400000000000002
+   "coverage_10y_p10": 19.0,
+   "coverage_10y_p50": 29.4,
+   "coverage_10y_p90": 43.620000000000005,
+   "P_money_flows_5y_mean": 0.7333333333333333,
+   "share_better_than_PW0": 0.7033333333333334,
+   "max_regret": 35.8
   },
   {
    "pathway": "PW3",
    "mechanism": "M-A",
-   "coverage_10y_p10": 21.2,
-   "coverage_10y_p50": 33.1,
-   "coverage_10y_p90": 53.440000000000005,
-   "P_money_flows_5y_mean": 0.8066666666666666,
-   "share_better_than_PW0": 0.7,
-   "max_regret": 58.2
+   "coverage_10y_p10": 20.4,
+   "coverage_10y_p50": 33.4,
+   "coverage_10y_p90": 52.0,
+   "P_money_flows_5y_mean": 0.7759999999999999,
+   "share_better_than_PW0": 0.6533333333333333,
+   "max_regret": 62.60000000000001
   },
   {
    "pathway": "PW3",
    "mechanism": "M-B1",
-   "coverage_10y_p10": 21.2,
-   "coverage_10y_p50": 33.0,
-   "coverage_10y_p90": 53.82,
-   "P_money_flows_5y_mean": 0.8160000000000001,
-   "share_better_than_PW0": 0.6866666666666666,
-   "max_regret": 58.599999999999994
+   "coverage_10y_p10": 20.4,
+   "coverage_10y_p50": 34.0,
+   "coverage_10y_p90": 50.620000000000005,
+   "P_money_flows_5y_mean": 0.7879999999999999,
+   "share_better_than_PW0": 0.6366666666666667,
+   "max_regret": 61.199999999999996
   },
   {
    "pathway": "PW3",
    "mechanism": "M-B2",
-   "coverage_10y_p10": 21.2,
-   "coverage_10y_p50": 33.0,
-   "coverage_10y_p90": 53.82,
-   "P_money_flows_5y_mean": 0.8160000000000001,
-   "share_better_than_PW0": 0.6866666666666666,
-   "max_regret": 58.599999999999994
+   "coverage_10y_p10": 20.4,
+   "coverage_10y_p50": 34.0,
+   "coverage_10y_p90": 50.620000000000005,
+   "P_money_flows_5y_mean": 0.7879999999999999,
+   "share_better_than_PW0": 0.6366666666666667,
+   "max_regret": 61.199999999999996
   },
   {
    "pathway": "PW3",
    "mechanism": "M-C1",
-   "coverage_10y_p10": 18.6,
-   "coverage_10y_p50": 27.8,
-   "coverage_10y_p90": 44.82,
-   "P_money_flows_5y_mean": 0.6206666666666667,
-   "share_better_than_PW0": 0.5133333333333333,
-   "max_regret": 47.60000000000001
+   "coverage_10y_p10": 18.78,
+   "coverage_10y_p50": 28.299999999999997,
+   "coverage_10y_p90": 44.64000000000001,
+   "P_money_flows_5y_mean": 0.6546666666666666,
+   "share_better_than_PW0": 0.5266666666666666,
+   "max_regret": 59.00000000000001
   },
   {
    "pathway": "PW3",
    "mechanism": "M-C2",
    "coverage_10y_p10": 20.0,
-   "coverage_10y_p50": 31.0,
-   "coverage_10y_p90": 49.700000000000024,
-   "P_money_flows_5y_mean": 0.81,
-   "share_better_than_PW0": 0.7,
-   "max_regret": 56.00000000000001
+   "coverage_10y_p50": 32.1,
+   "coverage_10y_p90": 46.040000000000006,
+   "P_money_flows_5y_mean": 0.7866666666666666,
+   "share_better_than_PW0": 0.6366666666666667,
+   "max_regret": 58.6
   },
   {
    "pathway": "PW3",
    "mechanism": "M-D",
-   "coverage_10y_p10": 17.78,
-   "coverage_10y_p50": 26.6,
-   "coverage_10y_p90": 41.82,
-   "P_money_flows_5y_mean": 0.5853333333333333,
-   "share_better_than_PW0": 0.5966666666666667,
-   "max_regret": 39.8
+   "coverage_10y_p10": 18.0,
+   "coverage_10y_p50": 27.9,
+   "coverage_10y_p90": 42.040000000000006,
+   "P_money_flows_5y_mean": 0.6186666666666667,
+   "share_better_than_PW0": 0.5733333333333334,
+   "max_regret": 60.8
   },
   {
    "pathway": "PW4",
    "mechanism": "M-A",
-   "coverage_10y_p10": 23.4,
-   "coverage_10y_p50": 37.7,
-   "coverage_10y_p90": 60.84,
-   "P_money_flows_5y_mean": 0.9159999999999998,
-   "share_better_than_PW0": 0.77,
-   "max_regret": 29.799999999999997
-  },
-  {
-   "pathway": "PW4",
-   "mechanism": "M-B1",
-   "coverage_10y_p10": 23.580000000000002,
-   "coverage_10y_p50": 38.5,
-   "coverage_10y_p90": 58.860000000000014,
+   "coverage_10y_p10": 24.8,
+   "coverage_10y_p50": 38.0,
+   "coverage_10y_p90": 59.040000000000006,
    "P_money_flows_5y_mean": 0.9133333333333333,
-   "share_better_than_PW0": 0.7666666666666667,
-   "max_regret": 34.8
-  },
-  {
-   "pathway": "PW4",
-   "mechanism": "M-B2",
-   "coverage_10y_p10": 23.580000000000002,
-   "coverage_10y_p50": 38.5,
-   "coverage_10y_p90": 58.860000000000014,
-   "P_money_flows_5y_mean": 0.9133333333333333,
-   "share_better_than_PW0": 0.7666666666666667,
-   "max_regret": 34.8
-  },
-  {
-   "pathway": "PW4",
-   "mechanism": "M-C1",
-   "coverage_10y_p10": 21.580000000000002,
-   "coverage_10y_p50": 34.8,
-   "coverage_10y_p90": 51.040000000000006,
-   "P_money_flows_5y_mean": 0.8786666666666667,
-   "share_better_than_PW0": 0.77,
-   "max_regret": 24.6
-  },
-  {
-   "pathway": "PW4",
-   "mechanism": "M-C2",
-   "coverage_10y_p10": 22.580000000000002,
-   "coverage_10y_p50": 35.4,
-   "coverage_10y_p90": 58.220000000000006,
-   "P_money_flows_5y_mean": 0.9066666666666666,
-   "share_better_than_PW0": 0.8266666666666667,
-   "max_regret": 33.800000000000004
-  },
-  {
-   "pathway": "PW4",
-   "mechanism": "M-D",
-   "coverage_10y_p10": 20.98,
-   "coverage_10y_p50": 33.3,
-   "coverage_10y_p90": 49.460000000000015,
-   "P_money_flows_5y_mean": 0.8666666666666667,
-   "share_better_than_PW0": 0.82,
-   "max_regret": 22.6
-  },
-  {
-   "pathway": "PW5",
-   "mechanism": "M-A",
-   "coverage_10y_p10": 25.560000000000002,
-   "coverage_10y_p50": 39.7,
-   "coverage_10y_p90": 61.84,
-   "P_money_flows_5y_mean": 0.9666666666666667,
-   "share_better_than_PW0": 0.8666666666666667,
-   "max_regret": 29.000000000000004
-  },
-  {
-   "pathway": "PW5",
-   "mechanism": "M-B1",
-   "coverage_10y_p10": 25.2,
-   "coverage_10y_p50": 39.0,
-   "coverage_10y_p90": 62.300000000000026,
-   "P_money_flows_5y_mean": 0.9706666666666668,
-   "share_better_than_PW0": 0.8366666666666667,
-   "max_regret": 23.799999999999997
-  },
-  {
-   "pathway": "PW5",
-   "mechanism": "M-B2",
-   "coverage_10y_p10": 25.2,
-   "coverage_10y_p50": 39.0,
-   "coverage_10y_p90": 62.300000000000026,
-   "P_money_flows_5y_mean": 0.9706666666666668,
-   "share_better_than_PW0": 0.8366666666666667,
-   "max_regret": 23.799999999999997
-  },
-  {
-   "pathway": "PW5",
-   "mechanism": "M-C1",
-   "coverage_10y_p10": 22.18,
-   "coverage_10y_p50": 34.0,
-   "coverage_10y_p90": 51.460000000000015,
-   "P_money_flows_5y_mean": 0.9486666666666668,
-   "share_better_than_PW0": 0.8066666666666666,
-   "max_regret": 21.6
-  },
-  {
-   "pathway": "PW5",
-   "mechanism": "M-C2",
-   "coverage_10y_p10": 23.4,
-   "coverage_10y_p50": 35.2,
-   "coverage_10y_p90": 55.220000000000006,
-   "P_money_flows_5y_mean": 0.9586666666666668,
-   "share_better_than_PW0": 0.83,
-   "max_regret": 28.400000000000006
-  },
-  {
-   "pathway": "PW5",
-   "mechanism": "M-D",
-   "coverage_10y_p10": 21.18,
-   "coverage_10y_p50": 31.0,
-   "coverage_10y_p90": 47.2,
-   "P_money_flows_5y_mean": 0.9286666666666668,
-   "share_better_than_PW0": 0.83,
-   "max_regret": 20.200000000000003
-  },
-  {
-   "pathway": "PW6",
-   "mechanism": "M-A",
-   "coverage_10y_p10": 22.18,
-   "coverage_10y_p50": 33.0,
-   "coverage_10y_p90": 53.860000000000014,
-   "P_money_flows_5y_mean": 0.894,
    "share_better_than_PW0": 0.78,
-   "max_regret": 40.8
+   "max_regret": 30.599999999999994
+  },
+  {
+   "pathway": "PW4",
+   "mechanism": "M-B1",
+   "coverage_10y_p10": 24.6,
+   "coverage_10y_p50": 38.6,
+   "coverage_10y_p90": 57.860000000000014,
+   "P_money_flows_5y_mean": 0.9140000000000001,
+   "share_better_than_PW0": 0.7766666666666666,
+   "max_regret": 30.400000000000006
+  },
+  {
+   "pathway": "PW4",
+   "mechanism": "M-B2",
+   "coverage_10y_p10": 24.6,
+   "coverage_10y_p50": 38.6,
+   "coverage_10y_p90": 57.860000000000014,
+   "P_money_flows_5y_mean": 0.9140000000000001,
+   "share_better_than_PW0": 0.7766666666666666,
+   "max_regret": 30.400000000000006
+  },
+  {
+   "pathway": "PW4",
+   "mechanism": "M-C1",
+   "coverage_10y_p10": 22.8,
+   "coverage_10y_p50": 35.2,
+   "coverage_10y_p90": 50.8,
+   "P_money_flows_5y_mean": 0.8779999999999999,
+   "share_better_than_PW0": 0.8033333333333333,
+   "max_regret": 31.799999999999997
+  },
+  {
+   "pathway": "PW4",
+   "mechanism": "M-C2",
+   "coverage_10y_p10": 22.78,
+   "coverage_10y_p50": 35.6,
+   "coverage_10y_p90": 52.02,
+   "P_money_flows_5y_mean": 0.9033333333333333,
+   "share_better_than_PW0": 0.7333333333333333,
+   "max_regret": 20.799999999999997
+  },
+  {
+   "pathway": "PW4",
+   "mechanism": "M-D",
+   "coverage_10y_p10": 20.98,
+   "coverage_10y_p50": 33.0,
+   "coverage_10y_p90": 46.440000000000005,
+   "P_money_flows_5y_mean": 0.8646666666666666,
+   "share_better_than_PW0": 0.73,
+   "max_regret": 13.399999999999999
+  },
+  {
+   "pathway": "PW5",
+   "mechanism": "M-A",
+   "coverage_10y_p10": 26.16,
+   "coverage_10y_p50": 39.6,
+   "coverage_10y_p90": 59.02,
+   "P_money_flows_5y_mean": 0.9779999999999999,
+   "share_better_than_PW0": 0.8466666666666667,
+   "max_regret": 24.19999999999999
+  },
+  {
+   "pathway": "PW5",
+   "mechanism": "M-B1",
+   "coverage_10y_p10": 25.4,
+   "coverage_10y_p50": 39.6,
+   "coverage_10y_p90": 59.440000000000005,
+   "P_money_flows_5y_mean": 0.9726666666666667,
+   "share_better_than_PW0": 0.8166666666666667,
+   "max_regret": 24.400000000000006
+  },
+  {
+   "pathway": "PW5",
+   "mechanism": "M-B2",
+   "coverage_10y_p10": 25.4,
+   "coverage_10y_p50": 39.6,
+   "coverage_10y_p90": 59.440000000000005,
+   "P_money_flows_5y_mean": 0.9726666666666667,
+   "share_better_than_PW0": 0.8166666666666667,
+   "max_regret": 24.400000000000006
+  },
+  {
+   "pathway": "PW5",
+   "mechanism": "M-C1",
+   "coverage_10y_p10": 22.98,
+   "coverage_10y_p50": 34.4,
+   "coverage_10y_p90": 47.8,
+   "P_money_flows_5y_mean": 0.9573333333333333,
+   "share_better_than_PW0": 0.8033333333333333,
+   "max_regret": 23.799999999999997
+  },
+  {
+   "pathway": "PW5",
+   "mechanism": "M-C2",
+   "coverage_10y_p10": 23.38,
+   "coverage_10y_p50": 36.0,
+   "coverage_10y_p90": 49.8,
+   "P_money_flows_5y_mean": 0.9526666666666666,
+   "share_better_than_PW0": 0.8,
+   "max_regret": 14.800000000000004
+  },
+  {
+   "pathway": "PW5",
+   "mechanism": "M-D",
+   "coverage_10y_p10": 21.78,
+   "coverage_10y_p50": 32.0,
+   "coverage_10y_p90": 44.8,
+   "P_money_flows_5y_mean": 0.9313333333333332,
+   "share_better_than_PW0": 0.7666666666666667,
+   "max_regret": 14.800000000000004
+  },
+  {
+   "pathway": "PW6",
+   "mechanism": "M-A",
+   "coverage_10y_p10": 22.38,
+   "coverage_10y_p50": 34.0,
+   "coverage_10y_p90": 50.76000000000004,
+   "P_money_flows_5y_mean": 0.8859999999999999,
+   "share_better_than_PW0": 0.7633333333333333,
+   "max_regret": 43.800000000000004
   },
   {
    "pathway": "PW6",
    "mechanism": "M-B1",
-   "coverage_10y_p10": 22.18,
-   "coverage_10y_p50": 34.5,
-   "coverage_10y_p90": 55.2,
-   "P_money_flows_5y_mean": 0.9086666666666665,
-   "share_better_than_PW0": 0.7466666666666667,
-   "max_regret": 39.0
+   "coverage_10y_p10": 23.18,
+   "coverage_10y_p50": 35.0,
+   "coverage_10y_p90": 48.860000000000014,
+   "P_money_flows_5y_mean": 0.8986666666666667,
+   "share_better_than_PW0": 0.74,
+   "max_regret": 45.400000000000006
   },
   {
    "pathway": "PW6",
    "mechanism": "M-B2",
-   "coverage_10y_p10": 22.18,
-   "coverage_10y_p50": 34.5,
-   "coverage_10y_p90": 55.2,
-   "P_money_flows_5y_mean": 0.9086666666666665,
-   "share_better_than_PW0": 0.7466666666666667,
-   "max_regret": 39.0
+   "coverage_10y_p10": 23.18,
+   "coverage_10y_p50": 35.0,
+   "coverage_10y_p90": 48.860000000000014,
+   "P_money_flows_5y_mean": 0.8986666666666667,
+   "share_better_than_PW0": 0.74,
+   "max_regret": 45.400000000000006
   },
   {
    "pathway": "PW6",
    "mechanism": "M-C1",
-   "coverage_10y_p10": 20.38,
-   "coverage_10y_p50": 30.299999999999997,
-   "coverage_10y_p90": 45.8,
-   "P_money_flows_5y_mean": 0.8753333333333334,
-   "share_better_than_PW0": 0.7533333333333333,
-   "max_regret": 38.800000000000004
+   "coverage_10y_p10": 20.98,
+   "coverage_10y_p50": 30.5,
+   "coverage_10y_p90": 44.82,
+   "P_money_flows_5y_mean": 0.8759999999999999,
+   "share_better_than_PW0": 0.7733333333333333,
+   "max_regret": 32.2
   },
   {
    "pathway": "PW6",
    "mechanism": "M-C2",
-   "coverage_10y_p10": 20.98,
-   "coverage_10y_p50": 31.299999999999997,
-   "coverage_10y_p90": 52.2,
-   "P_money_flows_5y_mean": 0.8666666666666667,
-   "share_better_than_PW0": 0.7366666666666667,
-   "max_regret": 31.4
+   "coverage_10y_p10": 21.2,
+   "coverage_10y_p50": 33.3,
+   "coverage_10y_p90": 46.620000000000005,
+   "P_money_flows_5y_mean": 0.8873333333333333,
+   "share_better_than_PW0": 0.7333333333333333,
+   "max_regret": 43.400000000000006
   },
   {
    "pathway": "PW6",
    "mechanism": "M-D",
-   "coverage_10y_p10": 19.0,
-   "coverage_10y_p50": 29.5,
-   "coverage_10y_p90": 45.620000000000005,
-   "P_money_flows_5y_mean": 0.8046666666666666,
-   "share_better_than_PW0": 0.7466666666666667,
-   "max_regret": 24.199999999999996
+   "coverage_10y_p10": 20.2,
+   "coverage_10y_p50": 29.299999999999997,
+   "coverage_10y_p90": 42.64000000000001,
+   "P_money_flows_5y_mean": 0.8413333333333333,
+   "share_better_than_PW0": 0.72,
+   "max_regret": 29.599999999999998
   }
  ]
 }

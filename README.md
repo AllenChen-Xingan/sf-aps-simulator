@@ -39,7 +39,7 @@ node tests/e2e.mjs                    # headless browser + accessibility
 
 | Path | What |
 |---|---|
-| `index.html`, `assets/` | Page, styles, player and charts (`app.js`), model worker (`worker.js`) |
+| `index.html`, `assets/` | Page, styles, player and charts (`app.js`), actor cards, relationships and plain-English event text (`story.js`), model worker (`worker.js`) |
 | `model/abm/` | The ABM, copied **unchanged** from the research repository (`model.py`, `params.py`, `inputs.json`); `SOURCE.txt` has sha256 checksums |
 | `results/` | Result set exported by the ABM (`meta.json` … `runs.csv.gz`, copied unchanged), plus `runs-lite.json` (derived), `demo/` (one recorded run per pathway, played before the model loads) and `consistency.json` |
 | `config.json` | Display flags, e.g. pathways whose results are withheld |
@@ -54,15 +54,16 @@ model folder; a Python venv with numpy 2.4.6 in `.venv`; Node with `npm install`
 
 | Test | Command | Last result (2026-10-26) |
 |---|---|---|
-| **Consistency** — the browser runs the same Python files as the offline analysis. The report records the model fingerprint (model.py + params.py + inputs.json) and both runtimes; the page shows a pass only if that fingerprint equals the one the browser worker computes from the bytes it loaded. 67 fixed cases (every pathway × mechanism at defaults, 24 random parameter draws, one history-mode run) run in CPython and in Pyodide; every output and every event compared. Integers and strings equal; decimals within 1e-12 relative or 1e-9 absolute (a pass is not a bit-for-bit claim). The Pyodide side uses the same self-hosted runtime the page publishes, and the page also checks the runtime versions its worker loaded | `tests/run_consistency.sh` | CPython 3.14.8 vs Pyodide 314.0.7 (Python 3.14.2), numpy 2.4.6 both: **0 differences** over 19,456 events |
+| **Consistency** — the browser runs the same Python files as the offline analysis. The report records the model fingerprint (model.py + params.py + inputs.json) and both runtimes; the page shows a pass only if that fingerprint equals the one the browser worker computes from the bytes it loaded. 67 fixed cases (every pathway × mechanism at defaults, 24 random parameter draws, one history-mode run) run in CPython and in Pyodide; every output and every event compared. Integers and strings equal; decimals within 1e-12 relative or 1e-9 absolute (a pass is not a bit-for-bit claim). The Pyodide side uses the same self-hosted runtime the page publishes, and the page also checks the runtime versions its worker loaded | `tests/run_consistency.sh` | CPython 3.14.8 vs Pyodide 314.0.7 (Python 3.14.2), numpy 2.4.6 both: **0 differences** over 19,857 events |
 | **Replay** — the animation moves dots only from the event stream; replaying initial states + events must equal the model's own monthly stocks | `.venv/bin/python -I tests/test_replay.py` | 120 random runs, 14,400 months: **0 differences** |
-| **Browser + accessibility** — headless Chromium: model loads, animation plays, log and live announcements, compare mode by keyboard, pause/step, no console errors, phone width without horizontal scroll, axe-core WCAG 2.1 A/AA in light, dark and reduced-motion phone views | `node tests/e2e.mjs` | 20/20 checks pass (incl. a run started while the model loads); axe: **0 violations** (light, dark, mobile). One item axe could not decide automatically (colour contrast of text over the chart band, light mode) — needs a manual check |
+| **Browser + accessibility** — headless Chromium: model loads, animation plays, log and live announcements, compare mode by keyboard, pause/step, no console errors, phone width without horizontal scroll, axe-core WCAG 2.1 A/AA in light, dark and reduced-motion phone views | `node tests/e2e.mjs` | 25/25 checks pass (incl. actor cards by keyboard and a run started while the model loads); axe: **0 violations** (light, dark, mobile). One item axe could not decide automatically (colour contrast of text over the chart band, light mode) — needs a manual check |
 
 ## Accessibility
 
 The project is about blind and low-vision pedestrians, so the page is built to be used without sight:
 
 - Semantic headings and landmarks, skip link, every control labelled; range sliders announce values with units.
+- Every actor box is a button (Enter/Space opens a card; Escape closes it and returns focus); all relationships are also given as a text list; legend items highlight their links on focus.
 - The animation has a text twin: an event log (`aria-live="polite"`) announces key events each month
   ("Caltrans approve funding for 9 intersections …"); routine filings are grouped.
 - Every chart has a text summary (`aria-label`) and a data table (in a disclosure); status counts are a screen-reader table next to the dot view.
@@ -83,7 +84,7 @@ One rule draws on an interview with SFMTA staff.
 Scenario exploration, not prediction; rules are set by people; many ranges are informed guesses;
 request list only, San Francisco only; injury crashes only (benefits understated); history fit rests on
 very few funding events. The result set and the live model can be different versions while the model
-is under review (now both design v12, same model fingerprint) — the About section shows both.
+is under review (design v14: result set being re-run after a last parameter-file change; comparisons hidden until the fingerprints match) — the About section shows both.
 
 ## AI assistance
 

@@ -66,6 +66,10 @@ _S = [
     ('t_pause', 'Months paused when a contracting cost gap is not funded', 'months', 'uniform', 3.0, 12.0, 6.0, ALL, 'projection'),
     ('k_cont', 'Budgeted contingency share of planned cost', 'fraction', 'uniform', 0.05, 0.15, 0.1, ALL, 'all'),
     ('crash_impute', 'Unmatched site crashes: 0 exclude, 1 median, 2 90th percentile', 'code', 'discrete', 0, 2, 0, ALL, 'projection'),
+    ('lrsp_until', 'Local road safety plan valid until (months after 2026-07; negative = already expired)', 'months', 'uniform', -6.0, 54.0, 24.0, ALL, 'projection'),
+    ('q_lrsp', 'A plan update succeeds', 'probability', 'uniform', 0.2, 0.9, 0.6, ALL, 'projection'),
+    ('t_lrsp', 'Months to complete a plan update', 'months', 'uniform', 3.0, 18.0, 9.0, ALL, 'projection'),
+    ('c_xing', 'Cost of a signalized crossing upgrade (SI19PB) per site', 'USD/site', 'uniform', 15000, 80000, 40000, ALL, 'projection'),
     ('t_ext', 'Length of the one allowed 5-year extension', 'months', 'uniform', 6.0, 24.0, 12.0, ALL, 'projection'),
     ('lam_hw', 'Push-button / signal-hardware change events per candidate site', 'per year', 'uniform', 0.01, 0.08, 0.04, ALL, 'projection'),
     ('b_hw', 'Maintenance budget for APS add-ons under the design rule', 'USD/year', 'uniform', 0, 300000, 150000, ALL, 'projection'),
@@ -139,6 +143,9 @@ def sample(n, rng, width=1.0, names=None):
             a, b = mid - half, mid + half
             if unit in ('probability', 'fraction', '0-1'):
                 a, b = max(a, 0.0), min(b, 1.0)
+            elif lo >= 0:
+                # keep widened ranges legal: never negative, and strictly positive lows stay positive
+                a = max(a, 0.0 if lo == 0 else lo * 0.5)
             perm = rng.permutation(n)
             u = (perm + rng.random(n)) / n
             vals = a + u * (b - a)
