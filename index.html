@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SF APS Funding Simulator</title>
+<meta name="description" content="Scenario exploration: under which conditions does money flow to install accessible pedestrian signals on San Francisco's request list? An agent-based model you can run in the browser.">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="module" src="assets/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="banner" role="note" id="status-banner">
+  <strong>Preliminary.</strong>
+  Parameters are not calibrated and the model rules are still under review.
+  This is scenario exploration under stated rules, not a forecast.
+  <span id="status-version"></span>
+</div>
+
+<header class="site">
+  <h1>When does money flow to accessible signals?</h1>
+  <p class="lede">An agent-based simulator of San Francisco's request list for Accessible Pedestrian Signals (APS) &mdash; the push-button signals that tell blind and low-vision pedestrians, by sound and vibration, when it is safe to cross.</p>
+</header>
+
+<nav class="toc" aria-label="On this page">
+  <ul>
+    <li><a href="#about">What this is</a></li>
+    <li><a href="#sim">Run the simulation</a></li>
+    <li><a href="#results">Many runs</a></li>
+    <li><a href="#read">How to read this</a></li>
+    <li><a href="#method">Method and limits</a></li>
+    <li><a href="#sources">Sources</a></li>
+    <li><a href="#ai">AI use</a></li>
+  </ul>
+</nav>
+
+<main id="main">
+
+<section id="about" aria-labelledby="about-h">
+  <h2 id="about-h">What this is</h2>
+  <p>San Francisco installs APS every year, but residents who ask for one at a specific intersection join a list, and many of those requests wait for years. In the city's records, a requested intersection gets APS after it is funded. Who prepares the request for money, and under which rules can it succeed?</p>
+  <p>This page lets you test answers to that question. It simulates the people and offices involved &mdash; residents, advocates, SFMTA engineers, SFMTA's grants staff, the county transportation authority, Caltrans &mdash; month by month for ten years from July 2026. You pick a policy pathway, press <em>Run</em>, and watch who acts, where money moves, and which intersections get installed. Underneath, the same model was run tens of thousands of times with uncertain inputs drawn at random, so you can see how often each pathway works.</p>
+  <p><strong>Use it to compare policy designs, not to predict numbers.</strong> The rules come from public documents and an interview with SFMTA staff, but many values are informed guesses (listed under <a href="#method">Method and limits</a>).</p>
+</section>
+
+<section id="sim" aria-labelledby="sim-h">
+  <h2 id="sim-h">Run the simulation</h2>
+
+  <div class="model-status" id="model-status" role="status" aria-live="polite">Loading the in-browser model (about 10 MB the first time). Until it is ready, <em>Run</em> plays a recorded run with default settings.</div>
+
+  <form id="controls" class="controls" aria-labelledby="controls-h">
+    <h3 id="controls-h" class="visually-hidden">Scenario settings</h3>
+
+    <div class="scenario" data-slot="A">
+      <fieldset>
+        <legend>Scenario A</legend>
+        <label for="pw-A">Policy pathway</label>
+        <select id="pw-A" name="pathway"></select>
+        <p class="hint" id="pw-A-desc"></p>
+      </fieldset>
+    </div>
+
+    <div class="scenario" data-slot="B" hidden>
+      <fieldset>
+        <legend>Scenario B</legend>
+        <label for="pw-B">Policy pathway</label>
+        <select id="pw-B" name="pathway-b"></select>
+        <p class="hint" id="pw-B-desc"></p>
+      </fieldset>
+    </div>
+
+    <div class="row">
+      <label class="check"><input type="checkbox" id="compare"> Compare two pathways side by side (same random draws)</label>
+    </div>
+
+    <fieldset class="shared">
+      <legend>Shared assumptions</legend>
+      <label for="mech">Why the request list stalled (mechanism)</label>
+      <select id="mech"></select>
+      <p class="hint" id="mech-desc"></p>
+      <div id="switches" class="switches"></div>
+      <div id="key-params" class="params"></div>
+      <details>
+        <summary>All model parameters (<span id="n-params"></span>)</summary>
+        <p class="hint">Ranges are the model's prior ranges. Default is the middle of each range. Parameters marked with a mechanism only matter under that mechanism.</p>
+        <div id="all-params" class="params"></div>
+      </details>
+      <div class="row">
+        <label for="seed">Random seed</label>
+        <input id="seed" type="number" inputmode="numeric" min="0" step="1" value="146">
+        <button type="button" id="new-seed">New seed</button>
+        <button type="button" id="reset-params">Reset to defaults</button>
+      </div>
+    </fieldset>
+  </form>
+
+  <div class="player" role="group" aria-label="Playback">
+    <button type="button" id="run" class="primary">Run</button>
+    <button type="button" id="pause" aria-pressed="false" disabled>Pause</button>
+    <button type="button" id="step" disabled>Step one month</button>
+    <button type="button" id="restart" disabled>Replay</button>
+    <label for="speed">Speed</label>
+    <select id="speed">
+      <option value="0.5">Slow</option>
+      <option value="1" selected>Normal</option>
+      <option value="3">Fast</option>
+      <option value="10">Very fast</option>
+    </select>
+    <span class="clock" id="clock" aria-hidden="true">&ndash;</span>
+  </div>
+
+  <div class="stages" id="stages"></div>
+
+  <section class="log-wrap" aria-labelledby="log-h">
+    <h3 id="log-h">What happened</h3>
+    <p class="hint">Key events are also announced to screen readers as they happen. New requests and routine filing are grouped.</p>
+    <div id="announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+    <ol id="log" class="log" tabindex="0" aria-label="Event log"></ol>
+  </section>
+
+  <section class="run-result" aria-labelledby="run-h">
+    <h3 id="run-h">This run against the result set</h3>
+    <div id="run-summary" class="summary"></div>
+    <figure>
+      <div id="timeline" class="chart"></div>
+      <figcaption id="timeline-cap"></figcaption>
+    </figure>
+    <figure>
+      <div id="hist" class="chart"></div>
+      <figcaption id="hist-cap"></figcaption>
+    </figure>
+  </section>
+</section>
+
+<section id="results" aria-labelledby="results-h">
+  <h2 id="results-h">Many runs per pathway</h2>
+  <p class="label-tag" id="set-label"></p>
+  <p id="set-desc"></p>
+  <p>Every pathway was run on the same parameter sets with the same random seeds, so differences between pathways are not luck of the draw. Choose the explanation of the stall (mechanism) to see whether the ranking holds up.</p>
+  <div class="row">
+    <label for="mech-view">Mechanism</label>
+    <select id="mech-view"></select>
+  </div>
+  <div class="table-wrap"><table id="robust">
+    <caption>Installed within ten years, how often money arrived, and robustness, by pathway</caption>
+    <thead><tr>
+      <th scope="col">Pathway</th>
+      <th scope="col">Installed in 10 years: middle (10th&ndash;90th percentile)</th>
+      <th scope="col">Chance request-list money arrived within 5 years (average)</th>
+      <th scope="col">Parameter sets where it beat the status quo</th>
+      <th scope="col">Worst shortfall against the best pathway (intersections)</th>
+    </tr></thead>
+    <tbody></tbody>
+  </table></div>
+
+  <h3>How far each adaptive pathway went</h3>
+  <div id="reach" class="table-wrap"></div>
+
+  <h3>Under which conditions did money flow?</h3>
+  <div id="prim"></div>
+</section>
+
+<section id="read" aria-labelledby="read-h">
+  <h2 id="read-h">How to read this</h2>
+  <ul>
+    <li><strong>One run is one possible story.</strong> Change the seed and the same settings tell a different story. Compare pathways on the many-run tables, not on one animation.</li>
+    <li><strong>Rankings and conditions are the output; counts are illustrations.</strong> &ldquo;Pathway X beat the status quo in 9 of 10 parameter sets&rdquo; is the kind of statement the model supports. &ldquo;X will install 27 signals&rdquo; is not.</li>
+    <li><strong>The rules are set by people.</strong> If a rule is wrong, the result is wrong. Each rule and range is listed with its source in the design document.</li>
+    <li><strong>Dashed links in the network</strong> are steps that the rules allow but that did not happen in this run, such as the request list turning into an application for money.</li>
+    <li><strong>Mechanisms</strong> are competing explanations of why funded requests stopped. Running a pathway under each one shows which recommendations hold up whichever explanation is right.</li>
+  </ul>
+</section>
+
+<section id="method" aria-labelledby="method-h">
+  <h2 id="method-h">Method and limits</h2>
+  <details open>
+    <summary>Model in brief (ODD summary)</summary>
+    <dl class="odd">
+      <dt>Purpose</dt><dd>Explore under which conditions someone applies for money for the APS request list and gets it, and which policy pathways are robust across many uncertain futures.</dd>
+      <dt>Entities</dt><dd>Intersections on the request list (76 pending in mid-2026 plus new requests); one behavioural actor &mdash; SFMTA's capital budget and grants staff, who decide whether to prepare an application; rule-following actors: SFMTA APS engineering, the Signal Shop crews, advocates, external enforcement; venues: the federal Highway Safety Improvement Program (HSIP) run by Caltrans, the county sales-tax program (Prop L) run by SFCTA, the city General Fund, the federal Safe Streets for All grants, and signal projects that carry APS along.</dd>
+      <dt>Schedule</dt><dd>Monthly steps from July 2026 for ten years. Each month: new requests arrive and are classified; advocates may raise the issue, which may be deflected; the grants staff may start, finish or miss an application; venues decide on their own calendars; funded sites are installed by crews or with signal projects.</dd>
+      <dt>Key rules</dt><dd>The chance that an application is started each month depends on whether there is a named owner, a written deadline, oversight, recent advocacy pressure and external enforcement. HSIP applications must reach a benefit&ndash;cost ratio of 5.0 from injury crashes and crash-reduction factors, and must clear that cycle's cut-off; APS cannot be funded alone and must ride on a countermeasure such as signal-hardware upgrades. Delivery milestones and failure paths (missed deadlines, red flags, cost overruns, staff leaving, vetoes) are modelled explicitly.</dd>
+      <dt>Pathways</dt><dd>Adaptive: each starts with one action and switches to a fallback when a signpost is crossed (Haasnoot et al., 2013).</dd>
+      <dt>Analysis</dt><dd>Latin-hypercube draws of the uncertain inputs, several replicates per draw, the same draws and seeds for every pathway and mechanism. Planned for the full analysis: fitting to 2022&ndash;2025 snapshots, held-out checks, a zero-effect control, and rule-finding (PRIM) on held-out runs.</dd>
+    </dl>
+  </details>
+  <details>
+    <summary>Calibration and validation status</summary>
+    <p id="calib-text">Not yet calibrated. The full analysis plan fits each mechanism to the 2022&ndash;2025 list snapshots and checks it against later snapshots held out in advance. Until those results are in, every number here comes from uncalibrated prior ranges.</p>
+  </details>
+  <details>
+    <summary>Limits</summary>
+    <ul>
+      <li>Scenario exploration, not prediction. The model cannot say what will happen, only what follows from its rules under many assumptions.</li>
+      <li>The rules are set by people from documents and one interview. Behaviour inside agencies is simplified to one decision: whether to prepare an application.</li>
+      <li>Many ranges are informed guesses, including how much a named owner or advocacy pressure raises the chance of applying. A version with these effects set to zero is part of the full analysis.</li>
+      <li>Only intersections on the request list are modelled, not city-wide coverage, and only San Francisco.</li>
+      <li>Crash data cover injury crashes within 50 m; property-damage-only crashes are missing, so safety benefits are understated.</li>
+      <li>Fitting the history rests on very few funding events, so it can rule out little.</li>
+    </ul>
+  </details>
+  <details>
+    <summary>Consistency check</summary>
+    <p>The browser runs the same Python model file as the offline analysis, through Pyodide (Python compiled to WebAssembly). A test runs <span id="cons-cases">all</span> fixed cases in both and compares every output, including every event; the last run found <span id="consistency">no differences</span>. A second test replays each run's events and checks that the animation's counts equal the model's own counts every month.</p>
+  </details>
+</section>
+
+<section id="sources" aria-labelledby="sources-h">
+  <h2 id="sources-h">Sources</h2>
+  <ul class="sources">
+    <li>SFMTA, Accessible Pedestrian Signals request list and status snapshots (public web page, 2022&ndash;2026).</li>
+    <li>DataSF, Traffic crashes resulting in injury (dataset ubvf-ztfx), 2015&ndash;2025.</li>
+    <li>Caltrans, HSIP Cycle 13 call for projects and application instructions (2026); Local Roadway Safety Manual (2026), crash-reduction factors and crash costs.</li>
+    <li>SFMTA Capital Improvement Program FY2027&ndash;2031 and budget documents; SFMTA accessibility needs assessment (2024).</li>
+    <li>SFCTA, Prop L Expenditure Plan and Five-Year Prioritization Program for signals (2023).</li>
+    <li>Mayor's Disability Council, public minutes and agendas.</li>
+    <li>Interview with SFMTA staff.</li>
+    <li>Haasnoot, M., Kwakkel, J. H., Walker, W. E., &amp; ter Maat, J. (2013). Dynamic adaptive policy pathways. <i>Global Environmental Change, 23</i>(2), 485&ndash;498.</li>
+    <li>Grimm, V., et al. (2020). The ODD protocol for describing agent-based and other simulation models: A second update. <i>JASSS, 23</i>(2), 7.</li>
+    <li>Friedman, J. H., &amp; Fisher, N. I. (1999). Bump hunting in high-dimensional data. <i>Statistics and Computing, 9</i>, 123&ndash;143.</li>
+  </ul>
+</section>
+
+<section id="ai" aria-labelledby="ai-h">
+  <h2 id="ai-h">AI use</h2>
+  <p>The model code, the simulations and this web page were produced by AI (Anthropic's Claude) under the author's direction. The author set the question, the policy pathways and the requirements, and reviewed the outputs. Model rules and ranges were checked against the cited sources, and code and text were reviewed by a second AI model from another provider.</p>
+</section>
+
+</main>
+
+<footer class="site">
+  <p>Version <span id="version">&ndash;</span> &middot; results updated <span id="updated">&ndash;</span> &middot; status <span id="status-word">preliminary</span>.</p>
+  <p>Source code and tests: see the repository README.</p>
+</footer>
+</body>
+</html>

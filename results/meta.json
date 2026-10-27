@@ -1,0 +1,41 @@
+{
+ "status": "preliminary",
+ "label": "preliminary \u00b7 uncalibrated \u00b7 not used in the essay",
+ "model_version": "dev",
+ "design_version": "02 v6",
+ "run_date": "2026-10-26",
+ "n_param_sets": 300,
+ "replicates": 5,
+ "seed": 146,
+ "replicate_seeds": [
+  1907631119,
+  2145028543,
+  935302029,
+  1973214845,
+  1154524453
+ ],
+ "horizon_months": 120,
+ "total_runs": 63000,
+ "pathways": [
+  "PW0",
+  "PW1",
+  "PW2",
+  "PW3",
+  "PW4",
+  "PW5",
+  "PW6"
+ ],
+ "mechanisms": [
+  "M-A",
+  "M-B1",
+  "M-B2",
+  "M-C1",
+  "M-C2",
+  "M-D"
+ ],
+ "notes": [
+  "Priors are the D10 base ranges, not calibrated to 2022-2026 (no E1 filtering).",
+  "Scenario exploration under stated rules; not a forecast; not used in the essay.",
+  "PRIM and Sobol are not computed for the preliminary set."
+ ]
+}

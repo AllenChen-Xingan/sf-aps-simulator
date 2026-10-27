@@ -1,0 +1,7 @@
+.venv/
+node_modules/
+__pycache__/
+tests/out-*.json
+tests/screenshots/
+.DS_Store
+.abm-path

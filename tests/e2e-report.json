@@ -1,0 +1,97 @@
+{
+ "checks": [
+  {
+   "name": "in-browser model loads",
+   "pass": true,
+   "info": "1.3 s"
+  },
+  {
+   "name": "animation plays and log fills",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "announcer speaks",
+   "pass": true,
+   "info": "December 2026: 3 intersections installed."
+  },
+  {
+   "name": "run finished, lane counts present",
+   "pass": true,
+   "info": "98,24,1,0,17,49"
+  },
+  {
+   "name": "summary shown",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "timeline drawn",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "histogram drawn",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "compare mode shows two stages (keyboard start)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "pause toggles aria-pressed",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "step works",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "axe light: no violations",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "axe dark: no violations",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "mobile: no horizontal scroll",
+   "pass": true,
+   "info": "scrollWidth 390"
+  },
+  {
+   "name": "axe mobile reduced-motion: no violations",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "no console errors",
+   "pass": true,
+   "info": ""
+  }
+ ],
+ "console": [],
+ "axe": {
+  "light": {
+   "violations": [],
+   "passes": 33,
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "dark": {
+   "violations": [],
+   "passes": 31,
+   "incomplete": []
+  },
+  "mobile": {
+   "violations": []
+  }
+ }
+}

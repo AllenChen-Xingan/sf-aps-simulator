@@ -1,0 +1,2527 @@
+{
+"version": "dev",
+"history": {
+"snapshots": [
+"2022-07-29",
+"2023-01-03",
+"2023-06-30",
+"2024-02-20",
+"2024-08-21",
+"2025-02-21",
+"2025-08-08",
+"2026-01-29",
+"2026-06-30"
+],
+"initial_2022_07": [
+{
+"key": "03rdst|berry",
+"state": "Fi",
+"rank": "high"
+},
+{
+"key": "03rdst|channel",
+"state": "Fs",
+"rank": "medium"
+},
+{
+"key": "04thave|california",
+"state": "Fi",
+"rank": "medium"
+},
+{
+"key": "04thst|brannan",
+"state": "Fs",
+"rank": "medium"
+},
+{
+"key": "04thst|bryant|i80offramp",
+"state": "Fs",
+"rank": "high"
+},
+{
+"key": "04thst|townsend",
+"state": "Fs",
+"rank": "medium"
+},
+{
+"key": "05thst|mission",
+"state": "Fs",
+"rank": "medium"
+},
+{
+"key": "06thst|bryant",
+"state": "Fs",
+"rank": "medium"
+},
+{
+"key": "06thst|harrison",
+"state": "Fs",
+"rank": "medium"
+},
+{
+"key": "06thst|howard",
+"state": "Fs",
+"rank": "medium"
+},
+{
+"key": "06thst|mission",
+"state": "Fs",
+"rank": "medium"
+},
+{
+"key": "07thst|berry|missionbay",
+"state": "Fi",
+"rank": "high"
+},
+{
+"key": "07thst|mission",
+"state": "Fi",
+"rank": "medium"
+},
+{
+"key": "08thst|brannan",
+"state": "Fi",
+"rank": "medium"
+},
+{
+"key": "13thst|duboce|mission|otis",
+"state": "Fs",
+"rank": "high"
+},
+{
+"key": "13thst|folsom",
+"state": "N",
+"rank": "low"
+},
+{
+"key": "13thst|harrison",
+"state": "N",
+"rank": "low"
+},
+{
+"key": "13thst|southvanness",
+"state": "Fs",
+"rank": "medium"
+},
+{
+"key": "14thst|guerrero",
+"state": "Fi",
+"rank": "low"
+},
+{
+"key": "15thst|guerrero",
+"state": "Fi",
+"rank": "low"
+},
+{
+"key": "15thst|market|sanchez",
+"state": "Fs",
+"rank": "medium"
+},
+{
+"key": "16thst|church",
+"state": "Fs",
+"rank": "medium"
+},
+{
+"key": "16thst|dolores",
+"state": "Fs",
+"rank": "medium"
+},
+{
+"key": "16thst|market|noe",
+"state": "Fs",
+"rank": "medium"
+},
+{
+"key": "18thst|guerrero",
+"state": "Fi",
+"rank": "medium"
+},
+{
+"key": "18thst|valencia",
+"state": "Fi",
+"rank": "medium"
+},
+{
+"key": "19thave|kirkham",
+"state": "Fs",
+"rank": "medium"
+},
+{
+"key": "19thave|santiago",
+"state": "Fs",
+"rank": "medium"
+},
+{
+"key": "19thst|valencia",
+"state": "Fi",
+"rank": "medium"
+},
+{
+"key": "24thst|castro",
+"state": "Fi",
+"rank": "medium"
+},
+{
+"key": "25thave|lincoln",
+"state": "N",
+"rank": "medium"
+},
+{
+"key": "alemany|santarosa",
+"state": "N",
+"rank": "low"
+},
+{
+"key": "alemany|seneca",
+"state": "N",
+"rank": "medium"
+},
+{
+"key": "bay|octavia",
+"state": "N",
+"rank": "medium"
+},
+{
+"key": "brazil|mission|norton",
+"state": "C",
+"rank": "medium"
+},
+{
+"key": "broadway|stockton",
+"state": "N",
+"rank": "medium"
+},
+{
+"key": "buchanan|sutter",
+"state": "N",
+"rank": "medium"
+},
+{
+"key": "bush|kearny",
+"state": "C",
+"rank": "medium"
+},
+{
+"key": "bush|montgomery",
+"state": "C",
+"rank": "medium"
+},
+{
+"key": "bush|powell",
+"state": "Fi",
+"rank": "medium"
+},
+{
+"key": "california|drumm",
+"state": "Fs",
+"rank": "medium"
+},
+{
+"key": "california|fillmore",
+"state": "N",
+"rank": "low"
+},
+{
+"key": "california|presidio",
+"state": "Fs",
+"rank": "medium"
+},
+{
+"key": "california|steiner",
+"state": "N",
+"rank": "medium"
+},
+{
+"key": "cargo|mendell",
+"state": "N",
+"rank": "medium"
+},
+{
+"key": "columbus|greenwich|mason",
+"state": "Fi",
+"rank": "medium"
+},
+{
+"key": "columbus|lombard|newell",
+"state": "N",
+"rank": "medium"
+},
+{
+"key": "cyrilmagnin|eddy",
+"state": "Fs",
+"rank": "medium"
+},
+{
+"key": "diamond|monterey|sanjoseofframp",
+"state": "Fi",
+"rank": "medium"
+},
+{
+"key": "dolores|randall|sanjoseonramp",
+"state": "Fi",
+"rank": "medium"
+},
+{
+"key": "eddy|fillmore",
+"state": "Fs",
+"rank": "medium"
+},
+{
+"key": "eddy|hyde",
+"state": "C",
+"rank": "medium"
+},
+{
+"key": "ellis|hyde",
+"state": "C",
+"rank": "medium"
+},
+{
+"key": "ellis|powell",
+"state": "Fs",
+"rank": "medium"
+},
+{
+"key": "excelsior|mission",
+"state": "N",
+"rank": "medium"
+},
+{
+"key": "fillmore|geary",
+"state": "N",
+"rank": "medium"
+},
+{
+"key": "front|sacramento",
+"state": "Fi",
+"rank": "low"
+},
+{
+"key": "fulton|masonic",
+"state": "C",
+"rank": "medium"
+},
+{
+"key": "goldengate|hyde",
+"state": "Fi",
+"rank": "medium"
+},
+{
+"key": "goldengate|larkin",
+"state": "Fi",
+"rank": "medium"
+},
+{
+"key": "goldengate|leavenworth",
+"state": "Fs",
+"rank": "medium"
+},
+{
+"key": "goldengate|masonic",
+"state": "Fi",
+"rank": "low"
+},
+{
+"key": "gough|mccoppin|otis",
+"state": "Fs",
+"rank": "medium"
+},
+{
+"key": "harrison|main",
+"state": "Fs",
+"rank": "medium"
+},
+{
+"key": "hyde|turk",
+"state": "Fi",
+"rank": "medium"
+},
+{
+"key": "jones|market|mcallister",
+"state": "Fs",
+"rank": "high"
+},
+{
+"key": "laguna|pine",
+"state": "Fi",
+"rank": "low"
+},
+{
+"key": "mason|union",
+"state": "N",
+"rank": "medium"
+},
+{
+"key": "mission|ocean",
+"state": "C",
+"rank": "medium"
+},
+{
+"key": "mission|persia",
+"state": "N",
+"rank": "medium"
+},
+{
+"key": "mission|silver",
+"state": "C",
+"rank": "medium"
+},
+{
+"key": "parker|turk",
+"state": "N",
+"rank": "medium"
+},
+{
+"key": "stockton|sutter",
+"state": "Fs",
+"rank": "high"
+},
+{
+"key": "sunset|taraval",
+"state": "Fi",
+"rank": "low"
+}
+],
+"arrivals": [
+{
+"snapshot": "2024-02-20",
+"key": "03rdst|16thst",
+"state": "C",
+"rank": "high"
+},
+{
+"snapshot": "2024-02-20",
+"key": "03rdst|22ndst",
+"state": "C",
+"rank": "high"
+},
+{
+"snapshot": "2025-08-08",
+"key": "03rdst|lane|yosemite",
+"state": "C",
+"rank": "medium"
+},
+{
+"snapshot": "2026-06-30",
+"key": "03rdst|mckinnon",
+"state": "C",
+"rank": "medium"
+},
+{
+"snapshot": "2024-02-20",
+"key": "03rdst|northsouthmissionbay",
+"state": "C",
+"rank": "medium"
+},
+{
+"snapshot": "2026-01-29",
+"key": "04thst|16thst",
+"state": "C",
+"rank": "high"
+},
+{
+"snapshot": "2026-01-29",
+"key": "06thave|fulton",
+"state": "Fs",
+"rank": "medium"
+},
+{
+"snapshot": "2024-02-20",
+"key": "06thave|irving",
+"state": "Fs",
+"rank": "medium"
+},
+{
+"snapshot": "2025-08-08",
+"key": "07thave|kirkham",
+"state": "Fs",
+"rank": "medium"
+},
+{
+"snapshot": "2026-01-29",
+"key": "07thst|16thst|mississippi",
+"state": "C",
+"rank": "high"
+},
+{
+"snapshot": "2023-06-30",
+"key": "08thave|fulton",
+"state": "C",
+"rank": "medium"
+},
+{
+"snapshot": "2023-01-03",
+"key": "09thst|101offramp|bryant",
+"state": "Fs",
+"rank": "medium"
+},
+{
+"snapshot": "2024-02-20",
+"key": "10thave|fulton",
+"state": "C",
+"rank": "medium"
+},
+{
+"snapshot": "2026-01-29",
+"key": "10thst|fell|market|polk",
+"state": "C",
+"rank": "medium"
+},
+{
+"snapshot": "2023-01-03",
+"key": "11thst|howard",
+"state": "Fs",
+"rank": "medium"
+},
+{
+"snapshot": "2023-01-03",
+"key": "15thst|church",
+"state": "C",
+"rank": "low"
+},
+{
+"snapshot": "2024-02-20",
+"key": "15thst|valencia",
+"state": "C",
+"rank": "medium"
+},
+{
+"snapshot": "2024-02-20",
+"key": "16thst|owens",
+"state": "C",
+"rank": "high"
+},
+{
+"snapshot": "2025-08-08",
+"key": "17thst|church",
+"state": "N",
+"rank": "medium"
+},
+{
+"snapshot": "2025-08-08",
+"key": "22ndst|mission",
+"state": "C",
+"rank": "medium"
+},
+{
+"snapshot": "2025-08-08",
+"key": "22ndst|valencia",
+"state": "C",
+"rank": "medium"
+},
+{
+"snapshot": "2025-02-21",
+"key": "30thave|lincoln",
+"state": "C",
+"rank": "high"
+},
+{
+"snapshot": "2024-08-21",
+"key": "bay|laguna",
+"state": "N",
+"rank": "high"
+},
+{
+"snapshot": "2026-01-29",
+"key": "bay|mason",
+"state": "C",
+"rank": "medium"
+},
+{
+"snapshot": "2025-02-21",
+"key": "brotherhoood|lakemerced",
+"state": "C",
+"rank": "high"
+},
+{
+"snapshot": "2024-02-20",
+"key": "bush|grant",
+"state": "C",
+"rank": "medium"
+},
+{
+"snapshot": "2024-02-20",
+"key": "california|cherry|jordan",
+"state": "C",
+"rank": "high"
+},
+{
+"snapshot": "2024-02-20",
+"key": "california|grant",
+"state": "C",
+"rank": "medium"
+},
+{
+"snapshot": "2024-02-20",
+"key": "california|maple|parker",
+"state": "C",
+"rank": "high"
+},
+{
+"snapshot": "2024-02-20",
+"key": "california|stockton",
+"state": "C",
+"rank": "medium"
+},
+{
+"snapshot": "2026-06-30",
+"key": "cesarchavez|folsom",
+"state": "C",
+"rank": "medium"
+},
+{
+"snapshot": "2024-02-20",
+"key": "clay|drumm",
+"state": "C",
+"rank": "medium"
+},
+{
+"snapshot": "2024-02-20",
+"key": "columbus|union",
+"state": "C",
+"rank": "medium"
+},
+{
+"snapshot": "2026-06-30",
+"key": "eddy|laguna",
+"state": "C",
+"rank": "medium"
+},
+{
+"snapshot": "2024-02-20",
+"key": "fair|mission|valencia",
+"state": "C",
+"rank": "medium"
+},
+{
+"snapshot": "2025-08-08",
+"key": "faxon|ocean",
+"state": "C",
+"rank": "medium"
+},
+{
+"snapshot": "2023-06-30",
+"key": "geary|stanyan",
+"state": "C",
+"rank": "medium"
+},
+{
+"snapshot": "2025-02-21",
+"key": "greathighway|lincoln",
+"state": "Fs",
+"rank": "medium"
+},
+{
+"snapshot": "2026-01-29",
+"key": "hernandez|woodside",
+"state": "N",
+"rank": "high"
+},
+{
+"snapshot": "2024-02-20",
+"key": "octavia|page",
+"state": "C",
+"rank": "medium"
+},
+{
+"snapshot": "2023-06-30",
+"key": "polk|union",
+"state": "C",
+"rank": "medium"
+}
+],
+"observed_stocks": {
+"2022-07-29": {
+"C": 8,
+"N": 17,
+"Fi": 22,
+"Fs": 27,
+"I": 30
+},
+"2023-01-03": {
+"C": 8,
+"N": 18,
+"Fi": 19,
+"Fs": 23,
+"I": 39
+},
+"2023-06-30": {
+"C": 10,
+"N": 18,
+"Fi": 15,
+"Fs": 22,
+"I": 45
+},
+"2024-02-20": {
+"C": 26,
+"N": 18,
+"Fi": 4,
+"Fs": 22,
+"I": 56
+},
+"2024-08-21": {
+"C": 26,
+"N": 19,
+"Fi": 1,
+"Fs": 19,
+"I": 62
+},
+"2025-02-21": {
+"C": 28,
+"N": 19,
+"Fi": 1,
+"Fs": 20,
+"I": 62
+},
+"2025-08-08": {
+"C": 32,
+"N": 20,
+"Fi": 1,
+"Fs": 21,
+"I": 62
+},
+"2026-01-29": {
+"C": 38,
+"N": 19,
+"Fi": 1,
+"Fs": 17,
+"I": 67
+},
+"2026-06-30": {
+"C": 35,
+"N": 18,
+"Fi": 2,
+"Fs": 21,
+"I": 69
+}
+}
+},
+"pending76": [
+{
+"key": "03rd Street / 16th Street",
+"state": "C",
+"rank": "high",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 1,
+"pb_KA_w5": 1,
+"pb_B_w3": 1,
+"pb_B_w5": 1,
+"pb_C_w3": 1,
+"pb_C_w5": 3,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 1,
+"nonpb_B_w3": 1,
+"nonpb_B_w5": 1,
+"nonpb_C_w3": 1,
+"nonpb_C_w5": 1
+}
+},
+{
+"key": "03rd Street / 22nd Street",
+"state": "C",
+"rank": "high",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 0,
+"pb_B_w5": 0,
+"pb_C_w3": 0,
+"pb_C_w5": 0,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 0,
+"nonpb_C_w3": 0,
+"nonpb_C_w5": 1
+}
+},
+{
+"key": "03rd Street / Lane / Yosemite",
+"state": "C",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 0,
+"pb_B_w5": 1,
+"pb_C_w3": 0,
+"pb_C_w5": 0,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 0,
+"nonpb_C_w3": 0,
+"nonpb_C_w5": 2
+}
+},
+{
+"key": "03rd Street / McKinnon",
+"state": "C",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 0,
+"pb_B_w5": 1,
+"pb_C_w3": 0,
+"pb_C_w5": 0,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 1,
+"nonpb_B_w5": 1,
+"nonpb_C_w3": 5,
+"nonpb_C_w5": 5
+}
+},
+{
+"key": "03rd Street / North & South Mission Bay",
+"state": "C",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": false,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 0,
+"pb_B_w5": 0,
+"pb_C_w3": 0,
+"pb_C_w5": 0,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 0,
+"nonpb_C_w3": 0,
+"nonpb_C_w5": 0
+}
+},
+{
+"key": "04th Street / 16th Street",
+"state": "C",
+"rank": "high",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 1,
+"pb_B_w3": 0,
+"pb_B_w5": 0,
+"pb_C_w3": 1,
+"pb_C_w5": 1,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 0,
+"nonpb_C_w3": 0,
+"nonpb_C_w5": 1
+}
+},
+{
+"key": "05th Street / Mission",
+"state": "Fs",
+"rank": "medium",
+"route": "fold",
+"fold": "no_unfunded",
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 1,
+"pb_B_w3": 3,
+"pb_B_w5": 3,
+"pb_C_w3": 3,
+"pb_C_w5": 3,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 1,
+"nonpb_B_w5": 2,
+"nonpb_C_w3": 3,
+"nonpb_C_w5": 9
+}
+},
+{
+"key": "06th Avenue / Fulton",
+"state": "Fs",
+"rank": "",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 1,
+"pb_B_w5": 1,
+"pb_C_w3": 0,
+"pb_C_w5": 0,
+"nonpb_KA_w3": 1,
+"nonpb_KA_w5": 1,
+"nonpb_B_w3": 1,
+"nonpb_B_w5": 1,
+"nonpb_C_w3": 0,
+"nonpb_C_w5": 4
+}
+},
+{
+"key": "06th Avenue / Irving",
+"state": "Fs",
+"rank": "medium",
+"route": "fold",
+"fold": "yes",
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 1,
+"pb_KA_w5": 1,
+"pb_B_w3": 1,
+"pb_B_w5": 1,
+"pb_C_w3": 1,
+"pb_C_w5": 1,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 0,
+"nonpb_C_w3": 0,
+"nonpb_C_w5": 0
+}
+},
+{
+"key": "07th Street / 16th St / Mississippi",
+"state": "C",
+"rank": "high",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 1,
+"pb_B_w3": 0,
+"pb_B_w5": 0,
+"pb_C_w3": 0,
+"pb_C_w5": 1,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 1,
+"nonpb_C_w3": 2,
+"nonpb_C_w5": 3
+}
+},
+{
+"key": "08th Avenue / Fulton",
+"state": "C",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 1,
+"pb_B_w5": 2,
+"pb_C_w3": 0,
+"pb_C_w5": 0,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 1,
+"nonpb_B_w5": 2,
+"nonpb_C_w3": 0,
+"nonpb_C_w5": 0
+}
+},
+{
+"key": "10th Avenue / Fulton",
+"state": "C",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 1,
+"pb_B_w5": 1,
+"pb_C_w3": 1,
+"pb_C_w5": 2,
+"nonpb_KA_w3": 1,
+"nonpb_KA_w5": 1,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 1,
+"nonpb_C_w3": 0,
+"nonpb_C_w5": 0
+}
+},
+{
+"key": "10th Street / Fell / Market / Polk",
+"state": "Fi",
+"rank": "medium",
+"route": "corridor",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 1,
+"pb_KA_w5": 1,
+"pb_B_w3": 2,
+"pb_B_w5": 3,
+"pb_C_w3": 3,
+"pb_C_w5": 3,
+"nonpb_KA_w3": 1,
+"nonpb_KA_w5": 1,
+"nonpb_B_w3": 3,
+"nonpb_B_w5": 4,
+"nonpb_C_w3": 5,
+"nonpb_C_w5": 6
+}
+},
+{
+"key": "11th Street / Howard",
+"state": "Fs",
+"rank": "",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 2,
+"pb_B_w5": 2,
+"pb_C_w3": 3,
+"pb_C_w5": 3,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 1,
+"nonpb_B_w5": 1,
+"nonpb_C_w3": 0,
+"nonpb_C_w5": 0
+}
+},
+{
+"key": "13th Street / Duboce / Mission / Otis",
+"state": "Fs",
+"rank": "high",
+"route": "fold",
+"fold": "unverified",
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 2,
+"pb_KA_w5": 3,
+"pb_B_w3": 1,
+"pb_B_w5": 1,
+"pb_C_w3": 3,
+"pb_C_w5": 4,
+"nonpb_KA_w3": 1,
+"nonpb_KA_w5": 2,
+"nonpb_B_w3": 1,
+"nonpb_B_w5": 3,
+"nonpb_C_w3": 8,
+"nonpb_C_w5": 21
+}
+},
+{
+"key": "13th Street / Folsom",
+"state": "Fs",
+"rank": "low",
+"route": "fold",
+"fold": "unverified",
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 1,
+"pb_KA_w5": 1,
+"pb_B_w3": 2,
+"pb_B_w5": 3,
+"pb_C_w3": 3,
+"pb_C_w5": 3,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 1,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 0,
+"nonpb_C_w3": 4,
+"nonpb_C_w5": 7
+}
+},
+{
+"key": "13th Street / Harrison",
+"state": "N",
+"rank": "low",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 1,
+"pb_B_w5": 1,
+"pb_C_w3": 1,
+"pb_C_w5": 3,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 1,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 2,
+"nonpb_C_w3": 4,
+"nonpb_C_w5": 7
+}
+},
+{
+"key": "13th Street / South Van Ness",
+"state": "Fs",
+"rank": "medium",
+"route": "fold",
+"fold": "unverified",
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 5,
+"pb_B_w5": 6,
+"pb_C_w3": 0,
+"pb_C_w5": 1,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 2,
+"nonpb_B_w5": 4,
+"nonpb_C_w3": 15,
+"nonpb_C_w5": 26
+}
+},
+{
+"key": "15th Street / Church",
+"state": "C",
+"rank": "low",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 0,
+"pb_B_w5": 0,
+"pb_C_w3": 2,
+"pb_C_w5": 3,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 0,
+"nonpb_C_w3": 0,
+"nonpb_C_w5": 2
+}
+},
+{
+"key": "15th Street / Valencia",
+"state": "C",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 2,
+"pb_KA_w5": 2,
+"pb_B_w3": 0,
+"pb_B_w5": 0,
+"pb_C_w3": 0,
+"pb_C_w5": 2,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 2,
+"nonpb_C_w3": 2,
+"nonpb_C_w5": 3
+}
+},
+{
+"key": "16th Street / Church",
+"state": "Fs",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 0,
+"pb_B_w5": 0,
+"pb_C_w3": 0,
+"pb_C_w5": 0,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 0,
+"nonpb_C_w3": 2,
+"nonpb_C_w5": 7
+}
+},
+{
+"key": "16th Street / Dolores",
+"state": "Fs",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 0,
+"pb_B_w5": 0,
+"pb_C_w3": 3,
+"pb_C_w5": 3,
+"nonpb_KA_w3": 1,
+"nonpb_KA_w5": 1,
+"nonpb_B_w3": 2,
+"nonpb_B_w5": 2,
+"nonpb_C_w3": 2,
+"nonpb_C_w5": 3
+}
+},
+{
+"key": "16th Street / Owens",
+"state": "C",
+"rank": "high",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 0,
+"pb_B_w5": 0,
+"pb_C_w3": 0,
+"pb_C_w5": 0,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 0,
+"nonpb_C_w3": 0,
+"nonpb_C_w5": 0
+}
+},
+{
+"key": "17th Street / Church",
+"state": "N",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": true,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 1,
+"pb_KA_w5": 1,
+"pb_B_w3": 1,
+"pb_B_w5": 3,
+"pb_C_w3": 3,
+"pb_C_w5": 5,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 1,
+"nonpb_B_w5": 2,
+"nonpb_C_w3": 3,
+"nonpb_C_w5": 5
+}
+},
+{
+"key": "22nd Street / Mission",
+"state": "C",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 1,
+"pb_B_w5": 1,
+"pb_C_w3": 1,
+"pb_C_w5": 2,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 0,
+"nonpb_C_w3": 1,
+"nonpb_C_w5": 3
+}
+},
+{
+"key": "22nd Street / Valencia",
+"state": "C",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 1,
+"pb_B_w5": 3,
+"pb_C_w3": 1,
+"pb_C_w5": 2,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 0,
+"nonpb_C_w3": 0,
+"nonpb_C_w5": 0
+}
+},
+{
+"key": "25th Avenue / Lincoln",
+"state": "Fs",
+"rank": "medium",
+"route": "corridor",
+"fold": null,
+"sg015_corridor": true,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 1,
+"pb_B_w5": 1,
+"pb_C_w3": 0,
+"pb_C_w5": 0,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 0,
+"nonpb_C_w3": 1,
+"nonpb_C_w5": 3
+}
+},
+{
+"key": "30th Avenue / Lincoln",
+"state": "C",
+"rank": "high",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 0,
+"pb_B_w5": 1,
+"pb_C_w3": 0,
+"pb_C_w5": 0,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 2,
+"nonpb_B_w5": 2,
+"nonpb_C_w3": 1,
+"nonpb_C_w5": 1
+}
+},
+{
+"key": "Alemany / Santa Rosa",
+"state": "N",
+"rank": "low",
+"route": "corridor",
+"fold": null,
+"sg015_corridor": true,
+"missing_ped_heads": true,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 0,
+"pb_B_w5": 0,
+"pb_C_w3": 0,
+"pb_C_w5": 0,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 0,
+"nonpb_C_w3": 4,
+"nonpb_C_w5": 7
+}
+},
+{
+"key": "Alemany / Seneca",
+"state": "N",
+"rank": "medium",
+"route": "corridor",
+"fold": null,
+"sg015_corridor": true,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 1,
+"pb_B_w5": 2,
+"pb_C_w3": 1,
+"pb_C_w5": 1,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 2,
+"nonpb_B_w5": 3,
+"nonpb_C_w3": 7,
+"nonpb_C_w5": 9
+}
+},
+{
+"key": "Bay / Laguna",
+"state": "N",
+"rank": "high",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": true,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 0,
+"pb_B_w5": 0,
+"pb_C_w3": 2,
+"pb_C_w5": 2,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 0,
+"nonpb_C_w3": 2,
+"nonpb_C_w5": 3
+}
+},
+{
+"key": "Bay / Mason",
+"state": "C",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 1,
+"pb_B_w5": 2,
+"pb_C_w3": 1,
+"pb_C_w5": 1,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 0,
+"nonpb_C_w3": 4,
+"nonpb_C_w5": 6
+}
+},
+{
+"key": "Bay / Octavia",
+"state": "N",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": true,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 0,
+"pb_B_w5": 0,
+"pb_C_w3": 0,
+"pb_C_w5": 0,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 0,
+"nonpb_C_w3": 3,
+"nonpb_C_w5": 4
+}
+},
+{
+"key": "Brazil / Mission / Norton",
+"state": "Fs",
+"rank": "medium",
+"route": "corridor",
+"fold": null,
+"sg015_corridor": true,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 0,
+"pb_B_w5": 0,
+"pb_C_w3": 2,
+"pb_C_w5": 3,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 1,
+"nonpb_B_w5": 1,
+"nonpb_C_w3": 5,
+"nonpb_C_w5": 5
+}
+},
+{
+"key": "Broadway / Stockton",
+"state": "N",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 1,
+"pb_B_w5": 1,
+"pb_C_w3": 4,
+"pb_C_w5": 4,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 1,
+"nonpb_B_w5": 1,
+"nonpb_C_w3": 0,
+"nonpb_C_w5": 1
+}
+},
+{
+"key": "Brotherhoood / Lake Merced",
+"state": "C",
+"rank": "high",
+"route": "corridor",
+"fold": null,
+"sg015_corridor": true,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 0,
+"pb_B_w5": 1,
+"pb_C_w3": 0,
+"pb_C_w5": 0,
+"nonpb_KA_w3": 2,
+"nonpb_KA_w5": 2,
+"nonpb_B_w3": 1,
+"nonpb_B_w5": 2,
+"nonpb_C_w3": 3,
+"nonpb_C_w5": 6
+}
+},
+{
+"key": "Buchanan / Sutter",
+"state": "N",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": true,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 1,
+"pb_KA_w5": 1,
+"pb_B_w3": 0,
+"pb_B_w5": 0,
+"pb_C_w3": 0,
+"pb_C_w5": 0,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 0,
+"nonpb_C_w3": 0,
+"nonpb_C_w5": 1
+}
+},
+{
+"key": "Bush / Grant",
+"state": "C",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 1,
+"pb_KA_w5": 2,
+"pb_B_w3": 1,
+"pb_B_w5": 2,
+"pb_C_w3": 0,
+"pb_C_w5": 0,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 1,
+"nonpb_C_w3": 0,
+"nonpb_C_w5": 1
+}
+},
+{
+"key": "Bush / Montgomery",
+"state": "C",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 0,
+"pb_B_w5": 0,
+"pb_C_w3": 1,
+"pb_C_w5": 1,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 1,
+"nonpb_B_w5": 1,
+"nonpb_C_w3": 2,
+"nonpb_C_w5": 6
+}
+},
+{
+"key": "California / Cherry / Jordan",
+"state": "C",
+"rank": "high",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 0,
+"pb_B_w5": 0,
+"pb_C_w3": 0,
+"pb_C_w5": 0,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 0,
+"nonpb_C_w3": 0,
+"nonpb_C_w5": 0
+}
+},
+{
+"key": "California / Drumm",
+"state": "N",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 1,
+"pb_B_w3": 0,
+"pb_B_w5": 1,
+"pb_C_w3": 1,
+"pb_C_w5": 1,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 1,
+"nonpb_C_w3": 1,
+"nonpb_C_w5": 2
+}
+},
+{
+"key": "California / Fillmore",
+"state": "N",
+"rank": "low",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 1,
+"pb_B_w3": 0,
+"pb_B_w5": 0,
+"pb_C_w3": 0,
+"pb_C_w5": 1,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 0,
+"nonpb_C_w3": 0,
+"nonpb_C_w5": 1
+}
+},
+{
+"key": "California / Grant",
+"state": "C",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 0,
+"pb_B_w5": 0,
+"pb_C_w3": 0,
+"pb_C_w5": 1,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 1,
+"nonpb_B_w5": 1,
+"nonpb_C_w3": 1,
+"nonpb_C_w5": 1
+}
+},
+{
+"key": "California / Maple / Parker",
+"state": "C",
+"rank": "high",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 0,
+"pb_B_w5": 0,
+"pb_C_w3": 0,
+"pb_C_w5": 0,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 0,
+"nonpb_C_w3": 0,
+"nonpb_C_w5": 0
+}
+},
+{
+"key": "California / Steiner",
+"state": "N",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": true,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 0,
+"pb_B_w5": 2,
+"pb_C_w3": 1,
+"pb_C_w5": 1,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 1,
+"nonpb_B_w5": 1,
+"nonpb_C_w3": 2,
+"nonpb_C_w5": 2
+}
+},
+{
+"key": "California / Stockton",
+"state": "C",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 1,
+"pb_KA_w5": 1,
+"pb_B_w3": 0,
+"pb_B_w5": 0,
+"pb_C_w3": 0,
+"pb_C_w5": 0,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 2,
+"nonpb_B_w5": 2,
+"nonpb_C_w3": 0,
+"nonpb_C_w5": 0
+}
+},
+{
+"key": "Cargo / Mendell",
+"state": "N",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": true,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 0,
+"pb_B_w5": 0,
+"pb_C_w3": 0,
+"pb_C_w5": 0,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 0,
+"nonpb_C_w3": 2,
+"nonpb_C_w5": 5
+}
+},
+{
+"key": "Cesar Chavez / Folsom",
+"state": "C",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 0,
+"pb_B_w5": 1,
+"pb_C_w3": 1,
+"pb_C_w5": 2,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 1,
+"nonpb_B_w3": 1,
+"nonpb_B_w5": 2,
+"nonpb_C_w3": 5,
+"nonpb_C_w5": 9
+}
+},
+{
+"key": "Clay / Drumm",
+"state": "C",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 0,
+"pb_B_w5": 0,
+"pb_C_w3": 0,
+"pb_C_w5": 0,
+"nonpb_KA_w3": 1,
+"nonpb_KA_w5": 1,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 0,
+"nonpb_C_w3": 1,
+"nonpb_C_w5": 1
+}
+},
+{
+"key": "Columbus / Lombard / Newell",
+"state": "N",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 1,
+"pb_B_w5": 1,
+"pb_C_w3": 1,
+"pb_C_w5": 2,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 1,
+"nonpb_B_w5": 1,
+"nonpb_C_w3": 4,
+"nonpb_C_w5": 4
+}
+},
+{
+"key": "Columbus / Union",
+"state": "C",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 1,
+"pb_B_w3": 1,
+"pb_B_w5": 1,
+"pb_C_w3": 1,
+"pb_C_w5": 2,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 0,
+"nonpb_C_w3": 1,
+"nonpb_C_w5": 3
+}
+},
+{
+"key": "Cyril Magnin / Eddy",
+"state": "N",
+"rank": "medium",
+"route": "corridor",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 1,
+"pb_B_w3": 0,
+"pb_B_w5": 0,
+"pb_C_w3": 1,
+"pb_C_w5": 2,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 0,
+"nonpb_C_w3": 1,
+"nonpb_C_w5": 1
+}
+},
+{
+"key": "Eddy / Fillmore",
+"state": "Fs",
+"rank": "",
+"route": "fold",
+"fold": "likely",
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 1,
+"pb_KA_w5": 1,
+"pb_B_w3": 0,
+"pb_B_w5": 1,
+"pb_C_w3": 0,
+"pb_C_w5": 1,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 1,
+"nonpb_B_w5": 2,
+"nonpb_C_w3": 3,
+"nonpb_C_w5": 6
+}
+},
+{
+"key": "Eddy / Hyde",
+"state": "C",
+"rank": "medium",
+"route": "corridor",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 1,
+"pb_KA_w5": 1,
+"pb_B_w3": 4,
+"pb_B_w5": 6,
+"pb_C_w3": 2,
+"pb_C_w5": 7,
+"nonpb_KA_w3": 1,
+"nonpb_KA_w5": 1,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 1,
+"nonpb_C_w3": 3,
+"nonpb_C_w5": 3
+}
+},
+{
+"key": "Eddy / Laguna",
+"state": "C",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 0,
+"pb_B_w5": 0,
+"pb_C_w3": 3,
+"pb_C_w5": 3,
+"nonpb_KA_w3": 2,
+"nonpb_KA_w5": 2,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 0,
+"nonpb_C_w3": 2,
+"nonpb_C_w5": 3
+}
+},
+{
+"key": "Ellis / Powell",
+"state": "Fs",
+"rank": "medium",
+"route": "fold",
+"fold": "unverified",
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 1,
+"pb_B_w5": 1,
+"pb_C_w3": 0,
+"pb_C_w5": 0,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 0,
+"nonpb_C_w3": 0,
+"nonpb_C_w5": 2
+}
+},
+{
+"key": "Excelsior / Mission",
+"state": "Fs",
+"rank": "medium",
+"route": "corridor",
+"fold": null,
+"sg015_corridor": true,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 1,
+"pb_B_w5": 1,
+"pb_C_w3": 0,
+"pb_C_w5": 0,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 1,
+"nonpb_B_w5": 1,
+"nonpb_C_w3": 2,
+"nonpb_C_w5": 4
+}
+},
+{
+"key": "Fair / Mission / Valencia",
+"state": "C",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 1,
+"pb_B_w3": 1,
+"pb_B_w5": 1,
+"pb_C_w3": 0,
+"pb_C_w5": 2,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 1,
+"nonpb_B_w3": 1,
+"nonpb_B_w5": 1,
+"nonpb_C_w3": 7,
+"nonpb_C_w5": 8
+}
+},
+{
+"key": "Faxon / Ocean",
+"state": "C",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 1,
+"pb_B_w3": 2,
+"pb_B_w5": 3,
+"pb_C_w3": 0,
+"pb_C_w5": 0,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 2,
+"nonpb_B_w5": 2,
+"nonpb_C_w3": 0,
+"nonpb_C_w5": 2
+}
+},
+{
+"key": "Fillmore / Geary",
+"state": "N",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 0,
+"pb_B_w5": 0,
+"pb_C_w3": 0,
+"pb_C_w5": 0,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 2,
+"nonpb_B_w5": 2,
+"nonpb_C_w3": 3,
+"nonpb_C_w5": 4
+}
+},
+{
+"key": "Fulton / Masonic",
+"state": "C",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 3,
+"pb_KA_w5": 3,
+"pb_B_w3": 3,
+"pb_B_w5": 4,
+"pb_C_w3": 2,
+"pb_C_w5": 2,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 1,
+"nonpb_B_w5": 1,
+"nonpb_C_w3": 2,
+"nonpb_C_w5": 3
+}
+},
+{
+"key": "Geary / Stanyan",
+"state": "C",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 1,
+"pb_B_w5": 1,
+"pb_C_w3": 0,
+"pb_C_w5": 0,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 1,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 0,
+"nonpb_C_w3": 1,
+"nonpb_C_w5": 3
+}
+},
+{
+"key": "Golden Gate / Larkin",
+"state": "Fi",
+"rank": "medium",
+"route": "fold",
+"fold": "likely",
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 3,
+"pb_B_w5": 4,
+"pb_C_w3": 0,
+"pb_C_w5": 1,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 0,
+"nonpb_C_w3": 1,
+"nonpb_C_w5": 1
+}
+},
+{
+"key": "Golden Gate / Leavenworth",
+"state": "C",
+"rank": "medium",
+"route": "corridor",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 1,
+"pb_KA_w5": 1,
+"pb_B_w3": 0,
+"pb_B_w5": 0,
+"pb_C_w3": 1,
+"pb_C_w5": 2,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 1,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 1,
+"nonpb_C_w3": 3,
+"nonpb_C_w5": 8
+}
+},
+{
+"key": "Great Highway / Lincoln",
+"state": "Fs",
+"rank": "",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 1,
+"pb_B_w3": 1,
+"pb_B_w5": 1,
+"pb_C_w3": 0,
+"pb_C_w5": 0,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 1,
+"nonpb_B_w5": 1,
+"nonpb_C_w3": 1,
+"nonpb_C_w5": 2
+}
+},
+{
+"key": "Harrison / Main",
+"state": "Fs",
+"rank": "medium",
+"route": "fold",
+"fold": "no_parent_done",
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 0,
+"pb_B_w5": 0,
+"pb_C_w3": 0,
+"pb_C_w5": 0,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 2,
+"nonpb_C_w3": 2,
+"nonpb_C_w5": 3
+}
+},
+{
+"key": "Hernandez / Woodside",
+"state": "N",
+"rank": "high",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": true,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 0,
+"pb_B_w5": 0,
+"pb_C_w3": 0,
+"pb_C_w5": 0,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 1,
+"nonpb_C_w3": 0,
+"nonpb_C_w5": 1
+}
+},
+{
+"key": "Jones / Market / McAllister",
+"state": "Fs",
+"rank": "high",
+"route": "fold",
+"fold": "no_parent_done",
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 1,
+"pb_KA_w5": 1,
+"pb_B_w3": 1,
+"pb_B_w5": 4,
+"pb_C_w3": 6,
+"pb_C_w5": 9,
+"nonpb_KA_w3": 1,
+"nonpb_KA_w5": 1,
+"nonpb_B_w3": 1,
+"nonpb_B_w5": 2,
+"nonpb_C_w3": 0,
+"nonpb_C_w5": 0
+}
+},
+{
+"key": "Mason / Union",
+"state": "N",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": true,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 0,
+"pb_B_w5": 0,
+"pb_C_w3": 0,
+"pb_C_w5": 0,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 1,
+"nonpb_C_w3": 1,
+"nonpb_C_w5": 1
+}
+},
+{
+"key": "Mission / Ocean",
+"state": "Fs",
+"rank": "medium",
+"route": "corridor",
+"fold": null,
+"sg015_corridor": true,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 1,
+"pb_B_w5": 1,
+"pb_C_w3": 1,
+"pb_C_w5": 2,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 2,
+"nonpb_B_w5": 2,
+"nonpb_C_w3": 5,
+"nonpb_C_w5": 6
+}
+},
+{
+"key": "Mission / Persia",
+"state": "Fs",
+"rank": "medium",
+"route": "corridor",
+"fold": null,
+"sg015_corridor": true,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 1,
+"pb_B_w3": 1,
+"pb_B_w5": 3,
+"pb_C_w3": 2,
+"pb_C_w5": 4,
+"nonpb_KA_w3": 2,
+"nonpb_KA_w5": 2,
+"nonpb_B_w3": 1,
+"nonpb_B_w5": 1,
+"nonpb_C_w3": 5,
+"nonpb_C_w5": 8
+}
+},
+{
+"key": "Mission / Silver",
+"state": "Fs",
+"rank": "medium",
+"route": "corridor",
+"fold": null,
+"sg015_corridor": true,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 2,
+"pb_B_w5": 4,
+"pb_C_w3": 6,
+"pb_C_w5": 7,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 2,
+"nonpb_C_w3": 0,
+"nonpb_C_w5": 2
+}
+},
+{
+"key": "Octavia / Page",
+"state": "C",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 2,
+"pb_B_w3": 0,
+"pb_B_w5": 1,
+"pb_C_w3": 2,
+"pb_C_w5": 3,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 2,
+"nonpb_C_w3": 4,
+"nonpb_C_w5": 8
+}
+},
+{
+"key": "Parker / Turk",
+"state": "N",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": true,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 1,
+"pb_B_w5": 1,
+"pb_C_w3": 0,
+"pb_C_w5": 1,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 1,
+"nonpb_B_w5": 1,
+"nonpb_C_w3": 0,
+"nonpb_C_w5": 0
+}
+},
+{
+"key": "Polk / Union",
+"state": "C",
+"rank": "medium",
+"route": "unidentified",
+"fold": null,
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 0,
+"pb_B_w5": 0,
+"pb_C_w3": 0,
+"pb_C_w5": 0,
+"nonpb_KA_w3": 1,
+"nonpb_KA_w5": 1,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 0,
+"nonpb_C_w3": 2,
+"nonpb_C_w5": 2
+}
+},
+{
+"key": "Stockton / Sutter",
+"state": "Fs",
+"rank": "high",
+"route": "fold",
+"fold": "no_parent_done",
+"sg015_corridor": false,
+"missing_ped_heads": false,
+"crash_matched": true,
+"crashes": {
+"pb_KA_w3": 0,
+"pb_KA_w5": 0,
+"pb_B_w3": 1,
+"pb_B_w5": 3,
+"pb_C_w3": 2,
+"pb_C_w5": 3,
+"nonpb_KA_w3": 0,
+"nonpb_KA_w5": 0,
+"nonpb_B_w3": 0,
+"nonpb_B_w5": 0,
+"nonpb_C_w3": 3,
+"nonpb_C_w5": 4
+}
+}
+]
+}

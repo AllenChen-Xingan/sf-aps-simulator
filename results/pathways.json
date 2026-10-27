@@ -1,0 +1,58 @@
+{
+ "label": "preliminary \u00b7 uncalibrated \u00b7 not used in the essay",
+ "path_reach": {
+  "PW0": {
+   "runs": 9000,
+   "nodes": {
+    "PW0:start": 1.0
+   }
+  },
+  "PW1": {
+   "runs": 9000,
+   "nodes": {
+    "PW1:C14_repack": 0.9484444444444444,
+    "PW1:Director_or_GF": 0.3958888888888889,
+    "PW1:PropL_amendment": 0.722,
+    "PW1:start": 1.0
+   }
+  },
+  "PW2": {
+   "runs": 9000,
+   "nodes": {
+    "PW2:GF_request": 0.6455555555555555,
+    "PW2:HSIP_repack": 0.4797777777777778,
+    "PW2:start": 1.0
+   }
+  },
+  "PW3": {
+   "runs": 9000,
+   "nodes": {
+    "PW3:lawsuit": 0.30477777777777776,
+    "PW3:start": 1.0,
+    "PW3:structured_negotiation": 0.942
+   }
+  },
+  "PW4": {
+   "runs": 9000,
+   "nodes": {
+    "PW4:start": 1.0
+   }
+  },
+  "PW5": {
+   "runs": 9000,
+   "nodes": {
+    "PW5:local_line": 0.9522222222222222,
+    "PW5:start": 1.0
+   }
+  },
+  "PW6": {
+   "runs": 9000,
+   "nodes": {
+    "PW6:GF_request": 0.4182222222222222,
+    "PW6:HSIP_repack": 0.29588888888888887,
+    "PW6:PropL_amendment": 0.7462222222222222,
+    "PW6:start": 1.0
+   }
+  }
+ }
+}
