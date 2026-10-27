@@ -11,6 +11,9 @@ SRC = Path(os.environ.get('ABM_RESULTS') or Path(_abm).parent / 'results' / 'web
 DST = ROOT / 'results'; DST.mkdir(exist_ok=True)
 _tf = ROOT / '.private-terms'
 TERMS = re.compile('|'.join(re.escape(w) for w in _tf.read_text().split()), re.I) if _tf.exists() else None
+_meta = json.loads((SRC / 'meta.json').read_text(encoding='utf-8'))
+if _meta.get('n_param_sets', 0) < int(os.environ.get('MIN_SETS', 100)):   # guard against test batches
+    sys.exit(f"meta.json has only {_meta.get('n_param_sets')} parameter sets; not syncing (set MIN_SETS to override)")
 for f in ('meta.json', 'params.json', 'quantiles.json', 'pathways.json', 'robustness.json', 'prim.json'):
     txt = (SRC / f).read_text(encoding='utf-8')
     if TERMS and TERMS.search(txt):   # local term list (.private-terms, not committed) must not appear in public files
