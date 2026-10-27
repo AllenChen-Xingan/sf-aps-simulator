@@ -21,11 +21,11 @@ const monthLong = ym => `${MONTHS_LONG[+ym.slice(5, 7) - 1]} ${ym.slice(0, 4)}`;
 // ---------------------------------------------------------------- vocabulary
 const PATHWAYS = {
   PW0: ['Status quo', 'No change. The request list waits for whoever chooses to apply for money.'],
-  PW1: ['HSIP first', 'Bundle APS with the signal-visibility upgrade (SG015) in the federal safety grant, HSIP Cycle 13. If not funded: repack for Cycle 14 with full signal upgrades and the pedestrian set-aside. If that fails: amend the county Prop L plan, then ask the Director or the General Fund.'],
+  PW1: ['HSIP first', 'Bundle APS with the signal-visibility upgrade (SG015) in the federal safety grant, HSIP Cycle 13. If not funded: repack for Cycle 14 with full signal upgrades and the pedestrian set-aside. If that fails: amend the county Prop L plan, then ask the Director to move money (a hypothetical fallback).'],
   PW2: ['Local first', 'Amend the county Prop L signal plan to restore a dedicated APS line. If the SFCTA Board rejects or delays it: request General Fund money. If that fails: bundle APS into HSIP.'],
   PW3: ['Accountability first', 'Set a deadline, name an owner and report publicly. If no application is filed within the signpost period: structured negotiation with advocates. If there is still no money: advocates go to court.'],
   PW4: ['Route by intersection', 'Give each intersection its own funding route: fold it into a parent project already planned there, add it to corridor designs, and use a local line or an HSIP signal-hardware bundle for the rest. Reroute when a parent project slips. In the model the local line exists from the first month, with no approval step.'],
-  PW5: ['Design rule', 'Require APS whenever push buttons or signal hardware are replaced at a candidate intersection, paid from a capped yearly add-on budget. If too few listed intersections get it within two years: open a local APS line (in the model, automatically, with no approval step).'],
+  PW5: ['Design rule', 'Require APS whenever push buttons or signal hardware are replaced at a candidate intersection, paid from a capped yearly add-on budget. If too few intersections get APS through this rule within two years: open a local APS line (in the model, automatically, with no approval step).'],
   PW6: ['Existing hardware line', 'Install APS through the existing signal-hardware replacement line (SG017). If that is blocked: amend Prop L, then request General Fund money, then repack for HSIP.'],
 };
 const MECHS = {
@@ -67,7 +67,7 @@ const VARIANTS = { PW4: 'PW4-approval', PW5: 'PW5-approval' };
 const variantName = v => `${v.split('-')[0]} + approval (variant)`;
 const STEP_ORDER = ['start', 'C14_repack', 'local_line', 'PropL_amendment', 'Director_or_GF', 'GF_request', 'HSIP_repack', 'structured_negotiation', 'lawsuit'];
 const STEP_NAMES = { start: 'start', C14_repack: 'HSIP Cycle 14 repack', local_line: 'local line triggered (two-year check)', PropL_amendment: 'Prop L amendment requested',
-  Director_or_GF: 'Director or General Fund asked', GF_request: 'General Fund requested', HSIP_repack: 'HSIP repack', structured_negotiation: 'structured negotiation', lawsuit: 'lawsuit' };
+  Director_or_GF: 'Director asked (assumed fallback)', GF_request: 'General Fund requested', HSIP_repack: 'HSIP repack', structured_negotiation: 'structured negotiation', lawsuit: 'lawsuit' };
 const VARIANT_NOTE = 'the local line must first pass a Prop L amendment; if that fails, one General Fund request (as in PW2)';
 // The result set covers runs with no standing local line at the start (as today).
 const lineOn = r => Number(r.request.params.sw_line) !== 0;
@@ -514,7 +514,7 @@ function showSummary() {
     div.innerHTML = `<h4>${tag ? 'Scenario ' + tag + ': ' : ''}${r.request.pathway} · ${PATHWAYS[r.request.pathway][0]}</h4>
       <p class="source ${r._source === 'recorded' ? 'warn' : ''}">${sourceText(r)}</p>
       <dl class="kv">
-        <dt>Installed within 5 years</dt><dd>${s.installed_5y}${pct !== null ? ` <span class="hint">(higher than ${pct}% of the result set for this pathway and mechanism)</span>` : ''}</dd>
+        <dt>Installed within 5 years</dt><dd>${s.installed_5y}${pct !== null ? ` <span class="hint">(higher than the ${state.meta.replicates}-run average of ${pct}% of parameter sets for this pathway and mechanism)</span>` : ''}</dd>
         <dt>Installed within 10 years</dt><dd>${s.coverage_10y}</dd>
         <dt>Request-list money within 5 years</dt><dd>${s.money_flows_5y ? 'Yes' : 'No'}</dd>
         <dt>Pathway steps reached</dt><dd>${(r.path_nodes_reached || []).map(x => { const k = x.split(':')[1]; return STEP_NAMES[k] || k.replace(/_/g, ' '); }).join(' → ')}</dd>
@@ -607,7 +607,7 @@ function drawHist() {
   }
   const pct = percentileOf(r0);
   const sorted = [...v].sort((a, b) => a - b), q = p => sorted[Math.floor(p * (sorted.length - 1))];
-  s.setAttribute('aria-label', `Histogram of intersections installed within five years across ${v.length} runs of ${r0.request.pathway}: 10th percentile ${q(0.1)}, middle ${q(0.5)}, 90th percentile ${q(0.9)}. This run: ${r0.summary.installed_5y}, higher than ${pct}% of runs.`);
+  s.setAttribute('aria-label', `Histogram of intersections installed within five years for ${v.length} parameter sets of ${r0.request.pathway} (each the average of ${state.meta.replicates} runs): 10th percentile ${q(0.1)}, middle ${q(0.5)}, 90th percentile ${q(0.9)}. This run: ${r0.summary.installed_5y}, higher than the average of ${pct}% of parameter sets.`);
   $('#hist-cap').textContent = `Installed within five years for each of the ${v.length} parameter sets of ${r0.request.pathway} under ${r0.request.mechanism} in the result set, with no standing local line at the start (mean of ${state.meta.replicates} replicates, rounded). The vertical line is this run. Middle: ${q(0.5)}; 10th–90th percentile: ${q(0.1)}–${q(0.9)}.`;
 }
 

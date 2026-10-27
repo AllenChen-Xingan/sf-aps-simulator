@@ -195,7 +195,7 @@ export function humanize(e) {
     case 'owner_quit': return 'The person responsible for APS funding left; the post is empty.';
     case 'owner_filled': return 'A new person responsible for APS funding started.';
     case 'pathway_switch': return 'The plan\'s warning sign was reached, so the pathway moved to its next step.';
-    case 'rule_apply': return `Signal hardware was replaced at ${count(n)} and, under the design rule, APS went in too.`;
+    case 'rule_apply': return `Signal hardware was replaced at ${count(n)}; under the design rule, APS there is now funded and waits for the city crews.`;
     case 'skip_rule': return `Signal hardware was replaced at ${count(n)}, but the yearly APS add-on budget was used up.`;
     case 'scope_add': return `${count(n)} added to planned projects.`;
     case 'reroute': return `${count(n)} rerouted after a planned project slipped.`;

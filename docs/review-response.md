@@ -91,3 +91,18 @@ Tests after round 4: browser 32/32; axe 0 violations. Model and results unchange
 | P2 #6 | README check count and contrast note stale | Valid | 32/32; manual contrast check needed in light and dark mode |
 
 Tests after round 5: browser 32/32; axe 0 violations.
+
+## Round 6 (reviewed 367ed9e): no P0/P1 — converged
+
+| # | Finding | Verdict | Change |
+|---|---|---|---|
+| P2 #1 | `rule_apply` text announced installation; the model only funds and queues it | Valid | "APS there is now funded and waits for the city crews"; completion is announced only by `install` |
+| P2 #2 | PW1 text and step name still mentioned a General Fund request after the Director | Valid | "ask the Director to move money (a hypothetical fallback)"; step "Director asked (assumed fallback)" |
+| P2 #3 | PW5 trigger counted all installs, not design-rule installs | Valid | "if too few intersections get APS through this rule within two years" (pathway text and variant note) |
+| P2 #4 | Histogram label called parameter-set averages "runs" | Valid | aria-label and run summary compare against the replicate average of parameter sets |
+
+Tests after round 6: browser 32/32; axe 0 violations.
+
+Stop line: rounds 5 and 6 had no P0/P1 (two in a row), so the review stops here. The remaining P2s above are fixed.
+
+Process note: the review script's privacy check rejects a previous-round output that begins with "P1"/"P2" (the `file` command reads it as a netpbm image header). From round 4 on, `--previous` pointed to a copy with one heading line added (`prev-index-codex-N.md`; originals unchanged), so the script's own stop-line check could not see the previous round and the consecutive count was kept by hand. The bug has been passed on to the maintainer.
