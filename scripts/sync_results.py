@@ -9,10 +9,12 @@ ROOT = Path(__file__).resolve().parents[1]
 _abm = os.environ.get('ABM_DIR') or (ROOT / '.abm-path').read_text().splitlines()[0]
 SRC = Path(os.environ.get('ABM_RESULTS') or Path(_abm).parent / 'results' / 'web')
 DST = ROOT / 'results'; DST.mkdir(exist_ok=True)
+_tf = ROOT / '.private-terms'
+TERMS = re.compile('|'.join(re.escape(w) for w in _tf.read_text().split()), re.I) if _tf.exists() else None
 for f in ('meta.json', 'params.json', 'quantiles.json', 'pathways.json', 'robustness.json', 'prim.json'):
     txt = (SRC / f).read_text(encoding='utf-8')
-    if re.search(r'ess' + r'ay|assignment|homework', txt, re.I):   # public files must not mention coursework
-        sys.exit(f'{f}: label mentions coursework; fix at the source')
+    if TERMS and TERMS.search(txt):   # local term list (.private-terms, not committed) must not appear in public files
+        sys.exit(f'{f}: contains a term from .private-terms; fix at the source')
     shutil.copy2(SRC / f, DST / f)
 shutil.copy2(SRC / 'runs.csv.gz', DST / 'runs.csv.gz')
 rows = list(csv.DictReader(io.TextIOWrapper(gzip.open(SRC / 'runs.csv.gz'), 'utf-8')))

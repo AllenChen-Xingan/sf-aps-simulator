@@ -5,3 +5,4 @@ tests/out-*.json
 tests/screenshots/
 .DS_Store
 .abm-path
+.private-terms
