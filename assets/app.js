@@ -23,7 +23,7 @@ const PATHWAYS = {
   PW2: ['Local first', 'Amend the county Prop L signal plan to restore a dedicated APS line. If the SFCTA Board rejects or delays it: request General Fund money. If that fails: bundle APS into HSIP.'],
   PW3: ['Accountability first', 'Set a deadline, name an owner and report publicly. If no application is filed within the signpost period: structured negotiation with advocates. If there is still no money: advocates go to court.'],
   PW4: ['Route by intersection', 'Give each intersection its own funding route: fold it into a parent project already planned there, add it to corridor designs, and use a local line or an HSIP signal-hardware bundle for the rest. Reroute when a parent project slips.'],
-  PW5: ['Design rule', 'Require APS whenever push buttons or signal hardware are replaced, so it rides along with other work. If too few listed intersections get it within two years: open a local line, then try HSIP.'],
+  PW5: ['Design rule', 'Require APS whenever push buttons or signal hardware are replaced at a candidate intersection, paid from a capped yearly add-on budget. If too few listed intersections get it within two years: open a local APS line.'],
   PW6: ['Existing hardware line', 'Install APS through the existing signal-hardware replacement line (SG017). If that is blocked: amend Prop L, then request General Fund money, then repack for HSIP.'],
 };
 const MECHS = {
@@ -133,6 +133,7 @@ function scrollRegions(root = document) {
 const state = { schema: [], quantiles: null, runs: null, robust: null, meta: null, prim: null, reach: null, config: { withheld: {} }, version: null };
 const withheld = pw => (state.config.withheld || {})[pw];
 const caution = pw => (state.config.caution || {})[pw];
+const notImpl = name => (state.config.not_implemented || []).includes(name);
 const pwName = pw => `${pw} · ${PATHWAYS[pw][0]}`;
 async function getJSON(url) { const r = await fetch(url); if (!r.ok) throw new Error(url); return r.json(); }
 
@@ -144,8 +145,8 @@ worker.onmessage = ev => { const p = pending.get(ev.data.id); if (p) { pending.d
 const callWorker = (type, request) => new Promise(res => { const id = ++reqId; pending.set(id, res); worker.postMessage({ id, type, request }); });
 callWorker('init').then(r => {
   const box = $('#model-status');
-  if (r.ok) { modelReady = true; box.textContent = 'The model is running in your browser. Change any setting and press Run.'; box.classList.add('ok'); }
-  else { box.textContent = 'The in-browser model could not load (' + r.error + '). Run will play recorded runs with default settings.'; box.classList.add('warn'); }
+  if (r.ok) { modelReady = true; box.textContent = 'Model ready.'; box.classList.add('ok'); }
+  else { box.textContent = 'The model could not load (' + r.error + '); Run plays recorded runs with default settings.'; box.classList.add('warn'); }
 });
 
 // ---------------------------------------------------------------- controls
@@ -165,7 +166,8 @@ function paramControl(s, host, prefix = 'p') {
   wrap.className = 'param';
   const only = s.applies_to.length < 6 ? ` <span class="only">only under ${s.applies_to.join(', ')}</span>` : '';
   if (s.kind === 'switch') {
-    wrap.innerHTML = `<label class="check"><input type="checkbox" id="${id}"> ${s.label_en}${only}</label>`;
+    const ni = notImpl(s.name) ? ' <span class="only">(not yet implemented in the model)</span>' : '';
+    wrap.innerHTML = `<label class="check"><input type="checkbox" id="${id}"${ni ? ' disabled' : ''}> ${s.label_en}${only}${ni}</label>`;
     const cb = $('input', wrap); cb.checked = !!values[s.name];
     cb.addEventListener('change', () => { values[s.name] = cb.checked ? 1 : 0; syncControls(s.name, wrap); });
   } else if (s.kind === 'discrete') {
@@ -210,13 +212,11 @@ function buildControls() {
     sel.value = slot === 'A' ? 'PW0' : 'PW4';
     const desc = () => { $('#pw-' + slot + '-desc').textContent = PATHWAYS[sel.value][1] + (caution(sel.value) ? ' Note: ' + caution(sel.value) + '.' : ''); };
     sel.addEventListener('change', desc); desc();
-    sel.setAttribute('aria-describedby', 'pw-' + slot + '-desc');
   }
   const mech = $('#mech');
   for (const k of Object.keys(MECHS)) mech.add(new Option(k, k));
   const md = () => { $('#mech-desc').textContent = MECHS[mech.value]; };
   mech.addEventListener('change', md); md();
-  mech.setAttribute('aria-describedby', 'mech-desc');
 
   const sw = $('#switches');
   for (const n of ['sw_si02', 'sw_line', 'sw_relax', 'sw_ss4a']) { const s = state.schema.find(x => x.name === n); if (s) paramControl(s, sw); }
@@ -226,7 +226,7 @@ function buildControls() {
   for (const s of state.schema) paramControl(s, all, 'all');
   $('#n-params').textContent = state.schema.length;
 
-  $('#compare').addEventListener('change', e => { $('.scenario[data-slot="B"]').hidden = !e.target.checked; });
+  $('#compare').addEventListener('change', e => { $('.pick[data-slot="B"]').hidden = !e.target.checked; $('#pw-B-desc').hidden = !e.target.checked; });
   $('#new-seed').addEventListener('click', () => { $('#seed').value = Math.floor(Math.random() * 1e6); });
   $('#reset-params').addEventListener('click', () => {
     for (const s of state.schema) { values[s.name] = s.default; syncControls(s.name, null); }
@@ -242,10 +242,10 @@ class Stage {
     this.root.setAttribute('aria-label', title);
     this.root.innerHTML = `<h3>${title}</h3>
       <figure class="net-fig"><div class="net"></div>
-        <figcaption>Who acts on whom. Bright links happened this month; faint links happened earlier; the dashed link (grants staff taking up the request list) has not happened yet in this run.</figcaption></figure>
+        <figcaption>Red: what happens this month. Dashed: grants staff taking up the request list — not yet.</figcaption></figure>
       <figure class="lanes-fig"><div class="lanes"></div>
-        <figcaption>Each dot is one requested intersection. Dots move between rows as the simulation runs; a ring marks the top quarter by injury crashes.</figcaption></figure>
-      <div class="table-wrap"><table class="counts"><caption>Intersections by status, <span class="cmonth">start</span></caption>
+        <figcaption>Each dot is one requested intersection; ringed dots have the most injury crashes.</figcaption></figure>
+      <div class="visually-hidden"><table class="counts"><caption>Intersections by status, <span class="cmonth">start</span></caption>
         <thead><tr><th scope="col">Status</th><th scope="col">Count</th></tr></thead><tbody></tbody></table></div>`;
     host.appendChild(this.root);
     scrollRegions(this.root);
@@ -469,9 +469,7 @@ function showSummary() {
         <dt>Installed within 5 years</dt><dd>${s.installed_5y}${pct !== null ? ` <span class="hint">(higher than ${pct}% of the result set for this pathway and mechanism)</span>` : ''}</dd>
         <dt>Installed within 10 years</dt><dd>${s.coverage_10y}</dd>
         <dt>Request-list money within 5 years</dt><dd>${s.money_flows_5y ? 'Yes' : 'No'}</dd>
-        <dt>Setbacks</dt><dd>${s.n_failures ?? '–'}</dd>
-        <dt>Months from first setback to next funding</dt><dd>${s.recovery_time ?? 'no recovery in this run'}</dd>
-        <dt>Pathway steps reached</dt><dd>${(r.path_nodes_reached || []).join(' → ')}</dd>
+        <dt>Pathway steps reached</dt><dd>${(r.path_nodes_reached || []).map(x => x.split(':')[1].replace(/_/g, ' ')).join(' → ')}</dd>
       </dl>`;
     box.appendChild(div);
   }
@@ -520,18 +518,18 @@ function drawTimeline(upto) {
   if (upto >= 0) svg('line', { x1: X(upto), x2: X(upto), y1: T, y2: H - B, class: 'now' }, s);
   const yrs = [12, 24, 36, 48, 60, 84, 119].filter(i => i < n);
   const desc = player.runs.map((r, k) => `${player.runs.length > 1 ? (k ? 'B' : 'A') + ' ' : ''}this run: ` + yrs.map(i => `${months[i].slice(0, 4)} ${r.stocks.I_cum[i]}`).join(', ')).join('; ');
-  s.setAttribute('aria-label', `Cumulative intersections installed by month. ${desc}.` + (band ? ` Thousand-run middle: ${yrs.map(i => band[50][i]).join(', ')} at the same dates.` : ''));
-  $('#timeline-cap').innerHTML = `Cumulative installs on the request list. Line${player.runs.length > 1 ? 's' : ''}: this run${player.runs.length > 1 ? ' (A solid, B dashed)' : ''}. ${band ? `Shaded band: 10th–90th percentile of the preliminary result set for ${r0.request.pathway} under ${r0.request.mechanism} (switches drawn at random there); thin dashed line: their middle.` : 'No result-set band for this pathway.'}
-    <details><summary>Show as table</summary>${timelineTable(yrs, band)}</details>`;
+  s.setAttribute('aria-label', `Cumulative intersections installed by month. ${desc}.` + (band ? ` Result-set middle: ${yrs.map(i => band[50][i]).join(', ')} at the same dates.` : ''));
+  $('#timeline-cap').textContent = `Cumulative installs. Line${player.runs.length > 1 ? 's' : ''}: this run${player.runs.length > 1 ? ' (A solid, B dashed)' : ''}. ` +
+    (band ? `Band: 10th–90th percentile of the result set for ${r0.request.pathway} under ${r0.request.mechanism}; dashed: its middle.` : 'No result-set band for this pathway.');
+  if (upto < 0 || upto === n - 1) fillTimelineTable(yrs, band);   // update data only; keep the disclosure open and focus in place
 }
 
-function timelineTable(yrs, band) {
-  const months = player.runs[0].months;
-  let h = '<table><thead><tr><th scope="col">Month</th>' + player.runs.map((_, k) => `<th scope="col">This run${player.runs.length > 1 ? (k ? ' B' : ' A') : ''}</th>`).join('') +
-    (band ? '<th scope="col">Result set: 10th</th><th scope="col">middle</th><th scope="col">90th</th>' : '') + '</tr></thead><tbody>';
-  for (const i of yrs) h += `<tr><th scope="row">${monthShort(months[i])}</th>` + player.runs.map(r => `<td>${r.stocks.I_cum[i]}</td>`).join('') +
-    (band ? `<td>${band[10][i]}</td><td>${band[50][i]}</td><td>${band[90][i]}</td>` : '') + '</tr>';
-  return h + '</tbody></table>';
+function fillTimelineTable(yrs, band) {
+  const months = player.runs[0].months, t = $('#timeline-data table');
+  $('thead', t).innerHTML = '<tr><th scope="col">Month</th>' + player.runs.map((_, k) => `<th scope="col">This run${player.runs.length > 1 ? (k ? ' B' : ' A') : ''}</th>`).join('') +
+    (band ? '<th scope="col">Result set: 10th</th><th scope="col">middle</th><th scope="col">90th</th>' : '') + '</tr>';
+  $('tbody', t).innerHTML = yrs.map(i => `<tr><th scope="row">${monthShort(months[i])}</th>` + player.runs.map(r => `<td>${r.stocks.I_cum[i]}</td>`).join('') +
+    (band ? `<td>${band[10][i]}</td><td>${band[50][i]}</td><td>${band[90][i]}</td>` : '') + '</tr>').join('');
 }
 
 function drawHist() {
@@ -547,6 +545,7 @@ function drawHist() {
   const X = x => L + (W - L - R) * (x - lo + 0.5) / (hi - lo + 1), bw = (W - L - R) / (hi - lo + 1);
   const s = svg('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img' }, host);
   for (const [x, c] of Object.entries(bins)) svg('rect', { x: X(+x) - bw / 2 + 0.5, width: Math.max(1, bw - 1), y: T + (H - T - B) * (1 - c / cmax), height: (H - T - B) * c / cmax, class: 'bar' }, s);
+  $('#hist-data tbody').innerHTML = Object.entries(bins).sort((a, b) => a[0] - b[0]).map(([x, c]) => `<tr><th scope="row">${x}</th><td>${c}</td></tr>`).join('');
   const step = Math.max(1, Math.ceil((hi - lo) / 10));
   for (let x = lo; x <= hi; x += step) { const t = svg('text', { x: X(x), y: H - 12, 'text-anchor': 'middle', class: 'tick' }, s); t.textContent = x; }
   const marks = player.runs.filter(r => r.request.pathway === r0.request.pathway);
@@ -618,7 +617,7 @@ async function getRun(req) {
     throw new Error(r.error);
   }
   const demo = await getJSON(`results/demo/${req.pathway}.json`);
-  if (!isDefault(req)) $('#model-status').textContent = 'The in-browser model is still loading, so this is the recorded run with default settings. Press Run again once it is ready to use your settings.';
+  if (!isDefault(req)) $('#model-status').textContent = 'Still loading: this is a recorded run with default settings.';
   return demo;
 }
 
@@ -661,12 +660,14 @@ async function boot() {
   mv.addEventListener('change', drawRobust);
   const m = state.meta, v = state.version;
   $('#set-desc').textContent = `${fmtInt(m.n_param_sets)} parameter sets × ${m.replicates} replicates for every pathway and mechanism (${fmtInt(m.total_runs)} runs), drawn from the base prior ranges. Run on ${m.run_date} with design version ${m.design_version}.`;
-  $('#version').textContent = `live model ${v.model_sha256_12} (synced ${v.synced}); result set: design ${m.design_version}, run ${m.run_date}`;
   $('#set-label').textContent = m.label;
-  getJSON('results/consistency.json').then(c => { $('#cons-cases').textContent = c.cases; $('#consistency').textContent = c.mismatches === 0 ? `no differences across ${fmtInt(c.events)} events (${c.runtimes.join(' vs ')})` : `${c.mismatches} differences`; }).catch(() => {});
-  $('#updated').textContent = m.run_date; $('#status-word').textContent = m.label || m.status;
-  $('#status-version').textContent = `Result set: ${m.label}. Design ${m.design_version}, run ${m.run_date}; the in-browser model is the newer synced version ${v.model_sha256_12}.`;
-  if (m.status === 'final') $('#status-banner').hidden = true;
+  getJSON('results/consistency.json').then(c => {
+    // only claim a pass for the exact model file that is loaded
+    if (c.model_sha256_12 === v.model_sha256_12 && c.mismatches === 0)
+      $('#consistency').textContent = `passed for this model version — ${c.cases} fixed cases, ${fmtInt(c.events)} events, no differences (${c.runtimes.join(' vs ')})`;
+    else if (c.model_sha256_12 === v.model_sha256_12) $('#consistency').textContent = `${c.mismatches} differences found for this model version`;
+  }).catch(() => {});
+  $('#version-line').textContent = `In-browser model ${v.model_sha256_12} (synced ${v.synced}). Result set: design ${m.design_version}, run ${m.run_date}.`;
 
   $('#run').addEventListener('click', onRun);
   $('#pause').addEventListener('click', () => {

@@ -1,6 +1,6 @@
 {
  "status": "preliminary",
- "label": "preliminary \u00b7 uncalibrated \u00b7 not used in the essay",
+ "label": "preliminary \u00b7 uncalibrated \u00b7 scenario projections, not forecasts",
  "model_version": "dev",
  "design_version": "02 v8",
  "run_date": "2026-10-26",
@@ -35,7 +35,7 @@
  ],
  "notes": [
   "Priors are the D10 base ranges, not calibrated to 2022-2026 (no E1 filtering).",
-  "Scenario exploration under stated rules; not a forecast; not used in the essay.",
+  "Scenario exploration under stated rules; scenario projections, not forecasts.",
   "PRIM and Sobol are not computed for the preliminary set."
  ]
 }

@@ -124,13 +124,17 @@ class Sim:
                            {'route': r['route'], 'fold': r['fold'], 'missing_ped': r['missing_ped_heads'],
                             'crashes': r['crashes'] if r['crash_matched'] else None,
                             'sg015': r.get('sg015_corridor', False)})
+            if r.get('parent_finish'):
+                s['parent_nominal'] = mi(r['parent_finish'])
+            elif r['fold'] in ('likely', 'unverified', 'yes'):
+                s['parent_nominal'] = self.t0 + 18      # undated parent (Tenderloin SS4A): assume 18 months
             self._draw_carriers(s)
             f = r['fold']
             if f == 'no_parent_done':
                 if self.p['done3_real']:
                     s['state'] = 'Fi'                       # needs in-house hand-off wiring
                 else:
-                    s['state'], s['installed'] = 'I', self.t0  # record lag only
+                    s['state'], s['installed'] = 'I', self.t0 - 1  # record lag only: installed before the start
             elif f == 'no_unfunded':
                 s['hazard_fs'] = False
             elif f in ('likely', 'unverified') and self.rng.random() >= self.p['pi_scope']:
@@ -195,6 +199,8 @@ class Sim:
 
     def move(self, s, to):
         frm = s['state']
+        if to == 'I' and s.get('installed') is not None:
+            raise AssertionError('site installed twice')
         if to == 'I' and frm == 'Fi' and self.now < s.get('ready_at', -1):
             raise AssertionError('install before design complete')
         if to in ('I', 'Fi') and frm == 'Fh' and s.get('proj') is not None and self.projects[s['proj']]['terminated']:
@@ -366,7 +372,7 @@ class Sim:
         u = self.unit_cost()
         batch, spent = [], 0.0
         for s in cands:
-            c = u + s['adders']
+            c = (u + s['adders']) * (1 + self.p['k_cont'])   # contingency budgeted up front
             if spent + c > amount:
                 continue
             batch.append(s)
@@ -377,7 +383,7 @@ class Sim:
         for s in batch:
             s['via'] = 'local'
         payer = 'SFCTA' if self.line_on else 'SFMTA'
-        self.cost[payer] += spent
+        self.cost[payer] += spent / (1 + self.p['k_cont'])   # contingency drawn only if needed
         self.fund_months.append(self.now)
         self.ev('SFCTA' if self.line_on else 'GF', 'A2', 'allocate', batch, ch, f'${spent:,.0f}')
         self.ev('A2', 'A3', 'batch_fund', batch)
@@ -467,6 +473,7 @@ class Sim:
             chosen.append(s)
             union |= s['_cms']
             B, Cst = B + b, Cst + c
+        Cst *= 1 + self.p['k_cont']                      # application cost includes contingency
         return chosen, (B / Cst if Cst else 0.0), Cst
 
     def _submit_hsip(self, tk):
@@ -583,7 +590,7 @@ class Sim:
               'sites': a['sites'], 'cs': cs, 'con_at': con, 'contract': contract, 'mode': a['mode'],
               'cancel': a['mode'] == 'sg015' and rng.random() < p['q_partner_cancel'],
               'limit': limit, 'cost': a['cost'], 'done': False,
-              'build_at': con + (int(round(p['t_contract'])) if contract else 0) + int(round(p['t_build']))}
+              'build_at': (con + int(round(p['t_contract'])) + int(round(p['t_build']))) if contract else con}
         flags = []
         if pe_at is not None and pe_at - cs > 9:
             flags.append((cs + 9, pe_at + int(p['t_fix'])))
@@ -608,8 +615,12 @@ class Sim:
         if pr['done']:
             return
         if t == pr['des_at']:
-            actual = math.exp(p['sigma_over'] * self.rng.standard_normal())
-            if actual > 1.25 and self.rng.random() >= p['q_topup']:
+            ratio = math.exp(p['sigma_over'] * self.rng.standard_normal())
+            gap = max(0.0, ratio - 1 - p['k_cont']) * pr['cost']
+            if gap > 0 and self.rng.random() < p['q_topup']:
+                self.cost['SFMTA'] += gap
+                self.ev('SFCTA', 'A2', 'topup', pr['sites'], detail=f'design overrun +${gap:,.0f} beyond contingency')
+            elif gap > 0:
                 ch = self._terminate(pr, 'overrun')
                 self.ev('A2', 'HSIP', 'overrun_revert', pr['sites'], ch, 'overrun found at design; no top-up')
                 self.fail('F-f', 'A2', 'HSIP', 'overrun at design, project terminated')
@@ -643,9 +654,16 @@ class Sim:
             self.ev('A2', 'HSIP', 'partner_delay', pr['sites'], ch, 'partner project cancelled; APS loses carrier')
             self.fail('F-g', 'A2', 'HSIP', 'partner cancelled')
             return
+        if t == pr.get('ext_end') and pr['con_at'] > t:
+            ch = self._terminate(pr, 'removed', 'C')
+            self.cost['refunds'] += 0.1 * pr['cost']
+            self.ev('A2', 'CT', 'return_funds', pr['sites'], ch, 'extension ran out')
+            self.fail('F-d', 'CT', 'A2', 'extension expired without construction; removed')
+            return
         if t == pr['cs'] + 60 and pr['con_at'] - pr['cs'] > 60:
             if self.rng.random() < p['e_ext']:
-                self.ev('CT', 'A2', 'extend', pr['sites'])
+                pr['ext_end'] = t + int(round(p['t_ext']))   # one extension only
+                self.ev('CT', 'A2', 'extend', pr['sites'], detail=f"until {ms(pr['ext_end'])}")
             else:
                 ch = self._terminate(pr, 'removed', 'C')
                 self.cost['refunds'] += 0.1 * pr['cost']
@@ -656,12 +674,12 @@ class Sim:
             pr['done'] = True
             for s in pr['sites']:
                 if pr['contract']:
-                    ch = self.move(s, 'I')
+                    ch = self.move(s, 'I')         # contractor: construction finished
                     self.ev('PARENT', 'A2', 'install', [s], [ch], 'contractor')
                 else:
-                    ch = self.move(s, 'Fi')          # joins the in-house queue
-                    s['via'] = 'hsip'
-                    self.ev('A2', 'A3', 'handoff', [s], [ch], 'HSIP project ready for in-house install')
+                    ch = self.move(s, 'Fi')        # in-house: one chain, queue -> install
+                    s['via'], s['ready_at'] = 'hsip', t
+                    self.ev('A2', 'A3', 'handoff', [s], [ch], 'construction authorized; joins in-house queue')
 
     # ------------------------------------------------------------ pathway signposts (design D3.6)
     def _pathway_signposts(self):
@@ -721,7 +739,8 @@ class Sim:
                 self.enf = max(self.enf, 3)
         if pw == 'PW4' and node == 0:
             for s in self.sites:
-                if s['state'] == 'Fs' and s.get('parent_ready', 10 ** 6) + p['th_parent'] < t and s['route'] == 'fold':
+                if (s['state'] == 'Fs' and s['route'] == 'fold' and s.get('parent_nominal') is not None
+                        and t > max(s['parent_nominal'], self.t0) + p['th_parent']):
                     ch = self.move(s, 'C')
                     self.ev('A2', 'GF', 'reroute', [s], [ch], 'parent delayed; moved to local queue')
                     self.fail('F-g', 'PARENT', 'A2', 'parent delayed; moved to local queue')
@@ -802,11 +821,13 @@ class Sim:
             if s['state'] != 'Fi':
                 continue
             actual = min(1_500_000.0, plan * math.exp(p['sigma_over'] * self.rng.standard_normal()))
-            extra = max(0.0, actual - plan)
-            if extra > 0.25 * plan:
+            cont = p['k_cont'] * plan                 # budgeted contingency (already counted in cost)
+            self.cost[payer] += min(max(0.0, actual - plan), cont)
+            gap = max(0.0, actual - plan - cont)       # funding gap: any amount beyond contingency
+            if gap > 0:
                 if self.rng.random() < p['q_topup']:
-                    self.cost[payer] += extra
-                    self.ev('SFCTA', 'A2', 'topup', [s], detail=f'+${extra:,.0f}')
+                    self.cost[payer] += gap
+                    self.ev('SFCTA', 'A2', 'topup', [s], detail=f'+${gap:,.0f} beyond contingency')
                 else:
                     ch = self.move(s, 'C')
                     self.ev('A2', 'GF', 'overrun_revert', [s], [ch], 'no top-up')
@@ -874,7 +895,7 @@ class Sim:
 
     def _summary(self, months, series, snaps):
         t5, t10 = self.t0 + 60, self.t0 + 120
-        inst = [s for s in self.sites if s['installed'] is not None and s['installed'] > self.t0]
+        inst = [s for s in self.sites if s['installed'] is not None and s['installed'] >= self.t0]   # includes month 1
         hp = [s for s in self.sites if s['rank'] == 'high']
         rec = None
         if self.fail_months:
@@ -890,7 +911,7 @@ class Sim:
             'summary': {
                 'money_flows_5y': int(any(self.t0 <= m < t5 for m in self.fund_months)),
                 'installed_5y': sum(1 for s in inst if s['installed'] < t5),
-                'high_priority_5y': (sum(1 for s in hp if s['installed'] is not None and self.t0 < s['installed'] < t5) / len(hp)) if hp else None,
+                'high_priority_5y': (sum(1 for s in hp if s['installed'] is not None and self.t0 <= s['installed'] < t5) / len(hp)) if hp else None,
                 'coverage_10y': sum(1 for s in inst if s['installed'] < t10),
                 'recovery_time': rec,
                 'n_failures': len(self.fail_months),

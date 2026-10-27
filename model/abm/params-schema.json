@@ -940,6 +940,42 @@
 "phase": "projection"
 },
 {
+"name": "k_cont",
+"label_en": "Budgeted contingency share of planned cost",
+"unit": "fraction",
+"kind": "uniform",
+"low": 0.05,
+"high": 0.15,
+"default": 0.1,
+"applies_to": [
+"M-A",
+"M-B1",
+"M-B2",
+"M-C1",
+"M-C2",
+"M-D"
+],
+"phase": "all"
+},
+{
+"name": "t_ext",
+"label_en": "Length of the one allowed 5-year extension",
+"unit": "months",
+"kind": "uniform",
+"low": 6.0,
+"high": 24.0,
+"default": 12.0,
+"applies_to": [
+"M-A",
+"M-B1",
+"M-B2",
+"M-C1",
+"M-C2",
+"M-D"
+],
+"phase": "projection"
+},
+{
 "name": "lam_hw",
 "label_en": "Push-button / signal-hardware change events per candidate site",
 "unit": "per year",
@@ -1572,42 +1608,6 @@
 {
 "name": "sw_line",
 "label_en": "Dedicated local line on",
-"unit": "switch",
-"kind": "switch",
-"low": 0,
-"high": 1,
-"default": 0,
-"applies_to": [
-"M-A",
-"M-B1",
-"M-B2",
-"M-C1",
-"M-C2",
-"M-D"
-],
-"phase": "projection"
-},
-{
-"name": "sw_relax",
-"label_en": "HSIP allows APS-only again",
-"unit": "switch",
-"kind": "switch",
-"low": 0,
-"high": 1,
-"default": 0,
-"applies_to": [
-"M-A",
-"M-B1",
-"M-B2",
-"M-C1",
-"M-C2",
-"M-D"
-],
-"phase": "projection"
-},
-{
-"name": "sw_ss4a",
-"label_en": "SS4A continues",
 "unit": "switch",
 "kind": "switch",
 "low": 0,

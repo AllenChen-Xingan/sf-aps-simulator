@@ -23,5 +23,7 @@ n = len(A['results']); ev = sum(len(r.get('events', [])) for r in A['results'])
 print(f"{A['runtime']}  vs  {B['runtime']}")
 print(f'cases {n}, events compared {ev}, mismatches {len(bad)}')
 for b in bad[:10]: print('  ', b)
-json.dump({'cases': n, 'events': ev, 'mismatches': len(bad), 'runtimes': [A['runtime'], B['runtime']]}, open(H.parent / 'results/consistency.json', 'w'))
+import hashlib
+sha = hashlib.sha256(open(H.parent / 'model/abm/model.py', 'rb').read()).hexdigest()[:12]
+json.dump({'model_sha256_12': sha, 'cases': n, 'events': ev, 'mismatches': len(bad), 'runtimes': [A['runtime'], B['runtime']]}, open(H.parent / 'results/consistency.json', 'w'))
 sys.exit(1 if bad else 0)

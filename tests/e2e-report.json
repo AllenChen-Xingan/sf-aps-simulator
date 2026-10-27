@@ -13,12 +13,12 @@
   {
    "name": "announcer speaks",
    "pass": true,
-   "info": "December 2026: 3 intersections installed."
+   "info": "January 2027: 1 intersection installed."
   },
   {
    "name": "run finished, lane counts present",
    "pass": true,
-   "info": "98,24,1,0,17,49"
+   "info": "91,18,1,0,9,44"
   },
   {
    "name": "summary shown",
@@ -34,6 +34,16 @@
    "name": "histogram drawn",
    "pass": true,
    "info": ""
+  },
+  {
+   "name": "histogram table filled",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "consistency shown as verified for this model",
+   "pass": true,
+   "info": "passed for this model version — 67 fixed cases, 19,628 events, no differences (C"
   },
   {
    "name": "compare mode shows two stages (keyboard start)",
@@ -80,14 +90,14 @@
  "axe": {
   "light": {
    "violations": [],
-   "passes": 33,
+   "passes": 30,
    "incomplete": [
     "color-contrast"
    ]
   },
   "dark": {
    "violations": [],
-   "passes": 31,
+   "passes": 24,
    "incomplete": []
   },
   "mobile": {

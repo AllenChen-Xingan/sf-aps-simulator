@@ -65,6 +65,8 @@ _S = [
     ('t_des', 'Months from local award to design complete (overrun found)', 'months', 'uniform', 2.0, 6.0, 4.0, ALL, 'all'),
     ('t_dsg', 'Months from design start (PE E-76 or cycle start) to design complete', 'months', 'uniform', 4.0, 14.0, 8.0, ALL, 'projection'),
     ('t_pause', 'Months paused when a contracting cost gap is not funded', 'months', 'uniform', 3.0, 12.0, 6.0, ALL, 'projection'),
+    ('k_cont', 'Budgeted contingency share of planned cost', 'fraction', 'uniform', 0.05, 0.15, 0.1, ALL, 'all'),
+    ('t_ext', 'Length of the one allowed 5-year extension', 'months', 'uniform', 6.0, 24.0, 12.0, ALL, 'projection'),
     ('lam_hw', 'Push-button / signal-hardware change events per candidate site', 'per year', 'uniform', 0.01, 0.08, 0.04, ALL, 'projection'),
     ('b_hw', 'Maintenance budget for APS add-ons under the design rule', 'USD/year', 'uniform', 0, 300000, 150000, ALL, 'projection'),
     ('q_sg017_block', 'SG017 allocation excludes new APS', 'probability', 'uniform', 0.2, 0.9, 0.55, ALL, 'projection'),
@@ -101,8 +103,6 @@ _S = [
     ('eps_enf', 'External enforcement steps up', 'per year', 'uniform', 0.0, 0.1, 0.03, ALL, 'all'),
     ('sw_si02', 'Signal-hardware carrier accepted', 'switch', 'switch', 0, 1, 1, ALL, 'projection'),
     ('sw_line', 'Dedicated local line on', 'switch', 'switch', 0, 1, 0, ALL, 'projection'),
-    ('sw_relax', 'HSIP allows APS-only again', 'switch', 'switch', 0, 1, 0, ALL, 'projection'),
-    ('sw_ss4a', 'SS4A continues', 'switch', 'switch', 0, 1, 0, ALL, 'projection'),
 ]
 
 FIELDS = ('name', 'label_en', 'unit', 'kind', 'low', 'high', 'default', 'applies_to', 'phase')
