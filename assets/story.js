@@ -7,7 +7,7 @@ export const NODES = {
   C2: { label: 'Advocates', x: 85, y: 200, kind: 'actor' },
   D1: { label: 'Enforcement', x: 85, y: 330, kind: 'actor' },
   A1: { label: 'SFMTA APS engineers', x: 290, y: 70, kind: 'actor' },
-  MDC: { label: 'Disability Council', x: 290, y: 200, kind: 'venue' },
+  MDC: { label: "Mayor's Disability Council", x: 290, y: 200, kind: 'venue' },
   A2: { label: 'SFMTA funding staff', x: 480, y: 200, kind: 'actor' },
   DIR: { label: 'SFMTA Director', x: 480, y: 330, kind: 'actor' },
   HSIP: { label: 'HSIP (federal)', x: 680, y: 50, kind: 'venue' },
@@ -166,7 +166,7 @@ export function humanize(e) {
   const n = (e.intersections || []).length, d = e.detail || '';
   if (e.action.startsWith('failure:')) return `Setback: ${SETBACK[e.action.slice(8)] || 'something went wrong'}.`;
   switch (e.action) {
-    case 'press': return 'Advocates raised the APS backlog at the Disability Council.';
+    case 'press': return 'Advocates raised the APS backlog at the Mayor\'s Disability Council.';
     case 'deflect': return 'SFMTA\'s funding staff answered "no money, too expensive" and did not start an application.';
     case 'start_prep': return `SFMTA's funding staff started preparing an APS application for ${VENUE[e.target] || e.target}.`;
     case 'submit':

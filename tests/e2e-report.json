@@ -23,7 +23,7 @@
   {
    "name": "in-browser model loads",
    "pass": true,
-   "info": "1.3 s"
+   "info": "3.3 s"
   },
   {
    "name": "log lines name their link",
@@ -56,7 +56,7 @@
    "info": ""
   },
   {
-   "name": "comparison hidden (result set from another model version)",
+   "name": "histogram drawn (result set matches loaded model)",
    "pass": true,
    "info": ""
   },
@@ -108,7 +108,7 @@
   {
    "name": "after load, comparisons shown only if the result set matches the loaded model",
    "pass": true,
-   "info": "different model: hidden"
+   "info": "same model: shown"
   },
   {
    "name": "mobile: no horizontal scroll",
@@ -132,8 +132,7 @@
    "violations": [],
    "passes": 31,
    "incomplete": [
-    "color-contrast",
-    "th-has-data-cells"
+    "color-contrast"
    ]
   },
   "dark": {

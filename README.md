@@ -84,7 +84,7 @@ One rule draws on an interview with SFMTA staff.
 Scenario exploration, not prediction; rules are set by people; many ranges are informed guesses;
 request list only, San Francisco only; injury crashes only (benefits understated); history fit rests on
 very few funding events. The result set and the live model can be different versions while the model
-is under review (design v14: result set being re-run after a last parameter-file change; comparisons hidden until the fingerprints match) — the About section shows both.
+is under review (now both design v14, frozen; same model fingerprint) — the About section shows both.
 
 ## AI assistance
 

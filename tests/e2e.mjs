@@ -3,15 +3,26 @@
 // Run: node tests/e2e.mjs   (serves the site on a local port by itself)
 import { chromium } from 'playwright';
 import AxeBuilder from '@axe-core/playwright';
-import { spawn } from 'node:child_process';
+import http from 'node:http';
+import { createReadStream, existsSync, statSync } from 'node:fs';
 import { writeFileSync, mkdirSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(here, '..');
 const PORT = 8765, URL0 = `http://127.0.0.1:${PORT}/`;
-const srv = spawn('python3', ['-m', 'http.server', String(PORT), '--bind', '127.0.0.1'], { cwd: root, stdio: 'ignore' });
-await new Promise(r => setTimeout(r, 800));
+// Small in-process static server (more robust under load than python's http.server).
+const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript', '.css': 'text/css', '.json': 'application/json',
+  '.wasm': 'application/wasm', '.zip': 'application/zip', '.whl': 'application/zip', '.py': 'text/plain', '.gz': 'application/gzip', '.txt': 'text/plain' };
+const srv = http.createServer((req, res) => {
+  let p = decodeURIComponent(new URL(req.url, URL0).pathname);
+  if (p.endsWith('/')) p += 'index.html';
+  const f = path.join(root, path.normalize(p));
+  if (!f.startsWith(root) || !existsSync(f) || !statSync(f).isFile()) { res.writeHead(404); res.end(); return; }
+  res.writeHead(200, { 'Content-Type': TYPES[path.extname(f)] || 'application/octet-stream', 'Content-Length': statSync(f).size });
+  createReadStream(f).pipe(res);
+}).listen(PORT, '127.0.0.1');
+await new Promise(r => srv.once('listening', r));
 const shots = path.join(here, 'screenshots'); mkdirSync(shots, { recursive: true });
 const out = { checks: [], console: [], axe: {} };
 const ok = (name, cond, info = '') => { out.checks.push({ name, pass: !!cond, info }); console.log((cond ? 'PASS ' : 'FAIL ') + name + (info ? ' — ' + info : '')); };
@@ -108,7 +119,7 @@ try {
   ok('axe mobile reduced-motion: no violations', ax.violations.length === 0, ax.violations.map(v => v.id).join(' '));
   await m.close();
 } finally {
-  await browser.close(); srv.kill();
+  await browser.close(); srv.close();
 }
 ok('no console errors', out.console.filter(x => !/favicon/.test(x)).length === 0, out.console.slice(0, 5).join(' | '));
 writeFileSync(path.join(here, 'e2e-report.json'), JSON.stringify(out, null, 1));

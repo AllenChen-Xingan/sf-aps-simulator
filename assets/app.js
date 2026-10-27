@@ -62,7 +62,13 @@ const withheld = pw => (state.config.withheld || {})[pw];
 const caution = pw => (state.config.caution || {})[pw];
 const notImpl = name => (state.config.not_implemented || []).includes(name);
 const pwName = pw => `${pw} · ${PATHWAYS[pw][0]}`;
-async function getJSON(url) { const r = await fetch(url); if (!r.ok) throw new Error(url); return r.json(); }
+// Retry briefly: one dropped request should not leave the page empty.
+async function getJSON(url, tries = 3) {
+  for (let i = 1; ; i++) {
+    try { const r = await fetch(url); if (!r.ok) throw new Error(url + ' ' + r.status); return await r.json(); }
+    catch (e) { if (i >= tries) throw e; await new Promise(res => setTimeout(res, 400 * i)); }
+  }
+}
 
 // ---------------------------------------------------------------- model worker
 const worker = new Worker(new URL('./worker.js', import.meta.url), { type: 'module' });

@@ -2,7 +2,7 @@
  "status": "preliminary",
  "label": "preliminary \u00b7 uncalibrated \u00b7 scenario projections, not forecasts",
  "model_version": "dev",
- "model_fingerprint": "379480a50f8408f35194e79e31c39f34b46e0b1b24cacebbc1cdc528bb43a13c",
+ "model_fingerprint": "c42d8e8a6ce02d803a662bb3b7952467195295477ed89d77ea4f5777397125ad",
  "design_version": "02 v14 (frozen)",
  "run_date": "2026-10-27",
  "n_param_sets": 300,
