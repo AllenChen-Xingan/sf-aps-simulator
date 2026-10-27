@@ -25,5 +25,5 @@ print(f'cases {n}, events compared {ev}, mismatches {len(bad)}')
 for b in bad[:10]: print('  ', b)
 import runpy
 fp = runpy.run_path(str(H.parent / 'scripts/fingerprint.py'))['fingerprint'](H.parent / 'model/abm')
-json.dump({'model_fingerprint': fp, 'cases': n, 'events': ev, 'mismatches': len(bad), 'runtimes': [A['runtime'], B['runtime']]}, open(H.parent / 'results/consistency.json', 'w'))
+json.dump({'model_fingerprint': fp, 'cases': n, 'events': ev, 'mismatches': len(bad), 'runtimes': [A['runtime'], B['runtime']], 'browser_runtime': B.get('runtime_id')}, open(H.parent / 'results/consistency.json', 'w'))
 sys.exit(1 if bad else 0)

@@ -139,16 +139,18 @@ async function getJSON(url) { const r = await fetch(url); if (!r.ok) throw new E
 
 // ---------------------------------------------------------------- model worker
 const worker = new Worker(new URL('./worker.js', import.meta.url), { type: 'module' });
-let modelReady = false, reqId = 0, liveFP = null;
+let modelReady = false, reqId = 0, liveFP = null, liveRuntime = null;
 // Many-run comparisons are shown only when the result set was produced by the very model file set that runs here.
-const sameModel = () => !!(state.meta && state.meta.model_fingerprint && state.meta.model_fingerprint === (liveFP || (state.version && state.version.model_fingerprint)));
+// liveFP is computed by the worker from the bytes it actually loaded; nothing is compared before that.
+const sameModel = () => !!(liveFP && state.meta && state.meta.model_fingerprint === liveFP);
 const pending = new Map();
 worker.onmessage = ev => { const p = pending.get(ev.data.id); if (p) { pending.delete(ev.data.id); p(ev.data); } };
 const callWorker = (type, request) => new Promise(res => { const id = ++reqId; pending.set(id, res); worker.postMessage({ id, type, request }); });
 callWorker('init').then(r => {
   const box = $('#model-status');
-  if (r.ok) { modelReady = true; liveFP = r.fingerprint; showConsistency(); box.textContent = 'Model ready.'; box.classList.add('ok'); }
+  if (r.ok) { modelReady = true; liveFP = r.fingerprint; liveRuntime = r.runtime; box.textContent = 'Model ready.'; box.classList.add('ok'); }
   else { box.textContent = 'The model could not load (' + r.error + '); Run plays recorded runs with default settings.'; box.classList.add('warn'); }
+  if (state.meta) refreshComparisons();
 });
 
 // ---------------------------------------------------------------- controls
@@ -455,7 +457,8 @@ function startPlayback(runs) {
   for (const r of runs) r._byMonth = byMonth(r);
   const host = $('#stages'); host.replaceChildren();
   host.classList.toggle('two', runs.length > 1);
-  player.stages = runs.map((r, i) => new Stage(host, runs.length > 1 ? `Scenario ${i ? 'B' : 'A'}: ${r.request.pathway} · ${PATHWAYS[r.request.pathway][0]}` : `${r.request.pathway} · ${PATHWAYS[r.request.pathway][0]}`));
+  const rec = r => r._source === 'recorded' ? ' (recorded run, default settings)' : '';
+  player.stages = runs.map((r, i) => new Stage(host, (runs.length > 1 ? `Scenario ${i ? 'B' : 'A'}: ` : '') + `${r.request.pathway} · ${PATHWAYS[r.request.pathway][0]}${rec(r)}`));
   player.stages.forEach((s, i) => s.reset(runs[i]));
   $('#log').replaceChildren();
   player.t = -1; player.paused = false;
@@ -472,6 +475,14 @@ function summaryText(r, tag) {
     (s.money_flows_5y ? 'request-list money arrived within five years.' : 'no request-list money within five years.');
 }
 
+function sourceText(r) {
+  const q = r.request, changed = state.schema.filter(s => q.params[s.name] !== s.default).length;
+  const set = `mechanism ${q.mechanism}, seed ${q.seed}, ${changed ? changed + ' parameter' + (changed > 1 ? 's' : '') + ' changed from default' : 'default parameters'}`;
+  if (r._source === 'recorded')
+    return `Recorded run (${set}), played because the model was still loading` + (isDefault(r._asked) ? '.' : ' — your settings were not used. Press Run again now that the model is ready.');
+  return `Run in this browser with your settings: ${set}.`;
+}
+
 function showSummary() {
   const box = $('#run-summary'); box.replaceChildren();
   for (const [i, r] of player.runs.entries()) {
@@ -479,6 +490,7 @@ function showSummary() {
     const pct = percentileOf(r);
     const div = document.createElement('div');
     div.innerHTML = `<h4>${tag ? 'Scenario ' + tag + ': ' : ''}${r.request.pathway} · ${PATHWAYS[r.request.pathway][0]}</h4>
+      <p class="source ${r._source === 'recorded' ? 'warn' : ''}">${sourceText(r)}</p>
       <dl class="kv">
         <dt>Installed within 5 years</dt><dd>${s.installed_5y}${pct !== null ? ` <span class="hint">(higher than ${pct}% of the result set for this pathway and mechanism)</span>` : ''}</dd>
         <dt>Installed within 10 years</dt><dd>${s.coverage_10y}</dd>
@@ -576,8 +588,11 @@ function drawHist() {
 }
 
 // ---------------------------------------------------------------- batch results tables
+const HIDDEN_MSG = () => liveFP ? 'Hidden: this result set was produced by a different model version than the one loaded here.' : 'Shown once the model has loaded and its version is checked.';
+
 function drawRobust() {
   const mech = $('#mech-view').value, tb = $('#robust tbody'); tb.replaceChildren();
+  if (!sameModel()) { tb.innerHTML = `<tr><td colspan="5">${HIDDEN_MSG()}</td></tr>`; return; }
   const pct = x => (x === null || x === undefined) ? '—' : Math.round(100 * x) + '%';
   const r1 = x => Math.round(x);
   for (const pw of Object.keys(PATHWAYS)) {
@@ -599,6 +614,7 @@ function drawRobust() {
 
 function drawReach() {
   const host = $('#reach'); host.replaceChildren();
+  if (!sameModel()) { host.innerHTML = `<p class="hint">${HIDDEN_MSG()}</p>`; return; }
   const pr = state.reach.path_reach;
   let h = '<table><caption>Share of runs that reached each step of the pathway (all mechanisms pooled)</caption><thead><tr><th scope="col">Pathway</th><th scope="col">Steps reached</th></tr></thead><tbody>';
   for (const pw of Object.keys(PATHWAYS)) {
@@ -624,9 +640,23 @@ function showConsistency() {
   if (!c || !el) return;
   if (!liveFP) { el.textContent = 'not yet verified (model still loading)'; return; }
   if (c.model_fingerprint !== liveFP) { el.textContent = 'not yet verified for the model files loaded here'; return; }
+  const rt = c.browser_runtime || {};
+  if (!liveRuntime || ['pyodide', 'python', 'numpy'].some(k => rt[k] !== liveRuntime[k])) {
+    el.textContent = `not yet verified for this browser runtime (tested ${JSON.stringify(rt)}, loaded ${JSON.stringify(liveRuntime)})`; return;
+  }
   el.textContent = c.mismatches === 0
-    ? `passed for the model files loaded here (fingerprint ${liveFP.slice(0, 12)}) — ${c.cases} fixed cases, ${fmtInt(c.events)} events, no differences (${c.runtimes.join(' vs ')})`
+    ? `passed for the model files and runtime loaded here (fingerprint ${liveFP.slice(0, 12)}; Pyodide ${liveRuntime.pyodide}, Python ${liveRuntime.python}, numpy ${liveRuntime.numpy}) — ${c.cases} fixed cases, ${fmtInt(c.events)} events; integers and text equal, decimals within 1e-12 relative / 1e-9 absolute; compared with ${c.runtimes[0]}`
     : `${c.mismatches} differences found for these model files`;
+}
+
+// Everything that compares against the result set is redrawn from one place, using the loaded fingerprint.
+function refreshComparisons() {
+  const m = state.meta, v = state.version;
+  $('#set-desc').textContent = (sameModel() ? '' : HIDDEN_MSG() + ' ') + `${fmtInt(m.n_param_sets)} parameter sets × ${m.replicates} replicates for every pathway and mechanism (${fmtInt(m.total_runs)} runs), drawn from the base prior ranges. Run on ${m.run_date} with design version ${m.design_version}.`;
+  $('#version-line').textContent = `Model loaded here: fingerprint ${liveFP ? liveFP.slice(0, 12) : 'not yet computed'} (files synced ${v.synced}). Result set: design ${m.design_version}, run ${m.run_date}, fingerprint ${(m.model_fingerprint || 'not recorded').slice(0, 12)}` +
+    (sameModel() ? ' — same model.' : liveFP ? ' — different model, so many-run comparisons are hidden.' : '.');
+  drawRobust(); drawReach(); showConsistency();
+  if (player.runs.length) { drawTimeline(player.t >= player.runs[0].months.length - 1 ? -1 : player.t); drawHist(); showSummary(); }
 }
 
 // ---------------------------------------------------------------- run button
@@ -639,11 +669,11 @@ const isDefault = req => req.mechanism === 'M-D' && req.seed === 146 && state.sc
 async function getRun(req) {
   if (modelReady) {
     const r = await callWorker('run', req);
-    if (r.ok) return r.result;
+    if (r.ok) { r.result._source = 'live'; return r.result; }
     throw new Error(r.error);
   }
   const demo = await getJSON(`results/demo/${req.pathway}.json`);
-  if (!isDefault(req)) $('#model-status').textContent = 'Still loading: this is a recorded run with default settings.';
+  demo._source = 'recorded'; demo._asked = req;
   return demo;
 }
 
@@ -682,13 +712,11 @@ async function boot() {
   const mv = $('#mech-view');
   for (const k of state.meta.mechanisms) mv.add(new Option(k + ' · ' + MECHS[k].split(':')[0], k));
   mv.value = 'M-D';
-  drawRobust(); drawReach(); drawPrim(); scrollRegions();
+  drawPrim(); scrollRegions();
   mv.addEventListener('change', drawRobust);
-  const m = state.meta, v = state.version;
-  $('#set-desc').textContent = (sameModel() ? '' : 'Note: this result set was produced by a different or unknown model version than the one running on this page. ') + `${fmtInt(m.n_param_sets)} parameter sets × ${m.replicates} replicates for every pathway and mechanism (${fmtInt(m.total_runs)} runs), drawn from the base prior ranges. Run on ${m.run_date} with design version ${m.design_version}.`;
-  $('#set-label').textContent = m.label;
+  $('#set-label').textContent = state.meta.label;
   getJSON('results/consistency.json').then(c => { state.consistency = c; showConsistency(); }).catch(() => {});
-  $('#version-line').textContent = `In-browser model fingerprint ${v.model_fingerprint.slice(0, 12)} (synced ${v.synced}). Result set: design ${m.design_version}, run ${m.run_date}, fingerprint ${(m.model_fingerprint || 'not recorded').slice(0, 12)}` + (sameModel() ? ' — same model.' : ' — different or unknown model version, so many-run comparisons are hidden.');
+  refreshComparisons();
 
   $('#run').addEventListener('click', onRun);
   $('#pause').addEventListener('click', () => {

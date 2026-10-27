@@ -6,8 +6,9 @@ The site never edits model files; it copies them in at build time (`scripts/sync
 ## 1. Live mode (browser runs the model)
 
 Choice: **run the same Python model in the browser via Pyodide**, not a JS port.
-Reason: the model is still changing; a port drifts. Same code + same seed = identical output,
-so the consistency test is exact equality, not a tolerance.
+Reason: the model is still changing; a port drifts. Same code + same seed gives the same output up to
+floating-point library differences, so the consistency test uses one rule (see §3): integers and text
+equal; decimals within 1e-12 relative or 1e-9 absolute. A pass is not a claim of bit-for-bit identity.
 
 What the site needs from `abm/model/`:
 
@@ -62,7 +63,7 @@ Node ids (agreed with abm, = 02 design):
 | `HSIP` `PROPL` `GF` `SS4A` `PARENT` `MDC` | venue | HSIP call · Prop L EP17 · General Fund/CIP · SS4A · parent signal project · Mayor's Disability Council |
 
 Extra actions (abm): `prep_abort`, `topup`, `partner_delay`, `batch_fund` (right after `approve`/`allocate`).
-Floats: PCG64 stream is stable across numpy versions; libm may differ in the last bit, so floats compare at 1e-12 relative, integers exactly.
+Floats: PCG64 stream is stable across numpy versions; libm may differ in the last bit, so decimals compare within 1e-12 relative or 1e-9 absolute (`math.isclose`), integers and text exactly.
 `meta.json` also carries `design_version` (02 version) and `mechanisms`.
 
 A switch `emit_events=True` (default False for batch speed) is fine.
@@ -87,9 +88,9 @@ Please write to `abm/results/web/` (any of these may be marked preliminary):
 Entry point: `tests/run_consistency.sh` (CPython side `tests/py_side.py`, Pyodide side `tests/pyodide_side.mjs`,
 comparison `tests/compare.py`, shared cases `tests/cases.py`). 67 fixed cases: every pathway × mechanism at
 default parameters (7 × 6), 24 random parameter draws, one history-mode run. Every output and every event
-compared: integers and strings exact, floats 1e-12 relative. The report `results/consistency.json` carries
+compared: integers and strings equal, decimals within 1e-12 relative or 1e-9 absolute (`math.isclose`). The Pyodide side loads the self-hosted runtime in `vendor/pyodide/` — the same files the page publishes — and the report records its Pyodide, Python and numpy versions; the page shows a pass only if both the model fingerprint and these runtime versions equal what its worker loaded. The report `results/consistency.json` carries
 `model_fingerprint` (see `scripts/fingerprint.py`) and both runtime versions. `tests/test_replay.py` checks
-that replaying events reproduces the model's monthly stocks; `tests/e2e.mjs` runs 17 browser and
+that replaying events reproduces the model's monthly stocks; `tests/e2e.mjs` runs 20 browser and
 accessibility checks.
 
 `meta.json` of the result set must carry the same `model_fingerprint`, computed when the set is run;

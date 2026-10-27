@@ -13,14 +13,27 @@ fingerprint of the model files the browser actually loaded (`scripts/fingerprint
 
 ## Run locally
 
+**Only to view the page:** any static file server, no other dependency.
+
 ```sh
-python3 -m http.server 8000      # from this folder
-# open http://127.0.0.1:8000/
+python3 -m http.server 8000      # from this folder, then open http://127.0.0.1:8000/
 ```
 
 Static files only; GitHub Pages can host the folder as is. No CDN is needed at run time: Pyodide
 (Python in WebAssembly) and numpy are self-hosted in `vendor/pyodide/` (about 16 MB, loaded once and
-then cached by the browser).
+then cached by the browser). Until the model has loaded, Run plays a recorded run with default settings
+and the result says so.
+
+**To run the tests or rebuild:** Python 3.14 with a venv holding numpy 2.4.6, Node.js 20 or newer, and
+Playwright's Chromium.
+
+```sh
+python3 -m venv .venv && .venv/bin/pip install numpy==2.4.6
+(cd tests && npm install && npx playwright install chromium)
+./tests/run_consistency.sh            # CPython vs the self-hosted Pyodide runtime
+.venv/bin/python -I tests/test_replay.py
+node tests/e2e.mjs                    # headless browser + accessibility
+```
 
 ## What is where
 
@@ -41,9 +54,9 @@ model folder; a Python venv with numpy 2.4.6 in `.venv`; Node with `npm install`
 
 | Test | Command | Last result (2026-10-26) |
 |---|---|---|
-| **Consistency** — the browser runs the same Python files as the offline analysis. The report records the model fingerprint (model.py + params.py + inputs.json) and both runtimes; the page shows a pass only if that fingerprint equals the one the browser worker computes from the bytes it loaded. 67 fixed cases (every pathway × mechanism at defaults, 24 random parameter draws, one history-mode run) run in CPython and in Pyodide; every output and every event compared. Integers and strings exact; floats 1e-12 relative | `tests/run_consistency.sh` | CPython 3.14.8 vs Pyodide 314.0.7 (Python 3.14.2), numpy 2.4.6 both: **0 differences** over 19,689 events |
+| **Consistency** — the browser runs the same Python files as the offline analysis. The report records the model fingerprint (model.py + params.py + inputs.json) and both runtimes; the page shows a pass only if that fingerprint equals the one the browser worker computes from the bytes it loaded. 67 fixed cases (every pathway × mechanism at defaults, 24 random parameter draws, one history-mode run) run in CPython and in Pyodide; every output and every event compared. Integers and strings equal; decimals within 1e-12 relative or 1e-9 absolute (a pass is not a bit-for-bit claim). The Pyodide side uses the same self-hosted runtime the page publishes, and the page also checks the runtime versions its worker loaded | `tests/run_consistency.sh` | CPython 3.14.8 vs Pyodide 314.0.7 (Python 3.14.2), numpy 2.4.6 both: **0 differences** over 19,689 events |
 | **Replay** — the animation moves dots only from the event stream; replaying initial states + events must equal the model's own monthly stocks | `.venv/bin/python -I tests/test_replay.py` | 120 random runs, 14,400 months: **0 differences** |
-| **Browser + accessibility** — headless Chromium: model loads, animation plays, log and live announcements, compare mode by keyboard, pause/step, no console errors, phone width without horizontal scroll, axe-core WCAG 2.1 A/AA in light, dark and reduced-motion phone views | `node tests/e2e.mjs` | 17/17 checks pass; axe: **0 violations** (light, dark, mobile). One item axe could not decide automatically (colour contrast of text over the chart band, light mode) — needs a manual check |
+| **Browser + accessibility** — headless Chromium: model loads, animation plays, log and live announcements, compare mode by keyboard, pause/step, no console errors, phone width without horizontal scroll, axe-core WCAG 2.1 A/AA in light, dark and reduced-motion phone views | `node tests/e2e.mjs` | 20/20 checks pass (incl. a run started while the model loads); axe: **0 violations** (light, dark, mobile). One item axe could not decide automatically (colour contrast of text over the chart band, light mode) — needs a manual check |
 
 ## Accessibility
 

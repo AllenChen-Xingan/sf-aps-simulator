@@ -41,9 +41,9 @@
    "info": ""
   },
   {
-   "name": "consistency verified against the loaded model files",
+   "name": "consistency verified against the loaded model files and runtime",
    "pass": true,
-   "info": "passed for the model files loaded here (fingerprint 2d4bf860ae8a) — 67 fixed cas"
+   "info": "passed for the model files and runtime loaded here (fingerprint 2d4bf860ae8a; Py"
   },
   {
    "name": "compare mode shows two stages (keyboard start)",
@@ -67,6 +67,21 @@
   },
   {
    "name": "axe dark: no violations",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "recorded run labelled while loading",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "label persists after model is ready",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "comparisons hidden before load, shown after",
    "pass": true,
    "info": ""
   },

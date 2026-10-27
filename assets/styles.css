@@ -168,3 +168,5 @@ footer.site { color: var(--muted); font-size: 14px; padding-bottom: 40px; border
 .label-tag { margin: 4px 0 0; }
 .model-status { margin: 8px 0 0; padding: 4px 10px; font-size: 14px; }
 header.site h1 { margin-top: 24px; }
+.source { font-size: 14px; color: var(--muted); margin: 0 0 6px; }
+.source.warn { color: var(--warn-ink); background: var(--warn-bg); padding: 4px 8px; border-radius: 4px; }

@@ -6,6 +6,7 @@ const PYODIDE = new URL('../vendor/pyodide/', import.meta.url).href;
 
 let ready = null;
 let fingerprint = null;
+let runtime = null;
 
 async function init() {
   const py = await loadPyodide({ indexURL: PYODIDE });
@@ -30,6 +31,8 @@ import sys, json
 sys.path.insert(0, '/abm')
 import model, params
 INPUTS = json.load(open('/abm/inputs.json'))
+import platform, pyodide as _pyo, numpy as _np
+RUNTIME = json.dumps({'pyodide': _pyo.__version__, 'python': platform.python_version(), 'numpy': _np.__version__})
 def _run(req):
     q = json.loads(req)
     p = params.default_params(); p.update(q['params'])
@@ -37,6 +40,7 @@ def _run(req):
     r['request'] = {**q, 'params': p}
     return json.dumps(r)
 `);
+  runtime = JSON.parse(py.globals.get('RUNTIME'));
   return py;
 }
 
@@ -45,7 +49,7 @@ self.onmessage = async (ev) => {
   try {
     if (!ready) ready = init();
     const py = await ready;
-    if (type === 'init') { self.postMessage({ id, ok: true, fingerprint }); return; }
+    if (type === 'init') { self.postMessage({ id, ok: true, fingerprint, runtime }); return; }
     const t0 = performance.now();
     const out = py.globals.get('_run')(JSON.stringify(request));
     self.postMessage({ id, ok: true, result: JSON.parse(out), ms: performance.now() - t0 });

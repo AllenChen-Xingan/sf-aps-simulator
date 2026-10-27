@@ -46,7 +46,7 @@ try {
       // open every disclosure so axe also checks their contents
       await page.$$eval('details', ds => ds.forEach(d => { d.open = true; }));
       ok('histogram table matches comparison state', same ? (await page.$$('#hist-data tbody tr')).length > 3 : (await page.$$('#hist-data tbody tr')).length === 0);
-      ok('consistency verified against the loaded model files', /passed for the model files loaded here/.test(await page.textContent('#consistency')), (await page.textContent('#consistency')).slice(0, 80));
+      ok('consistency verified against the loaded model files and runtime', /passed for the model files and runtime loaded here/.test(await page.textContent('#consistency')), (await page.textContent('#consistency')).slice(0, 80));
       await page.locator('#sim').screenshot({ path: path.join(shots, 'desktop-light-sim.png') });
       // keyboard: tab to Run and press Enter
       await page.check('#compare');
@@ -63,6 +63,24 @@ try {
     out.axe[scheme] = { violations: axe.violations.map(v => ({ id: v.id, impact: v.impact, nodes: v.nodes.length, help: v.help, sample: v.nodes[0]?.target })), passes: axe.passes.length, incomplete: axe.incomplete.map(v => v.id) };
     ok(`axe ${scheme}: no violations`, axe.violations.length === 0, axe.violations.map(v => `${v.id}(${v.nodes.length})`).join(' '));
     await page.screenshot({ path: path.join(shots, `desktop-${scheme}-top.png`) });
+    await ctx.close();
+  }
+  // Run while the model is still loading (runtime download held back): the result must say it is a
+  // recorded run and that the user's settings were not used, and keep saying so after the model is ready.
+  {
+    const ctx = await browser.newContext();
+    const pg = await ctx.newPage();
+    await pg.route('**/pyodide.asm.wasm', async r => { await new Promise(x => setTimeout(x, 6000)); await r.continue(); });
+    await pg.goto(URL0); await pg.waitForSelector('#robust tbody tr', { state: 'attached' });
+    await pg.$eval('details.fold:nth-of-type(2)', d => { d.open = true; });
+    await pg.fill('#seed', '999');
+    await pg.selectOption('#speed', '10');
+    await pg.click('#run');
+    await pg.waitForSelector('.source.warn');
+    ok('recorded run labelled while loading', /your settings were not used/.test(await pg.textContent('#run-summary')));
+    await pg.waitForSelector('#model-status.ok', { timeout: 120000 });
+    ok('label persists after model is ready', /Recorded run/.test(await pg.textContent('#run-summary')));
+    ok('comparisons hidden before load, shown after', await pg.$('#robust tbody tr td[colspan]') === null);
     await ctx.close();
   }
   const m = await browser.newContext({ viewport: { width: 390, height: 844 }, colorScheme: 'light', reducedMotion: 'reduce' });
