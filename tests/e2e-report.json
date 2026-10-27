@@ -23,7 +23,7 @@
   {
    "name": "in-browser model loads",
    "pass": true,
-   "info": "3.3 s"
+   "info": "1.3 s"
   },
   {
    "name": "log lines name their link",
@@ -68,7 +68,32 @@
   {
    "name": "consistency verified against the loaded model files and runtime",
    "pass": true,
-   "info": "passed for the model files and runtime loaded here (fingerprint c42d8e8a6ce0; Py"
+   "info": "passed for the model files and runtime loaded here (fingerprint 7b9c9beda614; Py"
+  },
+  {
+   "name": "pathway table matches the result file, variant rows included",
+   "pass": true,
+   "info": "9 rows"
+  },
+  {
+   "name": "pooled view: variant rows say they were not run",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "PRIM conditions shown for every pathway",
+   "pass": true,
+   "info": "PW0 · Status quoa standing local line, and at least about 4–7% of it written for APS0.77–0.830.96–0.98"
+  },
+  {
+   "name": "no stale wording",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "line switched on: run comparison hidden, not mixed with the main view",
+   "pass": true,
+   "info": ""
   },
   {
    "name": "compare mode shows two stages (keyboard start)",

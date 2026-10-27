@@ -5,7 +5,7 @@ import { chromium } from 'playwright';
 import AxeBuilder from '@axe-core/playwright';
 import http from 'node:http';
 import { createReadStream, existsSync, statSync } from 'node:fs';
-import { writeFileSync, mkdirSync } from 'node:fs';
+import { writeFileSync, mkdirSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -68,6 +68,34 @@ try {
       ok('histogram table matches comparison state', same ? (await page.$$('#hist-data tbody tr')).length > 3 : (await page.$$('#hist-data tbody tr')).length === 0);
       ok('consistency verified against the loaded model files and runtime', /passed for the model files and runtime loaded here/.test(await page.textContent('#consistency')), (await page.textContent('#consistency')).slice(0, 80));
       await page.locator('#sim').screenshot({ path: path.join(shots, 'desktop-light-sim.png') });
+      // Formal result set: the table shows what results/robustness.json says (M-D, main view), variant rows included.
+      if (same) {
+        const R = JSON.parse(readFileSync(path.join(here, '..', 'results', 'robustness.json'), 'utf8'));
+        const pc = x => Math.round(100 * x) + '%';
+        const want = pw => {
+          const tab = pw.includes('approval') ? R.table_variant_approval : R.table;
+          const z = pw.includes('approval') ? R.table_variant_approval : R.table_zero_direct;
+          const a = tab.find(x => x.pathway === pw && x.mechanism === 'M-D' && (x.control || 'positive') === 'positive');
+          const b = z.find(x => x.pathway === pw && x.mechanism === 'M-D' && x.control === 'zero_direct');
+          return [pc(a.P_money_flows_5y_mean), pc(a.share_better_than_PW0), pc(b.share_better_than_PW0)];
+        };
+        const rows = await page.$$eval('#robust tbody tr', trs => trs.map(tr => [tr.querySelector('th').textContent, ...[...tr.querySelectorAll('td')].map(td => td.textContent)]));
+        const got = name => { const r = rows.find(x => x[0].startsWith(name)); return r ? [r[2], r[3], r[4]] : null; };
+        const pairs = [['PW4 · ', 'PW4'], ['PW4 + approval', 'PW4-approval'], ['PW5 + approval', 'PW5-approval'], ['PW3 · ', 'PW3']];
+        const bad = pairs.filter(([n, k]) => JSON.stringify(got(n)) !== JSON.stringify(want(k)));
+        ok('pathway table matches the result file, variant rows included', rows.length === 9 && !bad.length, bad.map(b => b[0]).join(',') || `${rows.length} rows`);
+        await page.selectOption('#line-view', 'pooled');
+        ok('pooled view: variant rows say they were not run', /Run only with no standing line/.test(await page.textContent('#robust tbody')));
+        await page.selectOption('#line-view', 'main');
+        const prim = await page.$$eval('#prim tbody tr', trs => trs.map(tr => tr.textContent));
+        ok('PRIM conditions shown for every pathway', prim.length === 7 && /standing local line/.test(prim[0]) && /written for APS/.test(prim[4]), prim[0]);
+        const body = await page.textContent('body');
+        ok('no stale wording', !/\$580|580k|580,000|preliminary result set|base prior|display pending|Not yet available|max_regret|undefined|NaN/.test(body));
+        await page.check('#p-sw_line'); await page.click('#run');
+        await page.waitForFunction(() => /standing local APS line at the start/.test(document.querySelector('#hist-cap').textContent), null, { timeout: 60000 });
+        ok('line switched on: run comparison hidden, not mixed with the main view', await page.$('#hist svg rect.bar') === null && !/higher than/.test(await page.textContent('#run-summary')));
+        await page.uncheck('#p-sw_line');
+      }
       // keyboard: tab to Run and press Enter
       await page.check('#compare');
       await page.selectOption('#pw-B', 'PW0');

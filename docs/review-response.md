@@ -53,3 +53,14 @@ Tests after round 3 (model fingerprint 2d4bf860ae8a…, runtime Pyodide 314.0.7 
 ## Status after round 3
 
 Model P1 (contingency in package screening) fixed by the model owner; result set re-run on design v12 with fingerprint `b06c98c3c1e4…` = loaded model. New switch `sw_si07` added to the settings panel. Consistency 67 cases / 19,456 events, 0 differences (self-hosted runtime); replay 0 differences; browser 20/20; axe 0 violations.
+
+## Formal result set (2026-10-27)
+
+Result set replaced by the model owner's formal export (`status: formal`, fingerprint `7b9c9beda614…`; produced by the frozen model `c42d8e8a…`, bit-identical with the approval switch off). Page changes:
+- Main table uses the "no standing local line at the start" view; a "Start" selector shows the pooled view (`table_pooled_sw_line`). The last column is now the share that beat the status quo with the direct start effect set to zero (`table_zero_direct`); the old "worst shortfall" column is gone (not in the formal export).
+- PW4/PW5 approval variant shown as separate rows in the pathway table and the steps table (`table_variant_approval`, `variant_path_reach`); view only, not runnable.
+- PRIM conditions rendered from `prim.boxes` (standing line + APS share range across five splits; coverage and density on test sets; line size not a condition).
+- Run-vs-many-runs band, histogram and percentile are hidden when the viewer switches the standing line on, because the result set covers only runs without it.
+- About and README: weak history screen (not a calibration); pressure, owner and crew capacity have no channel in the model beyond the start probability or a cap; PW1's Director step is hypothetical.
+
+Tests: consistency 67 cases / 19,857 events, 0 differences; replay 14,400 months, 0 differences; browser 30/30 (5 new checks: table equals the result file incl. variant rows, pooled view, PRIM table, no stale wording, line-on comparison hidden); axe 0 violations.

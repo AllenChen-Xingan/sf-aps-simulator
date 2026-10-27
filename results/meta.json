@@ -1,22 +1,24 @@
 {
- "status": "preliminary",
+ "status": "formal",
  "label": "preliminary \u00b7 uncalibrated \u00b7 scenario projections, not forecasts",
- "model_version": "dev",
- "model_fingerprint": "c42d8e8a6ce02d803a662bb3b7952467195295477ed89d77ea4f5777397125ad",
+ "model_version": "02 v14 frozen + 04 \u00a79 approval variant",
+ "model_fingerprint": "7b9c9beda6144155d7e3476489be4a69d96a04305d5ef896926b59f17b1f4a9b",
+ "produced_by_fingerprint": "c42d8e8a6ce02d803a662bb3b7952467195295477ed89d77ea4f5777397125ad",
  "design_version": "02 v14 (frozen)",
  "run_date": "2026-10-27",
- "n_param_sets": 300,
- "replicates": 5,
+ "n_param_sets": 461,
+ "n_param_sets_by_mechanism": {
+  "M-A": 518,
+  "M-B1": 517,
+  "M-B2": 502,
+  "M-C1": 483,
+  "M-C2": 461,
+  "M-D": 528
+ },
+ "replicates": 20,
  "seed": 146,
- "replicate_seeds": [
-  1130946783,
-  1301642512,
-  2026229336,
-  1160432734,
-  1855256667
- ],
  "horizon_months": 120,
- "total_runs": 63000,
+ "total_runs": 421260,
  "pathways": [
   "PW0",
   "PW1",
@@ -34,9 +36,13 @@
   "M-C2",
   "M-D"
  ],
+ "view": "sw_line = 0 (no standing local APS line at the start, as today); positive-effect priors",
  "notes": [
-  "Priors are the D10 base ranges, not calibrated to 2022-2026 (no E1 filtering).",
-  "Scenario exploration under stated rules; scenario projections, not forecasts.",
-  "PRIM and Sobol are not computed for the preliminary set."
+  "Parameters were first screened against the 2022-2025 request lists (rejection filter; weak, ranges stay close to the priors; not a calibration).",
+  "Scenario exploration under stated rules; scenario projections, not forecasts. Shares are shares of parameter sets, not probabilities of real outcomes.",
+  "E3 runs were produced by the frozen model (produced_by_fingerprint). The current model.py (model_fingerprint) adds an approval switch that is off by default; with it off, outputs are bit-identical to the frozen model (04 \u00a79).",
+  "In the frozen pathways, PW4 has a standing local line from the start and PW5 adds one automatically after two years, with no approval step; PW2 must pass a Prop L amendment. The \"-approval\" variant puts PW4/PW5 through the same approval chain as PW2.",
+  "PW1 ends in a hypothetical Director reallocation branch (probability and amount are assumptions).",
+  "Pressure, a named owner and crew capacity act in the model only through the start probability or a cap; their small sensitivity reflects the model having no other channel for them, not their real-world importance."
  ]
 }

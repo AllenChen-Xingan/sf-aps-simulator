@@ -2,56 +2,75 @@
  "label": "preliminary \u00b7 uncalibrated \u00b7 scenario projections, not forecasts",
  "path_reach": {
   "PW0": {
-   "runs": 9000,
+   "runs": 60180,
    "nodes": {
     "PW0:start": 1.0
    }
   },
   "PW1": {
-   "runs": 9000,
+   "runs": 60180,
    "nodes": {
-    "PW1:C14_repack": 0.9626666666666667,
-    "PW1:Director_or_GF": 0.47544444444444445,
-    "PW1:PropL_amendment": 0.8424444444444444,
+    "PW1:C14_repack": 0.9700564971751412,
+    "PW1:Director_or_GF": 0.4652874709205716,
+    "PW1:PropL_amendment": 0.848637421070123,
     "PW1:start": 1.0
    }
   },
   "PW2": {
-   "runs": 9000,
+   "runs": 60180,
    "nodes": {
-    "PW2:GF_request": 0.6046666666666667,
-    "PW2:HSIP_repack": 0.44055555555555553,
+    "PW2:GF_request": 0.5495181123296776,
+    "PW2:HSIP_repack": 0.4116151545363908,
     "PW2:start": 1.0
    }
   },
   "PW3": {
-   "runs": 9000,
+   "runs": 60180,
    "nodes": {
-    "PW3:lawsuit": 0.3748888888888889,
+    "PW3:lawsuit": 0.6463609172482553,
     "PW3:start": 1.0,
-    "PW3:structured_negotiation": 0.9462222222222222
+    "PW3:structured_negotiation": 0.9651545363908275
    }
   },
   "PW4": {
-   "runs": 9000,
+   "runs": 60180,
    "nodes": {
     "PW4:start": 1.0
    }
   },
   "PW5": {
-   "runs": 9000,
+   "runs": 60180,
    "nodes": {
-    "PW5:local_line": 0.9944444444444445,
+    "PW5:local_line": 0.9966434031239615,
     "PW5:start": 1.0
    }
   },
   "PW6": {
-   "runs": 9000,
+   "runs": 60180,
    "nodes": {
-    "PW6:GF_request": 0.4028888888888889,
-    "PW6:HSIP_repack": 0.27666666666666667,
-    "PW6:PropL_amendment": 0.7031111111111111,
+    "PW6:GF_request": 0.41566965769358594,
+    "PW6:HSIP_repack": 0.2825357261548687,
+    "PW6:PropL_amendment": 0.7622798271851113,
     "PW6:start": 1.0
+   }
+  }
+ },
+ "variant_path_reach": {
+  "PW4-approval": {
+   "runs": 60180,
+   "nodes": {
+    "PW4:GF_request": 0.5499501495513459,
+    "PW4:PropL_amendment": 1.0,
+    "PW4:start": 1.0
+   }
+  },
+  "PW5-approval": {
+   "runs": 60180,
+   "nodes": {
+    "PW5:GF_request": 0.5491359255566634,
+    "PW5:PropL_amendment": 0.9966434031239615,
+    "PW5:local_line": 0.9966434031239615,
+    "PW5:start": 1.0
    }
   }
  }

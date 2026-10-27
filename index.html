@@ -113,18 +113,25 @@
     <summary>All pathways compared</summary>
     <p id="set-desc"></p>
     <p>Every pathway was run on the same parameter sets with the same random seeds. Pathways draw random events in a different order, so outside shocks are not identical across pathways.</p>
+    <p>Read the table as tiers, not ranks: sampling error is about &plusmn;1.5 percentage points. The share columns say in what share of parameter sets a pathway did better than the status quo. They are not forecasts and not probabilities of real outcomes. Installed counts vary widely; compare their order, not their size.</p>
+    <p>Two rows are a variant of PW4 and PW5. As designed, PW4 has a local APS line from the first month and PW5 adds one after two years, with no approval step. In the variant the line must first pass the same approval chain as PW2: a Prop L amendment, then one General Fund request. The variant can only be viewed here, not run.</p>
     <div class="row">
       <label for="mech-view">Mechanism</label>
       <select id="mech-view"></select>
+      <label for="line-view">Start</label>
+      <select id="line-view">
+        <option value="main" selected>No standing local line (as today)</option>
+        <option value="pooled">With and without a standing line, pooled</option>
+      </select>
     </div>
     <div class="table-wrap"><table id="robust">
-      <caption>Installed within ten years, how often money arrived, and robustness, by pathway</caption>
+      <caption>Installed within ten years, how often money arrived, and share of parameter sets that did better than the status quo, by pathway</caption>
       <thead><tr>
         <th scope="col">Pathway</th>
         <th scope="col">Installed in 10 years: middle (10th&ndash;90th percentile)</th>
-        <th scope="col">Chance request-list money arrived within 5 years</th>
-        <th scope="col">Parameter sets where it beat the status quo</th>
-        <th scope="col">Worst shortfall against the best pathway</th>
+        <th scope="col">Share of runs where request-list money arrived within 5 years</th>
+        <th scope="col">Share of parameter sets where it did better than the status quo</th>
+        <th scope="col">The same, with the direct start effect of an owner, deadline, oversight and pressure set to zero</th>
       </tr></thead>
       <tbody></tbody>
     </table></div>
@@ -141,11 +148,12 @@
       <ul>
         <li>One run is one possible story; a new seed tells another. Compare pathways on the many-run table, not on one animation.</li>
         <li>Rankings and conditions are the output; counts are illustrations.</li>
-        <li>The rules are set by people from public documents and an interview with SFMTA staff. Many ranges are informed guesses and have not been calibrated to the 2022&ndash;2026 list snapshots.</li>
+        <li>The rules are set by people from public documents and an interview with SFMTA staff. Many ranges are informed guesses. Parameters were screened against the 2022&ndash;2025 request lists, but that screen is weak and is not a calibration; results mostly follow the ranges.</li>
+        <li>Pressure from advocates, a named owner and crew capacity are not among the twelve inputs that move results most. That is because the model gives them no channel to act through except the chance of starting an application (or a monthly cap), not because they are unimportant in reality.</li>
         <li>In the network, the dashed link (grants staff taking up the request list) stays dashed until it happens in the run.</li>
       </ul>
       <h2 class="small-h">Limits</h2>
-      <p>Scenario projections, not forecasts or proof of cause. Request list only, San Francisco only. Injury crashes only, so safety benefits are understated. Behaviour inside agencies is reduced to one decision: whether to prepare an application.</p>
+      <p>Scenario projections, not forecasts or proof of cause. Request list only, San Francisco only. Injury crashes only, so safety benefits are understated. Behaviour inside agencies is reduced to one decision: whether to prepare an application. PW1's last step (the Director moving money) is a hypothetical fallback whose chance and amount are assumed.</p>
       <h2 class="small-h">Checks</h2>
       <p>The browser runs the same Python model file as the offline analysis (through Pyodide). Consistency test: <span id="consistency">not yet verified for this model version</span>.</p>
       <p class="hint" id="version-line"></p>

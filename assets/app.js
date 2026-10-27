@@ -24,8 +24,8 @@ const PATHWAYS = {
   PW1: ['HSIP first', 'Bundle APS with the signal-visibility upgrade (SG015) in the federal safety grant, HSIP Cycle 13. If not funded: repack for Cycle 14 with full signal upgrades and the pedestrian set-aside. If that fails: amend the county Prop L plan, then ask the Director or the General Fund.'],
   PW2: ['Local first', 'Amend the county Prop L signal plan to restore a dedicated APS line. If the SFCTA Board rejects or delays it: request General Fund money. If that fails: bundle APS into HSIP.'],
   PW3: ['Accountability first', 'Set a deadline, name an owner and report publicly. If no application is filed within the signpost period: structured negotiation with advocates. If there is still no money: advocates go to court.'],
-  PW4: ['Route by intersection', 'Give each intersection its own funding route: fold it into a parent project already planned there, add it to corridor designs, and use a local line or an HSIP signal-hardware bundle for the rest. Reroute when a parent project slips.'],
-  PW5: ['Design rule', 'Require APS whenever push buttons or signal hardware are replaced at a candidate intersection, paid from a capped yearly add-on budget. If too few listed intersections get it within two years: open a local APS line.'],
+  PW4: ['Route by intersection', 'Give each intersection its own funding route: fold it into a parent project already planned there, add it to corridor designs, and use a local line or an HSIP signal-hardware bundle for the rest. Reroute when a parent project slips. In the model the local line exists from the first month, with no approval step.'],
+  PW5: ['Design rule', 'Require APS whenever push buttons or signal hardware are replaced at a candidate intersection, paid from a capped yearly add-on budget. If too few listed intersections get it within two years: open a local APS line (in the model, automatically, with no approval step).'],
   PW6: ['Existing hardware line', 'Install APS through the existing signal-hardware replacement line (SG017). If that is blocked: amend Prop L, then request General Fund money, then repack for HSIP.'],
 };
 const MECHS = {
@@ -62,6 +62,13 @@ const withheld = pw => (state.config.withheld || {})[pw];
 const caution = pw => (state.config.caution || {})[pw];
 const notImpl = name => (state.config.not_implemented || []).includes(name);
 const pwName = pw => `${pw} · ${PATHWAYS[pw][0]}`;
+// Approval variant (result set only; not runnable here): PW4/PW5's local line must pass PW2's approval chain.
+const VARIANTS = { PW4: 'PW4-approval', PW5: 'PW5-approval' };
+const variantName = v => `${v.split('-')[0]} + approval (variant)`;
+const VARIANT_NOTE = 'the local line must first pass a Prop L amendment, then one General Fund request, as in PW2';
+// The result set covers runs with no standing local line at the start (as today).
+const lineOn = r => Number(r.request.params.sw_line) !== 0;
+const LINE_MSG = 'No comparison shown: the result set covers runs with no standing local APS line at the start (as today), and this run has that line switched on.';
 // Retry briefly: one dropped request should not leave the page empty.
 async function getJSON(url, tries = 3) {
   for (let i = 1; ; i++) {
@@ -518,7 +525,7 @@ function setValues(r) {
   return state.runs.rows.filter(x => x[0] === r.request.pathway && x[1] === r.request.mechanism && x[3] !== null).map(x => x[3]);
 }
 function percentileOf(r) {
-  if (withheld(r.request.pathway) || !sameModel()) return null;
+  if (withheld(r.request.pathway) || !sameModel() || lineOn(r)) return null;
   const v = setValues(r);
   if (!v.length) return null;
   return Math.round(100 * v.filter(x => x < r.summary.installed_5y).length / v.length);
@@ -532,7 +539,7 @@ function drawTimeline(upto) {
   const months = player.runs[0].months, n = months.length;
   const r0 = player.runs[0];
   const q = state.quantiles.by_pathway_mechanism[`${r0.request.pathway}|${r0.request.mechanism}`];
-  const band = q && !withheld(r0.request.pathway) && sameModel() ? q.I_cum : null;
+  const band = q && !withheld(r0.request.pathway) && sameModel() && !lineOn(r0) ? q.I_cum : null;
   const ys = [...(band ? band[90] : []), ...player.runs.flatMap(r => r.stocks.I_cum)];
   const ymax = Math.max(10, ...ys) * 1.05;
   const X = i => L + (W - L - R) * i / (n - 1), Y = v => T + (H - T - B) * (1 - v / ymax);
@@ -558,7 +565,7 @@ function drawTimeline(upto) {
   const desc = player.runs.map((r, k) => `${player.runs.length > 1 ? (k ? 'B' : 'A') + ' ' : ''}this run: ` + yrs.map(i => `${months[i].slice(0, 4)} ${r.stocks.I_cum[i]}`).join(', ')).join('; ');
   s.setAttribute('aria-label', `Cumulative intersections installed by month. ${desc}.` + (band ? ` Result-set middle: ${yrs.map(i => band[50][i]).join(', ')} at the same dates.` : ''));
   $('#timeline-cap').textContent = `Cumulative installs. Line${player.runs.length > 1 ? 's' : ''}: this run${player.runs.length > 1 ? ' (A solid, B dashed)' : ''}. ` +
-    (band ? `Band: 10th–90th percentile of the result set for ${r0.request.pathway} under ${r0.request.mechanism} (same model version); dashed: its middle.` : sameModel() ? 'No result-set band for this pathway.' : 'No comparison shown: the result set was produced by a different model version than the one running here.');
+    (band ? `Band: 10th–90th percentile of the result set for ${r0.request.pathway} under ${r0.request.mechanism} (same model version, no standing line at the start); dashed: its middle.` : !sameModel() ? 'No comparison shown: the result set was produced by a different model version than the one running here.' : lineOn(r0) ? LINE_MSG : 'No result-set band for this pathway.');
   if (upto < 0 || upto === n - 1) fillTimelineTable(yrs, band);   // update data only; keep the disclosure open and focus in place
 }
 
@@ -577,6 +584,7 @@ function drawHist() {
   $('#hist-data tbody').replaceChildren();
   if (!sameModel()) { $('#hist-cap').textContent = 'No comparison shown: the result set was produced by a different model version than the one running here.'; return; }
   if (withheld(r0.request.pathway)) { $('#hist-cap').textContent = ''; return; }
+  if (lineOn(r0)) { $('#hist-cap').textContent = LINE_MSG; return; }
   const v = setValues(r0).map(Math.round);
   if (!v.length) return;
   const lo = Math.min(...v), hi = Math.max(...v), bins = {};
@@ -596,55 +604,95 @@ function drawHist() {
   const pct = percentileOf(r0);
   const sorted = [...v].sort((a, b) => a - b), q = p => sorted[Math.floor(p * (sorted.length - 1))];
   s.setAttribute('aria-label', `Histogram of intersections installed within five years across ${v.length} runs of ${r0.request.pathway}: 10th percentile ${q(0.1)}, middle ${q(0.5)}, 90th percentile ${q(0.9)}. This run: ${r0.summary.installed_5y}, higher than ${pct}% of runs.`);
-  $('#hist-cap').textContent = `Installed within five years for each of the ${v.length} parameter sets of ${r0.request.pathway} under ${r0.request.mechanism} in the preliminary result set (mean of ${state.meta.replicates} replicates, rounded). The vertical line is this run. Middle: ${q(0.5)}; 10th–90th percentile: ${q(0.1)}–${q(0.9)}.`;
+  $('#hist-cap').textContent = `Installed within five years for each of the ${v.length} parameter sets of ${r0.request.pathway} under ${r0.request.mechanism} in the result set, with no standing local line at the start (mean of ${state.meta.replicates} replicates, rounded). The vertical line is this run. Middle: ${q(0.5)}; 10th–90th percentile: ${q(0.1)}–${q(0.9)}.`;
 }
 
 // ---------------------------------------------------------------- batch results tables
 const HIDDEN_MSG = () => liveFP ? 'Hidden: this result set was produced by a different model version than the one loaded here.' : 'Shown once the model has loaded and its version is checked.';
 
+// Main view: no standing local line at the start (as today). The pooled view mixes sets with and without one.
 function drawRobust() {
-  const mech = $('#mech-view').value, tb = $('#robust tbody'); tb.replaceChildren();
+  const mech = $('#mech-view').value, pooled = $('#line-view').value === 'pooled', tb = $('#robust tbody'); tb.replaceChildren();
   if (!sameModel()) { tb.innerHTML = `<tr><td colspan="5">${HIDDEN_MSG()}</td></tr>`; return; }
+  const R = state.robust;
+  const main = pooled ? (R.table_pooled_sw_line || []) : R.table;
+  const zero = pooled ? [] : (R.table_zero_direct || []);
   const pct = x => (x === null || x === undefined) ? '—' : Math.round(100 * x) + '%';
   const r1 = x => Math.round(x);
-  for (const pw of Object.keys(PATHWAYS)) {
-    const r = state.robust.table.find(x => x.pathway === pw && x.mechanism === mech);
-    if (!r) continue;
+  const find = (tab, pw) => tab.find(x => x.pathway === pw && x.mechanism === mech && (x.control || 'positive') !== 'zero_direct') ||
+    tab.find(x => x.pathway === pw && x.mechanism === mech);
+  const row = (head, r, z, isBase) => {
     const tr = document.createElement('tr');
-    if (withheld(pw)) {
-      tr.innerHTML = `<th scope="row">${pw} · ${PATHWAYS[pw][0]}</th><td colspan="4">${withheld(pw)}</td>`;
-    } else {
-      tr.innerHTML = `<th scope="row">${pwName(pw)}${caution(pw) ? `<br><span class="hint">${caution(pw)}</span>` : ''}</th>
-        <td>${r1(r.coverage_10y_p50)} (${r1(r.coverage_10y_p10)}–${r1(r.coverage_10y_p90)})</td>
-        <td>${pct(r.P_money_flows_5y_mean)}</td>
-        <td>${pw === 'PW0' ? '—' : pct(r.share_better_than_PW0)}</td>
-        <td>${r1(r.max_regret)}</td>`;
-    }
+    tr.innerHTML = `<th scope="row">${head}</th>
+      <td>${r1(r.coverage_10y_p50)} (${r1(r.coverage_10y_p10)}–${r1(r.coverage_10y_p90)})</td>
+      <td>${pct(r.P_money_flows_5y_mean)}</td>
+      <td>${isBase ? '—' : pct(r.share_better_than_PW0)}</td>
+      <td>${isBase || !z ? '—' : pct(z.share_better_than_PW0)}</td>`;
     tb.appendChild(tr);
+  };
+  for (const pw of Object.keys(PATHWAYS)) {
+    const r = find(main, pw);
+    if (!r) continue;
+    if (withheld(pw)) {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<th scope="row">${pw} · ${PATHWAYS[pw][0]}</th><td colspan="4">${withheld(pw)}</td>`;
+      tb.appendChild(tr); continue;
+    }
+    row(`${pwName(pw)}${caution(pw) ? `<br><span class="hint">${caution(pw)}</span>` : ''}`, r, zero.find(x => x.pathway === pw && x.mechanism === mech), pw === 'PW0');
+    const v = VARIANTS[pw];
+    if (!v) continue;
+    const head = `${variantName(v)}<br><span class="hint">${VARIANT_NOTE}</span>`;
+    const vr = pooled ? null : (R.table_variant_approval || []).find(x => x.pathway === v && x.mechanism === mech && x.control === 'positive');
+    const vz = (R.table_variant_approval || []).find(x => x.pathway === v && x.mechanism === mech && x.control === 'zero_direct');
+    if (vr) row(head, vr, vz, false);
+    else { const tr = document.createElement('tr'); tr.innerHTML = `<th scope="row">${head}</th><td colspan="4">Run only with no standing line at the start; switch the view above.</td>`; tb.appendChild(tr); }
   }
 }
 
 function drawReach() {
   const host = $('#reach'); host.replaceChildren();
   if (!sameModel()) { host.innerHTML = `<p class="hint">${HIDDEN_MSG()}</p>`; return; }
-  const pr = state.reach.path_reach;
-  let h = '<table><caption>Share of runs that reached each step of the pathway (all mechanisms pooled)</caption><thead><tr><th scope="col">Pathway</th><th scope="col">Steps reached</th></tr></thead><tbody>';
+  const pr = state.reach.path_reach, vr = state.reach.variant_path_reach || {};
+  const steps = nodes => Object.entries(nodes).sort((a, b) => b[1] - a[1] || a[0].endsWith(':start') * -1 || b[0].endsWith(':start') * 1)
+    .map(([k, v]) => `${k.split(':')[1].replace(/_/g, ' ')}: ${Math.round(100 * v)}%`).join(' → ');
+  let h = '<div class="table-wrap"><table><caption>Share of runs that reached each step of the pathway (all six mechanisms together; no standing line at the start)</caption><thead><tr><th scope="col">Pathway</th><th scope="col">Steps reached</th></tr></thead><tbody>';
   for (const pw of Object.keys(PATHWAYS)) {
     if (!pr[pw]) continue;
     if (withheld(pw)) { h += `<tr><th scope="row">${pw} · ${PATHWAYS[pw][0]}</th><td>${withheld(pw)}</td></tr>`; continue; }
-    const nodes = Object.entries(pr[pw].nodes).sort((a, b) => b[1] - a[1])
-      .map(([k, v]) => `${k.split(':')[1].replace(/_/g, ' ')}: ${Math.round(100 * v)}%`).join(' → ');
-    h += `<tr><th scope="row">${pwName(pw)}${caution(pw) ? `<br><span class="hint">${caution(pw)}</span>` : ''}</th><td>${nodes}</td></tr>`;
+    h += `<tr><th scope="row">${pwName(pw)}${caution(pw) ? `<br><span class="hint">${caution(pw)}</span>` : ''}</th><td>${steps(pr[pw].nodes)}</td></tr>`;
+    const v = VARIANTS[pw];
+    if (v && vr[v]) h += `<tr><th scope="row">${variantName(v)}</th><td>${steps(vr[v].nodes)}</td></tr>`;
   }
-  host.innerHTML = h + '</tbody></table>';
-  scrollRegions();
+  host.innerHTML = h + '</tbody></table></div>';
+  scrollRegions(host);
 }
 
+// PRIM: conditions under which money arrives. Five train/test splits per pathway; show the spread across them.
 function drawPrim() {
-  const host = $('#prim');
-  const st = state.prim.status || '';
-  host.innerHTML = state.prim.boxes ? '<p>(rule boxes available; display pending)</p>'
-    : `<p class="hint">Not yet available: ${st || 'not computed'}. Rule-finding (PRIM, checked on held-out runs) is part of the full analysis and will appear here.</p>`;
+  const host = $('#prim'), P = state.prim;
+  if (!P.boxes) { host.innerHTML = `<p class="hint">Not available in this result set.</p>`; return; }
+  const span = (xs, f) => { const a = Math.min(...xs), b = Math.max(...xs); return f(a) === f(b) ? f(a) : `${f(a)}–${f(b)}`; };
+  const pc = x => String(Math.round(100 * x)), d2 = x => x.toFixed(2);
+  let rows = '';
+  for (const pw of Object.keys(PATHWAYS)) {
+    const bs = P.boxes[pw];
+    if (!bs || !bs.length || withheld(pw)) continue;
+    const rules = bs.map(b => b.rules);
+    const line = rules.filter(rs => rs.some(r => r.param === 'sw_line' && r.low >= 0.5)).length;
+    const share = rules.flatMap(rs => rs.filter(r => r.param === 'aps_share').map(r => r.low));
+    const cond = [];
+    if (line) cond.push(line === bs.length ? 'a standing local line' : `a standing local line (in ${line} of ${bs.length} splits)`);
+    if (share.length) cond.push(`at least about ${span(share, pc)}% of ${line ? 'it' : 'the local line'} written for APS`);
+    rows += `<tr><th scope="row">${pwName(pw)}</th><td>${cond.join(', and ') || '—'}</td>` +
+      `<td>${span(bs.map(b => b.coverage_test), d2)}</td><td>${span(bs.map(b => b.density_test), d2)}</td></tr>`;
+  }
+  host.innerHTML = `<h3 class="small-h">When does money arrive?</h3>
+    <p>A rule-finding method (PRIM) looked for the settings under which request-list money arrives within five years in at least half of the ${state.meta.replicates} replicates, using sets with and without a standing line at the start. Each rule was checked on held-out runs, five times with different splits; ranges show the spread across splits.</p>
+    <div class="table-wrap"><table><caption>Conditions under which money arrived within five years, by pathway</caption>
+    <thead><tr><th scope="col">Pathway</th><th scope="col">Condition found</th><th scope="col">Share of successful sets it covers (test)</th><th scope="col">Share of sets inside it that succeed (test)</th></tr></thead>
+    <tbody>${rows}</tbody></table></div>
+    <p>In the model the condition comes down to a line that exists every year and has a written share for APS. In PW4–PW6 the line comes with the pathway (or the existing SG017 line), so only the share remains. The rules also trim a small edge of other ranges, mostly sets in which nearly every costly intersection needs conduit or curb-ramp work. The size of the line (sampled between $0.5 and $2 million a year) is not a condition.</p>`;
+  scrollRegions(host);
 }
 
 function showConsistency() {
@@ -664,7 +712,8 @@ function showConsistency() {
 // Everything that compares against the result set is redrawn from one place, using the loaded fingerprint.
 function refreshComparisons() {
   const m = state.meta, v = state.version;
-  $('#set-desc').textContent = (sameModel() ? '' : HIDDEN_MSG() + ' ') + `${fmtInt(m.n_param_sets)} parameter sets × ${m.replicates} replicates for every pathway and mechanism (${fmtInt(m.total_runs)} runs), drawn from the base prior ranges. Run on ${m.run_date} with design version ${m.design_version}.`;
+  const nb = Object.values(m.n_param_sets_by_mechanism || {}), nRange = nb.length ? `${fmtInt(Math.min(...nb))}–${fmtInt(Math.max(...nb))}` : fmtInt(m.n_param_sets);
+  $('#set-desc').textContent = (sameModel() ? '' : HIDDEN_MSG() + ' ') + `Main view: the parameter sets that start with no standing local APS line, as today (${nRange} per mechanism), each run ${m.replicates} times for every pathway (${fmtInt(m.total_runs)} runs). Parameters were first screened against the 2022–2025 request lists; that screen is weak and is not a calibration. Run on ${m.run_date}, design version ${m.design_version}.`;
   $('#version-line').textContent = `Model loaded here: fingerprint ${liveFP ? liveFP.slice(0, 12) : 'not yet computed'} (files synced ${v.synced}). Result set: design ${m.design_version}, run ${m.run_date}, fingerprint ${(m.model_fingerprint || 'not recorded').slice(0, 12)}` +
     (sameModel() ? ' — same model.' : liveFP ? ' — different model, so many-run comparisons are hidden.' : '.');
   drawRobust(); drawReach(); showConsistency();
@@ -744,6 +793,7 @@ async function boot() {
   mv.value = 'M-D';
   drawPrim(); scrollRegions();
   mv.addEventListener('change', drawRobust);
+  $('#line-view').addEventListener('change', drawRobust);
   $('#set-label').textContent = state.meta.label;
   getJSON('results/consistency.json').then(c => { state.consistency = c; showConsistency(); }).catch(() => {});
   refreshComparisons();

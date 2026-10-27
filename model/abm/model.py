@@ -21,6 +21,10 @@ MECHANISMS = ['M-A', 'M-B1', 'M-B2', 'M-C1', 'M-C2', 'M-D']
 RANK = {'high': 0, 'medium': 1, 'low': 2}
 CC = {'KA': 2379000.0, 'B': 213000.0, 'C': 121000.0}       # LRSM 2026 App. D, signalized
 SG105_END = '2024-06'                                     # dedicated money exhausted (ledger 4.1)
+# Variant (04 §9, unfrozen 2026-10-27): PW4/PW5's standing local line must pass the same
+# approval chain as PW2 (Prop L amendment q_veto/t_defer, then General Fund q_gf).
+# False reproduces the frozen model bit for bit (no extra random draws).
+LINE_APPROVAL = False
 HSIP_CYCLES = {'C13': 2026, 'C14': 2028, 'C15': 2030, 'C16': 2032, 'C17': 2034}
 
 
@@ -173,13 +177,16 @@ class Sim:
         elif pw == 'PW3':
             self._accountability_on()
         elif pw == 'PW4':
-            self.line_on = True
+            if not LINE_APPROVAL:
+                self.line_on = True
             self.tasks['HSIP']['commit'] = ('C13', 'sg015')
             for s in self.sites:
                 if s['route'] == 'corridor' and s['state'] in ('C', 'N') and self.rng.random() < self.p['pi_scope']:
                     s['via'] = 'corridor_design'
                     s['parent_ready'] = self.t0 + int(self.p['t_parent'])
                     self.init_moves.append((s, 'Fs', 'corridor design adds APS'))
+            if LINE_APPROVAL and not self.line_on:     # drawn after the corridor draws to keep them aligned
+                self._line_approval_start(self.t0)
         elif pw == 'PW6':
             self.sg017_try = [mi('2026-07'), mi('2027-07')]
         elif pw == 'PW5':
@@ -844,7 +851,41 @@ class Sim:
         if pw == 'PW5' and node == 0 and t == self.t0 + 24 and self.rule_installs < p['th_rule']:
             self.pw_state['node'] = 1
             self._node('local_line')
-            self.line_on = True
+            if not LINE_APPROVAL:
+                self.line_on = True
+            elif not self.line_on:
+                self._line_approval_start(t)
+        if LINE_APPROVAL and pw in ('PW4', 'PW5'):
+            self._line_approval_step(t, res)
+
+    def _line_approval_start(self, t):
+        """Variant: request the standing line through a Prop L amendment (same draws as PW2)."""
+        if t == self.t0 and not hasattr(self, 'now'):
+            self.nodes.append(f'{self.pw}:PropL_amendment')   # at init: tag only (no month yet), as PW2 does
+        else:
+            self._node('PropL_amendment')
+        self._propl_amendment(t)
+        self.line_app = 'propl'
+
+    def _line_approval_step(self, t, res):
+        """Variant: amendment result; on failure one General Fund request (q_gf), then stop."""
+        st = getattr(self, 'line_app', None)
+        if st == 'propl' and res is not None:
+            if res == 'pass':
+                self.line_on, self.line_app = True, 'done'
+                self.ev('SFCTA', 'A2', 'approve', detail='Prop L amendment adds APS line')
+            else:
+                self.fail('F-j', 'SFCTA', 'A2', 'Prop L amendment rejected or deferred')
+                self._node('GF_request')
+                self.gf_try, self.line_app = t + (18 - t % 12) % 12 or 12, 'gf'
+        elif st == 'gf' and getattr(self, 'gf_try', None) == t:
+            self.gf_try = None
+            if self.rng.random() < self.p['q_gf']:
+                self.line_on, self.line_app = True, 'done'
+                self.ev('GF', 'A2', 'approve', detail='General Fund line')
+            else:
+                self.line_app = 'failed'                 # as in PW2, not counted as a failure event
+                self.ev('GF', 'A2', 'decline', detail='General Fund line not funded')
 
     def _design_rule(self):
         """PW5: push-button / hardware change events at candidate sites carry APS, paid from a
