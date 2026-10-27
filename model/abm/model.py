@@ -122,7 +122,7 @@ class Sim:
         for r in self.pool:
             s = self._site(r['key'], r['state'], r['rank'],
                            {'route': r['route'], 'fold': r['fold'], 'missing_ped': r['missing_ped_heads'],
-                            'crashes': r['crashes'] if r['crash_matched'] else None,
+                            'crashes': r['crashes'] if r['crash_matched'] else self._impute(),
                             'sg015': r.get('sg015_corridor', False)})
             if r.get('parent_finish'):
                 s['parent_nominal'] = mi(r['parent_finish'])
@@ -142,6 +142,16 @@ class Sim:
             if r['route'] == 'unidentified' and s['state'] == 'Fs' and not self.p['fs5_parent']:
                 s['hazard_fs'] = False
             self.sites.append(s)
+
+    def _impute(self):
+        """Explicit treatment of unmatched sites' crashes (never a silent zero):
+        0 exclude from HSIP (None), 1 per-field median, 2 per-field 90th percentile of matched sites."""
+        mode = int(self.p['crash_impute'])
+        if mode == 0:
+            return None
+        m = [r['crashes'] for r in self.inputs['pending76'] if r['crash_matched']]
+        q = 50 if mode == 1 else 90
+        return {k: int(np.percentile([c[k] for c in m], q)) for k in m[0]}
 
     def _draw_carriers(self, s):
         p, rng = self.p, self.rng
@@ -327,7 +337,7 @@ class Sim:
             st = ['C', 'Fs', 'N'][int(self.rng.choice(3, p=[32 / 41, 6 / 41, 3 / 41]))]
             s = self._site(f'new-{self.now}-{len(self.sites)}', st, r['rank'],
                            {'route': 'unidentified', 'missing_ped': r['missing_ped_heads'],
-                            'crashes': r['crashes'] if r['crash_matched'] else None})
+                            'crashes': r['crashes'] if r['crash_matched'] else self._impute()})
             s['listed'] = self.now
             self._draw_carriers(s)
             self.sites.append(s)
@@ -465,15 +475,18 @@ class Sim:
                 parts.append((ben * life / cost, ben * life, cost, s))
         parts.sort(key=lambda x: -x[0])
         chosen, B, Cst, union = [], 0.0, 0.0, set()
+        kc = 1 + self.p['k_cont']
         for r, b, c, s in parts:
-            if Cst + c > cap or len(union | s['_cms']) > 3:
+            if (Cst + c) * kc > cap or len(union | s['_cms']) > 3:   # cap check includes contingency
                 continue
             if chosen and (B + b) / (Cst + c) < 5.0:
                 break
             chosen.append(s)
             union |= s['_cms']
             B, Cst = B + b, Cst + c
-        Cst *= 1 + self.p['k_cont']                      # application cost includes contingency
+        Cst *= kc                                        # application cost includes contingency
+        if Cst > cap + 1e-6:
+            raise AssertionError('application exceeds remaining $10M cap')
         return chosen, (B / Cst if Cst else 0.0), Cst
 
     def _submit_hsip(self, tk):
@@ -578,10 +591,11 @@ class Sim:
         if p['sw_pe']:
             pe_at = cs + int(round(p['t_pe']))
             node = pe_at
-        des_done = (pe_at if pe_at is not None else cs) + int(round(p['t_dsg']))   # design complete != PE E-76
-        node = max(node, des_done) + int(round(p['t_pif']))
+        design_done = (pe_at if pe_at is not None else cs) + int(round(p['t_dsg']))  # design complete != PE E-76
+        pif_done = (pe_at if pe_at is not None else cs) + int(round(p['t_pif']))     # PIF runs alongside design
         contract = rng.random() < p['q_pif_deny']         # PIF denied: does not delay CON E-76
-        con = max(node, cs + int(round(p['t_con_med'] * math.exp(0.40 * rng.standard_normal()))))
+        con = max(design_done, pif_done, cs + int(round(p['t_con_med'] * math.exp(0.40 * rng.standard_normal()))))
+        des_done = design_done
         if a['mode'] == 'sg015':
             con += int(round(p['t_partner']))
         limit = 42 if p['sw_consult'] else 36
@@ -838,7 +852,7 @@ class Sim:
         p, rng, t = self.p, self.rng, self.now
         self._overruns()
         cap = p['k0'] * (1 - p['phi'] * self.strain()) if self.sw['strain'] else p['k0']
-        self.bank = min(self.bank + cap, cap * 3)
+        self.bank = min(self.bank + cap, max(cap * 3, 1.0))   # cumulative workload; never caps below one site
         h_in = 1 - math.exp(-p['h_in'] / 12)
         due = [s for s in self.sites if s['state'] == 'Fi' and not s['blocked'] and t >= s.get('ready_at', -1)
                and rng.random() < h_in]

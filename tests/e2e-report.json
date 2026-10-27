@@ -31,19 +31,19 @@
    "info": ""
   },
   {
-   "name": "histogram drawn",
+   "name": "comparison hidden (result set from another model version)",
    "pass": true,
    "info": ""
   },
   {
-   "name": "histogram table filled",
+   "name": "histogram table matches comparison state",
    "pass": true,
    "info": ""
   },
   {
-   "name": "consistency shown as verified for this model",
+   "name": "consistency verified against the loaded model files",
    "pass": true,
-   "info": "passed for this model version — 67 fixed cases, 19,628 events, no differences (C"
+   "info": "passed for the model files loaded here (fingerprint 2d4bf860ae8a) — 67 fixed cas"
   },
   {
    "name": "compare mode shows two stages (keyboard start)",
@@ -92,7 +92,8 @@
    "violations": [],
    "passes": 30,
    "incomplete": [
-    "color-contrast"
+    "color-contrast",
+    "th-has-data-cells"
    ]
   },
   "dark": {

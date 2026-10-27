@@ -487,7 +487,11 @@
 "M-C2",
 "M-D"
 ],
-"phase": "projection"
+"phase": "projection",
+"choices": [
+3,
+5
+]
 },
 {
 "name": "l_rule",
@@ -505,7 +509,11 @@
 "M-C2",
 "M-D"
 ],
-"phase": "projection"
+"phase": "projection",
+"choices": [
+0,
+1
+]
 },
 {
 "name": "c_final",
@@ -833,30 +841,12 @@
 },
 {
 "name": "t_con_med",
-"label_en": "Median months, cycle start to construction E-76 (SF award-based data shifted by t_lag)",
+"label_en": "Median months, cycle start to construction E-76 (SF award-based 15-28 months minus 8-10 months award-to-cycle-start)",
 "unit": "months",
 "kind": "uniform",
 "low": 8.0,
 "high": 16.0,
 "default": 12.0,
-"applies_to": [
-"M-A",
-"M-B1",
-"M-B2",
-"M-C1",
-"M-C2",
-"M-D"
-],
-"phase": "projection"
-},
-{
-"name": "t_lag",
-"label_en": "Months from award notice to cycle start",
-"unit": "months",
-"kind": "uniform",
-"low": 8.0,
-"high": 10.0,
-"default": 9.0,
 "applies_to": [
 "M-A",
 "M-B1",
@@ -956,6 +946,29 @@
 "M-D"
 ],
 "phase": "all"
+},
+{
+"name": "crash_impute",
+"label_en": "Unmatched site crashes: 0 exclude, 1 median, 2 90th percentile",
+"unit": "code",
+"kind": "discrete",
+"low": 0,
+"high": 2,
+"default": 0,
+"applies_to": [
+"M-A",
+"M-B1",
+"M-B2",
+"M-C1",
+"M-C2",
+"M-D"
+],
+"phase": "projection",
+"choices": [
+0,
+1,
+2
+]
 },
 {
 "name": "t_ext",

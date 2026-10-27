@@ -14,4 +14,4 @@ cat model/abm/SOURCE.txt
 # parameter table of the live model, for the control panel before Pyodide loads
 .venv/bin/python -I -c "import sys,json;sys.path.insert(0,'model/abm');import params;json.dump(params.param_schema(),open('model/abm/params-schema.json','w'),indent=0)"
 # small JSON for the page footer
-python3 -c "import json,hashlib;h=hashlib.sha256(open('model/abm/model.py','rb').read()).hexdigest()[:12];import datetime;json.dump({'model_sha256_12':h,'synced':datetime.date.today().isoformat()},open('model/abm/version.json','w'))"
+python3 -I -c "import json,datetime,runpy;fp=runpy.run_path('scripts/fingerprint.py')['fingerprint']('model/abm');json.dump({'model_fingerprint':fp,'model_sha256_12':fp[:12],'synced':datetime.date.today().isoformat()},open('model/abm/version.json','w'))"

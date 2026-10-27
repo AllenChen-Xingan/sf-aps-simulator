@@ -6,8 +6,10 @@ in the browser, animates who acts on whom, and compares policy pathways against 
 
 **Status: preliminary · uncalibrated · scenario projections, not forecasts.** Scenario exploration under stated rules — not a forecast,
 not proof of cause. Parameters come from prior ranges that have not been calibrated to the 2022–2026
-list snapshots yet; model rules are still under review. Pathway PW5 is withheld (its rule is not yet
-defined) via `config.json`.
+list snapshots yet; model rules are still under review. Pathway PW5 (design rule) runs, but its rule is
+inferred: the hardware-change rate and the APS add-on budget are assumptions (shown as a note via
+`config.json`). Many-run comparisons appear only when the result set's model fingerprint equals the
+fingerprint of the model files the browser actually loaded (`scripts/fingerprint.py`).
 
 ## Run locally
 
@@ -39,7 +41,7 @@ model folder; a Python venv with numpy 2.4.6 in `.venv`; Node with `npm install`
 
 | Test | Command | Last result (2026-10-26) |
 |---|---|---|
-| **Consistency** — the browser runs the same Python file as the offline analysis. 67 fixed cases (every pathway × mechanism at defaults, 24 random parameter draws, one history-mode run) run in CPython and in Pyodide; every output and every event compared. Integers and strings exact; floats 1e-12 relative | `tests/run_consistency.sh` | CPython 3.14.8 vs Pyodide 314.0.7 (Python 3.14.2), numpy 2.4.6 both: **0 differences** over 19,628 events |
+| **Consistency** — the browser runs the same Python files as the offline analysis. The report records the model fingerprint (model.py + params.py + inputs.json) and both runtimes; the page shows a pass only if that fingerprint equals the one the browser worker computes from the bytes it loaded. 67 fixed cases (every pathway × mechanism at defaults, 24 random parameter draws, one history-mode run) run in CPython and in Pyodide; every output and every event compared. Integers and strings exact; floats 1e-12 relative | `tests/run_consistency.sh` | CPython 3.14.8 vs Pyodide 314.0.7 (Python 3.14.2), numpy 2.4.6 both: **0 differences** over 19,628 events |
 | **Replay** — the animation moves dots only from the event stream; replaying initial states + events must equal the model's own monthly stocks | `.venv/bin/python -I tests/test_replay.py` | 120 random runs, 14,400 months: **0 differences** |
 | **Browser + accessibility** — headless Chromium: model loads, animation plays, log and live announcements, compare mode by keyboard, pause/step, no console errors, phone width without horizontal scroll, axe-core WCAG 2.1 A/AA in light, dark and reduced-motion phone views | `node tests/e2e.mjs` | 17/17 checks pass; axe: **0 violations** (light, dark, mobile). One item axe could not decide automatically (colour contrast of text over the chart band, light mode) — needs a manual check |
 

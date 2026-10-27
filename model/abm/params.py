@@ -59,13 +59,13 @@ _S = [
     ('t_pif', 'Months for public interest finding', 'months', 'uniform', 1.0, 12.0, 4.0, ALL, 'projection'),
     ('q_pif_deny', 'PIF denied (switch to contractor)', 'probability', 'uniform', 0.0, 0.3, 0.1, ALL, 'projection'),
     ('sw_consult', 'Consultant design (42-month CON limit)', 'switch', 'switch', 0, 1, 0, ALL, 'projection'),
-    ('t_con_med', 'Median months, cycle start to construction E-76 (SF award-based data shifted by t_lag)', 'months', 'uniform', 8.0, 16.0, 12.0, ALL, 'projection'),
-    ('t_lag', 'Months from award notice to cycle start', 'months', 'uniform', 8.0, 10.0, 9.0, ALL, 'projection'),
+    ('t_con_med', 'Median months, cycle start to construction E-76 (SF award-based 15-28 months minus 8-10 months award-to-cycle-start)', 'months', 'uniform', 8.0, 16.0, 12.0, ALL, 'projection'),
     ('d_split', 'Extra months per additional application instance', 'months', 'uniform', 0.0, 2.0, 1.0, ALL, 'projection'),
     ('t_des', 'Months from local award to design complete (overrun found)', 'months', 'uniform', 2.0, 6.0, 4.0, ALL, 'all'),
     ('t_dsg', 'Months from design start (PE E-76 or cycle start) to design complete', 'months', 'uniform', 4.0, 14.0, 8.0, ALL, 'projection'),
     ('t_pause', 'Months paused when a contracting cost gap is not funded', 'months', 'uniform', 3.0, 12.0, 6.0, ALL, 'projection'),
     ('k_cont', 'Budgeted contingency share of planned cost', 'fraction', 'uniform', 0.05, 0.15, 0.1, ALL, 'all'),
+    ('crash_impute', 'Unmatched site crashes: 0 exclude, 1 median, 2 90th percentile', 'code', 'discrete', 0, 2, 0, ALL, 'projection'),
     ('t_ext', 'Length of the one allowed 5-year extension', 'months', 'uniform', 6.0, 24.0, 12.0, ALL, 'projection'),
     ('lam_hw', 'Push-button / signal-hardware change events per candidate site', 'per year', 'uniform', 0.01, 0.08, 0.04, ALL, 'projection'),
     ('b_hw', 'Maintenance budget for APS add-ons under the design rule', 'USD/year', 'uniform', 0, 300000, 150000, ALL, 'projection'),
@@ -107,9 +107,18 @@ _S = [
 
 FIELDS = ('name', 'label_en', 'unit', 'kind', 'low', 'high', 'default', 'applies_to', 'phase')
 
+# Explicit choice lists for discrete parameters (switches are {0, 1}).
+CHOICES = {'y_win': [3, 5], 'l_rule': [0, 1], 'crash_impute': [0, 1, 2]}
+
 
 def param_schema():
-    return [dict(zip(FIELDS, row)) for row in _S]
+    out = []
+    for row in _S:
+        d = dict(zip(FIELDS, row))
+        if d['name'] in CHOICES:
+            d['choices'] = CHOICES[d['name']]
+        out.append(d)
+    return out
 
 
 def default_params():
@@ -132,7 +141,7 @@ def sample(n, rng, width=1.0, names=None):
             u = (perm + rng.random(n)) / n
             vals = a + u * (b - a)
         else:
-            vals = rng.choice([lo, hi], size=n)
+            vals = rng.choice(CHOICES.get(name, [lo, hi]), size=n)
         for i in range(n):
             out[i][name] = float(vals[i]) if kind == 'uniform' else int(vals[i])
     return out

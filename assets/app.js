@@ -139,13 +139,15 @@ async function getJSON(url) { const r = await fetch(url); if (!r.ok) throw new E
 
 // ---------------------------------------------------------------- model worker
 const worker = new Worker(new URL('./worker.js', import.meta.url), { type: 'module' });
-let modelReady = false, reqId = 0;
+let modelReady = false, reqId = 0, liveFP = null;
+// Many-run comparisons are shown only when the result set was produced by the very model file set that runs here.
+const sameModel = () => !!(state.meta && state.meta.model_fingerprint && state.meta.model_fingerprint === (liveFP || (state.version && state.version.model_fingerprint)));
 const pending = new Map();
 worker.onmessage = ev => { const p = pending.get(ev.data.id); if (p) { pending.delete(ev.data.id); p(ev.data); } };
 const callWorker = (type, request) => new Promise(res => { const id = ++reqId; pending.set(id, res); worker.postMessage({ id, type, request }); });
 callWorker('init').then(r => {
   const box = $('#model-status');
-  if (r.ok) { modelReady = true; box.textContent = 'Model ready.'; box.classList.add('ok'); }
+  if (r.ok) { modelReady = true; liveFP = r.fingerprint; showConsistency(); box.textContent = 'Model ready.'; box.classList.add('ok'); }
   else { box.textContent = 'The model could not load (' + r.error + '); Run plays recorded runs with default settings.'; box.classList.add('warn'); }
 });
 
@@ -171,7 +173,8 @@ function paramControl(s, host, prefix = 'p') {
     const cb = $('input', wrap); cb.checked = !!values[s.name];
     cb.addEventListener('change', () => { values[s.name] = cb.checked ? 1 : 0; syncControls(s.name, wrap); });
   } else if (s.kind === 'discrete') {
-    wrap.innerHTML = `<label for="${id}">${s.label_en}${only}</label><select id="${id}"><option value="${s.low}">${s.low}</option><option value="${s.high}">${s.high}</option></select>`;
+    const choices = s.choices || [s.low, s.high];
+    wrap.innerHTML = `<label for="${id}">${s.label_en}${only}</label><select id="${id}">${choices.map(c => `<option value="${c}">${c}</option>`).join('')}</select>`;
     const sel = $('select', wrap); sel.value = String(values[s.name]);
     sel.addEventListener('change', () => { values[s.name] = Number(sel.value); syncControls(s.name, wrap); });
   } else if (s.kind === 'uniform') {
@@ -491,7 +494,7 @@ function setValues(r) {
   return state.runs.rows.filter(x => x[0] === r.request.pathway && x[1] === r.request.mechanism && x[3] !== null).map(x => x[3]);
 }
 function percentileOf(r) {
-  if (withheld(r.request.pathway)) return null;
+  if (withheld(r.request.pathway) || !sameModel()) return null;
   const v = setValues(r);
   if (!v.length) return null;
   return Math.round(100 * v.filter(x => x < r.summary.installed_5y).length / v.length);
@@ -505,7 +508,7 @@ function drawTimeline(upto) {
   const months = player.runs[0].months, n = months.length;
   const r0 = player.runs[0];
   const q = state.quantiles.by_pathway_mechanism[`${r0.request.pathway}|${r0.request.mechanism}`];
-  const band = q && !withheld(r0.request.pathway) ? q.I_cum : null;
+  const band = q && !withheld(r0.request.pathway) && sameModel() ? q.I_cum : null;
   const ys = [...(band ? band[90] : []), ...player.runs.flatMap(r => r.stocks.I_cum)];
   const ymax = Math.max(10, ...ys) * 1.05;
   const X = i => L + (W - L - R) * i / (n - 1), Y = v => T + (H - T - B) * (1 - v / ymax);
@@ -531,7 +534,7 @@ function drawTimeline(upto) {
   const desc = player.runs.map((r, k) => `${player.runs.length > 1 ? (k ? 'B' : 'A') + ' ' : ''}this run: ` + yrs.map(i => `${months[i].slice(0, 4)} ${r.stocks.I_cum[i]}`).join(', ')).join('; ');
   s.setAttribute('aria-label', `Cumulative intersections installed by month. ${desc}.` + (band ? ` Result-set middle: ${yrs.map(i => band[50][i]).join(', ')} at the same dates.` : ''));
   $('#timeline-cap').textContent = `Cumulative installs. Line${player.runs.length > 1 ? 's' : ''}: this run${player.runs.length > 1 ? ' (A solid, B dashed)' : ''}. ` +
-    (band ? `Band: 10th–90th percentile of the result set for ${r0.request.pathway} under ${r0.request.mechanism}; dashed: its middle.` : 'No result-set band for this pathway.');
+    (band ? `Band: 10th–90th percentile of the result set for ${r0.request.pathway} under ${r0.request.mechanism} (same model version); dashed: its middle.` : sameModel() ? 'No result-set band for this pathway.' : 'No comparison shown: the result set was produced by a different model version than the one running here.');
   if (upto < 0 || upto === n - 1) fillTimelineTable(yrs, band);   // update data only; keep the disclosure open and focus in place
 }
 
@@ -547,6 +550,8 @@ function drawHist() {
   const host = $('#hist'); host.replaceChildren();
   if (!state.runs || !player.runs.length) return;
   const r0 = player.runs[0];
+  $('#hist-data tbody').replaceChildren();
+  if (!sameModel()) { $('#hist-cap').textContent = 'No comparison shown: the result set was produced by a different model version than the one running here.'; return; }
   if (withheld(r0.request.pathway)) { $('#hist-cap').textContent = ''; return; }
   const v = setValues(r0).map(Math.round);
   if (!v.length) return;
@@ -614,6 +619,16 @@ function drawPrim() {
     : `<p class="hint">Not yet available: ${st || 'not computed'}. Rule-finding (PRIM, checked on held-out runs) is part of the full analysis and will appear here.</p>`;
 }
 
+function showConsistency() {
+  const c = state.consistency, el = $('#consistency');
+  if (!c || !el) return;
+  if (!liveFP) { el.textContent = 'not yet verified (model still loading)'; return; }
+  if (c.model_fingerprint !== liveFP) { el.textContent = 'not yet verified for the model files loaded here'; return; }
+  el.textContent = c.mismatches === 0
+    ? `passed for the model files loaded here (fingerprint ${liveFP.slice(0, 12)}) — ${c.cases} fixed cases, ${fmtInt(c.events)} events, no differences (${c.runtimes.join(' vs ')})`
+    : `${c.mismatches} differences found for these model files`;
+}
+
 // ---------------------------------------------------------------- run button
 function currentRequest(pw) {
   const p = {}; for (const s of state.schema) p[s.name] = values[s.name];
@@ -670,15 +685,10 @@ async function boot() {
   drawRobust(); drawReach(); drawPrim(); scrollRegions();
   mv.addEventListener('change', drawRobust);
   const m = state.meta, v = state.version;
-  $('#set-desc').textContent = `${fmtInt(m.n_param_sets)} parameter sets × ${m.replicates} replicates for every pathway and mechanism (${fmtInt(m.total_runs)} runs), drawn from the base prior ranges. Run on ${m.run_date} with design version ${m.design_version}.`;
+  $('#set-desc').textContent = (sameModel() ? '' : 'Note: this result set was produced by a different or unknown model version than the one running on this page. ') + `${fmtInt(m.n_param_sets)} parameter sets × ${m.replicates} replicates for every pathway and mechanism (${fmtInt(m.total_runs)} runs), drawn from the base prior ranges. Run on ${m.run_date} with design version ${m.design_version}.`;
   $('#set-label').textContent = m.label;
-  getJSON('results/consistency.json').then(c => {
-    // only claim a pass for the exact model file that is loaded
-    if (c.model_sha256_12 === v.model_sha256_12 && c.mismatches === 0)
-      $('#consistency').textContent = `passed for this model version — ${c.cases} fixed cases, ${fmtInt(c.events)} events, no differences (${c.runtimes.join(' vs ')})`;
-    else if (c.model_sha256_12 === v.model_sha256_12) $('#consistency').textContent = `${c.mismatches} differences found for this model version`;
-  }).catch(() => {});
-  $('#version-line').textContent = `In-browser model ${v.model_sha256_12} (synced ${v.synced}). Result set: design ${m.design_version}, run ${m.run_date}.`;
+  getJSON('results/consistency.json').then(c => { state.consistency = c; showConsistency(); }).catch(() => {});
+  $('#version-line').textContent = `In-browser model fingerprint ${v.model_fingerprint.slice(0, 12)} (synced ${v.synced}). Result set: design ${m.design_version}, run ${m.run_date}, fingerprint ${(m.model_fingerprint || 'not recorded').slice(0, 12)}` + (sameModel() ? ' — same model.' : ' — different or unknown model version, so many-run comparisons are hidden.');
 
   $('#run').addEventListener('click', onRun);
   $('#pause').addEventListener('click', () => {

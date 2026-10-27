@@ -82,11 +82,18 @@ Please write to `abm/results/web/` (any of these may be marked preliminary):
 | `robustness.json` | ranking table: positive-effect vs zero-effect columns, share better than PW0, max regret |
 | `fit.json` (optional) | E1 acceptance rate per mechanism × prior width; H1 holdout pass/fail |
 
-## 3. Consistency test
+## 3. Consistency test (updated after codex round 2)
 
-`tests/test_consistency.py` (site repo): run `abm.run(...)` in CPython and the same call in Pyodide
-(`node` + `pyodide` npm package) for 5 fixed (params, pathway, seed) cases; compare `summary`
-and `stocks` — **exact equality** expected; tolerance 0 for integers, 1e-12 relative for floats.
+Entry point: `tests/run_consistency.sh` (CPython side `tests/py_side.py`, Pyodide side `tests/pyodide_side.mjs`,
+comparison `tests/compare.py`, shared cases `tests/cases.py`). 67 fixed cases: every pathway × mechanism at
+default parameters (7 × 6), 24 random parameter draws, one history-mode run. Every output and every event
+compared: integers and strings exact, floats 1e-12 relative. The report `results/consistency.json` carries
+`model_fingerprint` (see `scripts/fingerprint.py`) and both runtime versions. `tests/test_replay.py` checks
+that replaying events reproduces the model's monthly stocks; `tests/e2e.mjs` runs 17 browser and
+accessibility checks.
+
+`meta.json` of the result set must carry the same `model_fingerprint`, computed when the set is run;
+the page hides many-run comparisons when it differs from the loaded model.
 
 ## 4. Wording limits (from writing brief / stats report)
 

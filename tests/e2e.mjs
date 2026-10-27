@@ -39,12 +39,14 @@ try {
       ok('run finished, lane counts present', lanes.length === 6, lanes.join(','));
       ok('summary shown', /Installed within 5 years/.test(await page.textContent('#run-summary')));
       ok('timeline drawn', await page.$('#timeline svg polyline.run') !== null);
-      ok('histogram drawn', await page.$('#hist svg rect.bar') !== null);
+      const same = await page.evaluate(() => /same model\./.test(document.querySelector('#version-line').textContent));
+      if (same) ok('histogram drawn (result set matches loaded model)', await page.$('#hist svg rect.bar') !== null);
+      else ok('comparison hidden (result set from another model version)', /different model version/.test(await page.textContent('#hist-cap')) && await page.$('#hist svg rect.bar') === null);
       await page.screenshot({ path: path.join(shots, 'desktop-light-run.png'), fullPage: true });
       // open every disclosure so axe also checks their contents
       await page.$$eval('details', ds => ds.forEach(d => { d.open = true; }));
-      ok('histogram table filled', (await page.$$('#hist-data tbody tr')).length > 3);
-      ok('consistency shown as verified for this model', /passed for this model version/.test(await page.textContent('#consistency')), (await page.textContent('#consistency')).slice(0, 80));
+      ok('histogram table matches comparison state', same ? (await page.$$('#hist-data tbody tr')).length > 3 : (await page.$$('#hist-data tbody tr')).length === 0);
+      ok('consistency verified against the loaded model files', /passed for the model files loaded here/.test(await page.textContent('#consistency')), (await page.textContent('#consistency')).slice(0, 80));
       await page.locator('#sim').screenshot({ path: path.join(shots, 'desktop-light-sim.png') });
       // keyboard: tab to Run and press Enter
       await page.check('#compare');
