@@ -2,17 +2,17 @@
  "status": "preliminary",
  "label": "preliminary \u00b7 uncalibrated \u00b7 not used in the essay",
  "model_version": "dev",
- "design_version": "02 v6",
+ "design_version": "02 v8",
  "run_date": "2026-10-26",
  "n_param_sets": 300,
  "replicates": 5,
  "seed": 146,
  "replicate_seeds": [
-  1907631119,
-  2145028543,
-  935302029,
-  1973214845,
-  1154524453
+  527167473,
+  1261406024,
+  2005956517,
+  690943266,
+  945553631
  ],
  "horizon_months": 120,
  "total_runs": 63000,

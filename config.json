@@ -1,5 +1,6 @@
 {
-  "withheld": {
-    "PW5": "rule not yet defined — results withheld"
+  "withheld": {},
+  "caution": {
+    "PW5": "rule inferred (hardware-change rate and APS add-on budget are assumptions)"
   }
 }

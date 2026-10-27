@@ -63,7 +63,7 @@ const VERB = {
   owner_quit: 'owner leaves', owner_filled: 'owner hired', eligibility_fail: 'ineligible', red_flag: 'red flag',
   contract_out: 'contracts out', return_funds: 'funds returned', extend: 'extension', scope_add: 'adds to scope',
   reroute: 'reroutes', overrun_revert: 'overrun', partner_delay: 'partner delay', prep_abort: 'drops application',
-  pathway_switch: 'switches route',
+  pathway_switch: 'switches route', rule_apply: 'applies design rule', skip_rule: 'skips design rule', pause: 'pauses',
 };
 const FAIL = {
   'F-a': 'a package did not reach the minimum benefit–cost ratio of 5.0', 'F-b': 'an application fell below the cycle cut-off',
@@ -108,6 +108,9 @@ function describe(e) {
     case 'owner_quit': return 'The named owner of APS funding leaves; the post is vacant.';
     case 'owner_filled': return 'A new owner of APS funding is in post.';
     case 'pathway_switch': return `Signpost crossed: the pathway switches to its next step${d}.`;
+    case 'rule_apply': return `Design rule applied: APS added to hardware work at ${count(n)}${d}.`;
+    case 'skip_rule': return `Hardware work done without APS at ${count(n)}${d}.`;
+    case 'pause': return `${a} pause${d}.`;
     case 'scope_add': return `${count(n)} added to the scope of planned projects.`;
     case 'reroute': return `${count(n)} rerouted after a parent project slipped.`;
     case 'overrun_revert': return `${count(n)} back to the waiting list after a cost overrun.`;
@@ -128,7 +131,9 @@ function scrollRegions(root = document) {
 
 // ---------------------------------------------------------------- data
 const state = { schema: [], quantiles: null, runs: null, robust: null, meta: null, prim: null, reach: null, config: { withheld: {} }, version: null };
-const withheld = pw => state.config.withheld[pw];
+const withheld = pw => (state.config.withheld || {})[pw];
+const caution = pw => (state.config.caution || {})[pw];
+const pwName = pw => `${pw} · ${PATHWAYS[pw][0]}`;
 async function getJSON(url) { const r = await fetch(url); if (!r.ok) throw new Error(url); return r.json(); }
 
 // ---------------------------------------------------------------- model worker
@@ -199,11 +204,11 @@ function buildControls() {
   for (const slot of ['A', 'B']) {
     const sel = $('#pw-' + slot);
     for (const [k, [name]] of Object.entries(PATHWAYS)) {
-      const o = new Option(`${k} · ${name}${withheld(k) ? ' — ' + withheld(k) : ''}`, k);
+      const o = new Option(`${k} · ${name}${withheld(k) ? ' — ' + withheld(k) : caution(k) ? ' — ' + caution(k) : ''}`, k);
       o.disabled = !!withheld(k); sel.add(o);
     }
     sel.value = slot === 'A' ? 'PW0' : 'PW4';
-    const desc = () => { $('#pw-' + slot + '-desc').textContent = PATHWAYS[sel.value][1]; };
+    const desc = () => { $('#pw-' + slot + '-desc').textContent = PATHWAYS[sel.value][1] + (caution(sel.value) ? ' Note: ' + caution(sel.value) + '.' : ''); };
     sel.addEventListener('change', desc); desc();
     sel.setAttribute('aria-describedby', 'pw-' + slot + '-desc');
   }
@@ -567,7 +572,7 @@ function drawRobust() {
     if (withheld(pw)) {
       tr.innerHTML = `<th scope="row">${pw} · ${PATHWAYS[pw][0]}</th><td colspan="4">${withheld(pw)}</td>`;
     } else {
-      tr.innerHTML = `<th scope="row">${pw} · ${PATHWAYS[pw][0]}</th>
+      tr.innerHTML = `<th scope="row">${pwName(pw)}${caution(pw) ? `<br><span class="hint">${caution(pw)}</span>` : ''}</th>
         <td>${r1(r.coverage_10y_p50)} (${r1(r.coverage_10y_p10)}–${r1(r.coverage_10y_p90)})</td>
         <td>${pct(r.P_money_flows_5y_mean)}</td>
         <td>${pw === 'PW0' ? '—' : pct(r.share_better_than_PW0)}</td>
@@ -586,7 +591,7 @@ function drawReach() {
     if (withheld(pw)) { h += `<tr><th scope="row">${pw} · ${PATHWAYS[pw][0]}</th><td>${withheld(pw)}</td></tr>`; continue; }
     const nodes = Object.entries(pr[pw].nodes).sort((a, b) => b[1] - a[1])
       .map(([k, v]) => `${k.split(':')[1].replace(/_/g, ' ')}: ${Math.round(100 * v)}%`).join(' → ');
-    h += `<tr><th scope="row">${pw} · ${PATHWAYS[pw][0]}</th><td>${nodes}</td></tr>`;
+    h += `<tr><th scope="row">${pwName(pw)}${caution(pw) ? `<br><span class="hint">${caution(pw)}</span>` : ''}</th><td>${nodes}</td></tr>`;
   }
   host.innerHTML = h + '</tbody></table>';
   scrollRegions();

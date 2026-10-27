@@ -888,6 +888,96 @@
    "phase": "projection"
   },
   {
+   "name": "t_des",
+   "label_en": "Months from local award to design complete (overrun found)",
+   "unit": "months",
+   "kind": "uniform",
+   "low": 2.0,
+   "high": 6.0,
+   "default": 4.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "t_dsg",
+   "label_en": "Months from design start (PE E-76 or cycle start) to design complete",
+   "unit": "months",
+   "kind": "uniform",
+   "low": 4.0,
+   "high": 14.0,
+   "default": 8.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "t_pause",
+   "label_en": "Months paused when a contracting cost gap is not funded",
+   "unit": "months",
+   "kind": "uniform",
+   "low": 3.0,
+   "high": 12.0,
+   "default": 6.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "lam_hw",
+   "label_en": "Push-button / signal-hardware change events per candidate site",
+   "unit": "per year",
+   "kind": "uniform",
+   "low": 0.01,
+   "high": 0.08,
+   "default": 0.04,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "b_hw",
+   "label_en": "Maintenance budget for APS add-ons under the design rule",
+   "unit": "USD/year",
+   "kind": "uniform",
+   "low": 0,
+   "high": 300000,
+   "default": 150000,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
    "name": "q_sg017_block",
    "label_en": "SG017 allocation excludes new APS",
    "unit": "probability",
