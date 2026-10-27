@@ -90,7 +90,13 @@ try {
         const prim = await page.$$eval('#prim tbody tr', trs => trs.map(tr => tr.textContent));
         ok('PRIM conditions shown for every pathway', prim.length === 7 && /standing local line/.test(prim[0]) && /written for APS/.test(prim[4]), prim[0]);
         const body = await page.textContent('body');
-        ok('no stale wording', !/\$580|580k|580,000|preliminary result set|base prior|display pending|Not yet available|max_regret|undefined|NaN/.test(body));
+        ok('no stale wording', !/\$580|580k|580,000|preliminary result set|base prior|display pending|Not yet available|max_regret|up to 10%|undefined|NaN/.test(body));
+        const pw5v = await page.$$eval('#reach tbody tr', trs => (trs.find(tr => /PW5 \+ approval/.test(tr.textContent)) || {}).textContent || '');
+        ok('variant steps in model order with plain names', /start: 100% → local line triggered[^→]*→ Prop L amendment requested[^→]*→ General Fund requested/.test(pw5v), pw5v.slice(0, 120));
+        const { humanize } = await import('../assets/story.js');
+        ok('SG017 events not described as a Prop L amendment',
+          /SG017/.test(humanize({ action: 'approve', actor: 'SFCTA', detail: 'SG017 allocation includes new APS', intersections: [] })) &&
+          /SG017/.test(humanize({ action: 'failure:F-j', actor: 'SFCTA', detail: 'SG017 allocation limited to replacement' })));
         await page.check('#p-sw_line'); await page.click('#run');
         await page.waitForFunction(() => /standing local APS line at the start/.test(document.querySelector('#hist-cap').textContent), null, { timeout: 60000 });
         ok('line switched on: run comparison hidden, not mixed with the main view', await page.$('#hist svg rect.bar') === null && !/higher than/.test(await page.textContent('#run-summary')));

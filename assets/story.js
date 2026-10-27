@@ -46,7 +46,7 @@ export const CARDS = {
     does: 'Moves up in steps (none, uncertain, negotiation, lawsuit, court order). The higher the step, the harder it is to delay.',
     holds: 'Authority.', rel: ['enforce'] },
   DIR: { who: 'The head of SFMTA.',
-    does: 'Can move up to 10% of a budget line; in some pathways this is the last fallback for APS money.',
+    does: 'In PW1, the last fallback is asking the Director to move money to APS. In the model, whether that happens and how much are both assumptions.',
     holds: 'Authority over reallocations.', rel: ['dir'] },
   HSIP: { who: 'The federal Highway Safety Improvement Program, run in California by Caltrans.',
     does: 'A rule, not an actor. A call every two years. Projects need a benefit–cost ratio of at least 5 and must beat that round\'s cut-off; APS cannot be funded alone and must ride on a safety measure such as a signal-hardware upgrade. Each agency is capped; funded projects face design and construction deadlines.',
@@ -99,7 +99,7 @@ export const RELATIONS = [
   { id: 'build', from: 'A2', to: 'A3', type: 'build', label: 'hand over funded sites' },
   { id: 'ride', from: 'PARENT', to: 'A3', type: 'ride', label: 'install APS with signal work, no application' },
   { id: 'enforce', from: 'D1', to: 'A2', type: 'enforce', label: 'negotiation, lawsuit or court order' },
-  { id: 'dir', from: 'DIR', to: 'A2', type: 'fund', label: 'reallocate up to 10%' },
+  { id: 'dir', from: 'DIR', to: 'A2', type: 'fund', label: 'moves money (assumed fallback)' },
 ];
 
 // Links each pathway adds (drawn in the accent colour).
@@ -164,6 +164,7 @@ const cycle = d => { const m = /\bC(\d{2})\b/.exec(d || ''); return m ? ` (cycle
 // One plain-English sentence per event.
 export function humanize(e) {
   const n = (e.intersections || []).length, d = e.detail || '';
+  if (e.action === 'failure:F-j' && /SG017/.test(d)) return 'Setback: the existing signal-hardware line (SG017) could not be used for new APS.';
   if (e.action.startsWith('failure:')) return `Setback: ${SETBACK[e.action.slice(8)] || 'something went wrong'}.`;
   switch (e.action) {
     case 'press': return 'Advocates raised the APS backlog at the Mayor\'s Disability Council.';
@@ -177,13 +178,14 @@ export function humanize(e) {
     case 'prep_abort': return 'A half-written APS application was dropped.';
     case 'approve':
       if (e.actor === 'CT') return `Caltrans approved HSIP funding${cycle(d)} for ${count(n)}.`;
+      if (e.actor === 'SFCTA' && /SG017/.test(d)) return 'SFCTA approved money from the existing signal-hardware line (SG017) that now includes new APS.';
       if (e.actor === 'SFCTA') return 'The SFCTA Board approved a Prop L amendment that restores an APS line.';
       if (e.actor === 'GF') return 'The city approved a General Fund line for APS.';
       return `${nodeName(e.actor)} approved funding.`;
     case 'reject': return `Caltrans did not fund the application${cycle(d)}${n ? ` covering ${count(n)}` : ''}.`;
     case 'eligibility_fail': return 'Caltrans found SFMTA ineligible this round.';
     case 'allocate':
-      if (e.actor === 'DIR') return 'The SFMTA Director moved money to APS from a reserve.';
+      if (e.actor === 'DIR') return 'The SFMTA Director moved money to APS (an assumed fallback in the model).';
       return `${e.actor === 'SFCTA' ? 'Prop L' : 'The General Fund'} allocated ${d ? d + ' ' : ''}for ${n ? count(n) : 'APS'}.`;
     case 'batch_fund': return `${count(n)} now funded and handed to the crews.`;
     case 'handoff': return `${count(n)} finished design and went to the city crews.`;

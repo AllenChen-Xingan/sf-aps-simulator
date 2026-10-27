@@ -64,3 +64,17 @@ Result set replaced by the model owner's formal export (`status: formal`, finger
 - About and README: weak history screen (not a calibration); pressure, owner and crew capacity have no channel in the model beyond the start probability or a cap; PW1's Director step is hypothetical.
 
 Tests: consistency 67 cases / 19,857 events, 0 differences; replay 14,400 months, 0 differences; browser 30/30 (5 new checks: table equals the result file incl. variant rows, pooled view, PRIM table, no stale wording, line-on comparison hidden); axe 0 violations.
+
+## Round 4 (reviewed 7f841ae, formal result set)
+
+| # | Finding | Verdict | Change | Verify |
+|---|---|---|---|---|
+| P1 #1 | Director card and link still said "up to 10%" | Valid | Card: PW1's last fallback is asking the Director; whether and how much are assumptions. Link label "moves money (assumed fallback)". Event text says "an assumed fallback" | `assets/story.js` CARDS.DIR, RELATIONS `dir`; e2e "no stale wording" (includes "up to 10%") |
+| P2 #2 | PRIM table not version-gated | Valid | `drawPrim` hides behind `sameModel()` and is redrawn by `refreshComparisons()` | `assets/app.js` `drawPrim` |
+| P2 #3 | Line check looked only at run A | Valid | Band and histogram hidden if any run on screen has the standing line on; percentile already checked per run | `assets/app.js` `drawTimeline`, `drawHist` |
+| P2 #4 | SFCTA SG017 approval described as a Prop L amendment | Valid | SG017 approval and the SG017 setback (shares code F-j) get their own sentences, keyed on the event detail | `assets/story.js` `humanize`; e2e "SG017 events not described as a Prop L amendment" |
+| P2 #5 | Variant steps sorted by share, raw node names | Valid | Steps in the order they happen, plain names ("local line triggered (two-year check)", "Prop L amendment requested", …); caption says reaching a step means it was tried, values rounded. Same names in the run summary | `STEP_ORDER`, `STEP_NAMES`; e2e "variant steps in model order" |
+| P2 #6 | Money column explained as "better than status quo" | Valid | Each column explained separately (money: share of runs; better: share of parameter sets that installed more within ten years than the status quo with the same set) | `index.html` "All pathways compared" |
+| P2 #7 | "Direct start effect set to zero" unexplained | Valid | One sentence on parameter set vs replicate; the zero-effect column explained (owner, deadline, oversight, pressure no longer raise the chance of starting an application; outside enforcement still acts) | same |
+
+Tests after round 4: browser 32/32; axe 0 violations. Model and results unchanged (consistency and replay as in the formal section).

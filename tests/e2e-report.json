@@ -91,6 +91,16 @@
    "info": ""
   },
   {
+   "name": "variant steps in model order with plain names",
+   "pass": true,
+   "info": "PW5 + approval (variant)start: 100% → local line triggered (two-year check): 100% → Prop L amendment requested: 100% → G"
+  },
+  {
+   "name": "SG017 events not described as a Prop L amendment",
+   "pass": true,
+   "info": ""
+  },
+  {
    "name": "line switched on: run comparison hidden, not mixed with the main view",
    "pass": true,
    "info": ""

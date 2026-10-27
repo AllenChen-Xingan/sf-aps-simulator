@@ -65,10 +65,13 @@ const pwName = pw => `${pw} · ${PATHWAYS[pw][0]}`;
 // Approval variant (result set only; not runnable here): PW4/PW5's local line must pass PW2's approval chain.
 const VARIANTS = { PW4: 'PW4-approval', PW5: 'PW5-approval' };
 const variantName = v => `${v.split('-')[0]} + approval (variant)`;
+const STEP_ORDER = ['start', 'C14_repack', 'local_line', 'PropL_amendment', 'Director_or_GF', 'GF_request', 'HSIP_repack', 'structured_negotiation', 'lawsuit'];
+const STEP_NAMES = { start: 'start', C14_repack: 'HSIP Cycle 14 repack', local_line: 'local line triggered (two-year check)', PropL_amendment: 'Prop L amendment requested',
+  Director_or_GF: 'Director or General Fund asked', GF_request: 'General Fund requested', HSIP_repack: 'HSIP repack', structured_negotiation: 'structured negotiation', lawsuit: 'lawsuit' };
 const VARIANT_NOTE = 'the local line must first pass a Prop L amendment, then one General Fund request, as in PW2';
 // The result set covers runs with no standing local line at the start (as today).
 const lineOn = r => Number(r.request.params.sw_line) !== 0;
-const LINE_MSG = 'No comparison shown: the result set covers runs with no standing local APS line at the start (as today), and this run has that line switched on.';
+const LINE_MSG = 'No comparison shown: the result set covers runs with no standing local APS line at the start (as today), and a run shown here has that line switched on.';
 // Retry briefly: one dropped request should not leave the page empty.
 async function getJSON(url, tries = 3) {
   for (let i = 1; ; i++) {
@@ -514,7 +517,7 @@ function showSummary() {
         <dt>Installed within 5 years</dt><dd>${s.installed_5y}${pct !== null ? ` <span class="hint">(higher than ${pct}% of the result set for this pathway and mechanism)</span>` : ''}</dd>
         <dt>Installed within 10 years</dt><dd>${s.coverage_10y}</dd>
         <dt>Request-list money within 5 years</dt><dd>${s.money_flows_5y ? 'Yes' : 'No'}</dd>
-        <dt>Pathway steps reached</dt><dd>${(r.path_nodes_reached || []).map(x => x.split(':')[1].replace(/_/g, ' ')).join(' → ')}</dd>
+        <dt>Pathway steps reached</dt><dd>${(r.path_nodes_reached || []).map(x => { const k = x.split(':')[1]; return STEP_NAMES[k] || k.replace(/_/g, ' '); }).join(' → ')}</dd>
       </dl>`;
     box.appendChild(div);
   }
@@ -539,7 +542,8 @@ function drawTimeline(upto) {
   const months = player.runs[0].months, n = months.length;
   const r0 = player.runs[0];
   const q = state.quantiles.by_pathway_mechanism[`${r0.request.pathway}|${r0.request.mechanism}`];
-  const band = q && !withheld(r0.request.pathway) && sameModel() && !lineOn(r0) ? q.I_cum : null;
+  const anyLine = player.runs.some(lineOn);
+  const band = q && !withheld(r0.request.pathway) && sameModel() && !anyLine ? q.I_cum : null;
   const ys = [...(band ? band[90] : []), ...player.runs.flatMap(r => r.stocks.I_cum)];
   const ymax = Math.max(10, ...ys) * 1.05;
   const X = i => L + (W - L - R) * i / (n - 1), Y = v => T + (H - T - B) * (1 - v / ymax);
@@ -565,7 +569,7 @@ function drawTimeline(upto) {
   const desc = player.runs.map((r, k) => `${player.runs.length > 1 ? (k ? 'B' : 'A') + ' ' : ''}this run: ` + yrs.map(i => `${months[i].slice(0, 4)} ${r.stocks.I_cum[i]}`).join(', ')).join('; ');
   s.setAttribute('aria-label', `Cumulative intersections installed by month. ${desc}.` + (band ? ` Result-set middle: ${yrs.map(i => band[50][i]).join(', ')} at the same dates.` : ''));
   $('#timeline-cap').textContent = `Cumulative installs. Line${player.runs.length > 1 ? 's' : ''}: this run${player.runs.length > 1 ? ' (A solid, B dashed)' : ''}. ` +
-    (band ? `Band: 10th–90th percentile of the result set for ${r0.request.pathway} under ${r0.request.mechanism} (same model version, no standing line at the start); dashed: its middle.` : !sameModel() ? 'No comparison shown: the result set was produced by a different model version than the one running here.' : lineOn(r0) ? LINE_MSG : 'No result-set band for this pathway.');
+    (band ? `Band: 10th–90th percentile of the result set for ${r0.request.pathway} under ${r0.request.mechanism} (same model version, no standing line at the start); dashed: its middle.` : !sameModel() ? 'No comparison shown: the result set was produced by a different model version than the one running here.' : anyLine ? LINE_MSG : 'No result-set band for this pathway.');
   if (upto < 0 || upto === n - 1) fillTimelineTable(yrs, band);   // update data only; keep the disclosure open and focus in place
 }
 
@@ -584,7 +588,7 @@ function drawHist() {
   $('#hist-data tbody').replaceChildren();
   if (!sameModel()) { $('#hist-cap').textContent = 'No comparison shown: the result set was produced by a different model version than the one running here.'; return; }
   if (withheld(r0.request.pathway)) { $('#hist-cap').textContent = ''; return; }
-  if (lineOn(r0)) { $('#hist-cap').textContent = LINE_MSG; return; }
+  if (player.runs.some(lineOn)) { $('#hist-cap').textContent = LINE_MSG; return; }
   const v = setValues(r0).map(Math.round);
   if (!v.length) return;
   const lo = Math.min(...v), hi = Math.max(...v), bins = {};
@@ -653,9 +657,10 @@ function drawReach() {
   const host = $('#reach'); host.replaceChildren();
   if (!sameModel()) { host.innerHTML = `<p class="hint">${HIDDEN_MSG()}</p>`; return; }
   const pr = state.reach.path_reach, vr = state.reach.variant_path_reach || {};
-  const steps = nodes => Object.entries(nodes).sort((a, b) => b[1] - a[1] || a[0].endsWith(':start') * -1 || b[0].endsWith(':start') * 1)
-    .map(([k, v]) => `${k.split(':')[1].replace(/_/g, ' ')}: ${Math.round(100 * v)}%`).join(' → ');
-  let h = '<div class="table-wrap"><table><caption>Share of runs that reached each step of the pathway (all six mechanisms together; no standing line at the start)</caption><thead><tr><th scope="col">Pathway</th><th scope="col">Steps reached</th></tr></thead><tbody>';
+  const steps = nodes => Object.entries(nodes).map(([k, v]) => [k.split(':')[1], v])
+    .sort((a, b) => STEP_ORDER.indexOf(a[0]) - STEP_ORDER.indexOf(b[0]))
+    .map(([k, v]) => `${STEP_NAMES[k] || k.replace(/_/g, ' ')}: ${Math.round(100 * v)}%`).join(' → ');
+  let h = '<div class="table-wrap"><table><caption>Share of runs that reached each step of the pathway, in the order the steps happen (all six mechanisms together; no standing line at the start; rounded). Reaching a step means it was tried, not that it succeeded.</caption><thead><tr><th scope="col">Pathway</th><th scope="col">Steps reached</th></tr></thead><tbody>';
   for (const pw of Object.keys(PATHWAYS)) {
     if (!pr[pw]) continue;
     if (withheld(pw)) { h += `<tr><th scope="row">${pw} · ${PATHWAYS[pw][0]}</th><td>${withheld(pw)}</td></tr>`; continue; }
@@ -670,6 +675,7 @@ function drawReach() {
 // PRIM: conditions under which money arrives. Five train/test splits per pathway; show the spread across them.
 function drawPrim() {
   const host = $('#prim'), P = state.prim;
+  if (!sameModel()) { host.innerHTML = `<p class="hint">${HIDDEN_MSG()}</p>`; return; }
   if (!P.boxes) { host.innerHTML = `<p class="hint">Not available in this result set.</p>`; return; }
   const span = (xs, f) => { const a = Math.min(...xs), b = Math.max(...xs); return f(a) === f(b) ? f(a) : `${f(a)}–${f(b)}`; };
   const pc = x => String(Math.round(100 * x)), d2 = x => x.toFixed(2);
@@ -716,7 +722,7 @@ function refreshComparisons() {
   $('#set-desc').textContent = (sameModel() ? '' : HIDDEN_MSG() + ' ') + `Main view: the parameter sets that start with no standing local APS line, as today (${nRange} per mechanism), each run ${m.replicates} times for every pathway (${fmtInt(m.total_runs)} runs). Parameters were first screened against the 2022–2025 request lists; that screen is weak and is not a calibration. Run on ${m.run_date}, design version ${m.design_version}.`;
   $('#version-line').textContent = `Model loaded here: fingerprint ${liveFP ? liveFP.slice(0, 12) : 'not yet computed'} (files synced ${v.synced}). Result set: design ${m.design_version}, run ${m.run_date}, fingerprint ${(m.model_fingerprint || 'not recorded').slice(0, 12)}` +
     (sameModel() ? ' — same model.' : liveFP ? ' — different model, so many-run comparisons are hidden.' : '.');
-  drawRobust(); drawReach(); showConsistency();
+  drawRobust(); drawReach(); drawPrim(); showConsistency();
   if (player.runs.length) { drawTimeline(player.t >= player.runs[0].months.length - 1 ? -1 : player.t); drawHist(); showSummary(); }
 }
 
@@ -791,7 +797,7 @@ async function boot() {
   const mv = $('#mech-view');
   for (const k of state.meta.mechanisms) mv.add(new Option(k + ' · ' + MECHS[k].split(':')[0], k));
   mv.value = 'M-D';
-  drawPrim(); scrollRegions();
+  scrollRegions();
   mv.addEventListener('change', drawRobust);
   $('#line-view').addEventListener('change', drawRobust);
   $('#set-label').textContent = state.meta.label;
