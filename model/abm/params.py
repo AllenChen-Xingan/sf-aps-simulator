@@ -101,7 +101,9 @@ _S = [
     ('fs5_parent', 'Five Fs sites without a found parent do have one', 'switch', 'switch', 0, 1, 1, ALL, 'projection'),
     ('lam_arr', 'New requests', 'per year', 'uniform', 6.0, 17.0, 10.0, ALL, 'projection'),
     ('eps_enf', 'External enforcement steps up', 'per year', 'uniform', 0.0, 0.1, 0.03, ALL, 'all'),
-    ('sw_si02', 'Signal-hardware carrier accepted', 'switch', 'switch', 0, 1, 1, ALL, 'projection'),
+    ('sw_si02', 'SI02 signal-hardware carrier accepted (author interview only)', 'switch', 'switch', 0, 1, 1, ALL, 'projection'),
+    ('sw_si07', 'SI07 mast-arm conversion usable as a carrier', 'switch', 'switch', 0, 1, 1, ALL, 'projection'),
+    ('f_aff', 'Share of 50 m crashes on upgraded approaches (SI02/SI07 influence area)', 'fraction', 'uniform', 0.5, 1.0, 0.75, ALL, 'projection'),
     ('sw_line', 'Dedicated local line on', 'switch', 'switch', 0, 1, 0, ALL, 'projection'),
 ]
 

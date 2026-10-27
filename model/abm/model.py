@@ -433,7 +433,7 @@ class Sim:
                 cms.append(('SI18PB', 0.25, 20, 'pb', p['c_cd']))
             cost = sum(c[4] for c in cms) + self.unit_cost() + s['adders']
         elif s['state'] == 'N' and mode == 'repack':
-            if s['cmast'] and p['sw_si02']:
+            if s['cmast'] and p['sw_si07']:
                 cms.append(('SI07', 0.30, 20, 'all', 0.0))
             if s['ccd']:
                 cms.append(('SI18PB', 0.25, 20, 'pb', 0.0))
@@ -445,8 +445,14 @@ class Sim:
         else:
             return 0.0, 0.0, 10, False
         s['_cms'] = {c[0] for c in cms}
-        crf_pb = 1 - np.prod([1 - c[1] for c in cms])
-        crf_np = 1 - np.prod([1 - c[1] for c in cms if c[3] == 'all'] or [1.0])
+        # crashes on the upgraded approaches (share f_aff) get every countermeasure; the rest get only
+        # the pedestrian/bicycle crossing measures (SI18PB, SI22PB); LRSM SI02 note, l.2021
+        f = p['f_aff']
+        crf_pb_in = 1 - np.prod([1 - c[1] for c in cms])
+        crf_pb_out = 1 - np.prod([1 - c[1] for c in cms if c[3] == 'pb'] or [1.0])
+        crf_np_in = 1 - np.prod([1 - c[1] for c in cms if c[3] == 'all'] or [1.0])
+        crf_pb = f * crf_pb_in + (1 - f) * crf_pb_out
+        crf_np = f * crf_np_in
         y = int(p['y_win'])
         cr = s['crashes']
         ben = 0.0
@@ -479,7 +485,7 @@ class Sim:
         for r, b, c, s in parts:
             if (Cst + c) * kc > cap or len(union | s['_cms']) > 3:   # cap check includes contingency
                 continue
-            if chosen and (B + b) / (Cst + c) < 5.0:
+            if chosen and (B + b) / ((Cst + c) * kc) < 5.0:   # screen on the full cost incl. contingency
                 break
             chosen.append(s)
             union |= s['_cms']
@@ -487,7 +493,10 @@ class Sim:
         Cst *= kc                                        # application cost includes contingency
         if Cst > cap + 1e-6:
             raise AssertionError('application exceeds remaining $10M cap')
-        return chosen, (B / Cst if Cst else 0.0), Cst
+        bcr = B / Cst if Cst else 0.0
+        if len(chosen) > 1 and bcr < 5.0:
+            raise AssertionError('kept bundle fails the 5.0 floor')
+        return chosen, bcr, Cst
 
     def _submit_hsip(self, tk):
         cyc = self.cycle_name()

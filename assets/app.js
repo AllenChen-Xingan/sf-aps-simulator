@@ -224,7 +224,7 @@ function buildControls() {
   mech.addEventListener('change', md); md();
 
   const sw = $('#switches');
-  for (const n of ['sw_si02', 'sw_line', 'sw_relax', 'sw_ss4a']) { const s = state.schema.find(x => x.name === n); if (s) paramControl(s, sw); }
+  for (const n of ['sw_si02', 'sw_si07', 'sw_line']) { const s = state.schema.find(x => x.name === n); if (s) paramControl(s, sw); }
   const kp = $('#key-params');
   for (const n of KEY_PARAMS) { const s = state.schema.find(x => x.name === n); if (s) paramControl(s, kp); }
   const all = $('#all-params');

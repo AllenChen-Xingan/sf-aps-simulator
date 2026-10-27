@@ -49,3 +49,7 @@ Result set re-run by the model owner on design v10 with `model_fingerprint` = lo
 | P2 #6 | Clean-machine test prerequisites incomplete | Valid | README splits "only to view" (any static server) from "tests / rebuild" (Python 3.14 + numpy 2.4.6 venv, Node ≥ 20, `npx playwright install chromium`) with commands | README "Run locally" |
 
 Tests after round 3 (model fingerprint 2d4bf860ae8a…, runtime Pyodide 314.0.7 / Python 3.14.2 / numpy 2.4.6 from `vendor/`): consistency 67 cases / 19,689 events, 0 differences; replay 0 differences; browser 20/20; axe 0 violations.
+
+## Status after round 3
+
+Model P1 (contingency in package screening) fixed by the model owner; result set re-run on design v12 with fingerprint `b06c98c3c1e4…` = loaded model. New switch `sw_si07` added to the settings panel. Consistency 67 cases / 19,456 events, 0 differences (self-hosted runtime); replay 0 differences; browser 20/20; axe 0 violations.

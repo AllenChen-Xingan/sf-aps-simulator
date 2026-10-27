@@ -1604,12 +1604,48 @@
   },
   {
    "name": "sw_si02",
-   "label_en": "Signal-hardware carrier accepted",
+   "label_en": "SI02 signal-hardware carrier accepted (author interview only)",
    "unit": "switch",
    "kind": "switch",
    "low": 0,
    "high": 1,
    "default": 1,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "sw_si07",
+   "label_en": "SI07 mast-arm conversion usable as a carrier",
+   "unit": "switch",
+   "kind": "switch",
+   "low": 0,
+   "high": 1,
+   "default": 1,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "f_aff",
+   "label_en": "Share of 50 m crashes on upgraded approaches (SI02/SI07 influence area)",
+   "unit": "fraction",
+   "kind": "uniform",
+   "low": 0.5,
+   "high": 1.0,
+   "default": 0.75,
    "applies_to": [
     "M-A",
     "M-B1",

@@ -10,26 +10,26 @@
   "PW1": {
    "runs": 9000,
    "nodes": {
-    "PW1:C14_repack": 0.9494444444444444,
-    "PW1:Director_or_GF": 0.4295555555555556,
-    "PW1:PropL_amendment": 0.7451111111111111,
+    "PW1:C14_repack": 0.972,
+    "PW1:Director_or_GF": 0.4454444444444444,
+    "PW1:PropL_amendment": 0.7725555555555556,
     "PW1:start": 1.0
    }
   },
   "PW2": {
    "runs": 9000,
    "nodes": {
-    "PW2:GF_request": 0.5957777777777777,
-    "PW2:HSIP_repack": 0.43922222222222224,
+    "PW2:GF_request": 0.6395555555555555,
+    "PW2:HSIP_repack": 0.49033333333333334,
     "PW2:start": 1.0
    }
   },
   "PW3": {
    "runs": 9000,
    "nodes": {
-    "PW3:lawsuit": 0.3388888888888889,
+    "PW3:lawsuit": 0.374,
     "PW3:start": 1.0,
-    "PW3:structured_negotiation": 0.9511111111111111
+    "PW3:structured_negotiation": 0.9566666666666667
    }
   },
   "PW4": {
@@ -41,16 +41,16 @@
   "PW5": {
    "runs": 9000,
    "nodes": {
-    "PW5:local_line": 0.9973333333333333,
+    "PW5:local_line": 0.9991111111111111,
     "PW5:start": 1.0
    }
   },
   "PW6": {
    "runs": 9000,
    "nodes": {
-    "PW6:GF_request": 0.3868888888888889,
-    "PW6:HSIP_repack": 0.25677777777777777,
-    "PW6:PropL_amendment": 0.6871111111111111,
+    "PW6:GF_request": 0.4226666666666667,
+    "PW6:HSIP_repack": 0.2947777777777778,
+    "PW6:PropL_amendment": 0.7392222222222222,
     "PW6:start": 1.0
    }
   }
