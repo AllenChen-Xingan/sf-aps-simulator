@@ -31,7 +31,7 @@
    "info": ""
   },
   {
-   "name": "comparison hidden (result set from another model version)",
+   "name": "histogram drawn (result set matches loaded model)",
    "pass": true,
    "info": ""
   },
@@ -92,8 +92,7 @@
    "violations": [],
    "passes": 30,
    "incomplete": [
-    "color-contrast",
-    "th-has-data-cells"
+    "color-contrast"
    ]
   },
   "dark": {

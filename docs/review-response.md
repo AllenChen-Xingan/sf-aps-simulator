@@ -32,3 +32,7 @@ Each finding: verdict after checking against the current files, what changed, wh
 `results/` and `vendor/` were excluded from the review scan. Evidence instead: `results/consistency.json`
 (fingerprint, cases, events, runtimes); `vendor/pyodide/README.md` and `scripts/vendor_pyodide.sh`
 (numpy wheel sha256 checked against `pyodide-lock.json` at copy time).
+
+## Status after round 2
+
+Result set re-run by the model owner on design v10 with `model_fingerprint` = loaded model (`2d4bf860ae8a…`); comparisons are shown again. Consistency 67 cases / 19,689 events, 0 differences; replay 0 differences; browser 17/17; axe 0 violations.
