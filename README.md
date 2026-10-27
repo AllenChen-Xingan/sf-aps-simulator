@@ -39,9 +39,9 @@ model folder; a Python venv with numpy 2.4.6 in `.venv`; Node with `npm install`
 
 | Test | Command | Last result (2026-10-26) |
 |---|---|---|
-| **Consistency** — the browser runs the same Python file as the offline analysis. 67 fixed cases (every pathway × mechanism at defaults, 24 random parameter draws, one history-mode run) run in CPython and in Pyodide; every output and every event compared. Integers and strings exact; floats 1e-12 relative | `tests/run_consistency.sh` | CPython 3.14.8 vs Pyodide 314.0.7 (Python 3.14.2), numpy 2.4.6 both: **0 differences** over 19,582 events |
+| **Consistency** — the browser runs the same Python file as the offline analysis. 67 fixed cases (every pathway × mechanism at defaults, 24 random parameter draws, one history-mode run) run in CPython and in Pyodide; every output and every event compared. Integers and strings exact; floats 1e-12 relative | `tests/run_consistency.sh` | CPython 3.14.8 vs Pyodide 314.0.7 (Python 3.14.2), numpy 2.4.6 both: **0 differences** over 19,628 events |
 | **Replay** — the animation moves dots only from the event stream; replaying initial states + events must equal the model's own monthly stocks | `.venv/bin/python -I tests/test_replay.py` | 120 random runs, 14,400 months: **0 differences** |
-| **Browser + accessibility** — headless Chromium: model loads, animation plays, log and live announcements, compare mode by keyboard, pause/step, no console errors, phone width without horizontal scroll, axe-core WCAG 2.1 A/AA in light, dark and reduced-motion phone views | `node tests/e2e.mjs` | 15/15 checks pass; axe: **0 violations** (light, dark, mobile). One item axe could not decide automatically (colour contrast of text over the chart band, light mode) — needs a manual check |
+| **Browser + accessibility** — headless Chromium: model loads, animation plays, log and live announcements, compare mode by keyboard, pause/step, no console errors, phone width without horizontal scroll, axe-core WCAG 2.1 A/AA in light, dark and reduced-motion phone views | `node tests/e2e.mjs` | 17/17 checks pass; axe: **0 violations** (light, dark, mobile). One item axe could not decide automatically (colour contrast of text over the chart band, light mode) — needs a manual check |
 
 ## Accessibility
 
@@ -68,7 +68,7 @@ One rule draws on an interview with SFMTA staff.
 Scenario exploration, not prediction; rules are set by people; many ranges are informed guesses;
 request list only, San Francisco only; injury crashes only (benefits understated); history fit rests on
 very few funding events. The result set and the live model can be different versions while the model
-is under review (now: result set from design v8, live model one revision newer) — the About section shows both.
+is under review (now both design v9 with the 2026-10-26 bug fixes) — the About section shows both.
 
 ## AI assistance
 

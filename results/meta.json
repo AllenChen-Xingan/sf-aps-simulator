@@ -2,17 +2,17 @@
  "status": "preliminary",
  "label": "preliminary \u00b7 uncalibrated \u00b7 scenario projections, not forecasts",
  "model_version": "dev",
- "design_version": "02 v8",
+ "design_version": "02 v9 (bugfix 2026-10-26: PW4 reroute, month-1 installs)",
  "run_date": "2026-10-26",
  "n_param_sets": 300,
  "replicates": 5,
  "seed": 146,
  "replicate_seeds": [
-  527167473,
-  1261406024,
-  2005956517,
-  690943266,
-  945553631
+  1141135237,
+  914287942,
+  1831939689,
+  1220345888,
+  2034757464
  ],
  "horizon_months": 120,
  "total_runs": 63000,

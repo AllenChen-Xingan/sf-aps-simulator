@@ -35,11 +35,11 @@ const MECHS = {
   'M-C2': 'Technical: a share of intersections cannot be done in-house at all.',
 };
 const NODES = {
-  C3: { label: 'Residents who ask', x: 80, y: 70, kind: 'actor' },
+  C3: { label: 'Residents who ask', x: 85, y: 70, kind: 'actor' },
   C2: { label: 'Advocates', x: 80, y: 200, kind: 'actor' },
   D1: { label: 'Enforcement', x: 80, y: 330, kind: 'actor' },
-  A1: { label: 'SFMTA APS engineers', x: 270, y: 70, kind: 'actor' },
-  MDC: { label: 'Disability Council', x: 270, y: 200, kind: 'venue' },
+  A1: { label: 'SFMTA APS engineers', x: 285, y: 70, kind: 'actor' },
+  MDC: { label: 'Disability Council', x: 285, y: 200, kind: 'venue' },
   A2: { label: 'SFMTA grants staff', x: 470, y: 200, kind: 'actor' },
   DIR: { label: 'SFMTA Director', x: 470, y: 330, kind: 'actor' },
   HSIP: { label: 'HSIP (federal)', x: 670, y: 50, kind: 'venue' },
@@ -264,11 +264,22 @@ class Stage {
     this.nodeEls = {};
     for (const [id, n] of Object.entries(NODES)) {
       const g = svg('g', { class: 'node ' + n.kind, transform: `translate(${n.x},${n.y})` }, nodes);
-      if (n.kind === 'venue') svg('rect', { x: -62, y: -16, width: 124, height: 32, rx: 4 }, g);
-      else svg('rect', { x: -66, y: -16, width: 132, height: 32, rx: 16 }, g);
+      const r = svg('rect', { y: -16, height: 32, rx: n.kind === 'venue' ? 4 : 16 }, g);
       const t = svg('text', { 'text-anchor': 'middle', dy: '0.35em' }, g); t.textContent = n.label;
+      this.sizeNode(r, t, n.label);
       this.nodeEls[id] = g;
     }
+  }
+
+  // Box width follows the text (measured once the SVG is in the page; estimate until then).
+  sizeNode(r, t, label) {
+    const fit = () => {
+      let w = 0; try { w = t.getComputedTextLength(); } catch { /* not rendered yet */ }
+      if (!w) w = label.length * 7.6;
+      const W = Math.max(110, w + 28);
+      r.setAttribute('x', -W / 2); r.setAttribute('width', W);
+    };
+    fit(); requestAnimationFrame(fit);
   }
 
   edge(a, b) {
