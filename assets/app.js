@@ -68,7 +68,7 @@ const variantName = v => `${v.split('-')[0]} + approval (variant)`;
 const STEP_ORDER = ['start', 'C14_repack', 'local_line', 'PropL_amendment', 'Director_or_GF', 'GF_request', 'HSIP_repack', 'structured_negotiation', 'lawsuit'];
 const STEP_NAMES = { start: 'start', C14_repack: 'HSIP Cycle 14 repack', local_line: 'local line triggered (two-year check)', PropL_amendment: 'Prop L amendment requested',
   Director_or_GF: 'Director or General Fund asked', GF_request: 'General Fund requested', HSIP_repack: 'HSIP repack', structured_negotiation: 'structured negotiation', lawsuit: 'lawsuit' };
-const VARIANT_NOTE = 'the local line must first pass a Prop L amendment, then one General Fund request, as in PW2';
+const VARIANT_NOTE = 'the local line must first pass a Prop L amendment; if that fails, one General Fund request (as in PW2)';
 // The result set covers runs with no standing local line at the start (as today).
 const lineOn = r => Number(r.request.params.sw_line) !== 0;
 const LINE_MSG = 'No comparison shown: the result set covers runs with no standing local APS line at the start (as today), and a run shown here has that line switched on.';
@@ -600,7 +600,7 @@ function drawHist() {
   $('#hist-data tbody').innerHTML = Object.entries(bins).sort((a, b) => a[0] - b[0]).map(([x, c]) => `<tr><th scope="row">${x}</th><td>${c}</td></tr>`).join('');
   const step = Math.max(1, Math.ceil((hi - lo) / 10));
   for (let x = lo; x <= hi; x += step) { const t = svg('text', { x: X(x), y: H - 12, 'text-anchor': 'middle', class: 'tick' }, s); t.textContent = x; }
-  const marks = player.runs.filter(r => r.request.pathway === r0.request.pathway);
+  const marks = player.runs.filter(r => r.request.pathway === r0.request.pathway && r.request.mechanism === r0.request.mechanism);
   for (const r of marks) {
     const x = X(r.summary.installed_5y);
     svg('line', { x1: x, x2: x, y1: T, y2: H - B, class: 'now' }, s);
@@ -649,7 +649,7 @@ function drawRobust() {
     const vr = pooled ? null : (R.table_variant_approval || []).find(x => x.pathway === v && x.mechanism === mech && x.control === 'positive');
     const vz = (R.table_variant_approval || []).find(x => x.pathway === v && x.mechanism === mech && x.control === 'zero_direct');
     if (vr) row(head, vr, vz, false);
-    else { const tr = document.createElement('tr'); tr.innerHTML = `<th scope="row">${head}</th><td colspan="4">Run only with no standing line at the start; switch the view above.</td>`; tb.appendChild(tr); }
+    else { const tr = document.createElement('tr'); tr.innerHTML = `<th scope="row">${head}</th><td colspan="4">This variant was computed only for sets with no standing line at the start; choose that view above to see it. It cannot be run here.</td>`; tb.appendChild(tr); }
   }
 }
 
@@ -733,8 +733,8 @@ function currentRequest(pw) {
 }
 const isDefault = req => req.mechanism === 'M-D' && req.seed === 146 && state.schema.every(s => req.params[s.name] === s.default);
 
-async function getRun(req) {
-  if (modelReady) {
+async function getRun(req, live = modelReady) {
+  if (live) {
     const r = await callWorker('run', req);
     if (r.ok) { r.result._source = 'live'; return r.result; }
     throw new Error(r.error);
@@ -764,7 +764,8 @@ async function onRun() {
     const reqs = [currentRequest($('#pw-A').value)];
     if ($('#compare').checked) reqs.push(currentRequest($('#pw-B').value));
     const runs = [];
-    for (const q of reqs) runs.push(attachHigh(await getRun(q), highKeys));
+    const live = modelReady;                                  // one source for every run in a comparison
+    for (const q of reqs) runs.push(attachHigh(await getRun(q, live), highKeys));
     startPlayback(runs);
   } catch (e) {
     $('#model-status').textContent = 'The run failed: ' + e.message;

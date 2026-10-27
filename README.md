@@ -9,8 +9,9 @@ not proof of cause. Parameters were screened against the 2022–2025 request lis
 filter; ranges stay close to the priors; not a calibration). The result set is the formal one (design
 v14, frozen). Its main view starts with no standing local APS line, as today. It also includes a variant in which
 PW4/PW5's local line must pass the same approval chain as PW2 (view only; not runnable in the page) and
-the rule-finding (PRIM) conditions. Shares in the tables are shares of parameter sets, not probabilities of
-real outcomes. Pathway PW5 (design rule) runs, but its rule is inferred: the hardware-change rate and the
+the rule-finding (PRIM) conditions. None of the shares are probabilities of real outcomes: "money within
+5 years" and "steps reached" are shares of runs; "did better than the status quo" is the share of
+parameter sets that installed more within ten years than the status quo with the same set. Pathway PW5 (design rule) runs, but its rule is inferred: the hardware-change rate and the
 APS add-on budget are assumptions (shown as a note via `config.json`). PW1's last step (Director
 reallocation) is a hypothetical fallback. Many-run comparisons appear only when the result set's model fingerprint equals the
 fingerprint of the model files the browser actually loaded (`scripts/fingerprint.py`).
@@ -60,7 +61,7 @@ model folder; a Python venv with numpy 2.4.6 in `.venv`; Node with `npm install`
 |---|---|---|
 | **Consistency** — the browser runs the same Python files as the offline analysis. The report records the model fingerprint (model.py + params.py + inputs.json) and both runtimes; the page shows a pass only if that fingerprint equals the one the browser worker computes from the bytes it loaded. 67 fixed cases (every pathway × mechanism at defaults, 24 random parameter draws, one history-mode run) run in CPython and in Pyodide; every output and every event compared. Integers and strings equal; decimals within 1e-12 relative or 1e-9 absolute (a pass is not a bit-for-bit claim). The Pyodide side uses the same self-hosted runtime the page publishes, and the page also checks the runtime versions its worker loaded | `tests/run_consistency.sh` | CPython 3.14.8 vs Pyodide 314.0.7 (Python 3.14.2), numpy 2.4.6 both: **0 differences** over 19,857 events |
 | **Replay** — the animation moves dots only from the event stream; replaying initial states + events must equal the model's own monthly stocks | `.venv/bin/python -I tests/test_replay.py` | 120 random runs, 14,400 months: **0 differences** |
-| **Browser + accessibility** — headless Chromium: model loads, animation plays, log and live announcements, compare mode by keyboard, pause/step, no console errors, phone width without horizontal scroll, axe-core WCAG 2.1 A/AA in light, dark and reduced-motion phone views | `node tests/e2e.mjs` | 30/30 checks pass (incl. actor cards by keyboard, a run started while the model loads, and the pathway table checked against the result file); axe: **0 violations** (light, dark, mobile). One item axe could not decide automatically (colour contrast of text over the chart band, light mode) — needs a manual check |
+| **Browser + accessibility** — headless Chromium: model loads, animation plays, log and live announcements, compare mode by keyboard, pause/step, no console errors, phone width without horizontal scroll, axe-core WCAG 2.1 A/AA in light, dark and reduced-motion phone views | `node tests/e2e.mjs` | 32/32 checks pass (incl. actor cards by keyboard, a run started while the model loads, and the pathway table checked against the result file); axe: **0 violations** (light, dark, mobile). One item axe could not decide automatically (colour contrast of text over the chart band, in light and dark mode) — needs a manual check |
 
 ## Accessibility
 

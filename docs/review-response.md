@@ -78,3 +78,16 @@ Tests: consistency 67 cases / 19,857 events, 0 differences; replay 14,400 months
 | P2 #7 | "Direct start effect set to zero" unexplained | Valid | One sentence on parameter set vs replicate; the zero-effect column explained (owner, deadline, oversight, pressure no longer raise the chance of starting an application; outside enforcement still acts) | same |
 
 Tests after round 4: browser 32/32; axe 0 violations. Model and results unchanged (consistency and replay as in the formal section).
+
+## Round 5 (reviewed 5cea5d2): no P0/P1
+
+| # | Finding | Verdict | Change |
+|---|---|---|---|
+| P2 #1 | Histogram marks filtered by pathway only; recorded and live runs could mix | Valid | Marks also match the mechanism; `onRun` fixes one source (live or recorded) for every run in a comparison |
+| P2 #2 | Variant text implied Prop L then General Fund in sequence | Valid | "a Prop L amendment, and only if that fails, one General Fund request" (page and row note) |
+| P2 #3 | Pooled-view note could read as "runnable" | Valid | "computed only for sets with no standing line at the start; choose that view to see it. It cannot be run here." |
+| P2 #4 | README called every share a share of parameter sets | Valid | README separates shares of runs (money, steps) from shares of parameter sets (better than status quo) |
+| P2 #5 | PW5's line trigger condition omitted | Valid | "adds one if too few listed intersections got APS within two years" |
+| P2 #6 | README check count and contrast note stale | Valid | 32/32; manual contrast check needed in light and dark mode |
+
+Tests after round 5: browser 32/32; axe 0 violations.

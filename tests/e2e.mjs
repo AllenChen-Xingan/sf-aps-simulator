@@ -85,7 +85,7 @@ try {
         const bad = pairs.filter(([n, k]) => JSON.stringify(got(n)) !== JSON.stringify(want(k)));
         ok('pathway table matches the result file, variant rows included', rows.length === 9 && !bad.length, bad.map(b => b[0]).join(',') || `${rows.length} rows`);
         await page.selectOption('#line-view', 'pooled');
-        ok('pooled view: variant rows say they were not run', /Run only with no standing line/.test(await page.textContent('#robust tbody')));
+        ok('pooled view: variant rows say they were not run', /computed only for sets with no standing line[\s\S]*cannot be run here/.test(await page.textContent('#robust tbody')));
         await page.selectOption('#line-view', 'main');
         const prim = await page.$$eval('#prim tbody tr', trs => trs.map(tr => tr.textContent));
         ok('PRIM conditions shown for every pathway', prim.length === 7 && /standing local line/.test(prim[0]) && /written for APS/.test(prim[4]), prim[0]);
