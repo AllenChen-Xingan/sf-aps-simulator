@@ -1,4 +1,4 @@
-"""E3 approval variant (added after the pre-specified experiments were defined; reported separately).
+"""Approval variant: PW4/PW5 standing line requires the same Prop L approval as PW2 (reported separately).
 
 PW4 and PW5 get their standing local line only through the same approval chain as PW2
 (Prop L amendment: q_veto, t_defer, th_defer; on failure one General Fund request: q_gf).

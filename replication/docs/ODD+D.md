@@ -589,7 +589,7 @@ Parameters: `lam_arr`, plus those used by `_site` and `_draw_carriers`.
     a = 2024-07 (M-B1, M-D) or 2023-01 (M-B2);  end = 2026-12 + int(strain_end)
     strain() = 0 if now < a or now ≥ end, else min(1, (now − a + 1) / max(1, strain_ramp))
 
-**Unit cost and cost pressure** (`unit_cost`, `costpress`, l.254–260):
+**Unit cost and cost pressure** (`unit_cost`, l.254; `costpress`, l.259):
 
     years = max(0, (now − 2022-07) / 12)
     unit_cost() = u0 · (1 + g)^years,  g = g_cost in cost settings (M-C1, M-D), else 0

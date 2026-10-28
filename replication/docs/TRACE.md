@@ -218,10 +218,10 @@ Under the base priors, 15.4–26.2% of 2,000 combinations per setting reproduce 
 
 ### 6.2 Robustness of the screening
 
-- **Exhaustion date.** Acceptance changes by at most 1.8 percentage points (M-A, from 24.9% to 23.1%) across five assumed exhaustion dates of the earlier dedicated programme (Table 4).
-- **Prior width.** Narrow priors give acceptance of 24.3–26.6% and H1 pass rates of 89.6–91.2%; wide priors give 5.1–8.1% and 44.3–49.5% (Table 5). The ordering of settings is not stable across widths: M-B2 has the lowest acceptance under base and wide priors but the highest under narrow priors.
+- **Exhaustion date.** Acceptance changes by at most 1.8 percentage points (M-A, from 24.9% to 23.1%) across five assumed exhaustion dates of the earlier dedicated programme (`docs/results.md`, Table 4).
+- **Prior width.** Narrow priors give acceptance of 24.3–26.6% and H1 pass rates of 89.6–91.2%; wide priors give 5.1–8.1% and 44.3–49.5% (`docs/results.md`, Table 5). The ordering of settings is not stable across widths: M-B2 has the lowest acceptance under base and wide priors but the highest under narrow priors.
 - **Double use of the installation records.** With independent wide priors for `h_in` and `h_fs`, acceptance falls to 7.8–12.5% and the H1 pass rate to 46.0–56.5%; M-B2 again has the lowest acceptance (Table 5).
-- **Constraint on parameters.** The 10th–90th percentiles of accepted combinations cover most of each prior range (Table 6). The screening is a weak filter, not a calibration.
+- **Constraint on parameters.** The 10th–90th percentiles of accepted combinations cover most of each prior range (`docs/results.md`, Table 6). The screening is a weak filter, not a calibration.
 
 ### 6.3 Use of the screened combinations
 
@@ -242,19 +242,19 @@ Five experiments were specified in the protocol (`docs/experiment-protocol.md`):
 
 ### 7.2 Pathway comparison (E3)
 
-In the main comparison (no standing local line at the start), PW5, PW4 and PW6 form the leading tier under the base design (92.2–97.5% of combinations outperform current practice); PW1 and PW2 follow; PW3 is lowest in five of six settings (`docs/results.md`, Tables 7–8). Under the approval variant, PW4 and PW5 remain in the same tier as PW6 and PW1 for installations (90.7–95.2%), but their funding within five years falls (PW4 from 86.8–91.2% to 50.4–65.5%). Setting the direct initiation effects to zero reduces PW3 from 66.9–88.6% to 44.5–80.5%. The output pooled over both values of `sw_line`, the `sw_line` = 1 group and the PW1 subset without the hypothetical reallocation are reported for comparison (`docs/results.md` §§4.3–4.6).
+In the main comparison (no standing local line at the start), PW5 and PW4 under the base design outperform current practice in 92.4–97.3% of combinations, PW6 in 91.5–95.0%, PW1 in 89.4–95.0%, PW2 in 87.4–92.1%, and PW3, lowest in every setting, in 66.9–88.6% (`docs/results.md`, Tables 7–9). Under the approval variant, PW4 and PW5 outperform current practice in 91.2–95.2% of combinations, while their funding within five years falls to 51.3–66.5% (PW4) and 46.9–63.1% (PW5); the line received without approval accounts for a substantial part, but not all, of their advantage (`docs/results.md` §4.2). Setting the direct initiation effects to zero reduces PW3 from 66.9–88.6% to 44.5–80.5%. Because the measure counts only strict improvements in mean installations, a pathway with no systematic effect but a divergent random stream would score just below 50%; shares are read against that reference (`docs/results.md` §1). The output pooled over both values of `sw_line`, the `sw_line` = 1 group and the PW1 subset without the hypothetical reallocation are reported for comparison (`docs/results.md` §§4.3–4.6).
 
 ### 7.3 Scenario discovery (E2)
 
-The primary PRIM boxes have test density 0.939–0.996, and CART reaches test accuracy 0.748–0.972 (`docs/results.md`, Table 17). The rule lists stored by `prim_all` are defective (`docs/experiment-protocol.md` §8.2). Corrected rules, re-fitted as a secondary analysis, require a standing local line and an APS share of at least about 4–9% of it for PW0–PW3, and an APS share of at least about 7–11% for PW4–PW6; the size of the line does not enter any box (`docs/results.md` §6.2).
+The primary PRIM boxes have test density 0.939–0.995, and CART reaches test accuracy 0.748–0.966 (`docs/results.md`, Table 18); the base rate of success is not stored, so these values cannot be compared with it. The rule lists stored by `prim_all` are defective (`docs/experiment-protocol.md` §8.2). Corrected rules, re-fitted as a secondary analysis, require a standing local line and an APS share of at least about 4–9% of it for PW0–PW3, and an APS share of at least about 5–13% for PW4–PW6; the size of the line does not enter any box (`docs/results.md` §6.2).
 
 ### 7.4 Sensitivity analysis (E4)
 
-Morris screening of all 98 parameters selected the same ten of the top twelve in two passes; the first-pass list entered the Sobol analysis (`docs/experiment-protocol.md` §7). Averaged over 14 cells, the APS share of a standing line has the largest total index (0.329), followed by conduit work, the existence of a standing line and curb-ramp work (0.188–0.215, not separable), and line size (0.134). Total indices sum to 1.464 and first-order indices to 0.726, so interactions are substantial. The leading parameter did not change in the fixed-background check (`docs/results.md` §7).
+[Pending: Morris overlap and list, leading Sobol indices and their sums, and the fixed-background check, from `results/e4-sensitivity/`.]
 
 ### 7.5 Channels for accountability, pressure and capacity
 
-Pressure, ownership, deadlines, oversight, enforcement and crew capacity are not among the leading twelve in Morris screening (`docs/results.md`, Table 19), and marginal splits of the E3 runs show no trend in pressure (Tables 14–15). These results describe the model structure: these factors act only on the monthly probability of starting an application, or as a monthly ceiling, and supply no money. Mechanisms through which they act elsewhere, such as court-ordered quotas and funds, per-crossing deadlines or a monitor, are not modelled.
+Pressure, ownership, deadlines, oversight, enforcement and crew capacity are not among the leading twelve in Morris screening (`docs/results.md`, Table 20), and marginal splits of the E3 runs show no trend in pressure (`docs/results.md`, Tables 15–16). These results describe the model structure: these factors act only on the monthly probability of starting an application, or as a monthly ceiling, and supply no money. Mechanisms through which they act elsewhere, such as court-ordered quotas and funds, per-crossing deadlines or a monitor, are not modelled.
 
 ### 7.6 Secondary analyses
 

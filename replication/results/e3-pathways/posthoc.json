@@ -1297,7 +1297,7 @@
    ]
   }
  },
- "note": "post hoc, not in the pre-specified protocol; see module docstring",
+ "note": "secondary analyses computed from the E3 runs without new simulation; see module docstring",
  "prim_full_rules_thr0.5": {
   "PW0": [
    {

@@ -16,7 +16,7 @@ BLUE, ORANGE = '#2a78d6', '#eb6834'
 INK, INK2, GRID, SURF = '#0b0b0b', '#52514e', '#e4e3df', '#fcfcfb'
 NAMES = {'PW1': 'PW1 HSIP first', 'PW2': 'PW2 Local line first', 'PW3': 'PW3 Accountability first',
          'PW4': 'PW4 Per-intersection routes', 'PW5': 'PW5 Design rule', 'PW6': 'PW6 Use SG017 line'}
-LABEL = 'Preliminary · uncalibrated · scenario projections, not forecasts'
+LABEL = 'Uncalibrated scenario projections, not forecasts'
 
 
 def style(ax):

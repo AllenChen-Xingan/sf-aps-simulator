@@ -1,11 +1,11 @@
-"""Export the formal E3 results (plus the approval variant) for the web page, in the same file layout
-as prelim_export.py so the site's sync script keeps working. No simulation: reads saved runs only.
+"""Export the formal E3 results (plus the approval variant) for the web page, in the file layout
+the web page expects. No simulation: reads saved runs only.
 
 Main view = sw_line 0 (no standing local APS line at the start, as today), positive-effect priors,
 history-screened parameter sets (E1). Pooled and zero-direct-effect tables, the variant, and the
 corrected PRIM boxes are added as extra keys / files.
 
-    python -I final_export.py [--out DIR]      # default results/web/ (the preliminary set moves to results/web-prelim/)
+    python -I final_export.py [--out DIR]      # default results/web/
 """
 import argparse, csv, datetime, gzip, hashlib, io, json, shutil, sys
 from pathlib import Path
@@ -86,7 +86,7 @@ def main():
         keep = RES / 'web-prelim'
         if keep.exists():
             raise SystemExit(f'{keep} exists; move it aside first')
-        shutil.move(str(out), str(keep))                     # keep the preliminary set (reproducible by prelim_export.py)
+        shutil.move(str(out), str(keep))                     # keep an earlier exploratory export aside
     out.mkdir(parents=True, exist_ok=True)
 
     with gzip.open(RES / 'e3-pathways' / 'runs.csv.gz', 'rt') as f:
@@ -164,8 +164,8 @@ def main():
             'notes': [
                 'Parameters were first screened against the 2022-2025 request lists (rejection filter; weak, ranges stay close to the priors; not a calibration).',
                 'Scenario exploration under stated rules; scenario projections, not forecasts. Shares are shares of parameter sets, not probabilities of real outcomes.',
-                'E3 runs were produced by the model identified by produced_by_fingerprint. Its approval switch is off for the pre-specified pathways and on only for the "-approval" variant runs.',
-                'In the pre-specified pathways, PW4 has a standing local line from the start and PW5 adds one automatically after two years, with no approval step; PW2 must pass a Prop L amendment. The "-approval" variant puts PW4/PW5 through the same approval chain as PW2.',
+                'E3 runs were produced by the model identified by produced_by_fingerprint. Its approval switch is off for the base pathways and on only for the "-approval" variant runs.',
+                'In the base pathways, PW4 has a standing local line from the start and PW5 adds one automatically after two years, with no approval step; PW2 must pass a Prop L amendment. The "-approval" variant puts PW4/PW5 through the same approval chain as PW2.',
                 'PW1 ends in a hypothetical Director reallocation branch (probability and amount are assumptions).',
                 'Pressure, a named owner and crew capacity act in the model only through the start probability or a cap; their small sensitivity reflects the model having no other channel for them, not their real-world importance.']}
     (out / 'meta.json').write_text(json.dumps(meta, indent=1))

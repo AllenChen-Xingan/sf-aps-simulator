@@ -1,10 +1,10 @@
-"""Parallel batch runner for E1-E4 (and the preliminary set).
+"""Parallel batch runner for experiments E1-E4.
 
 Each task = (task_id, params dict, pathway, mechanism, seeds, start, horizon). A task's
 replicate seeds are fixed before dispatch, so results do not depend on which worker
 runs it or in what order. Workers write shard files (one gzip JSON-lines file per shard);
 merge() reads all shards and orders rows by task_id, so the merged output is identical
-to a single-process run. Default workers = CPU count - 2 (leave two cores for other sessions).
+to a single-process run. Default workers = CPU count - 2 (two cores left free).
 
     from runner import run_tasks, make_tasks
     rows = run_tasks(tasks, out_dir, workers=None)

@@ -1,6 +1,6 @@
-"""Post hoc analyses of the E2/E3 runs (no new simulation; specified after the experiment protocol).
+"""Secondary analyses computed from the E3 runs without new simulation.
 
-These are not part of the pre-specified protocol. They re-read results/e3-pathways/runs.csv.gz and write
+They re-read results/e3-pathways/runs.csv.gz and write
 results/e3-pathways/posthoc.json:
   1. robustness split by the sw_line switch (the design reports switch scenarios as separate groups);
      sw_line = 0 is the case that matches today's status quo (no standing local APS line);
@@ -139,7 +139,7 @@ def screened_corr():
 
 if __name__ == '__main__':
     rows = load()
-    res = {'note': 'post hoc, not in the pre-specified protocol; see module docstring',
+    res = {'note': 'secondary analyses computed from the E3 runs without new simulation; see module docstring',
            'by_sw_line': {'line0_status_quo': table(rows, lambda r: r['sw_line'] == 0),
                           'line1': table(rows, lambda r: r['sw_line'] == 1),
                           'pooled': table(rows, lambda r: True)},
