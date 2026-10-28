@@ -1,0 +1,13 @@
+Documentation, data and results in this package (docs/, data/, results/, README.md,
+MODEL_CARD.md) are licensed under the Creative Commons Attribution 4.0 International
+licence (CC BY 4.0).
+
+Copyright (c) 2026 Allen Chen
+
+You are free to share and adapt this material for any purpose, provided that you give
+appropriate credit, provide a link to the licence and indicate if changes were made.
+
+Full licence text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Third-party public documents and data sets cited in docs/references.md remain under
+their own terms; this package redistributes derived values, not the original documents.

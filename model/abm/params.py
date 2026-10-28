@@ -1,4 +1,4 @@
-"""Parameter table (design 02 section D10), machine-readable.
+"""Parameter table, machine-readable (see docs/parameters.md).
 
 Standard library only. `param_schema()` is the single source for the batch
 sampler and the web control panel. Status: dev, priors not calibrated.

@@ -719,8 +719,8 @@ function showConsistency() {
 function refreshComparisons() {
   const m = state.meta, v = state.version;
   const nb = Object.values(m.n_param_sets_by_mechanism || {}), nRange = nb.length ? `${fmtInt(Math.min(...nb))}–${fmtInt(Math.max(...nb))}` : fmtInt(m.n_param_sets);
-  $('#set-desc').textContent = (sameModel() ? '' : HIDDEN_MSG() + ' ') + `Main view: the parameter sets that start with no standing local APS line, as today (${nRange} per mechanism), each run ${m.replicates} times for every pathway (${fmtInt(m.total_runs)} runs). Parameters were first screened against the 2022–2025 request lists; that screen is weak and is not a calibration. Run on ${m.run_date}, design version ${m.design_version}.`;
-  $('#version-line').textContent = `Model loaded here: fingerprint ${liveFP ? liveFP.slice(0, 12) : 'not yet computed'} (files synced ${v.synced}). Result set: design ${m.design_version}, run ${m.run_date}, fingerprint ${(m.model_fingerprint || 'not recorded').slice(0, 12)}` +
+  $('#set-desc').textContent = (sameModel() ? '' : HIDDEN_MSG() + ' ') + `Main view: the parameter sets that start with no standing local APS line, as today (${nRange} per mechanism), each run ${m.replicates} times for every pathway (${fmtInt(m.total_runs)} runs). Parameters were first screened against the 2022–2025 request lists; that screen is weak and is not a calibration. Run on ${m.run_date}; ${m.design_version}.`;
+  $('#version-line').textContent = `Model loaded here: fingerprint ${liveFP ? liveFP.slice(0, 12) : 'not yet computed'} (files synced ${v.synced}). Result set: ${m.design_version}, run ${m.run_date}, fingerprint ${(m.model_fingerprint || 'not recorded').slice(0, 12)}` +
     (sameModel() ? ' — same model.' : liveFP ? ' — different model, so many-run comparisons are hidden.' : '.');
   drawRobust(); drawReach(); drawPrim(); showConsistency();
   if (player.runs.length) { drawTimeline(player.t >= player.runs[0].months.length - 1 ? -1 : player.t); drawHist(); showSummary(); }

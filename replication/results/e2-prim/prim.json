@@ -1,0 +1,2641 @@
+{
+ "PW0": [
+  {
+   "threshold": 0.25,
+   "split": 0,
+   "rules": [
+    {
+     "param": "aps_share",
+     "low": 0.1100029574180368,
+     "high": 0.49943759707489344
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.98920197493589
+    },
+    {
+     "param": "r_other",
+     "low": 1411.6758926968964,
+     "high": 9998570.965120444
+    }
+   ],
+   "coverage_test": 0.5734072022160664,
+   "density_test": 0.9847764034253093,
+   "cart_test_accuracy": 0.8256666666666667,
+   "cart_rules": "|--- sw_line <= 0.50\n|   |--- b0 <= -5.39\n|   |   |--- b_own <= 1.28\n|   |   |   |--- class: False\n|   |   |--- b_own >  1.28\n|   |   |   |--- class: False\n|   |--- b0 >  -5.39\n|   |   |--- a_local <= 28569.29\n|   |   |   |--- class: False\n|   |   |--- a_local >  28569.29\n|   |   |   |--- class: False\n|--- sw_line >  0.50\n|   |--- aps_share <= 0.04\n|   |   |--- a_line <= 1622119.12\n|   |   |   |--- class: False\n|   |   |--- a_line >  1622119.12\n|   |   |   |--- class: True\n|   |--- aps_share >  0.04\n|   |   |--- aps_share <= 0.06\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.06\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.25,
+   "split": 1,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500586.9115581133,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.0875556381165215,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.991691078147465
+    }
+   ],
+   "coverage_test": 0.6146478873239437,
+   "density_test": 0.9811151079136691,
+   "cart_test_accuracy": 0.821,
+   "cart_rules": "|--- sw_line <= 0.50\n|   |--- b0 <= -5.91\n|   |   |--- b_own <= 1.85\n|   |   |   |--- class: False\n|   |   |--- b_own >  1.85\n|   |   |   |--- class: False\n|   |--- b0 >  -5.91\n|   |   |--- a_local <= 35460.47\n|   |   |   |--- class: False\n|   |   |--- a_local >  35460.47\n|   |   |   |--- class: False\n|--- sw_line >  0.50\n|   |--- aps_share <= 0.06\n|   |   |--- a_line <= 1388419.19\n|   |   |   |--- class: False\n|   |   |--- a_line >  1388419.19\n|   |   |   |--- class: True\n|   |--- aps_share >  0.06\n|   |   |--- aps_share <= 0.08\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.08\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.25,
+   "split": 2,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 575662.7548442226,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.09016056661058965,
+     "high": 0.49954111078945684
+    },
+    {
+     "param": "c_final",
+     "low": 3.501532391307821,
+     "high": 17.9949585138121
+    }
+   ],
+   "coverage_test": 0.6041433370660694,
+   "density_test": 0.9880952380952381,
+   "cart_test_accuracy": 0.83,
+   "cart_rules": "|--- sw_line <= 0.50\n|   |--- b0 <= -5.93\n|   |   |--- c_cd <= 10205.53\n|   |   |   |--- class: True\n|   |   |--- c_cd >  10205.53\n|   |   |   |--- class: False\n|   |--- b0 >  -5.93\n|   |   |--- a_local <= 40382.51\n|   |   |   |--- class: False\n|   |   |--- a_local >  40382.51\n|   |   |   |--- class: False\n|--- sw_line >  0.50\n|   |--- aps_share <= 0.03\n|   |   |--- a_line <= 1474992.62\n|   |   |   |--- class: False\n|   |   |--- a_line >  1474992.62\n|   |   |   |--- class: False\n|   |--- aps_share >  0.03\n|   |   |--- aps_share <= 0.06\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.06\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.25,
+   "split": 3,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 572833.7601687894,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.08824708896720786,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.513995338031364,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.6240179573512907,
+   "density_test": 0.9884444444444445,
+   "cart_test_accuracy": 0.832,
+   "cart_rules": "|--- sw_line <= 0.50\n|   |--- b0 <= -5.49\n|   |   |--- b_own <= 1.28\n|   |   |   |--- class: False\n|   |   |--- b_own >  1.28\n|   |   |   |--- class: False\n|   |--- b0 >  -5.49\n|   |   |--- a_local <= 31220.50\n|   |   |   |--- class: False\n|   |   |--- a_local >  31220.50\n|   |   |   |--- class: False\n|--- sw_line >  0.50\n|   |--- aps_share <= 0.04\n|   |   |--- aps_share <= 0.02\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.02\n|   |   |   |--- class: False\n|   |--- aps_share >  0.04\n|   |   |--- aps_share <= 0.07\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.07\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.25,
+   "split": 4,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500446.2966828106,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.0831124929194883,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "r_other",
+     "low": 889.1200962572409,
+     "high": 9995223.370848808
+    }
+   ],
+   "coverage_test": 0.6284454244762955,
+   "density_test": 0.9827586206896551,
+   "cart_test_accuracy": 0.8313333333333334,
+   "cart_rules": "|--- sw_line <= 0.50\n|   |--- b0 <= -4.88\n|   |   |--- b_own <= 1.99\n|   |   |   |--- class: False\n|   |   |--- b_own >  1.99\n|   |   |   |--- class: False\n|   |--- b0 >  -4.88\n|   |   |--- a_local <= 36759.94\n|   |   |   |--- class: False\n|   |   |--- a_local >  36759.94\n|   |   |   |--- class: False\n|--- sw_line >  0.50\n|   |--- aps_share <= 0.05\n|   |   |--- aps_share <= 0.02\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.02\n|   |   |   |--- class: False\n|   |--- aps_share >  0.05\n|   |   |--- aps_share <= 0.08\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.08\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 0,
+   "rules": [
+    {
+     "param": "aps_share",
+     "low": 0.08718353112658198,
+     "high": 0.49943759707489344
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.98920197493589
+    },
+    {
+     "param": "r_other",
+     "low": 1411.6758926968964,
+     "high": 9998570.965120444
+    }
+   ],
+   "coverage_test": 0.7,
+   "density_test": 0.9792418772563177,
+   "cart_test_accuracy": 0.8986666666666666,
+   "cart_rules": "|--- sw_line <= 0.50\n|   |--- b0 <= -3.72\n|   |   |--- b_own <= 1.48\n|   |   |   |--- class: False\n|   |   |--- b_own >  1.48\n|   |   |   |--- class: False\n|   |--- b0 >  -3.72\n|   |   |--- a_local <= 75706.99\n|   |   |   |--- class: False\n|   |   |--- a_local >  75706.99\n|   |   |   |--- class: False\n|--- sw_line >  0.50\n|   |--- aps_share <= 0.05\n|   |   |--- aps_share <= 0.03\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.03\n|   |   |   |--- class: False\n|   |--- aps_share >  0.05\n|   |   |--- aps_share <= 0.09\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.09\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 1,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500586.9115581133,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.08899423029084465,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.991691078147465
+    }
+   ],
+   "coverage_test": 0.6867627785058977,
+   "density_test": 0.9703703703703703,
+   "cart_test_accuracy": 0.8846666666666667,
+   "cart_rules": "|--- sw_line <= 0.50\n|   |--- b0 <= -3.71\n|   |   |--- b_own <= 1.53\n|   |   |   |--- class: False\n|   |   |--- b_own >  1.53\n|   |   |   |--- class: False\n|   |--- b0 >  -3.71\n|   |   |--- a_local <= 47314.02\n|   |   |   |--- class: False\n|   |   |--- a_local >  47314.02\n|   |   |   |--- class: False\n|--- sw_line >  0.50\n|   |--- aps_share <= 0.06\n|   |   |--- aps_share <= 0.03\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.03\n|   |   |   |--- class: False\n|   |--- aps_share >  0.06\n|   |   |--- c_full <= 599446.31\n|   |   |   |--- class: True\n|   |   |--- c_full >  599446.31\n|   |   |   |--- class: False\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 2,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 575662.7548442226,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.09016056661058965,
+     "high": 0.49954111078945684
+    },
+    {
+     "param": "c_final",
+     "low": 3.501532391307821,
+     "high": 17.9949585138121
+    }
+   ],
+   "coverage_test": 0.6995397764628534,
+   "density_test": 0.9743589743589743,
+   "cart_test_accuracy": 0.901,
+   "cart_rules": "|--- sw_line <= 0.50\n|   |--- b0 <= -4.88\n|   |   |--- b_own <= 2.80\n|   |   |   |--- class: False\n|   |   |--- b_own >  2.80\n|   |   |   |--- class: False\n|   |--- b0 >  -4.88\n|   |   |--- b_own <= 1.52\n|   |   |   |--- class: False\n|   |   |--- b_own >  1.52\n|   |   |   |--- class: False\n|--- sw_line >  0.50\n|   |--- aps_share <= 0.03\n|   |   |--- t_con_med <= 8.21\n|   |   |   |--- class: True\n|   |   |--- t_con_med >  8.21\n|   |   |   |--- class: False\n|   |--- aps_share >  0.03\n|   |   |--- aps_share <= 0.06\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.06\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 3,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 577312.6735235713,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.07020649951572108,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.513995338031364,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.7495081967213115,
+   "density_test": 0.978595890410959,
+   "cart_test_accuracy": 0.907,
+   "cart_rules": "|--- sw_line <= 0.50\n|   |--- b0 <= -4.89\n|   |   |--- b_own <= 2.00\n|   |   |   |--- class: False\n|   |   |--- b_own >  2.00\n|   |   |   |--- class: False\n|   |--- b0 >  -4.89\n|   |   |--- b_own <= 1.52\n|   |   |   |--- class: False\n|   |   |--- b_own >  1.52\n|   |   |   |--- class: False\n|--- sw_line >  0.50\n|   |--- aps_share <= 0.04\n|   |   |--- t_con_med <= 8.20\n|   |   |   |--- class: True\n|   |   |--- t_con_med >  8.20\n|   |   |   |--- class: False\n|   |--- aps_share >  0.04\n|   |   |--- aps_share <= 0.07\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.07\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 4,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500446.2966828106,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.0831124929194883,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "r_other",
+     "low": 889.1200962572409,
+     "high": 9995223.370848808
+    }
+   ],
+   "coverage_test": 0.7220795892169448,
+   "density_test": 0.9698275862068966,
+   "cart_test_accuracy": 0.9013333333333333,
+   "cart_rules": "|--- sw_line <= 0.50\n|   |--- b0 <= -4.89\n|   |   |--- b_own <= 1.99\n|   |   |   |--- class: False\n|   |   |--- b_own >  1.99\n|   |   |   |--- class: False\n|   |--- b0 >  -4.89\n|   |   |--- b0 <= -3.38\n|   |   |   |--- class: False\n|   |   |--- b0 >  -3.38\n|   |   |   |--- class: False\n|--- sw_line >  0.50\n|   |--- aps_share <= 0.05\n|   |   |--- aps_share <= 0.02\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.02\n|   |   |   |--- class: False\n|   |--- aps_share >  0.05\n|   |   |--- aps_share <= 0.08\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.08\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 0,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 575828.2284388677,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.06457954749485159,
+     "high": 0.49943759707489344
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.8118240807498197,
+   "density_test": 0.9582978723404255,
+   "cart_test_accuracy": 0.932,
+   "cart_rules": "|--- sw_line <= 0.50\n|   |--- b0 <= -3.69\n|   |   |--- lam_press <= 0.00\n|   |   |   |--- class: True\n|   |   |--- lam_press >  0.00\n|   |   |   |--- class: False\n|   |--- b0 >  -3.69\n|   |   |--- b_own <= 2.41\n|   |   |   |--- class: False\n|   |   |--- b_own >  2.41\n|   |   |   |--- class: False\n|--- sw_line >  0.50\n|   |--- aps_share <= 0.05\n|   |   |--- aps_share <= 0.03\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.03\n|   |   |   |--- class: False\n|   |--- aps_share >  0.05\n|   |   |--- aps_share <= 0.20\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.20\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 1,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500586.9115581133,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.07020649951572108,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.991691078147465
+    }
+   ],
+   "coverage_test": 0.7877218934911243,
+   "density_test": 0.9391534391534392,
+   "cart_test_accuracy": 0.9213333333333333,
+   "cart_rules": "|--- sw_line <= 0.50\n|   |--- b0 <= -3.68\n|   |   |--- b_own <= 2.84\n|   |   |   |--- class: False\n|   |   |--- b_own >  2.84\n|   |   |   |--- class: False\n|   |--- b0 >  -3.68\n|   |   |--- q_fail <= 0.00\n|   |   |   |--- class: True\n|   |   |--- q_fail >  0.00\n|   |   |   |--- class: False\n|--- sw_line >  0.50\n|   |--- aps_share <= 0.06\n|   |   |--- aps_share <= 0.03\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.03\n|   |   |   |--- class: False\n|   |--- aps_share >  0.06\n|   |   |--- aps_share <= 0.20\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.20\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 2,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 575662.7548442226,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.1353140909719538,
+     "high": 0.49954111078945684
+    },
+    {
+     "param": "c_final",
+     "low": 3.501532391307821,
+     "high": 17.9949585138121
+    }
+   ],
+   "coverage_test": 0.6781021897810219,
+   "density_test": 0.9626943005181348,
+   "cart_test_accuracy": 0.9293333333333333,
+   "cart_rules": "|--- sw_line <= 0.50\n|   |--- b0 <= -3.46\n|   |   |--- b_own <= 2.80\n|   |   |   |--- class: False\n|   |   |--- b_own >  2.80\n|   |   |   |--- class: False\n|   |--- b0 >  -3.46\n|   |   |--- b_own <= 2.01\n|   |   |   |--- class: False\n|   |   |--- b_own >  2.01\n|   |   |   |--- class: False\n|--- sw_line >  0.50\n|   |--- aps_share <= 0.03\n|   |   |--- t_con_med <= 8.21\n|   |   |   |--- class: True\n|   |   |--- t_con_med >  8.21\n|   |   |   |--- class: False\n|   |--- aps_share >  0.03\n|   |   |--- aps_share <= 0.10\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.10\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 3,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 577312.6735235713,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.07020649951572108,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.513995338031364,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.8105567606652205,
+   "density_test": 0.9597602739726028,
+   "cart_test_accuracy": 0.9376666666666666,
+   "cart_rules": "|--- sw_line <= 0.50\n|   |--- b0 <= -3.70\n|   |   |--- b_own <= 2.80\n|   |   |   |--- class: False\n|   |   |--- b_own >  2.80\n|   |   |   |--- class: False\n|   |--- b0 >  -3.70\n|   |   |--- t_defer <= 10.54\n|   |   |   |--- class: False\n|   |   |--- t_defer >  10.54\n|   |   |   |--- class: False\n|--- sw_line >  0.50\n|   |--- aps_share <= 0.04\n|   |   |--- t_con_med <= 8.20\n|   |   |   |--- class: True\n|   |   |--- t_con_med >  8.20\n|   |   |   |--- class: False\n|   |--- aps_share >  0.04\n|   |   |--- aps_share <= 0.07\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.07\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 4,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500446.2966828106,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.0831124929194883,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "r_other",
+     "low": 889.1200962572409,
+     "high": 9995223.370848808
+    }
+   ],
+   "coverage_test": 0.7815845824411135,
+   "density_test": 0.9464131374243734,
+   "cart_test_accuracy": 0.933,
+   "cart_rules": "|--- sw_line <= 0.50\n|   |--- b0 <= -3.49\n|   |   |--- b_own <= 2.80\n|   |   |   |--- class: False\n|   |   |--- b_own >  2.80\n|   |   |   |--- class: False\n|   |--- b0 >  -3.49\n|   |   |--- th_parent <= 18.64\n|   |   |   |--- class: False\n|   |   |--- th_parent >  18.64\n|   |   |   |--- class: False\n|--- sw_line >  0.50\n|   |--- aps_share <= 0.05\n|   |   |--- aps_share <= 0.02\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.02\n|   |   |   |--- class: False\n|   |--- aps_share >  0.05\n|   |   |--- aps_share <= 0.09\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.09\n|   |   |   |--- class: True\n"
+  }
+ ],
+ "PW1": [
+  {
+   "threshold": 0.25,
+   "split": 0,
+   "rules": [
+    {
+     "param": "aps_share",
+     "low": 0.04750890254520114,
+     "high": 0.49943759707489344
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.255751719610323
+    },
+    {
+     "param": "r_other",
+     "low": 1411.6758926968964,
+     "high": 9998570.965120444
+    }
+   ],
+   "coverage_test": 0.7456296824830538,
+   "density_test": 0.9725453699395068,
+   "cart_test_accuracy": 0.9303333333333333,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- c_final <= 10.26\n|   |   |--- a_local <= 509223.47\n|   |   |   |--- class: True\n|   |   |--- a_local >  509223.47\n|   |   |   |--- class: False\n|   |--- c_final >  10.26\n|   |   |--- p_sa <= 0.07\n|   |   |   |--- class: True\n|   |   |--- p_sa >  0.07\n|   |   |   |--- class: True\n|--- aps_share >  0.04\n|   |--- t_defer <= 10.49\n|   |   |--- q_dir <= 0.10\n|   |   |   |--- class: True\n|   |   |--- q_dir >  0.10\n|   |   |   |--- class: True\n|   |--- t_defer >  10.49\n|   |   |--- sw_line <= 0.50\n|   |   |   |--- class: True\n|   |   |--- sw_line >  0.50\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.25,
+   "split": 1,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500586.9115581133,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.04976577031666826,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.991691078147465
+    }
+   ],
+   "coverage_test": 0.7029808374733854,
+   "density_test": 0.9850820487319741,
+   "cart_test_accuracy": 0.931,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- q_dir <= 0.35\n|   |   |--- a_local <= 450767.92\n|   |   |   |--- class: True\n|   |   |--- a_local >  450767.92\n|   |   |   |--- class: False\n|   |--- q_dir >  0.35\n|   |   |--- c_full <= 249568.66\n|   |   |   |--- class: False\n|   |   |--- c_full >  249568.66\n|   |   |   |--- class: True\n|--- aps_share >  0.04\n|   |--- t_defer <= 10.49\n|   |   |--- a_local <= 569794.81\n|   |   |   |--- class: True\n|   |   |--- a_local >  569794.81\n|   |   |   |--- class: False\n|   |--- t_defer >  10.49\n|   |   |--- sw_line <= 0.50\n|   |   |   |--- class: True\n|   |   |--- sw_line >  0.50\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.25,
+   "split": 2,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500586.9115581133,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.04724941888791137,
+     "high": 0.49954111078945684
+    },
+    {
+     "param": "c_final",
+     "low": 3.501532391307821,
+     "high": 17.9949585138121
+    }
+   ],
+   "coverage_test": 0.3992844364937388,
+   "density_test": 0.9928825622775801,
+   "cart_test_accuracy": 0.9293333333333333,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- a_line <= 1272673.81\n|   |   |--- sw_si02 <= 0.50\n|   |   |   |--- class: False\n|   |   |--- sw_si02 >  0.50\n|   |   |   |--- class: True\n|   |--- a_line >  1272673.81\n|   |   |--- th_defer <= 11.58\n|   |   |   |--- class: True\n|   |   |--- th_defer >  11.58\n|   |   |   |--- class: False\n|--- aps_share >  0.04\n|   |--- t_defer <= 10.46\n|   |   |--- q_dir <= 0.24\n|   |   |   |--- class: True\n|   |   |--- q_dir >  0.24\n|   |   |   |--- class: True\n|   |--- t_defer >  10.46\n|   |   |--- sw_line <= 0.50\n|   |   |   |--- class: True\n|   |   |--- sw_line >  0.50\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.25,
+   "split": 3,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500586.9115581133,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.04959679839296391,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.513995338031364,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.6974431818181818,
+   "density_test": 0.9834752128192289,
+   "cart_test_accuracy": 0.9386666666666666,
+   "cart_rules": "|--- aps_share <= 0.06\n|   |--- sw_si02 <= 0.50\n|   |   |--- q_dir <= 0.45\n|   |   |   |--- class: True\n|   |   |--- q_dir >  0.45\n|   |   |   |--- class: True\n|   |--- sw_si02 >  0.50\n|   |   |--- c_final <= 13.20\n|   |   |   |--- class: True\n|   |   |--- c_final >  13.20\n|   |   |   |--- class: True\n|--- aps_share >  0.06\n|   |--- t_defer <= 10.61\n|   |   |--- q_dir <= 0.11\n|   |   |   |--- class: True\n|   |   |--- q_dir >  0.11\n|   |   |   |--- class: True\n|   |--- t_defer >  10.61\n|   |   |--- sw_line <= 0.50\n|   |   |   |--- class: True\n|   |   |--- sw_line >  0.50\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.25,
+   "split": 4,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500446.2966828106,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.06517963898686394,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "r_other",
+     "low": 889.1200962572409,
+     "high": 9995223.370848808
+    }
+   ],
+   "coverage_test": 0.6837606837606838,
+   "density_test": 0.9856262833675564,
+   "cart_test_accuracy": 0.9326666666666666,
+   "cart_rules": "|--- aps_share <= 0.05\n|   |--- q_dir <= 0.45\n|   |   |--- a_line <= 821263.69\n|   |   |   |--- class: False\n|   |   |--- a_line >  821263.69\n|   |   |   |--- class: True\n|   |--- q_dir >  0.45\n|   |   |--- t_fix <= 11.45\n|   |   |   |--- class: True\n|   |   |--- t_fix >  11.45\n|   |   |   |--- class: False\n|--- aps_share >  0.05\n|   |--- t_defer <= 10.46\n|   |   |--- q_dir <= 0.22\n|   |   |   |--- class: True\n|   |   |--- q_dir >  0.22\n|   |   |   |--- class: True\n|   |--- t_defer >  10.46\n|   |   |--- sw_line <= 0.50\n|   |   |   |--- class: True\n|   |   |--- sw_line >  0.50\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 0,
+   "rules": [
+    {
+     "param": "aps_share",
+     "low": 0.0900272364737494,
+     "high": 0.49943759707489344
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.98920197493589
+    },
+    {
+     "param": "r_other",
+     "low": 1411.6758926968964,
+     "high": 9998570.965120444
+    }
+   ],
+   "coverage_test": 0.41965317919075146,
+   "density_test": 0.9864130434782609,
+   "cart_test_accuracy": 0.8736666666666667,
+   "cart_rules": "|--- aps_share <= 0.03\n|   |--- c_final <= 8.73\n|   |   |--- s_mast <= 0.13\n|   |   |   |--- class: False\n|   |   |--- s_mast >  0.13\n|   |   |   |--- class: True\n|   |--- c_final >  8.73\n|   |   |--- p_deflect <= 0.90\n|   |   |   |--- class: False\n|   |   |--- p_deflect >  0.90\n|   |   |   |--- class: True\n|--- aps_share >  0.03\n|   |--- t_defer <= 10.44\n|   |   |--- sw_line <= 0.50\n|   |   |   |--- class: True\n|   |   |--- sw_line >  0.50\n|   |   |   |--- class: True\n|   |--- t_defer >  10.44\n|   |   |--- sw_line <= 0.50\n|   |   |   |--- class: False\n|   |   |--- sw_line >  0.50\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 1,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500586.9115581133,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.0721172336286833,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.991691078147465
+    }
+   ],
+   "coverage_test": 0.3904614191547111,
+   "density_test": 0.9814814814814815,
+   "cart_test_accuracy": 0.866,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- q_dir <= 0.43\n|   |   |--- c_final <= 8.62\n|   |   |   |--- class: True\n|   |   |--- c_final >  8.62\n|   |   |   |--- class: False\n|   |--- q_dir >  0.43\n|   |   |--- th_defer <= 6.31\n|   |   |   |--- class: True\n|   |   |--- th_defer >  6.31\n|   |   |   |--- class: True\n|--- aps_share >  0.04\n|   |--- t_defer <= 10.49\n|   |   |--- sw_line <= 0.50\n|   |   |   |--- class: True\n|   |   |--- sw_line >  0.50\n|   |   |   |--- class: True\n|   |--- t_defer >  10.49\n|   |   |--- sw_line <= 0.50\n|   |   |   |--- class: False\n|   |   |--- sw_line >  0.50\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 2,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 575662.7548442226,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.09373800938567108,
+     "high": 0.49954111078945684
+    },
+    {
+     "param": "c_final",
+     "low": 3.501532391307821,
+     "high": 17.9949585138121
+    }
+   ],
+   "coverage_test": 0.4134988363072149,
+   "density_test": 0.9852125693160814,
+   "cart_test_accuracy": 0.8773333333333333,
+   "cart_rules": "|--- aps_share <= 0.03\n|   |--- q_dir <= 0.72\n|   |   |--- th_defer <= 4.21\n|   |   |   |--- class: True\n|   |   |--- th_defer >  4.21\n|   |   |   |--- class: False\n|   |--- q_dir >  0.72\n|   |   |--- s_bp <= 0.89\n|   |   |   |--- class: False\n|   |   |--- s_bp >  0.89\n|   |   |   |--- class: True\n|--- aps_share >  0.03\n|   |--- sw_line <= 0.50\n|   |   |--- t_defer <= 10.45\n|   |   |   |--- class: True\n|   |   |--- t_defer >  10.45\n|   |   |   |--- class: False\n|   |--- sw_line >  0.50\n|   |   |--- aps_share <= 0.07\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.07\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 3,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500586.9115581133,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.074071736743049,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.513995338031364,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.3914044512663085,
+   "density_test": 0.9855072463768116,
+   "cart_test_accuracy": 0.8763333333333333,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- th_defer <= 4.18\n|   |   |--- pi_scope <= 0.07\n|   |   |   |--- class: False\n|   |   |--- pi_scope >  0.07\n|   |   |   |--- class: True\n|   |--- th_defer >  4.18\n|   |   |--- q_dir <= 0.49\n|   |   |   |--- class: False\n|   |   |--- q_dir >  0.49\n|   |   |   |--- class: True\n|--- aps_share >  0.04\n|   |--- t_defer <= 10.52\n|   |   |--- sw_line <= 0.50\n|   |   |   |--- class: True\n|   |   |--- sw_line >  0.50\n|   |   |   |--- class: True\n|   |--- t_defer >  10.52\n|   |   |--- sw_line <= 0.50\n|   |   |   |--- class: False\n|   |   |--- sw_line >  0.50\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 4,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500446.2966828106,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.08498117914811765,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "r_other",
+     "low": 889.1200962572409,
+     "high": 9995223.370848808
+    }
+   ],
+   "coverage_test": 0.4359567901234568,
+   "density_test": 0.9809027777777778,
+   "cart_test_accuracy": 0.871,
+   "cart_rules": "|--- aps_share <= 0.03\n|   |--- th_defer <= 4.28\n|   |   |--- t_contract <= 7.74\n|   |   |   |--- class: False\n|   |   |--- t_contract >  7.74\n|   |   |   |--- class: True\n|   |--- th_defer >  4.28\n|   |   |--- a_line <= 971823.78\n|   |   |   |--- class: False\n|   |   |--- a_line >  971823.78\n|   |   |   |--- class: True\n|--- aps_share >  0.03\n|   |--- sw_line <= 0.50\n|   |   |--- t_defer <= 10.34\n|   |   |   |--- class: True\n|   |   |--- t_defer >  10.34\n|   |   |   |--- class: True\n|   |--- sw_line >  0.50\n|   |   |--- aps_share <= 0.08\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.08\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 0,
+   "rules": [
+    {
+     "param": "aps_share",
+     "low": 0.0900272364737494,
+     "high": 0.49943759707489344
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.98920197493589
+    },
+    {
+     "param": "r_other",
+     "low": 1411.6758926968964,
+     "high": 9998570.965120444
+    }
+   ],
+   "coverage_test": 0.464471403812825,
+   "density_test": 0.9710144927536232,
+   "cart_test_accuracy": 0.8253333333333334,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- c_final <= 8.69\n|   |   |--- lrsp_until <= 29.91\n|   |   |   |--- class: False\n|   |   |--- lrsp_until >  29.91\n|   |   |   |--- class: True\n|   |--- c_final >  8.69\n|   |   |--- s_lpi <= 0.47\n|   |   |   |--- class: False\n|   |   |--- s_lpi >  0.47\n|   |   |   |--- class: True\n|--- aps_share >  0.04\n|   |--- sw_line <= 0.50\n|   |   |--- t_defer <= 10.42\n|   |   |   |--- class: True\n|   |   |--- t_defer >  10.42\n|   |   |   |--- class: False\n|   |--- sw_line >  0.50\n|   |   |--- aps_share <= 0.09\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.09\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 1,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 578404.2361874636,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.08899423029084465,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.991691078147465
+    }
+   ],
+   "coverage_test": 0.4635211882918305,
+   "density_test": 0.9733944954128441,
+   "cart_test_accuracy": 0.8043333333333333,
+   "cart_rules": "|--- aps_share <= 0.05\n|   |--- a_line <= 1501728.12\n|   |   |--- c_bp <= 5693.53\n|   |   |   |--- class: False\n|   |   |--- c_bp >  5693.53\n|   |   |   |--- class: False\n|   |--- a_line >  1501728.12\n|   |   |--- aps_share <= 0.04\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.04\n|   |   |   |--- class: True\n|--- aps_share >  0.05\n|   |--- sw_line <= 0.50\n|   |   |--- t_defer <= 8.38\n|   |   |   |--- class: True\n|   |   |--- t_defer >  8.38\n|   |   |   |--- class: False\n|   |--- sw_line >  0.50\n|   |   |--- aps_share <= 0.08\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.08\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 2,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 575662.7548442226,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.09373800938567108,
+     "high": 0.49954111078945684
+    },
+    {
+     "param": "c_final",
+     "low": 3.501532391307821,
+     "high": 17.9949585138121
+    }
+   ],
+   "coverage_test": 0.46346830985915494,
+   "density_test": 0.9731977818853974,
+   "cart_test_accuracy": 0.8016666666666666,
+   "cart_rules": "|--- aps_share <= 0.03\n|   |--- aps_share <= 0.02\n|   |   |--- c_final <= 8.44\n|   |   |   |--- class: False\n|   |   |--- c_final >  8.44\n|   |   |   |--- class: False\n|   |--- aps_share >  0.02\n|   |   |--- a_sg017 <= 180492.62\n|   |   |   |--- class: False\n|   |   |--- a_sg017 >  180492.62\n|   |   |   |--- class: True\n|--- aps_share >  0.03\n|   |--- sw_line <= 0.50\n|   |   |--- t_defer <= 8.21\n|   |   |   |--- class: True\n|   |   |--- t_defer >  8.21\n|   |   |   |--- class: False\n|   |--- sw_line >  0.50\n|   |   |--- a_line <= 503114.67\n|   |   |   |--- class: False\n|   |   |--- a_line >  503114.67\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 3,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 651667.9359219909,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.08977673412619883,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.513995338031364,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.44974003466204504,
+   "density_test": 0.9774011299435028,
+   "cart_test_accuracy": 0.7853333333333333,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- b0 <= -6.75\n|   |   |--- a_sg017 <= 45413.90\n|   |   |   |--- class: False\n|   |   |--- a_sg017 >  45413.90\n|   |   |   |--- class: True\n|   |--- b0 >  -6.75\n|   |   |--- c_final <= 9.11\n|   |   |   |--- class: False\n|   |   |--- c_final >  9.11\n|   |   |   |--- class: False\n|--- aps_share >  0.04\n|   |--- sw_line <= 0.50\n|   |   |--- t_defer <= 6.67\n|   |   |   |--- class: True\n|   |   |--- t_defer >  6.67\n|   |   |   |--- class: False\n|   |--- sw_line >  0.50\n|   |   |--- aps_share <= 0.08\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.08\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 4,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500446.2966828106,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.087066749443559,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "r_other",
+     "low": 889.1200962572409,
+     "high": 9995223.370848808
+    }
+   ],
+   "coverage_test": 0.48329718004338396,
+   "density_test": 0.9678540399652477,
+   "cart_test_accuracy": 0.804,
+   "cart_rules": "|--- aps_share <= 0.05\n|   |--- aps_share <= 0.02\n|   |   |--- lrsp_until <= 52.88\n|   |   |   |--- class: False\n|   |   |--- lrsp_until >  52.88\n|   |   |   |--- class: True\n|   |--- aps_share >  0.02\n|   |   |--- a_line <= 1259975.19\n|   |   |   |--- class: False\n|   |   |--- a_line >  1259975.19\n|   |   |   |--- class: True\n|--- aps_share >  0.05\n|   |--- sw_line <= 0.50\n|   |   |--- t_defer <= 6.68\n|   |   |   |--- class: True\n|   |   |--- t_defer >  6.68\n|   |   |   |--- class: False\n|   |--- sw_line >  0.50\n|   |   |--- aps_share <= 0.09\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.09\n|   |   |   |--- class: True\n"
+  }
+ ],
+ "PW2": [
+  {
+   "threshold": 0.25,
+   "split": 0,
+   "rules": [
+    {
+     "param": "aps_share",
+     "low": 0.09232425102506195,
+     "high": 0.49943759707489344
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.98920197493589
+    },
+    {
+     "param": "r_other",
+     "low": 1411.6758926968964,
+     "high": 9998570.965120444
+    }
+   ],
+   "coverage_test": 0.40289639806906796,
+   "density_test": 0.9890610756608933,
+   "cart_test_accuracy": 0.922,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- a_line <= 1507504.00\n|   |   |--- q_veto <= 0.33\n|   |   |   |--- class: False\n|   |   |--- q_veto >  0.33\n|   |   |   |--- class: False\n|   |--- a_line >  1507504.00\n|   |   |--- aps_share <= 0.03\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.03\n|   |   |   |--- class: True\n|--- aps_share >  0.04\n|   |--- aps_share <= 0.08\n|   |   |--- a_line <= 620802.12\n|   |   |   |--- class: False\n|   |   |--- a_line >  620802.12\n|   |   |   |--- class: True\n|   |--- aps_share >  0.08\n|   |   |--- q_gf <= 0.15\n|   |   |   |--- class: True\n|   |   |--- q_gf >  0.15\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.25,
+   "split": 1,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500586.9115581133,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.07231290757549945,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.991691078147465
+    }
+   ],
+   "coverage_test": 0.8014842300556586,
+   "density_test": 0.9582963620230701,
+   "cart_test_accuracy": 0.9133333333333333,
+   "cart_rules": "|--- aps_share <= 0.05\n|   |--- a_line <= 1501728.12\n|   |   |--- th_defer <= 5.12\n|   |   |   |--- class: True\n|   |   |--- th_defer >  5.12\n|   |   |   |--- class: False\n|   |--- a_line >  1501728.12\n|   |   |--- aps_share <= 0.03\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.03\n|   |   |   |--- class: True\n|--- aps_share >  0.05\n|   |--- aps_share <= 0.08\n|   |   |--- a_line <= 813812.44\n|   |   |   |--- class: False\n|   |   |--- a_line >  813812.44\n|   |   |   |--- class: True\n|   |--- aps_share >  0.08\n|   |   |--- sw_line <= 0.50\n|   |   |   |--- class: True\n|   |   |--- sw_line >  0.50\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.25,
+   "split": 2,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 575662.7548442226,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.07107678185648425,
+     "high": 0.49954111078945684
+    },
+    {
+     "param": "c_final",
+     "low": 3.501532391307821,
+     "high": 17.9949585138121
+    }
+   ],
+   "coverage_test": 0.7915115413253909,
+   "density_test": 0.9628623188405797,
+   "cart_test_accuracy": 0.9226666666666666,
+   "cart_rules": "|--- aps_share <= 0.03\n|   |--- t_defer <= 9.47\n|   |   |--- aps_share <= 0.02\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.02\n|   |   |   |--- class: False\n|   |--- t_defer >  9.47\n|   |   |--- q_lrsp <= 0.45\n|   |   |   |--- class: False\n|   |   |--- q_lrsp >  0.45\n|   |   |   |--- class: True\n|--- aps_share >  0.03\n|   |--- aps_share <= 0.07\n|   |   |--- a_line <= 879807.59\n|   |   |   |--- class: False\n|   |   |--- a_line >  879807.59\n|   |   |   |--- class: True\n|   |--- aps_share >  0.07\n|   |   |--- t_defer <= 8.04\n|   |   |   |--- class: True\n|   |   |--- t_defer >  8.04\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.25,
+   "split": 3,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 578337.800897763,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.0739959157633701,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.513995338031364,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.7823507601038191,
+   "density_test": 0.9643510054844607,
+   "cart_test_accuracy": 0.9166666666666666,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- th_defer <= 3.28\n|   |   |--- class: True\n|   |--- th_defer >  3.28\n|   |   |--- aps_share <= 0.02\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.02\n|   |   |   |--- class: False\n|--- aps_share >  0.04\n|   |--- aps_share <= 0.07\n|   |   |--- a_line <= 997663.56\n|   |   |   |--- class: False\n|   |   |--- a_line >  997663.56\n|   |   |   |--- class: True\n|   |--- aps_share >  0.07\n|   |   |--- t_defer <= 7.66\n|   |   |   |--- class: True\n|   |   |--- t_defer >  7.66\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.25,
+   "split": 4,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500446.2966828106,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.08747355581130056,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "r_other",
+     "low": 889.1200962572409,
+     "high": 9995223.370848808
+    }
+   ],
+   "coverage_test": 0.7344153448911841,
+   "density_test": 0.9646317829457365,
+   "cart_test_accuracy": 0.925,
+   "cart_rules": "|--- aps_share <= 0.03\n|   |--- a_line <= 1469438.00\n|   |   |--- t_defer <= 5.86\n|   |   |   |--- class: False\n|   |   |--- t_defer >  5.86\n|   |   |   |--- class: False\n|   |--- a_line >  1469438.00\n|   |   |--- aps_share <= 0.02\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.02\n|   |   |   |--- class: True\n|--- aps_share >  0.03\n|   |--- aps_share <= 0.08\n|   |   |--- a_line <= 1011067.09\n|   |   |   |--- class: False\n|   |   |--- a_line >  1011067.09\n|   |   |   |--- class: True\n|   |--- aps_share >  0.08\n|   |   |--- sw_line <= 0.50\n|   |   |   |--- class: True\n|   |   |--- sw_line >  0.50\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 0,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 575192.6078449539,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.0900272364737494,
+     "high": 0.49943759707489344
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.43615727604377785,
+   "density_test": 0.9862511457378552,
+   "cart_test_accuracy": 0.8613333333333333,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- aps_share <= 0.03\n|   |   |--- t_lrsp <= 3.37\n|   |   |   |--- class: True\n|   |   |--- t_lrsp >  3.37\n|   |   |   |--- class: False\n|   |--- aps_share >  0.03\n|   |   |--- a_line <= 1598999.06\n|   |   |   |--- class: False\n|   |   |--- a_line >  1598999.06\n|   |   |   |--- class: True\n|--- aps_share >  0.04\n|   |--- sw_line <= 0.50\n|   |   |--- t_defer <= 8.76\n|   |   |   |--- class: True\n|   |   |--- t_defer >  8.76\n|   |   |   |--- class: True\n|   |--- sw_line >  0.50\n|   |   |--- aps_share <= 0.08\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.08\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 1,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500586.9115581133,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.09068154320677055,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.991691078147465
+    }
+   ],
+   "coverage_test": 0.4264825345247766,
+   "density_test": 0.9749303621169917,
+   "cart_test_accuracy": 0.8576666666666667,
+   "cart_rules": "|--- aps_share <= 0.05\n|   |--- aps_share <= 0.03\n|   |   |--- b0 <= -3.01\n|   |   |   |--- class: False\n|   |   |--- b0 >  -3.01\n|   |   |   |--- class: True\n|   |--- aps_share >  0.03\n|   |   |--- a_line <= 1539211.06\n|   |   |   |--- class: False\n|   |   |--- a_line >  1539211.06\n|   |   |   |--- class: True\n|--- aps_share >  0.05\n|   |--- sw_line <= 0.50\n|   |   |--- t_defer <= 8.43\n|   |   |   |--- class: True\n|   |   |--- t_defer >  8.43\n|   |   |   |--- class: True\n|   |--- sw_line >  0.50\n|   |   |--- aps_share <= 0.06\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.06\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 2,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 575662.7548442226,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.09373800938567108,
+     "high": 0.49954111078945684
+    },
+    {
+     "param": "c_final",
+     "low": 3.501532391307821,
+     "high": 17.9949585138121
+    }
+   ],
+   "coverage_test": 0.4349075975359343,
+   "density_test": 0.9787430683918669,
+   "cart_test_accuracy": 0.8536666666666667,
+   "cart_rules": "|--- aps_share <= 0.03\n|   |--- aps_share <= 0.02\n|   |   |--- q_lrsp <= 0.21\n|   |   |   |--- class: True\n|   |   |--- q_lrsp >  0.21\n|   |   |   |--- class: False\n|   |--- aps_share >  0.02\n|   |   |--- a_line <= 1474992.62\n|   |   |   |--- class: False\n|   |   |--- a_line >  1474992.62\n|   |   |   |--- class: True\n|--- aps_share >  0.03\n|   |--- sw_line <= 0.50\n|   |   |--- t_defer <= 8.17\n|   |   |   |--- class: True\n|   |   |--- t_defer >  8.17\n|   |   |   |--- class: True\n|   |--- sw_line >  0.50\n|   |   |--- aps_share <= 0.06\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.06\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 3,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 577312.6735235713,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.0739959157633701,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.513995338031364,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.46291768541157297,
+   "density_test": 0.9818496110630942,
+   "cart_test_accuracy": 0.8563333333333333,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- a_line <= 1474992.62\n|   |   |--- c_cd <= 10572.80\n|   |   |   |--- class: True\n|   |   |--- c_cd >  10572.80\n|   |   |   |--- class: False\n|   |--- a_line >  1474992.62\n|   |   |--- t_lrsp <= 15.47\n|   |   |   |--- class: False\n|   |   |--- t_lrsp >  15.47\n|   |   |   |--- class: True\n|--- aps_share >  0.04\n|   |--- sw_line <= 0.50\n|   |   |--- t_defer <= 6.90\n|   |   |   |--- class: True\n|   |   |--- t_defer >  6.90\n|   |   |   |--- class: True\n|   |--- sw_line >  0.50\n|   |   |--- aps_share <= 0.07\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.07\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 4,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500446.2966828106,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.08498117914811765,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "r_other",
+     "low": 889.1200962572409,
+     "high": 9995223.370848808
+    }
+   ],
+   "coverage_test": 0.4520547945205479,
+   "density_test": 0.9739583333333334,
+   "cart_test_accuracy": 0.8663333333333333,
+   "cart_rules": "|--- aps_share <= 0.03\n|   |--- aps_share <= 0.02\n|   |   |--- t_pe <= 3.50\n|   |   |   |--- class: True\n|   |   |--- t_pe >  3.50\n|   |   |   |--- class: False\n|   |--- aps_share >  0.02\n|   |   |--- a_line <= 1634575.38\n|   |   |   |--- class: False\n|   |   |--- a_line >  1634575.38\n|   |   |   |--- class: True\n|--- aps_share >  0.03\n|   |--- sw_line <= 0.50\n|   |   |--- t_defer <= 6.83\n|   |   |   |--- class: True\n|   |   |--- t_defer >  6.83\n|   |   |   |--- class: True\n|   |--- sw_line >  0.50\n|   |   |--- aps_share <= 0.08\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.08\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 0,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 575192.6078449539,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.06952596483831108,
+     "high": 0.49943759707489344
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.5183294663573086,
+   "density_test": 0.9629310344827586,
+   "cart_test_accuracy": 0.805,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- a_line <= 1507504.00\n|   |   |--- q_fail <= 0.00\n|   |   |   |--- class: True\n|   |   |--- q_fail >  0.00\n|   |   |   |--- class: False\n|   |--- a_line >  1507504.00\n|   |   |--- aps_share <= 0.02\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.02\n|   |   |   |--- class: False\n|--- aps_share >  0.04\n|   |--- sw_line <= 0.50\n|   |   |--- t_defer <= 8.76\n|   |   |   |--- class: True\n|   |   |--- t_defer >  8.76\n|   |   |   |--- class: False\n|   |--- sw_line >  0.50\n|   |   |--- aps_share <= 0.06\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.06\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 1,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500586.9115581133,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.07125549576960373,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.991691078147465
+    }
+   ],
+   "coverage_test": 0.4983682983682984,
+   "density_test": 0.9435127978817299,
+   "cart_test_accuracy": 0.792,
+   "cart_rules": "|--- aps_share <= 0.06\n|   |--- aps_share <= 0.04\n|   |   |--- b0 <= -3.01\n|   |   |   |--- class: False\n|   |   |--- b0 >  -3.01\n|   |   |   |--- class: True\n|   |--- aps_share >  0.04\n|   |   |--- a_line <= 1361680.25\n|   |   |   |--- class: False\n|   |   |--- a_line >  1361680.25\n|   |   |   |--- class: True\n|--- aps_share >  0.06\n|   |--- sw_line <= 0.50\n|   |   |--- t_defer <= 7.80\n|   |   |   |--- class: True\n|   |   |--- t_defer >  7.80\n|   |   |   |--- class: False\n|   |--- sw_line >  0.50\n|   |   |--- aps_share <= 0.08\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.08\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 2,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 575662.7548442226,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.09373800938567108,
+     "high": 0.49954111078945684
+    },
+    {
+     "param": "c_final",
+     "low": 3.501532391307821,
+     "high": 17.9949585138121
+    }
+   ],
+   "coverage_test": 0.48572765559195136,
+   "density_test": 0.9593345656192237,
+   "cart_test_accuracy": 0.798,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- aps_share <= 0.02\n|   |   |--- t_pif <= 11.91\n|   |   |   |--- class: False\n|   |   |--- t_pif >  11.91\n|   |   |   |--- class: True\n|   |--- aps_share >  0.02\n|   |   |--- a_line <= 1362811.38\n|   |   |   |--- class: False\n|   |   |--- a_line >  1362811.38\n|   |   |   |--- class: False\n|--- aps_share >  0.04\n|   |--- sw_line <= 0.50\n|   |   |--- t_defer <= 8.09\n|   |   |   |--- class: True\n|   |   |--- t_defer >  8.09\n|   |   |   |--- class: False\n|   |--- sw_line >  0.50\n|   |   |--- aps_share <= 0.07\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.07\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 3,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 577312.6735235713,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.07326474730256655,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.513995338031364,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.5222066386161758,
+   "density_test": 0.9629310344827586,
+   "cart_test_accuracy": 0.8036666666666666,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- rho_flag <= 0.29\n|   |   |--- aps_share <= 0.02\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.02\n|   |   |   |--- class: False\n|   |--- rho_flag >  0.29\n|   |   |--- class: True\n|--- aps_share >  0.04\n|   |--- sw_line <= 0.50\n|   |   |--- t_defer <= 7.53\n|   |   |   |--- class: True\n|   |   |--- t_defer >  7.53\n|   |   |   |--- class: False\n|   |--- sw_line >  0.50\n|   |   |--- aps_share <= 0.07\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.07\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 4,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500446.2966828106,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.087066749443559,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "r_other",
+     "low": 889.1200962572409,
+     "high": 9995223.370848808
+    }
+   ],
+   "coverage_test": 0.5006890215893431,
+   "density_test": 0.9511343804537522,
+   "cart_test_accuracy": 0.8066666666666666,
+   "cart_rules": "|--- aps_share <= 0.05\n|   |--- aps_share <= 0.02\n|   |   |--- e_ext <= 0.98\n|   |   |   |--- class: False\n|   |   |--- e_ext >  0.98\n|   |   |   |--- class: True\n|   |--- aps_share >  0.02\n|   |   |--- a_line <= 1226782.12\n|   |   |   |--- class: False\n|   |   |--- a_line >  1226782.12\n|   |   |   |--- class: True\n|--- aps_share >  0.05\n|   |--- sw_line <= 0.50\n|   |   |--- t_defer <= 7.78\n|   |   |   |--- class: True\n|   |   |--- t_defer >  7.78\n|   |   |   |--- class: False\n|   |--- sw_line >  0.50\n|   |   |--- aps_share <= 0.08\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.08\n|   |   |   |--- class: True\n"
+  }
+ ],
+ "PW3": [
+  {
+   "threshold": 0.25,
+   "split": 0,
+   "rules": [
+    {
+     "param": "aps_share",
+     "low": 0.08753031494095907,
+     "high": 0.49943759707489344
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.98920197493589
+    },
+    {
+     "param": "r_other",
+     "low": 1411.6758926968964,
+     "high": 9998570.965120444
+    }
+   ],
+   "coverage_test": 0.44005156854318866,
+   "density_test": 0.9855630413859481,
+   "cart_test_accuracy": 0.8426666666666667,
+   "cart_rules": "|--- sw_line <= 0.50\n|   |--- a_local <= 40382.51\n|   |   |--- a_local <= 28751.14\n|   |   |   |--- class: False\n|   |   |--- a_local >  28751.14\n|   |   |   |--- class: False\n|   |--- a_local >  40382.51\n|   |   |--- b_own <= 1.79\n|   |   |   |--- class: True\n|   |   |--- b_own >  1.79\n|   |   |   |--- class: True\n|--- sw_line >  0.50\n|   |--- aps_share <= 0.04\n|   |   |--- a_line <= 1622119.12\n|   |   |   |--- class: False\n|   |   |--- a_line >  1622119.12\n|   |   |   |--- class: True\n|   |--- aps_share >  0.04\n|   |   |--- aps_share <= 0.06\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.06\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.25,
+   "split": 1,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500586.9115581133,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.0875556381165215,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.991691078147465
+    }
+   ],
+   "coverage_test": 0.47079037800687284,
+   "density_test": 0.982078853046595,
+   "cart_test_accuracy": 0.8313333333333334,
+   "cart_rules": "|--- sw_line <= 0.50\n|   |--- a_local <= 45656.72\n|   |   |--- a_local <= 28751.14\n|   |   |   |--- class: False\n|   |   |--- a_local >  28751.14\n|   |   |   |--- class: False\n|   |--- a_local >  45656.72\n|   |   |--- b_own <= 0.17\n|   |   |   |--- class: False\n|   |   |--- b_own >  0.17\n|   |   |   |--- class: True\n|--- sw_line >  0.50\n|   |--- aps_share <= 0.06\n|   |   |--- a_line <= 1388419.19\n|   |   |   |--- class: False\n|   |   |--- a_line >  1388419.19\n|   |   |   |--- class: True\n|   |--- aps_share >  0.06\n|   |   |--- aps_share <= 0.08\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.08\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.25,
+   "split": 2,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500586.9115581133,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.07107678185648425,
+     "high": 0.49954111078945684
+    },
+    {
+     "param": "c_final",
+     "low": 3.501532391307821,
+     "high": 17.9949585138121
+    }
+   ],
+   "coverage_test": 0.47196870925684486,
+   "density_test": 0.9819168173598554,
+   "cart_test_accuracy": 0.839,
+   "cart_rules": "|--- sw_line <= 0.50\n|   |--- a_local <= 45549.76\n|   |   |--- a_local <= 31860.45\n|   |   |   |--- class: False\n|   |   |--- a_local >  31860.45\n|   |   |   |--- class: False\n|   |--- a_local >  45549.76\n|   |   |--- b0 <= -6.29\n|   |   |   |--- class: True\n|   |   |--- b0 >  -6.29\n|   |   |   |--- class: True\n|--- sw_line >  0.50\n|   |--- aps_share <= 0.03\n|   |   |--- a_line <= 1474992.62\n|   |   |   |--- class: False\n|   |   |--- a_line >  1474992.62\n|   |   |   |--- class: False\n|   |--- aps_share >  0.03\n|   |   |--- aps_share <= 0.06\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.06\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.25,
+   "split": 3,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500586.9115581133,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.07360693570575196,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.513995338031364,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.4797208896641954,
+   "density_test": 0.9838998211091234,
+   "cart_test_accuracy": 0.8326666666666667,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- sw_line <= 0.50\n|   |   |--- a_local <= 40171.74\n|   |   |   |--- class: False\n|   |   |--- a_local >  40171.74\n|   |   |   |--- class: True\n|   |--- sw_line >  0.50\n|   |   |--- aps_share <= 0.02\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.02\n|   |   |   |--- class: False\n|--- aps_share >  0.04\n|   |--- sw_line <= 0.50\n|   |   |--- a_local <= 45549.76\n|   |   |   |--- class: False\n|   |   |--- a_local >  45549.76\n|   |   |   |--- class: True\n|   |--- sw_line >  0.50\n|   |   |--- aps_share <= 0.07\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.07\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.25,
+   "split": 4,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500446.2966828106,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.08416535087264297,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "r_other",
+     "low": 889.1200962572409,
+     "high": 9995223.370848808
+    }
+   ],
+   "coverage_test": 0.4652867615351445,
+   "density_test": 0.980909090909091,
+   "cart_test_accuracy": 0.8343333333333334,
+   "cart_rules": "|--- sw_line <= 0.50\n|   |--- a_local <= 44785.27\n|   |   |--- a_local <= 36759.94\n|   |   |   |--- class: False\n|   |   |--- a_local >  36759.94\n|   |   |   |--- class: False\n|   |--- a_local >  44785.27\n|   |   |--- b0 <= -4.07\n|   |   |   |--- class: True\n|   |   |--- b0 >  -4.07\n|   |   |   |--- class: True\n|--- sw_line >  0.50\n|   |--- aps_share <= 0.05\n|   |   |--- aps_share <= 0.02\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.02\n|   |   |   |--- class: False\n|   |--- aps_share >  0.05\n|   |   |--- aps_share <= 0.08\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.08\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 0,
+   "rules": [
+    {
+     "param": "aps_share",
+     "low": 0.0670784707222532,
+     "high": 0.49943759707489344
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.98920197493589
+    },
+    {
+     "param": "r_other",
+     "low": 1411.6758926968964,
+     "high": 9998570.965120444
+    }
+   ],
+   "coverage_test": 0.5177434030937216,
+   "density_test": 0.9718189581554227,
+   "cart_test_accuracy": 0.7973333333333333,
+   "cart_rules": "|--- sw_line <= 0.50\n|   |--- a_local <= 40382.51\n|   |   |--- a_local <= 28751.14\n|   |   |   |--- class: False\n|   |   |--- a_local >  28751.14\n|   |   |   |--- class: False\n|   |--- a_local >  40382.51\n|   |   |--- b0 <= -5.81\n|   |   |   |--- class: False\n|   |   |--- b0 >  -5.81\n|   |   |   |--- class: True\n|--- sw_line >  0.50\n|   |--- aps_share <= 0.05\n|   |   |--- aps_share <= 0.03\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.03\n|   |   |   |--- class: False\n|   |--- aps_share >  0.05\n|   |   |--- aps_share <= 0.09\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.09\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 1,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500586.9115581133,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.08899423029084465,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.991691078147465
+    }
+   ],
+   "coverage_test": 0.479871912168344,
+   "density_test": 0.9712962962962963,
+   "cart_test_accuracy": 0.7853333333333333,
+   "cart_rules": "|--- sw_line <= 0.50\n|   |--- a_local <= 45656.72\n|   |   |--- a_local <= 28751.14\n|   |   |   |--- class: False\n|   |   |--- a_local >  28751.14\n|   |   |   |--- class: False\n|   |--- a_local >  45656.72\n|   |   |--- b0 <= -5.82\n|   |   |   |--- class: False\n|   |   |--- b0 >  -5.82\n|   |   |   |--- class: True\n|--- sw_line >  0.50\n|   |--- aps_share <= 0.06\n|   |   |--- aps_share <= 0.03\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.03\n|   |   |   |--- class: False\n|   |--- aps_share >  0.06\n|   |   |--- c_full <= 599446.31\n|   |   |   |--- class: True\n|   |   |--- c_full >  599446.31\n|   |   |   |--- class: False\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 2,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 575662.7548442226,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.0928351725726739,
+     "high": 0.49954111078945684
+    },
+    {
+     "param": "c_final",
+     "low": 3.501532391307821,
+     "high": 17.9949585138121
+    }
+   ],
+   "coverage_test": 0.48800738007380073,
+   "density_test": 0.9751152073732718,
+   "cart_test_accuracy": 0.7953333333333333,
+   "cart_rules": "|--- sw_line <= 0.50\n|   |--- a_local <= 40382.51\n|   |   |--- a_local <= 28751.14\n|   |   |   |--- class: False\n|   |   |--- a_local >  28751.14\n|   |   |   |--- class: False\n|   |--- a_local >  40382.51\n|   |   |--- b0 <= -6.29\n|   |   |   |--- class: False\n|   |   |--- b0 >  -6.29\n|   |   |   |--- class: True\n|--- sw_line >  0.50\n|   |--- aps_share <= 0.03\n|   |   |--- t_con_med <= 8.21\n|   |   |   |--- class: True\n|   |   |--- t_con_med >  8.21\n|   |   |   |--- class: False\n|   |--- aps_share >  0.03\n|   |   |--- aps_share <= 0.06\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.06\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 3,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500586.9115581133,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.07203298028438683,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.513995338031364,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.5274067250115154,
+   "density_test": 0.9728122344944775,
+   "cart_test_accuracy": 0.7953333333333333,
+   "cart_rules": "|--- sw_line <= 0.50\n|   |--- a_local <= 45549.76\n|   |   |--- a_local <= 28751.14\n|   |   |   |--- class: False\n|   |   |--- a_local >  28751.14\n|   |   |   |--- class: False\n|   |--- a_local >  45549.76\n|   |   |--- b0 <= -5.81\n|   |   |   |--- class: True\n|   |   |--- b0 >  -5.81\n|   |   |   |--- class: True\n|--- sw_line >  0.50\n|   |--- aps_share <= 0.04\n|   |   |--- t_con_med <= 8.20\n|   |   |   |--- class: True\n|   |   |--- t_con_med >  8.20\n|   |   |   |--- class: False\n|   |--- aps_share >  0.04\n|   |   |--- aps_share <= 0.07\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.07\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 4,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500446.2966828106,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.08474493242475908,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "r_other",
+     "low": 889.1200962572409,
+     "high": 9995223.370848808
+    }
+   ],
+   "coverage_test": 0.5134518923848609,
+   "density_test": 0.9673539518900344,
+   "cart_test_accuracy": 0.792,
+   "cart_rules": "|--- sw_line <= 0.50\n|   |--- a_local <= 40880.75\n|   |   |--- a_local <= 28751.14\n|   |   |   |--- class: False\n|   |   |--- a_local >  28751.14\n|   |   |   |--- class: False\n|   |--- a_local >  40880.75\n|   |   |--- b0 <= -5.83\n|   |   |   |--- class: True\n|   |   |--- b0 >  -5.83\n|   |   |   |--- class: True\n|--- sw_line >  0.50\n|   |--- aps_share <= 0.05\n|   |   |--- aps_share <= 0.02\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.02\n|   |   |   |--- class: False\n|   |--- aps_share >  0.05\n|   |   |--- aps_share <= 0.08\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.08\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 0,
+   "rules": [
+    {
+     "param": "aps_share",
+     "low": 0.08834961430298625,
+     "high": 0.49943759707489344
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.98920197493589
+    },
+    {
+     "param": "r_other",
+     "low": 1411.6758926968964,
+     "high": 9998570.965120444
+    }
+   ],
+   "coverage_test": 0.5178309721543722,
+   "density_test": 0.957542908762421,
+   "cart_test_accuracy": 0.7756666666666666,
+   "cart_rules": "|--- sw_line <= 0.50\n|   |--- a_local <= 35101.86\n|   |   |--- t_pause <= 3.14\n|   |   |   |--- class: True\n|   |   |--- t_pause >  3.14\n|   |   |   |--- class: False\n|   |--- a_local >  35101.86\n|   |   |--- b0 <= -5.81\n|   |   |   |--- class: False\n|   |   |--- b0 >  -5.81\n|   |   |   |--- class: True\n|--- sw_line >  0.50\n|   |--- aps_share <= 0.05\n|   |   |--- aps_share <= 0.03\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.03\n|   |   |   |--- class: False\n|   |--- aps_share >  0.05\n|   |   |--- aps_share <= 0.20\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.20\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 1,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500586.9115581133,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.08899423029084465,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.991691078147465
+    }
+   ],
+   "coverage_test": 0.5044334975369458,
+   "density_test": 0.9481481481481482,
+   "cart_test_accuracy": 0.758,
+   "cart_rules": "|--- sw_line <= 0.50\n|   |--- a_local <= 51214.42\n|   |   |--- a_local <= 28751.14\n|   |   |   |--- class: False\n|   |   |--- a_local >  28751.14\n|   |   |   |--- class: False\n|   |--- a_local >  51214.42\n|   |   |--- b_own <= 0.89\n|   |   |   |--- class: False\n|   |   |--- b_own >  0.89\n|   |   |   |--- class: True\n|--- sw_line >  0.50\n|   |--- aps_share <= 0.06\n|   |   |--- aps_share <= 0.03\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.03\n|   |   |   |--- class: False\n|   |--- aps_share >  0.06\n|   |   |--- aps_share <= 0.17\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.17\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 2,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 575662.7548442226,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.13734470883055144,
+     "high": 0.49954111078945684
+    },
+    {
+     "param": "c_final",
+     "low": 3.501532391307821,
+     "high": 17.9949585138121
+    }
+   ],
+   "coverage_test": 0.4611166500498505,
+   "density_test": 0.9625390218522373,
+   "cart_test_accuracy": 0.7593333333333333,
+   "cart_rules": "|--- sw_line <= 0.50\n|   |--- a_local <= 45549.76\n|   |   |--- a_local <= 28751.14\n|   |   |   |--- class: False\n|   |   |--- a_local >  28751.14\n|   |   |   |--- class: False\n|   |--- a_local >  45549.76\n|   |   |--- b0 <= -6.29\n|   |   |   |--- class: False\n|   |   |--- b0 >  -6.29\n|   |   |   |--- class: True\n|--- sw_line >  0.50\n|   |--- aps_share <= 0.03\n|   |   |--- t_con_med <= 8.21\n|   |   |   |--- class: True\n|   |   |--- t_con_med >  8.21\n|   |   |   |--- class: False\n|   |--- aps_share >  0.03\n|   |   |--- aps_share <= 0.13\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.13\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 3,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 577312.6735235713,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.07199534132671753,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.513995338031364,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.5485770363101079,
+   "density_test": 0.9604810996563574,
+   "cart_test_accuracy": 0.7773333333333333,
+   "cart_rules": "|--- sw_line <= 0.50\n|   |--- a_local <= 45549.76\n|   |   |--- a_local <= 28751.14\n|   |   |   |--- class: False\n|   |   |--- a_local >  28751.14\n|   |   |   |--- class: False\n|   |--- a_local >  45549.76\n|   |   |--- b_own <= 0.89\n|   |   |   |--- class: False\n|   |   |--- b_own >  0.89\n|   |   |   |--- class: True\n|--- sw_line >  0.50\n|   |--- aps_share <= 0.04\n|   |   |--- t_con_med <= 8.20\n|   |   |   |--- class: True\n|   |   |--- t_con_med >  8.20\n|   |   |   |--- class: False\n|   |--- aps_share >  0.04\n|   |   |--- aps_share <= 0.07\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.07\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 4,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500446.2966828106,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.08498117914811765,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "r_other",
+     "low": 889.1200962572409,
+     "high": 9995223.370848808
+    }
+   ],
+   "coverage_test": 0.5374083129584352,
+   "density_test": 0.9506920415224913,
+   "cart_test_accuracy": 0.7483333333333333,
+   "cart_rules": "|--- sw_line <= 0.50\n|   |--- a_local <= 44785.27\n|   |   |--- c_cd <= 11838.16\n|   |   |   |--- class: False\n|   |   |--- c_cd >  11838.16\n|   |   |   |--- class: False\n|   |--- a_local >  44785.27\n|   |   |--- b0 <= -4.10\n|   |   |   |--- class: True\n|   |   |--- b0 >  -4.10\n|   |   |   |--- class: True\n|--- sw_line >  0.50\n|   |--- aps_share <= 0.05\n|   |   |--- aps_share <= 0.02\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.02\n|   |   |   |--- class: False\n|   |--- aps_share >  0.05\n|   |   |--- aps_share <= 0.09\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.09\n|   |   |   |--- class: True\n"
+  }
+ ],
+ "PW4": [
+  {
+   "threshold": 0.25,
+   "split": 0,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 582153.4485897182,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.09232425102506195,
+     "high": 0.49943759707489344
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.7498165810711666,
+   "density_test": 0.9907901114881241,
+   "cart_test_accuracy": 0.958,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- aps_share <= 0.03\n|   |   |--- a_line <= 1880429.06\n|   |   |   |--- class: False\n|   |   |--- a_line >  1880429.06\n|   |   |   |--- class: False\n|   |--- aps_share >  0.03\n|   |   |--- a_line <= 1303362.62\n|   |   |   |--- class: False\n|   |   |--- a_line >  1303362.62\n|   |   |   |--- class: True\n|--- aps_share >  0.04\n|   |--- aps_share <= 0.08\n|   |   |--- a_line <= 720932.44\n|   |   |   |--- class: False\n|   |   |--- a_line >  720932.44\n|   |   |   |--- class: True\n|   |--- aps_share >  0.08\n|   |   |--- c_final <= 17.98\n|   |   |   |--- class: True\n|   |   |--- c_final >  17.98\n|   |   |   |--- class: False\n"
+  },
+  {
+   "threshold": 0.25,
+   "split": 1,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500586.9115581133,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.09218617497654259,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.991691078147465
+    }
+   ],
+   "coverage_test": 0.7904587155963303,
+   "density_test": 0.9844606946983546,
+   "cart_test_accuracy": 0.9556666666666667,
+   "cart_rules": "|--- aps_share <= 0.05\n|   |--- aps_share <= 0.03\n|   |   |--- a_line <= 1827527.19\n|   |   |   |--- class: False\n|   |   |--- a_line >  1827527.19\n|   |   |   |--- class: False\n|   |--- aps_share >  0.03\n|   |   |--- a_line <= 1153104.75\n|   |   |   |--- class: False\n|   |   |--- a_line >  1153104.75\n|   |   |   |--- class: True\n|--- aps_share >  0.05\n|   |--- aps_share <= 0.08\n|   |   |--- a_line <= 598589.75\n|   |   |   |--- class: False\n|   |   |--- a_line >  598589.75\n|   |   |   |--- class: True\n|   |--- aps_share >  0.08\n|   |   |--- q_lrsp <= 0.20\n|   |   |   |--- class: False\n|   |   |--- q_lrsp >  0.20\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.25,
+   "split": 2,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 577446.2534916274,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.09246929022623995,
+     "high": 0.49954111078945684
+    },
+    {
+     "param": "c_final",
+     "low": 3.501532391307821,
+     "high": 17.9949585138121
+    }
+   ],
+   "coverage_test": 0.7583917373662855,
+   "density_test": 0.9870379260681709,
+   "cart_test_accuracy": 0.963,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- aps_share <= 0.02\n|   |   |--- s_12in_C <= 0.70\n|   |   |   |--- class: False\n|   |   |--- s_12in_C >  0.70\n|   |   |   |--- class: True\n|   |--- aps_share >  0.02\n|   |   |--- a_line <= 1471565.56\n|   |   |   |--- class: False\n|   |   |--- a_line >  1471565.56\n|   |   |   |--- class: True\n|--- aps_share >  0.04\n|   |--- aps_share <= 0.07\n|   |   |--- a_line <= 976483.22\n|   |   |   |--- class: False\n|   |   |--- a_line >  976483.22\n|   |   |   |--- class: True\n|   |--- aps_share >  0.07\n|   |   |--- a_line <= 595943.12\n|   |   |   |--- class: True\n|   |   |--- a_line >  595943.12\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.25,
+   "split": 3,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 576653.677470186,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.13499458360704458,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.513995338031364,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.689388356669123,
+   "density_test": 0.9909957627118644,
+   "cart_test_accuracy": 0.9546666666666667,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- aps_share <= 0.02\n|   |   |--- a_sg017 <= 2948.47\n|   |   |   |--- class: True\n|   |   |--- a_sg017 >  2948.47\n|   |   |   |--- class: False\n|   |--- aps_share >  0.02\n|   |   |--- a_line <= 1132525.94\n|   |   |   |--- class: False\n|   |   |--- a_line >  1132525.94\n|   |   |   |--- class: True\n|--- aps_share >  0.04\n|   |--- aps_share <= 0.07\n|   |   |--- a_line <= 997663.56\n|   |   |   |--- class: False\n|   |   |--- a_line >  997663.56\n|   |   |   |--- class: True\n|   |--- aps_share >  0.07\n|   |   |--- q_dir <= 0.00\n|   |   |   |--- class: False\n|   |   |--- q_dir >  0.00\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.25,
+   "split": 4,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 643921.7428930837,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.08763972979235787,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "r_other",
+     "low": 889.1200962572409,
+     "high": 9995223.370848808
+    }
+   ],
+   "coverage_test": 0.7575312270389419,
+   "density_test": 0.9884947267497604,
+   "cart_test_accuracy": 0.9563333333333334,
+   "cart_rules": "|--- aps_share <= 0.03\n|   |--- a_line <= 1476285.75\n|   |   |--- t_dsg <= 13.60\n|   |   |   |--- class: False\n|   |   |--- t_dsg >  13.60\n|   |   |   |--- class: True\n|   |--- a_line >  1476285.75\n|   |   |--- aps_share <= 0.02\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.02\n|   |   |   |--- class: True\n|--- aps_share >  0.03\n|   |--- aps_share <= 0.08\n|   |   |--- a_line <= 981308.09\n|   |   |   |--- class: False\n|   |   |--- a_line >  981308.09\n|   |   |   |--- class: True\n|   |--- aps_share >  0.08\n|   |   |--- q_lrsp <= 0.20\n|   |   |   |--- class: False\n|   |   |--- q_lrsp >  0.20\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 0,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 582153.4485897182,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.1313153705170499,
+     "high": 0.49943759707489344
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.6788375558867362,
+   "density_test": 0.984332793084819,
+   "cart_test_accuracy": 0.9466666666666667,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- aps_share <= 0.02\n|   |   |--- b0 <= -6.87\n|   |   |   |--- class: True\n|   |   |--- b0 >  -6.87\n|   |   |   |--- class: False\n|   |--- aps_share >  0.02\n|   |   |--- a_line <= 1585237.81\n|   |   |   |--- class: False\n|   |   |--- a_line >  1585237.81\n|   |   |   |--- class: True\n|--- aps_share >  0.04\n|   |--- aps_share <= 0.09\n|   |   |--- a_line <= 976939.16\n|   |   |   |--- class: False\n|   |   |--- a_line >  976939.16\n|   |   |   |--- class: True\n|   |--- aps_share >  0.09\n|   |   |--- aps_share <= 0.24\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.24\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 1,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 578404.2361874636,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.12913080307148855,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.991691078147465
+    }
+   ],
+   "coverage_test": 0.7188318981654811,
+   "density_test": 0.9790922998470168,
+   "cart_test_accuracy": 0.9426666666666667,
+   "cart_rules": "|--- aps_share <= 0.05\n|   |--- aps_share <= 0.03\n|   |   |--- t_pe <= 3.04\n|   |   |   |--- class: True\n|   |   |--- t_pe >  3.04\n|   |   |   |--- class: False\n|   |--- aps_share >  0.03\n|   |   |--- a_line <= 1153104.75\n|   |   |   |--- class: False\n|   |   |--- a_line >  1153104.75\n|   |   |   |--- class: True\n|--- aps_share >  0.05\n|   |--- aps_share <= 0.07\n|   |   |--- a_line <= 906142.25\n|   |   |   |--- class: False\n|   |   |--- a_line >  906142.25\n|   |   |   |--- class: True\n|   |--- aps_share >  0.07\n|   |   |--- aps_share <= 0.21\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.21\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 2,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 577446.2534916274,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.09246929022623995,
+     "high": 0.49954111078945684
+    },
+    {
+     "param": "c_final",
+     "low": 3.501532391307821,
+     "high": 17.9949585138121
+    }
+   ],
+   "coverage_test": 0.7629407351837959,
+   "density_test": 0.9764762361977917,
+   "cart_test_accuracy": 0.948,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- a_line <= 1476285.75\n|   |   |--- s_bp <= 1.00\n|   |   |   |--- class: False\n|   |   |--- s_bp >  1.00\n|   |   |   |--- class: True\n|   |--- a_line >  1476285.75\n|   |   |--- aps_share <= 0.02\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.02\n|   |   |   |--- class: True\n|--- aps_share >  0.04\n|   |--- aps_share <= 0.07\n|   |   |--- a_line <= 976483.22\n|   |   |   |--- class: False\n|   |   |--- a_line >  976483.22\n|   |   |   |--- class: True\n|   |--- aps_share >  0.07\n|   |   |--- a_line <= 508398.52\n|   |   |   |--- class: True\n|   |   |--- a_line >  508398.52\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 3,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 576653.677470186,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.13630684282185465,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.513995338031364,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.6875234170101161,
+   "density_test": 0.9797116924719701,
+   "cart_test_accuracy": 0.9433333333333334,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- aps_share <= 0.02\n|   |   |--- b0 <= -6.86\n|   |   |   |--- class: True\n|   |   |--- b0 >  -6.86\n|   |   |   |--- class: False\n|   |--- aps_share >  0.02\n|   |   |--- a_line <= 1132525.94\n|   |   |   |--- class: False\n|   |   |--- a_line >  1132525.94\n|   |   |   |--- class: False\n|--- aps_share >  0.04\n|   |--- aps_share <= 0.07\n|   |   |--- a_line <= 962541.56\n|   |   |   |--- class: False\n|   |   |--- a_line >  962541.56\n|   |   |   |--- class: True\n|   |--- aps_share >  0.07\n|   |   |--- a_line <= 555540.31\n|   |   |   |--- class: True\n|   |   |--- a_line >  555540.31\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 4,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 571788.5606809829,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.10902965219370853,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "r_other",
+     "low": 889.1200962572409,
+     "high": 9995223.370848808
+    }
+   ],
+   "coverage_test": 0.7552316890881914,
+   "density_test": 0.9796412990790111,
+   "cart_test_accuracy": 0.944,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- a_line <= 1476285.75\n|   |   |--- t_pe <= 14.80\n|   |   |   |--- class: False\n|   |   |--- t_pe >  14.80\n|   |   |   |--- class: True\n|   |--- a_line >  1476285.75\n|   |   |--- aps_share <= 0.02\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.02\n|   |   |   |--- class: True\n|--- aps_share >  0.04\n|   |--- aps_share <= 0.08\n|   |   |--- a_line <= 981308.09\n|   |   |   |--- class: False\n|   |   |--- a_line >  981308.09\n|   |   |   |--- class: True\n|   |--- aps_share >  0.08\n|   |   |--- a_line <= 600584.09\n|   |   |   |--- class: True\n|   |   |--- a_line >  600584.09\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 0,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 725429.4347524635,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.21457961238331685,
+     "high": 0.49943759707489344
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.4832189168573608,
+   "density_test": 0.9913928012519562,
+   "cart_test_accuracy": 0.9283333333333333,
+   "cart_rules": "|--- aps_share <= 0.05\n|   |--- aps_share <= 0.03\n|   |   |--- a_line <= 1756735.31\n|   |   |   |--- class: False\n|   |   |--- a_line >  1756735.31\n|   |   |   |--- class: False\n|   |--- aps_share >  0.03\n|   |   |--- a_line <= 1235791.69\n|   |   |   |--- class: False\n|   |   |--- a_line >  1235791.69\n|   |   |   |--- class: True\n|--- aps_share >  0.05\n|   |--- aps_share <= 0.11\n|   |   |--- a_line <= 589754.03\n|   |   |   |--- class: False\n|   |   |--- a_line >  589754.03\n|   |   |   |--- class: True\n|   |--- aps_share >  0.11\n|   |   |--- a_line <= 1045090.72\n|   |   |   |--- class: True\n|   |   |--- a_line >  1045090.72\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 1,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 658772.9670076899,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.19890291782760383,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.245472560545508
+    }
+   ],
+   "coverage_test": 0.5617331288343558,
+   "density_test": 0.9825620389000671,
+   "cart_test_accuracy": 0.922,
+   "cart_rules": "|--- aps_share <= 0.05\n|   |--- aps_share <= 0.03\n|   |   |--- t_pe <= 3.04\n|   |   |   |--- class: True\n|   |   |--- t_pe >  3.04\n|   |   |   |--- class: False\n|   |--- aps_share >  0.03\n|   |   |--- a_line <= 1251901.31\n|   |   |   |--- class: False\n|   |   |--- a_line >  1251901.31\n|   |   |   |--- class: True\n|--- aps_share >  0.05\n|   |--- aps_share <= 0.08\n|   |   |--- a_line <= 598589.75\n|   |   |   |--- class: False\n|   |   |--- a_line >  598589.75\n|   |   |   |--- class: True\n|   |--- aps_share >  0.08\n|   |   |--- aps_share <= 0.20\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.20\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 2,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 719079.016985458,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.15391277173338616,
+     "high": 0.49954111078945684
+    },
+    {
+     "param": "c_final",
+     "low": 3.501532391307821,
+     "high": 17.9949585138121
+    }
+   ],
+   "coverage_test": 0.5937740199846272,
+   "density_test": 0.9704773869346733,
+   "cart_test_accuracy": 0.9266666666666666,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- a_line <= 1476285.75\n|   |   |--- s_bp <= 1.00\n|   |   |   |--- class: False\n|   |   |--- s_bp >  1.00\n|   |   |   |--- class: True\n|   |--- a_line >  1476285.75\n|   |   |--- aps_share <= 0.02\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.02\n|   |   |   |--- class: True\n|--- aps_share >  0.04\n|   |--- aps_share <= 0.07\n|   |   |--- a_line <= 884874.81\n|   |   |   |--- class: False\n|   |   |--- a_line >  884874.81\n|   |   |   |--- class: True\n|   |--- aps_share >  0.07\n|   |   |--- a_line <= 703941.22\n|   |   |   |--- class: True\n|   |   |--- a_line >  703941.22\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 3,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 649576.5905438415,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.13749380389260865,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.513995338031364,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.6600609756097561,
+   "density_test": 0.9730337078651685,
+   "cart_test_accuracy": 0.926,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- a_line <= 1430502.19\n|   |   |--- q_partner_cancel <= 0.01\n|   |   |   |--- class: True\n|   |   |--- q_partner_cancel >  0.01\n|   |   |   |--- class: False\n|   |--- a_line >  1430502.19\n|   |   |--- aps_share <= 0.02\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.02\n|   |   |   |--- class: True\n|--- aps_share >  0.04\n|   |--- aps_share <= 0.09\n|   |   |--- a_line <= 959559.22\n|   |   |   |--- class: False\n|   |   |--- a_line >  959559.22\n|   |   |   |--- class: True\n|   |--- aps_share >  0.09\n|   |   |--- a_line <= 632298.81\n|   |   |   |--- class: True\n|   |   |--- a_line >  632298.81\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 4,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 711140.7835616581,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.19878632189417839,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "r_other",
+     "low": 889.1200962572409,
+     "high": 9995223.370848808
+    }
+   ],
+   "coverage_test": 0.5471554028255059,
+   "density_test": 0.9828532235939643,
+   "cart_test_accuracy": 0.9223333333333333,
+   "cart_rules": "|--- aps_share <= 0.05\n|   |--- aps_share <= 0.02\n|   |   |--- e_ext <= 0.98\n|   |   |   |--- class: False\n|   |   |--- e_ext >  0.98\n|   |   |   |--- class: True\n|   |--- aps_share >  0.02\n|   |   |--- a_line <= 1259975.19\n|   |   |   |--- class: False\n|   |   |--- a_line >  1259975.19\n|   |   |   |--- class: True\n|--- aps_share >  0.05\n|   |--- aps_share <= 0.09\n|   |   |--- a_line <= 892147.38\n|   |   |   |--- class: False\n|   |   |--- a_line >  892147.38\n|   |   |   |--- class: True\n|   |--- aps_share >  0.09\n|   |   |--- a_line <= 638050.38\n|   |   |   |--- class: True\n|   |   |--- a_line >  638050.38\n|   |   |   |--- class: True\n"
+  }
+ ],
+ "PW5": [
+  {
+   "threshold": 0.25,
+   "split": 0,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 582153.4485897182,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.09232425102506195,
+     "high": 0.49943759707489344
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.7463343108504399,
+   "density_test": 0.98691226369365,
+   "cart_test_accuracy": 0.9496666666666667,
+   "cart_rules": "|--- aps_share <= 0.05\n|   |--- aps_share <= 0.03\n|   |   |--- t_lrsp <= 3.43\n|   |   |   |--- class: True\n|   |   |--- t_lrsp >  3.43\n|   |   |   |--- class: False\n|   |--- aps_share >  0.03\n|   |   |--- a_line <= 1235791.69\n|   |   |   |--- class: False\n|   |   |--- a_line >  1235791.69\n|   |   |   |--- class: True\n|--- aps_share >  0.05\n|   |--- aps_share <= 0.08\n|   |   |--- a_line <= 620802.12\n|   |   |   |--- class: False\n|   |   |--- a_line >  620802.12\n|   |   |   |--- class: True\n|   |--- aps_share >  0.08\n|   |   |--- c_final <= 17.98\n|   |   |   |--- class: True\n|   |   |--- c_final >  17.98\n|   |   |   |--- class: False\n"
+  },
+  {
+   "threshold": 0.25,
+   "split": 1,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500586.9115581133,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.09218617497654259,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.991691078147465
+    }
+   ],
+   "coverage_test": 0.7637564196625092,
+   "density_test": 0.9793038570084666,
+   "cart_test_accuracy": 0.9433333333333334,
+   "cart_rules": "|--- aps_share <= 0.05\n|   |--- a_line <= 1520220.19\n|   |   |--- a_line <= 1196038.25\n|   |   |   |--- class: False\n|   |   |--- a_line >  1196038.25\n|   |   |   |--- class: False\n|   |--- a_line >  1520220.19\n|   |   |--- aps_share <= 0.02\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.02\n|   |   |   |--- class: True\n|--- aps_share >  0.05\n|   |--- aps_share <= 0.07\n|   |   |--- a_line <= 609838.34\n|   |   |   |--- class: False\n|   |   |--- a_line >  609838.34\n|   |   |   |--- class: True\n|   |--- aps_share >  0.07\n|   |   |--- t_defer <= 12.00\n|   |   |   |--- class: True\n|   |   |--- t_defer >  12.00\n|   |   |   |--- class: False\n"
+  },
+  {
+   "threshold": 0.25,
+   "split": 2,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 577446.2534916274,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.09246929022623995,
+     "high": 0.49954111078945684
+    },
+    {
+     "param": "c_final",
+     "low": 3.501532391307821,
+     "high": 17.9949585138121
+    }
+   ],
+   "coverage_test": 0.7557925707980875,
+   "density_test": 0.986557849255881,
+   "cart_test_accuracy": 0.9493333333333334,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- a_line <= 1363259.62\n|   |   |--- t_pe <= 3.53\n|   |   |   |--- class: True\n|   |   |--- t_pe >  3.53\n|   |   |   |--- class: False\n|   |--- a_line >  1363259.62\n|   |   |--- aps_share <= 0.02\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.02\n|   |   |   |--- class: True\n|--- aps_share >  0.04\n|   |--- aps_share <= 0.07\n|   |   |--- a_line <= 976483.22\n|   |   |   |--- class: False\n|   |   |--- a_line >  976483.22\n|   |   |   |--- class: True\n|   |--- aps_share >  0.07\n|   |   |--- a_line <= 511898.11\n|   |   |   |--- class: True\n|   |   |--- a_line >  511898.11\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.25,
+   "split": 3,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 576653.677470186,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.1352398606054493,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.513995338031364,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.6872020535386872,
+   "density_test": 0.9904862579281184,
+   "cart_test_accuracy": 0.9486666666666667,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- a_line <= 1430502.19\n|   |   |--- t_lrsp <= 3.44\n|   |   |   |--- class: True\n|   |   |--- t_lrsp >  3.44\n|   |   |   |--- class: False\n|   |--- a_line >  1430502.19\n|   |   |--- aps_share <= 0.02\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.02\n|   |   |   |--- class: True\n|--- aps_share >  0.04\n|   |--- aps_share <= 0.07\n|   |   |--- a_line <= 997663.56\n|   |   |   |--- class: False\n|   |   |--- a_line >  997663.56\n|   |   |   |--- class: True\n|   |--- aps_share >  0.07\n|   |   |--- q_dir <= 0.00\n|   |   |   |--- class: False\n|   |   |--- q_dir >  0.00\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.25,
+   "split": 4,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 711886.0192725465,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.19878632189417839,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "r_other",
+     "low": 889.1200962572409,
+     "high": 9995223.370848808
+    }
+   ],
+   "coverage_test": 0.5003657644476956,
+   "density_test": 0.9949090909090909,
+   "cart_test_accuracy": 0.9516666666666667,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- a_line <= 1403514.44\n|   |   |--- t_lrsp <= 4.21\n|   |   |   |--- class: True\n|   |   |--- t_lrsp >  4.21\n|   |   |   |--- class: False\n|   |--- a_line >  1403514.44\n|   |   |--- aps_share <= 0.02\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.02\n|   |   |   |--- class: True\n|--- aps_share >  0.04\n|   |--- aps_share <= 0.08\n|   |   |--- a_line <= 981308.09\n|   |   |   |--- class: False\n|   |   |--- a_line >  981308.09\n|   |   |   |--- class: True\n|   |--- aps_share >  0.08\n|   |   |--- aps_share <= 0.19\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.19\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 0,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 582153.4485897182,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.1990385750857013,
+     "high": 0.49943759707489344
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.5579222720478326,
+   "density_test": 0.9893969516235918,
+   "cart_test_accuracy": 0.9353333333333333,
+   "cart_rules": "|--- aps_share <= 0.05\n|   |--- aps_share <= 0.03\n|   |   |--- t_build <= 4.09\n|   |   |   |--- class: True\n|   |   |--- t_build >  4.09\n|   |   |   |--- class: False\n|   |--- aps_share >  0.03\n|   |   |--- a_line <= 1235791.69\n|   |   |   |--- class: False\n|   |   |--- a_line >  1235791.69\n|   |   |   |--- class: True\n|--- aps_share >  0.05\n|   |--- aps_share <= 0.09\n|   |   |--- a_line <= 620802.12\n|   |   |   |--- class: False\n|   |   |--- a_line >  620802.12\n|   |   |   |--- class: True\n|   |--- aps_share >  0.09\n|   |   |--- c_final <= 17.98\n|   |   |   |--- class: True\n|   |   |--- c_final >  17.98\n|   |   |   |--- class: False\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 1,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 578404.2361874636,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.09218617497654259,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.991691078147465
+    }
+   ],
+   "coverage_test": 0.7763157894736842,
+   "density_test": 0.9740566037735849,
+   "cart_test_accuracy": 0.935,
+   "cart_rules": "|--- aps_share <= 0.05\n|   |--- aps_share <= 0.03\n|   |   |--- b0 <= -3.01\n|   |   |   |--- class: False\n|   |   |--- b0 >  -3.01\n|   |   |   |--- class: True\n|   |--- aps_share >  0.03\n|   |   |--- a_line <= 1251901.31\n|   |   |   |--- class: False\n|   |   |--- a_line >  1251901.31\n|   |   |   |--- class: True\n|--- aps_share >  0.05\n|   |--- aps_share <= 0.07\n|   |   |--- a_line <= 609838.34\n|   |   |   |--- class: False\n|   |   |--- a_line >  609838.34\n|   |   |   |--- class: True\n|   |--- aps_share >  0.07\n|   |   |--- a_line <= 508446.34\n|   |   |   |--- class: True\n|   |   |--- a_line >  508446.34\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 2,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 577446.2534916274,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.09246929022623995,
+     "high": 0.49954111078945684
+    },
+    {
+     "param": "c_final",
+     "low": 3.501532391307821,
+     "high": 17.9949585138121
+    }
+   ],
+   "coverage_test": 0.7642184557438795,
+   "density_test": 0.9740758521363418,
+   "cart_test_accuracy": 0.938,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- aps_share <= 0.02\n|   |   |--- t_con_med <= 15.92\n|   |   |   |--- class: False\n|   |   |--- t_con_med >  15.92\n|   |   |   |--- class: True\n|   |--- aps_share >  0.02\n|   |   |--- a_line <= 1362811.38\n|   |   |   |--- class: False\n|   |   |--- a_line >  1362811.38\n|   |   |   |--- class: True\n|--- aps_share >  0.04\n|   |--- aps_share <= 0.08\n|   |   |--- a_line <= 976483.22\n|   |   |   |--- class: False\n|   |   |--- a_line >  976483.22\n|   |   |   |--- class: True\n|   |--- aps_share >  0.08\n|   |   |--- a_line <= 502820.77\n|   |   |   |--- class: False\n|   |   |--- a_line >  502820.77\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 3,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 576653.677470186,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.16840930536288076,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.513995338031364,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.6400449943757031,
+   "density_test": 0.9838616714697407,
+   "cart_test_accuracy": 0.9393333333333334,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- a_line <= 1138416.00\n|   |   |--- t_con_med <= 15.92\n|   |   |   |--- class: False\n|   |   |--- t_con_med >  15.92\n|   |   |   |--- class: True\n|   |--- a_line >  1138416.00\n|   |   |--- aps_share <= 0.02\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.02\n|   |   |   |--- class: False\n|--- aps_share >  0.04\n|   |--- aps_share <= 0.07\n|   |   |--- a_line <= 962541.56\n|   |   |   |--- class: False\n|   |   |--- a_line >  962541.56\n|   |   |   |--- class: True\n|   |--- aps_share >  0.07\n|   |   |--- a_line <= 619000.66\n|   |   |   |--- class: True\n|   |   |--- a_line >  619000.66\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 4,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 643921.7428930837,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.08763972979235787,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "r_other",
+     "low": 889.1200962572409,
+     "high": 9995223.370848808
+    }
+   ],
+   "coverage_test": 0.7600596125186289,
+   "density_test": 0.9779482262703739,
+   "cart_test_accuracy": 0.941,
+   "cart_rules": "|--- aps_share <= 0.05\n|   |--- aps_share <= 0.02\n|   |   |--- e_ext <= 0.98\n|   |   |   |--- class: False\n|   |   |--- e_ext >  0.98\n|   |   |   |--- class: True\n|   |--- aps_share >  0.02\n|   |   |--- a_line <= 1124888.81\n|   |   |   |--- class: False\n|   |   |--- a_line >  1124888.81\n|   |   |   |--- class: True\n|--- aps_share >  0.05\n|   |--- aps_share <= 0.08\n|   |   |--- a_line <= 1032499.25\n|   |   |   |--- class: False\n|   |   |--- a_line >  1032499.25\n|   |   |   |--- class: True\n|   |--- aps_share >  0.08\n|   |   |--- a_line <= 628481.47\n|   |   |   |--- class: True\n|   |   |--- a_line >  628481.47\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 0,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 792376.4248841344,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.2434683746326488,
+     "high": 0.49943759707489344
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.4190950920245399,
+   "density_test": 0.9945404913557779,
+   "cart_test_accuracy": 0.9223333333333333,
+   "cart_rules": "|--- aps_share <= 0.05\n|   |--- aps_share <= 0.03\n|   |   |--- a_line <= 1625939.88\n|   |   |   |--- class: False\n|   |   |--- a_line >  1625939.88\n|   |   |   |--- class: False\n|   |--- aps_share >  0.03\n|   |   |--- a_line <= 1123848.69\n|   |   |   |--- class: False\n|   |   |--- a_line >  1123848.69\n|   |   |   |--- class: True\n|--- aps_share >  0.05\n|   |--- aps_share <= 0.20\n|   |   |--- a_line <= 646480.06\n|   |   |   |--- class: True\n|   |   |--- a_line >  646480.06\n|   |   |   |--- class: True\n|   |--- aps_share >  0.20\n|   |   |--- a_line <= 1045090.72\n|   |   |   |--- class: True\n|   |   |--- a_line >  1045090.72\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 1,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 792953.8337590918,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.16527775453474675,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.991691078147465
+    }
+   ],
+   "coverage_test": 0.5574468085106383,
+   "density_test": 0.9776119402985075,
+   "cart_test_accuracy": 0.9106666666666666,
+   "cart_rules": "|--- aps_share <= 0.05\n|   |--- aps_share <= 0.03\n|   |   |--- b0 <= -3.01\n|   |   |   |--- class: False\n|   |   |--- b0 >  -3.01\n|   |   |   |--- class: True\n|   |--- aps_share >  0.03\n|   |   |--- a_line <= 1251901.31\n|   |   |   |--- class: False\n|   |   |--- a_line >  1251901.31\n|   |   |   |--- class: True\n|--- aps_share >  0.05\n|   |--- aps_share <= 0.20\n|   |   |--- a_line <= 599171.97\n|   |   |   |--- class: True\n|   |   |--- a_line >  599171.97\n|   |   |   |--- class: True\n|   |--- aps_share >  0.20\n|   |   |--- a_line <= 791747.81\n|   |   |   |--- class: True\n|   |   |--- a_line >  791747.81\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 2,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 718514.1977964432,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.1709851713101897,
+     "high": 0.49954111078945684
+    },
+    {
+     "param": "c_final",
+     "low": 3.501532391307821,
+     "high": 17.9949585138121
+    }
+   ],
+   "coverage_test": 0.5731424148606811,
+   "density_test": 0.9782034346103038,
+   "cart_test_accuracy": 0.9093333333333333,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- aps_share <= 0.02\n|   |   |--- t_pif <= 11.91\n|   |   |   |--- class: False\n|   |   |--- t_pif >  11.91\n|   |   |   |--- class: True\n|   |--- aps_share >  0.02\n|   |   |--- a_line <= 1362811.38\n|   |   |   |--- class: False\n|   |   |--- a_line >  1362811.38\n|   |   |   |--- class: True\n|--- aps_share >  0.04\n|   |--- aps_share <= 0.14\n|   |   |--- a_line <= 883317.25\n|   |   |   |--- class: True\n|   |   |--- a_line >  883317.25\n|   |   |   |--- class: True\n|   |--- aps_share >  0.14\n|   |   |--- a_line <= 507189.98\n|   |   |   |--- class: False\n|   |   |--- a_line >  507189.98\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 3,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 724655.6648470833,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.13585403692438805,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.513995338031364,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.6244725738396625,
+   "density_test": 0.9736842105263158,
+   "cart_test_accuracy": 0.9196666666666666,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- a_line <= 1430502.19\n|   |   |--- t_lrsp <= 3.36\n|   |   |   |--- class: True\n|   |   |--- t_lrsp >  3.36\n|   |   |   |--- class: False\n|   |--- a_line >  1430502.19\n|   |   |--- aps_share <= 0.02\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.02\n|   |   |   |--- class: True\n|--- aps_share >  0.04\n|   |--- aps_share <= 0.09\n|   |   |--- a_line <= 959559.22\n|   |   |   |--- class: False\n|   |   |--- a_line >  959559.22\n|   |   |   |--- class: True\n|   |--- aps_share >  0.09\n|   |   |--- aps_share <= 0.21\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.21\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 4,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 711886.0192725465,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.19769751797600815,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "r_other",
+     "low": 889.1200962572409,
+     "high": 9995223.370848808
+    }
+   ],
+   "coverage_test": 0.5439938791124713,
+   "density_test": 0.9840830449826989,
+   "cart_test_accuracy": 0.9236666666666666,
+   "cart_rules": "|--- aps_share <= 0.05\n|   |--- aps_share <= 0.02\n|   |   |--- e_ext <= 0.98\n|   |   |   |--- class: False\n|   |   |--- e_ext >  0.98\n|   |   |   |--- class: True\n|   |--- aps_share >  0.02\n|   |   |--- a_line <= 1393634.44\n|   |   |   |--- class: False\n|   |   |--- a_line >  1393634.44\n|   |   |   |--- class: True\n|--- aps_share >  0.05\n|   |--- aps_share <= 0.20\n|   |   |--- a_line <= 665988.31\n|   |   |   |--- class: True\n|   |   |--- a_line >  665988.31\n|   |   |   |--- class: True\n|   |--- aps_share >  0.20\n|   |   |--- a_line <= 704157.47\n|   |   |   |--- class: True\n|   |   |--- a_line >  704157.47\n|   |   |   |--- class: True\n"
+  }
+ ],
+ "PW6": [
+  {
+   "threshold": 0.25,
+   "split": 0,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 580674.12370199,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.04750890254520114,
+     "high": 0.49943759707489344
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.7871012482662968,
+   "density_test": 0.9818339100346021,
+   "cart_test_accuracy": 0.9603333333333334,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- a_sg017 <= 41471.60\n|   |   |--- q_veto <= 0.35\n|   |   |   |--- class: False\n|   |   |--- q_veto >  0.35\n|   |   |   |--- class: True\n|   |--- a_sg017 >  41471.60\n|   |   |--- q_sg017_block <= 0.74\n|   |   |   |--- class: True\n|   |   |--- q_sg017_block >  0.74\n|   |   |   |--- class: True\n|--- aps_share >  0.04\n|   |--- a_line <= 622636.66\n|   |   |--- aps_share <= 0.10\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.10\n|   |   |   |--- class: True\n|   |--- a_line >  622636.66\n|   |   |--- a_sg017 <= 60313.24\n|   |   |   |--- class: True\n|   |   |--- a_sg017 >  60313.24\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.25,
+   "split": 1,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 580414.0585735322,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.07231290757549945,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.991691078147465
+    }
+   ],
+   "coverage_test": 0.7616903359889158,
+   "density_test": 0.9830129637907913,
+   "cart_test_accuracy": 0.958,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- a_sg017 <= 38939.35\n|   |   |--- t_defer <= 10.47\n|   |   |   |--- class: False\n|   |   |--- t_defer >  10.47\n|   |   |   |--- class: True\n|   |--- a_sg017 >  38939.35\n|   |   |--- t_pif <= 1.56\n|   |   |   |--- class: False\n|   |   |--- t_pif >  1.56\n|   |   |   |--- class: True\n|--- aps_share >  0.04\n|   |--- a_line <= 638472.62\n|   |   |--- aps_share <= 0.08\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.08\n|   |   |   |--- class: True\n|   |--- a_line >  638472.62\n|   |   |--- q_lrsp <= 0.20\n|   |   |   |--- class: False\n|   |   |--- q_lrsp >  0.20\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.25,
+   "split": 2,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 654806.8389178038,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.04724941888791137,
+     "high": 0.49954111078945684
+    },
+    {
+     "param": "c_final",
+     "low": 3.501532391307821,
+     "high": 17.9949585138121
+    }
+   ],
+   "coverage_test": 0.7544951590594744,
+   "density_test": 0.984212900315742,
+   "cart_test_accuracy": 0.9663333333333334,
+   "cart_rules": "|--- aps_share <= 0.03\n|   |--- a_sg017 <= 21762.39\n|   |   |--- p_sa <= 0.06\n|   |   |   |--- class: True\n|   |   |--- p_sa >  0.06\n|   |   |   |--- class: False\n|   |--- a_sg017 >  21762.39\n|   |   |--- q_sg017_block <= 0.67\n|   |   |   |--- class: True\n|   |   |--- q_sg017_block >  0.67\n|   |   |   |--- class: True\n|--- aps_share >  0.03\n|   |--- a_line <= 639756.41\n|   |   |--- q_sg017_block <= 0.75\n|   |   |   |--- class: True\n|   |   |--- q_sg017_block >  0.75\n|   |   |   |--- class: True\n|   |--- a_line >  639756.41\n|   |   |--- q_gf <= 0.00\n|   |   |   |--- class: True\n|   |   |--- q_gf >  0.00\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.25,
+   "split": 3,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 578766.2842258357,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.04959679839296391,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.513995338031364,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.8025676613462873,
+   "density_test": 0.9817487266553481,
+   "cart_test_accuracy": 0.9603333333333334,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- a_sg017 <= 18503.71\n|   |   |--- b_own <= 2.35\n|   |   |   |--- class: False\n|   |   |--- b_own >  2.35\n|   |   |   |--- class: True\n|   |--- a_sg017 >  18503.71\n|   |   |--- q_sg017_block <= 0.74\n|   |   |   |--- class: True\n|   |   |--- q_sg017_block >  0.74\n|   |   |   |--- class: True\n|--- aps_share >  0.04\n|   |--- th_rule <= 2.01\n|   |   |--- q_dir <= 0.26\n|   |   |   |--- class: False\n|   |   |--- q_dir >  0.26\n|   |   |   |--- class: True\n|   |--- th_rule >  2.01\n|   |   |--- p_deflect <= 0.50\n|   |   |   |--- class: True\n|   |   |--- p_deflect >  0.50\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.25,
+   "split": 4,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 573938.2721444578,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.06514009667383203,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "r_other",
+     "low": 889.1200962572409,
+     "high": 9995223.370848808
+    }
+   ],
+   "coverage_test": 0.7949428472462764,
+   "density_test": 0.9837119588512645,
+   "cart_test_accuracy": 0.9633333333333334,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- a_sg017 <= 19038.40\n|   |   |--- k_contract <= 1.55\n|   |   |   |--- class: False\n|   |   |--- k_contract >  1.55\n|   |   |   |--- class: True\n|   |--- a_sg017 >  19038.40\n|   |   |--- q_sg017_block <= 0.84\n|   |   |   |--- class: True\n|   |   |--- q_sg017_block >  0.84\n|   |   |   |--- class: False\n|--- aps_share >  0.04\n|   |--- a_line <= 600584.09\n|   |   |--- a_line <= 598943.16\n|   |   |   |--- class: True\n|   |   |--- a_line >  598943.16\n|   |   |   |--- class: False\n|   |--- a_line >  600584.09\n|   |   |--- q_pif_deny <= 0.30\n|   |   |   |--- class: True\n|   |   |--- q_pif_deny >  0.30\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 0,
+   "rules": [
+    {
+     "param": "aps_share",
+     "low": 0.09225360117584115,
+     "high": 0.49943759707489344
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.98920197493589
+    },
+    {
+     "param": "r_other",
+     "low": 1411.6758926968964,
+     "high": 9998570.965120444
+    }
+   ],
+   "coverage_test": 0.4005956813104989,
+   "density_test": 0.9898804047838087,
+   "cart_test_accuracy": 0.9093333333333333,
+   "cart_rules": "|--- aps_share <= 0.05\n|   |--- q_sg017_block <= 0.54\n|   |   |--- a_sg017 <= 54626.98\n|   |   |   |--- class: False\n|   |   |--- a_sg017 >  54626.98\n|   |   |   |--- class: True\n|   |--- q_sg017_block >  0.54\n|   |   |--- a_line <= 1470498.81\n|   |   |   |--- class: False\n|   |   |--- a_line >  1470498.81\n|   |   |   |--- class: True\n|--- aps_share >  0.05\n|   |--- sw_line <= 0.50\n|   |   |--- a_sg017 <= 60435.82\n|   |   |   |--- class: True\n|   |   |--- a_sg017 >  60435.82\n|   |   |   |--- class: True\n|   |--- sw_line >  0.50\n|   |   |--- aps_share <= 0.09\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.09\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 1,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500586.9115581133,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.09068154320677055,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.991691078147465
+    }
+   ],
+   "coverage_test": 0.3959806475623372,
+   "density_test": 0.9879294336118849,
+   "cart_test_accuracy": 0.9046666666666666,
+   "cart_rules": "|--- aps_share <= 0.07\n|   |--- q_sg017_block <= 0.63\n|   |   |--- a_sg017 <= 24866.66\n|   |   |   |--- class: False\n|   |   |--- a_sg017 >  24866.66\n|   |   |   |--- class: True\n|   |--- q_sg017_block >  0.63\n|   |   |--- a_line <= 1411001.31\n|   |   |   |--- class: False\n|   |   |--- a_line >  1411001.31\n|   |   |   |--- class: True\n|--- aps_share >  0.07\n|   |--- sw_line <= 0.50\n|   |   |--- a_sg017 <= 34967.31\n|   |   |   |--- class: True\n|   |   |--- a_sg017 >  34967.31\n|   |   |   |--- class: True\n|   |--- sw_line >  0.50\n|   |   |--- c_cd <= 10038.92\n|   |   |   |--- class: False\n|   |   |--- c_cd >  10038.92\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 2,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500586.9115581133,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.0713864164116946,
+     "high": 0.49954111078945684
+    },
+    {
+     "param": "c_final",
+     "low": 3.501532391307821,
+     "high": 17.9949585138121
+    }
+   ],
+   "coverage_test": 0.4236783320923306,
+   "density_test": 0.9861351819757366,
+   "cart_test_accuracy": 0.91,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- q_sg017_block <= 0.55\n|   |   |--- a_sg017 <= 54626.98\n|   |   |   |--- class: False\n|   |   |--- a_sg017 >  54626.98\n|   |   |   |--- class: True\n|   |--- q_sg017_block >  0.55\n|   |   |--- aps_share <= 0.02\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.02\n|   |   |   |--- class: False\n|--- aps_share >  0.04\n|   |--- sw_line <= 0.50\n|   |   |--- a_sg017 <= 53489.97\n|   |   |   |--- class: True\n|   |   |--- a_sg017 >  53489.97\n|   |   |   |--- class: True\n|   |--- sw_line >  0.50\n|   |   |--- aps_share <= 0.10\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.10\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 3,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500586.9115581133,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.0739959157633701,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.513995338031364,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.7720670391061453,
+   "density_test": 0.9439890710382514,
+   "cart_test_accuracy": 0.8993333333333333,
+   "cart_rules": "|--- aps_share <= 0.05\n|   |--- q_sg017_block <= 0.55\n|   |   |--- a_sg017 <= 7220.44\n|   |   |   |--- class: False\n|   |   |--- a_sg017 >  7220.44\n|   |   |   |--- class: True\n|   |--- q_sg017_block >  0.55\n|   |   |--- b_hw <= 13818.81\n|   |   |   |--- class: True\n|   |   |--- b_hw >  13818.81\n|   |   |   |--- class: False\n|--- aps_share >  0.05\n|   |--- sw_line <= 0.50\n|   |   |--- t_defer <= 6.68\n|   |   |   |--- class: True\n|   |   |--- t_defer >  6.68\n|   |   |   |--- class: True\n|   |--- sw_line >  0.50\n|   |   |--- aps_share <= 0.08\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.08\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.5,
+   "split": 4,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500446.2966828106,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.08416535087264297,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "r_other",
+     "low": 889.1200962572409,
+     "high": 9995223.370848808
+    }
+   ],
+   "coverage_test": 0.42105263157894735,
+   "density_test": 0.9844020797227037,
+   "cart_test_accuracy": 0.914,
+   "cart_rules": "|--- aps_share <= 0.05\n|   |--- q_sg017_block <= 0.54\n|   |   |--- a_sg017 <= 43947.87\n|   |   |   |--- class: False\n|   |   |--- a_sg017 >  43947.87\n|   |   |   |--- class: True\n|   |--- q_sg017_block >  0.54\n|   |   |--- a_line <= 1469438.00\n|   |   |   |--- class: False\n|   |   |--- a_line >  1469438.00\n|   |   |   |--- class: True\n|--- aps_share >  0.05\n|   |--- sw_line <= 0.50\n|   |   |--- a_sg017 <= 21010.38\n|   |   |   |--- class: True\n|   |   |--- a_sg017 >  21010.38\n|   |   |   |--- class: True\n|   |--- sw_line >  0.50\n|   |   |--- aps_share <= 0.08\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.08\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 0,
+   "rules": [
+    {
+     "param": "aps_share",
+     "low": 0.0900272364737494,
+     "high": 0.49943759707489344
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.98920197493589
+    },
+    {
+     "param": "r_other",
+     "low": 1411.6758926968964,
+     "high": 9998570.965120444
+    }
+   ],
+   "coverage_test": 0.46297098310957124,
+   "density_test": 0.9771480804387569,
+   "cart_test_accuracy": 0.81,
+   "cart_rules": "|--- aps_share <= 0.05\n|   |--- a_line <= 1267921.50\n|   |   |--- q_sg017_block <= 0.42\n|   |   |   |--- class: False\n|   |   |--- q_sg017_block >  0.42\n|   |   |   |--- class: False\n|   |--- a_line >  1267921.50\n|   |   |--- aps_share <= 0.03\n|   |   |   |--- class: False\n|   |   |--- aps_share >  0.03\n|   |   |   |--- class: True\n|--- aps_share >  0.05\n|   |--- sw_line <= 0.50\n|   |   |--- a_sg017 <= 53860.54\n|   |   |   |--- class: False\n|   |   |--- a_sg017 >  53860.54\n|   |   |   |--- class: True\n|   |--- sw_line >  0.50\n|   |   |--- aps_share <= 0.20\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.20\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 1,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500586.9115581133,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.0902436067014933,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.5008421309729503,
+     "high": 17.991691078147465
+    }
+   ],
+   "coverage_test": 0.45198961937716264,
+   "density_test": 0.9702878365831012,
+   "cart_test_accuracy": 0.8,
+   "cart_rules": "|--- aps_share <= 0.06\n|   |--- aps_share <= 0.03\n|   |   |--- q_sg017_block <= 0.33\n|   |   |   |--- class: True\n|   |   |--- q_sg017_block >  0.33\n|   |   |   |--- class: False\n|   |--- aps_share >  0.03\n|   |   |--- a_line <= 1259975.19\n|   |   |   |--- class: False\n|   |   |--- a_line >  1259975.19\n|   |   |   |--- class: True\n|--- aps_share >  0.06\n|   |--- sw_line <= 0.50\n|   |   |--- t_defer <= 7.56\n|   |   |   |--- class: True\n|   |   |--- t_defer >  7.56\n|   |   |   |--- class: True\n|   |--- sw_line >  0.50\n|   |   |--- aps_share <= 0.08\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.08\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 2,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 575662.7548442226,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.11995124669030938,
+     "high": 0.49954111078945684
+    },
+    {
+     "param": "c_final",
+     "low": 3.501532391307821,
+     "high": 17.9949585138121
+    }
+   ],
+   "coverage_test": 0.42857142857142855,
+   "density_test": 0.9752229930624381,
+   "cart_test_accuracy": 0.7983333333333333,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- aps_share <= 0.02\n|   |   |--- q_sg017_block <= 0.29\n|   |   |   |--- class: True\n|   |   |--- q_sg017_block >  0.29\n|   |   |   |--- class: False\n|   |--- aps_share >  0.02\n|   |   |--- q_gf <= 0.31\n|   |   |   |--- class: True\n|   |   |--- q_gf >  0.31\n|   |   |   |--- class: False\n|--- aps_share >  0.04\n|   |--- sw_line <= 0.50\n|   |   |--- a_sg017 <= 49440.07\n|   |   |   |--- class: False\n|   |   |--- a_sg017 >  49440.07\n|   |   |   |--- class: True\n|   |--- sw_line >  0.50\n|   |   |--- aps_share <= 0.10\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.10\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 3,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 577312.6735235713,
+     "high": 1999675.0728773954
+    },
+    {
+     "param": "aps_share",
+     "low": 0.07326474730256655,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "c_final",
+     "low": 3.513995338031364,
+     "high": 17.98920197493589
+    }
+   ],
+   "coverage_test": 0.4908774978279757,
+   "density_test": 0.9741379310344828,
+   "cart_test_accuracy": 0.7976666666666666,
+   "cart_rules": "|--- aps_share <= 0.04\n|   |--- q_sg017_block <= 0.50\n|   |   |--- s_cd <= 0.12\n|   |   |   |--- class: False\n|   |   |--- s_cd >  0.12\n|   |   |   |--- class: True\n|   |--- q_sg017_block >  0.50\n|   |   |--- t_pe <= 13.56\n|   |   |   |--- class: False\n|   |   |--- t_pe >  13.56\n|   |   |   |--- class: False\n|--- aps_share >  0.04\n|   |--- sw_line <= 0.50\n|   |   |--- t_defer <= 7.07\n|   |   |   |--- class: True\n|   |   |--- t_defer >  7.07\n|   |   |   |--- class: True\n|   |--- sw_line >  0.50\n|   |   |--- aps_share <= 0.08\n|   |   |   |--- class: True\n|   |   |--- aps_share >  0.08\n|   |   |   |--- class: True\n"
+  },
+  {
+   "threshold": 0.75,
+   "split": 4,
+   "rules": [
+    {
+     "param": "a_line",
+     "low": 500446.2966828106,
+     "high": 1999733.1544509819
+    },
+    {
+     "param": "aps_share",
+     "low": 0.14541485414341113,
+     "high": 0.4999500927673691
+    },
+    {
+     "param": "r_other",
+     "low": 889.1200962572409,
+     "high": 9995223.370848808
+    }
+   ],
+   "coverage_test": 0.41444539982803097,
+   "density_test": 0.9757085020242915,
+   "cart_test_accuracy": 0.815,
+   "cart_rules": "|--- aps_share <= 0.06\n|   |--- aps_share <= 0.02\n|   |   |--- q_sg017_block <= 0.32\n|   |   |   |--- class: True\n|   |   |--- q_sg017_block >  0.32\n|   |   |   |--- class: False\n|   |--- aps_share >  0.02\n|   |   |--- a_line <= 1120308.06\n|   |   |   |--- class: False\n|   |   |--- a_line >  1120308.06\n|   |   |   |--- class: True\n|--- aps_share >  0.06\n|   |--- sw_line <= 0.50\n|   |   |--- a_sg017 <= 39331.65\n|   |   |   |--- class: False\n|   |   |--- a_sg017 >  39331.65\n|   |   |   |--- class: True\n|   |--- sw_line >  0.50\n|   |   |--- q_topup <= 0.70\n|   |   |   |--- class: True\n|   |   |--- q_topup >  0.70\n|   |   |   |--- class: False\n"
+  }
+ ]
+}

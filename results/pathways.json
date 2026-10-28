@@ -1,5 +1,5 @@
 {
- "label": "preliminary \u00b7 uncalibrated \u00b7 scenario projections, not forecasts",
+ "label": "uncalibrated \u00b7 scenario projections, not forecasts",
  "path_reach": {
   "PW0": {
    "runs": 60180,
@@ -10,9 +10,9 @@
   "PW1": {
    "runs": 60180,
    "nodes": {
-    "PW1:C14_repack": 0.9700564971751412,
-    "PW1:Director_or_GF": 0.4652874709205716,
-    "PW1:PropL_amendment": 0.848637421070123,
+    "PW1:C14_repack": 1.0,
+    "PW1:Director_or_GF": 0.426304420073114,
+    "PW1:PropL_amendment": 0.7770687936191426,
     "PW1:start": 1.0
    }
   },
@@ -20,7 +20,7 @@
    "runs": 60180,
    "nodes": {
     "PW2:GF_request": 0.5495181123296776,
-    "PW2:HSIP_repack": 0.4116151545363908,
+    "PW2:HSIP_repack": 0.41229644400132937,
     "PW2:start": 1.0
    }
   },
@@ -49,7 +49,7 @@
    "runs": 60180,
    "nodes": {
     "PW6:GF_request": 0.41566965769358594,
-    "PW6:HSIP_repack": 0.2825357261548687,
+    "PW6:HSIP_repack": 0.3106846128281821,
     "PW6:PropL_amendment": 0.7622798271851113,
     "PW6:start": 1.0
    }

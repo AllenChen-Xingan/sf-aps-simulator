@@ -1,0 +1,1750 @@
+{
+ "label": "uncalibrated \u00b7 scenario projections, not forecasts",
+ "schema": [
+  {
+   "name": "oversight",
+   "label_en": "Actual oversight strength",
+   "unit": "0-1",
+   "kind": "uniform",
+   "low": 0.05,
+   "high": 0.6,
+   "default": 0.3,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "b0",
+   "label_en": "Baseline start propensity (logit per month)",
+   "unit": "logit",
+   "kind": "uniform",
+   "low": -6.9,
+   "high": -2.9,
+   "default": -4.9,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "b_own",
+   "label_en": "Effect of a named owner",
+   "unit": "logit",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 3.0,
+   "default": 1.5,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "b_spec",
+   "label_en": "Effect of a written deadline",
+   "unit": "logit",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 2.0,
+   "default": 1.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "b_ov",
+   "label_en": "Effect of oversight",
+   "unit": "logit/unit",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 2.0,
+   "default": 1.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "b_pr",
+   "label_en": "Effect of advocacy pressure",
+   "unit": "logit/unit",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 2.0,
+   "default": 1.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "b_enf",
+   "label_en": "Effect of external enforcement",
+   "unit": "logit/level",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 3.0,
+   "default": 1.5,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "lam_press",
+   "label_en": "Advocacy pressure events",
+   "unit": "per year",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 0.5,
+   "default": 0.25,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "k_decay",
+   "label_en": "Pressure decay time",
+   "unit": "months",
+   "kind": "uniform",
+   "low": 1.0,
+   "high": 12.0,
+   "default": 6.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "p_deflect",
+   "label_en": "Buck-passing probability",
+   "unit": "probability",
+   "kind": "uniform",
+   "low": 0.5,
+   "high": 0.95,
+   "default": 0.75,
+   "applies_to": [
+    "M-A",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "r_back",
+   "label_en": "Months before a deflected task can restart",
+   "unit": "months",
+   "kind": "uniform",
+   "low": 1.0,
+   "high": 12.0,
+   "default": 6.0,
+   "applies_to": [
+    "M-A",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "d_prep",
+   "label_en": "Months to prepare an application",
+   "unit": "months",
+   "kind": "uniform",
+   "low": 1.0,
+   "high": 6.0,
+   "default": 3.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "m_b",
+   "label_en": "Staff strain dampens starts",
+   "unit": "logit/unit",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 3.0,
+   "default": 1.5,
+   "applies_to": [
+    "M-B1",
+    "M-B2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "strain_ramp",
+   "label_en": "Months for strain to reach full",
+   "unit": "months",
+   "kind": "uniform",
+   "low": 1.0,
+   "high": 12.0,
+   "default": 6.0,
+   "applies_to": [
+    "M-B1",
+    "M-B2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "strain_end",
+   "label_en": "Hiring freeze ends (months after 2026-12)",
+   "unit": "months",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 24.0,
+   "default": 12.0,
+   "applies_to": [
+    "M-B1",
+    "M-B2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "phi",
+   "label_en": "Strain reduces crew capacity",
+   "unit": "fraction",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 0.9,
+   "default": 0.45,
+   "applies_to": [
+    "M-B1",
+    "M-B2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "k0",
+   "label_en": "In-house crew capacity",
+   "unit": "sites per month",
+   "kind": "uniform",
+   "low": 0.5,
+   "high": 3.0,
+   "default": 1.5,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "h_in",
+   "label_en": "Funded in-house site install rate",
+   "unit": "per year",
+   "kind": "uniform",
+   "low": 0.59,
+   "high": 1.41,
+   "default": 0.94,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "h_fs",
+   "label_en": "Signal-project site install rate",
+   "unit": "per year",
+   "kind": "uniform",
+   "low": 0.08,
+   "high": 0.31,
+   "default": 0.16,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "m_c",
+   "label_en": "Cost pressure dampens starts",
+   "unit": "logit/unit",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 3.0,
+   "default": 1.5,
+   "applies_to": [
+    "M-C1",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "g_cost",
+   "label_en": "Base unit cost growth",
+   "unit": "per year",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 0.15,
+   "default": 0.08,
+   "applies_to": [
+    "M-C1",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "tau",
+   "label_en": "Share of candidate sites technically blocked",
+   "unit": "fraction",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 0.8,
+   "default": 0.4,
+   "applies_to": [
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "u0",
+   "label_en": "Base APS cost per site",
+   "unit": "USD",
+   "kind": "uniform",
+   "low": 22000,
+   "high": 50000,
+   "default": 36000,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "q_pipe",
+   "label_en": "Chance conduit work is needed (+$200k)",
+   "unit": "probability",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 1.0,
+   "default": 0.3,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "q_ramp",
+   "label_en": "Chance new curb ramps are needed (+$200k)",
+   "unit": "probability",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 1.0,
+   "default": 0.3,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "a_local",
+   "label_en": "Local money for APS per year (status quo)",
+   "unit": "USD/year",
+   "kind": "uniform",
+   "low": 0,
+   "high": 570000,
+   "default": 250000,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "a_line",
+   "label_en": "Dedicated line size when on",
+   "unit": "USD/year",
+   "kind": "uniform",
+   "low": 500000,
+   "high": 2000000,
+   "default": 1000000,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "aps_share",
+   "label_en": "APS share of a standing line",
+   "unit": "fraction",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 0.5,
+   "default": 0.25,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "y_win",
+   "label_en": "Crash window",
+   "unit": "years",
+   "kind": "discrete",
+   "low": 3,
+   "high": 5,
+   "default": 5,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection",
+   "choices": [
+    3,
+    5
+   ]
+  },
+  {
+   "name": "l_rule",
+   "label_en": "Service life rule (0 shortest, 1 weighted)",
+   "unit": "code",
+   "kind": "discrete",
+   "low": 0,
+   "high": 1,
+   "default": 0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection",
+   "choices": [
+    0,
+    1
+   ]
+  },
+  {
+   "name": "c_final",
+   "label_en": "HSIP final BCR cutoff",
+   "unit": "BCR",
+   "kind": "uniform",
+   "low": 3.5,
+   "high": 18.0,
+   "default": 8.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "r_other",
+   "label_en": "Other SF HSIP requests using the $10M cap",
+   "unit": "USD",
+   "kind": "uniform",
+   "low": 0,
+   "high": 10000000,
+   "default": 4000000,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "rho_flag",
+   "label_en": "Other SF HSIP project red-flagged per cycle",
+   "unit": "probability",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 0.3,
+   "default": 0.1,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "q_fail",
+   "label_en": "Residual random failure after passing cutoff",
+   "unit": "probability",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 0.2,
+   "default": 0.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "p_sa",
+   "label_en": "SF wins a pedestrian-crossing set-aside",
+   "unit": "probability",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 0.9,
+   "default": 0.4,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "s_12in_C",
+   "label_en": "Share of candidate (C) sites still with 8-inch heads",
+   "unit": "fraction",
+   "kind": "uniform",
+   "low": 0.25,
+   "high": 0.7,
+   "default": 0.47,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "s_bp",
+   "label_en": "Share of sites that can take backplates",
+   "unit": "fraction",
+   "kind": "uniform",
+   "low": 0.85,
+   "high": 1.0,
+   "default": 0.92,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "s_mast",
+   "label_en": "Share of full-upgrade sites now pedestal-mounted",
+   "unit": "fraction",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 1.0,
+   "default": 0.5,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "s_lpi",
+   "label_en": "Share of sites where a new LPI is possible",
+   "unit": "fraction",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 0.5,
+   "default": 0.2,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "c_12in",
+   "label_en": "Cost of 12-inch head upgrade",
+   "unit": "USD/site",
+   "kind": "uniform",
+   "low": 8000,
+   "high": 20000,
+   "default": 14000,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "c_bp",
+   "label_en": "Cost of backplates",
+   "unit": "USD/site",
+   "kind": "uniform",
+   "low": 2000,
+   "high": 8000,
+   "default": 5000,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "c_lpi",
+   "label_en": "Cost of a new LPI",
+   "unit": "USD/site",
+   "kind": "uniform",
+   "low": 1000,
+   "high": 5000,
+   "default": 3000,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "c_full",
+   "label_en": "Full signal upgrade cost (incl. APS hardware)",
+   "unit": "USD/site",
+   "kind": "uniform",
+   "low": 200000,
+   "high": 600000,
+   "default": 400000,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "sw_pe",
+   "label_en": "HSIP pays for design (PE milestone applies)",
+   "unit": "switch",
+   "kind": "switch",
+   "low": 0,
+   "high": 1,
+   "default": 0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "t_pe",
+   "label_en": "Months to design E-76",
+   "unit": "months",
+   "kind": "uniform",
+   "low": 3.0,
+   "high": 15.0,
+   "default": 8.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "t_pif",
+   "label_en": "Months for public interest finding",
+   "unit": "months",
+   "kind": "uniform",
+   "low": 1.0,
+   "high": 12.0,
+   "default": 4.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "q_pif_deny",
+   "label_en": "PIF denied (switch to contractor)",
+   "unit": "probability",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 0.3,
+   "default": 0.1,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "sw_consult",
+   "label_en": "Consultant design (42-month CON limit)",
+   "unit": "switch",
+   "kind": "switch",
+   "low": 0,
+   "high": 1,
+   "default": 0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "t_con_med",
+   "label_en": "Median months, cycle start to construction E-76 (SF award-based 15-28 months minus 8-10 months award-to-cycle-start)",
+   "unit": "months",
+   "kind": "uniform",
+   "low": 8.0,
+   "high": 16.0,
+   "default": 12.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "d_split",
+   "label_en": "Extra months per additional application instance",
+   "unit": "months",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 2.0,
+   "default": 1.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "t_des",
+   "label_en": "Months from local award to design complete (overrun found)",
+   "unit": "months",
+   "kind": "uniform",
+   "low": 2.0,
+   "high": 6.0,
+   "default": 4.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "t_dsg",
+   "label_en": "Months from design start (PE E-76 or cycle start) to design complete",
+   "unit": "months",
+   "kind": "uniform",
+   "low": 4.0,
+   "high": 14.0,
+   "default": 8.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "t_pause",
+   "label_en": "Months paused when a contracting cost gap is not funded",
+   "unit": "months",
+   "kind": "uniform",
+   "low": 3.0,
+   "high": 12.0,
+   "default": 6.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "k_cont",
+   "label_en": "Budgeted contingency share of planned cost",
+   "unit": "fraction",
+   "kind": "uniform",
+   "low": 0.05,
+   "high": 0.15,
+   "default": 0.1,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "crash_impute",
+   "label_en": "Unmatched site crashes: 0 exclude, 1 median, 2 90th percentile",
+   "unit": "code",
+   "kind": "discrete",
+   "low": 0,
+   "high": 2,
+   "default": 0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection",
+   "choices": [
+    0,
+    1,
+    2
+   ]
+  },
+  {
+   "name": "lrsp_until",
+   "label_en": "Local road safety plan valid until (months after 2026-07; negative = already expired)",
+   "unit": "months",
+   "kind": "uniform",
+   "low": -6.0,
+   "high": 54.0,
+   "default": 24.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "q_lrsp",
+   "label_en": "A plan update succeeds",
+   "unit": "probability",
+   "kind": "uniform",
+   "low": 0.2,
+   "high": 0.9,
+   "default": 0.6,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "t_lrsp",
+   "label_en": "Months to complete a plan update",
+   "unit": "months",
+   "kind": "uniform",
+   "low": 3.0,
+   "high": 18.0,
+   "default": 9.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "c_xing",
+   "label_en": "Cost of a signalized crossing upgrade (SI19PB) per site",
+   "unit": "USD/site",
+   "kind": "uniform",
+   "low": 15000,
+   "high": 80000,
+   "default": 40000,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "t_ext",
+   "label_en": "Length of the one allowed 5-year extension",
+   "unit": "months",
+   "kind": "uniform",
+   "low": 6.0,
+   "high": 24.0,
+   "default": 12.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "lam_hw",
+   "label_en": "Push-button / signal-hardware change events per candidate site",
+   "unit": "per year",
+   "kind": "uniform",
+   "low": 0.01,
+   "high": 0.08,
+   "default": 0.04,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "b_hw",
+   "label_en": "Maintenance budget for APS add-ons under the design rule",
+   "unit": "USD/year",
+   "kind": "uniform",
+   "low": 0,
+   "high": 300000,
+   "default": 150000,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "q_sg017_block",
+   "label_en": "SG017 allocation excludes new APS",
+   "unit": "probability",
+   "kind": "uniform",
+   "low": 0.2,
+   "high": 0.9,
+   "default": 0.55,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "a_sg017",
+   "label_en": "SG017 money usable for APS per year (FY27, FY28)",
+   "unit": "USD/year",
+   "kind": "uniform",
+   "low": 0,
+   "high": 250000,
+   "default": 125000,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "s_cd",
+   "label_en": "Share of unknown sites missing countdown heads",
+   "unit": "fraction",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 0.2,
+   "default": 0.05,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "c_cd",
+   "label_en": "Cost of new countdown heads",
+   "unit": "USD/site",
+   "kind": "uniform",
+   "low": 10000,
+   "high": 40000,
+   "default": 25000,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "sigma_over",
+   "label_en": "Cost overrun log-scale",
+   "unit": "log",
+   "kind": "uniform",
+   "low": 0.2,
+   "high": 0.8,
+   "default": 0.5,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "lam_quiet",
+   "label_en": "Advocacy quiet spells start",
+   "unit": "per year",
+   "kind": "uniform",
+   "low": 0.05,
+   "high": 0.3,
+   "default": 0.1,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "t_fix",
+   "label_en": "Months to clear a red flag",
+   "unit": "months",
+   "kind": "uniform",
+   "low": 1.0,
+   "high": 12.0,
+   "default": 4.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "t_contract",
+   "label_en": "Months to procure a contractor",
+   "unit": "months",
+   "kind": "uniform",
+   "low": 6.0,
+   "high": 24.0,
+   "default": 12.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "k_contract",
+   "label_en": "Contractor cost markup",
+   "unit": "multiple",
+   "kind": "uniform",
+   "low": 1.1,
+   "high": 1.6,
+   "default": 1.3,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "q_topup",
+   "label_en": "Overrun gets a top-up allocation",
+   "unit": "probability",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 0.7,
+   "default": 0.35,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "t_partner",
+   "label_en": "Partner project delay",
+   "unit": "months",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 24.0,
+   "default": 6.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "q_partner_cancel",
+   "label_en": "Partner project cancelled",
+   "unit": "probability",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 0.3,
+   "default": 0.1,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "lam_quit",
+   "label_en": "Owner leaves per year",
+   "unit": "per year",
+   "kind": "uniform",
+   "low": 0.05,
+   "high": 0.3,
+   "default": 0.15,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "t_vac",
+   "label_en": "Months the post stays vacant",
+   "unit": "months",
+   "kind": "uniform",
+   "low": 3.0,
+   "high": 18.0,
+   "default": 8.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "q_drop",
+   "label_en": "Preparation dropped when owner leaves",
+   "unit": "probability",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 1.0,
+   "default": 0.5,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "q_veto",
+   "label_en": "SFCTA board rejects Prop L amendment",
+   "unit": "probability",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 0.5,
+   "default": 0.2,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "t_defer",
+   "label_en": "Months a Prop L amendment is deferred",
+   "unit": "months",
+   "kind": "uniform",
+   "low": 1.0,
+   "high": 12.0,
+   "default": 4.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "q_gf",
+   "label_en": "General Fund request is included in budget",
+   "unit": "probability",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 0.5,
+   "default": 0.2,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "q_dir",
+   "label_en": "Director reallocation used for APS",
+   "unit": "probability",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 0.8,
+   "default": 0.3,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "t_quiet",
+   "label_en": "Months advocacy goes quiet",
+   "unit": "months",
+   "kind": "uniform",
+   "low": 6.0,
+   "high": 36.0,
+   "default": 18.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "th_defer",
+   "label_en": "Signpost: deferral months before switching",
+   "unit": "months",
+   "kind": "uniform",
+   "low": 3.0,
+   "high": 12.0,
+   "default": 6.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "th_idle",
+   "label_en": "Signpost: months with no application before escalating",
+   "unit": "months",
+   "kind": "uniform",
+   "low": 6.0,
+   "high": 24.0,
+   "default": 12.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "th_parent",
+   "label_en": "Signpost: parent project delay before switching",
+   "unit": "months",
+   "kind": "uniform",
+   "low": 6.0,
+   "high": 24.0,
+   "default": 12.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "th_rule",
+   "label_en": "Signpost: installs via design rule in 2 years",
+   "unit": "sites",
+   "kind": "uniform",
+   "low": 2.0,
+   "high": 10.0,
+   "default": 5.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "t_build",
+   "label_en": "Months from construction E-76 to install",
+   "unit": "months",
+   "kind": "uniform",
+   "low": 3.0,
+   "high": 24.0,
+   "default": 10.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "e_ext",
+   "label_en": "Extension granted at 5 years",
+   "unit": "probability",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 1.0,
+   "default": 0.5,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "t_parent",
+   "label_en": "Parent project delay",
+   "unit": "months",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 24.0,
+   "default": 8.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "pi_scope",
+   "label_en": "Likely/unverified fold-in still in scope",
+   "unit": "probability",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 1.0,
+   "default": 0.5,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "done3_real",
+   "label_en": "Three finished-parent sites truly undelivered",
+   "unit": "switch",
+   "kind": "switch",
+   "low": 0,
+   "high": 1,
+   "default": 1,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "fs5_parent",
+   "label_en": "Five Fs sites without a found parent do have one",
+   "unit": "switch",
+   "kind": "switch",
+   "low": 0,
+   "high": 1,
+   "default": 1,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "lam_arr",
+   "label_en": "New requests",
+   "unit": "per year",
+   "kind": "uniform",
+   "low": 6.0,
+   "high": 17.0,
+   "default": 10.0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "eps_enf",
+   "label_en": "External enforcement steps up",
+   "unit": "per year",
+   "kind": "uniform",
+   "low": 0.0,
+   "high": 0.1,
+   "default": 0.03,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "all"
+  },
+  {
+   "name": "sw_si02",
+   "label_en": "SI02 signal-hardware carrier accepted (author interview only)",
+   "unit": "switch",
+   "kind": "switch",
+   "low": 0,
+   "high": 1,
+   "default": 1,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "sw_si07",
+   "label_en": "SI07 mast-arm conversion usable as a carrier",
+   "unit": "switch",
+   "kind": "switch",
+   "low": 0,
+   "high": 1,
+   "default": 1,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "f_aff",
+   "label_en": "Share of 50 m crashes on upgraded approaches (SI02/SI07 influence area)",
+   "unit": "fraction",
+   "kind": "uniform",
+   "low": 0.5,
+   "high": 1.0,
+   "default": 0.75,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  },
+  {
+   "name": "sw_line",
+   "label_en": "Dedicated local line on",
+   "unit": "switch",
+   "kind": "switch",
+   "low": 0,
+   "high": 1,
+   "default": 0,
+   "applies_to": [
+    "M-A",
+    "M-B1",
+    "M-B2",
+    "M-C1",
+    "M-C2",
+    "M-D"
+   ],
+   "phase": "projection"
+  }
+ ]
+}

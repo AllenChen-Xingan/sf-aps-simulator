@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this model or its documentation, please cite it as below."
+title: "An agent-based model of funding and coordination pathways for accessible pedestrian signals in San Francisco"
+type: software
+authors:
+  - family-names: Chen
+    given-names: Allen
+date-released: 2026-10-28
+license: MIT
+keywords:
+  - agent-based model
+  - accessible pedestrian signals
+  - public budgeting
+  - exploratory modelling
+  - scenario discovery

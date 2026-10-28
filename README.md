@@ -4,17 +4,24 @@ An interactive page for exploring **under which conditions money flows** to inst
 Pedestrian Signals (APS) on San Francisco's request list. It runs an agent-based model month by month
 in the browser, animates who acts on whom, and compares policy pathways against a pre-computed result set.
 
-**Status: preliminary · uncalibrated · scenario projections, not forecasts.** Scenario exploration under stated rules — not a forecast,
+**Status: uncalibrated · scenario projections, not forecasts.** Scenario exploration under stated rules — not a forecast,
 not proof of cause. Parameters were screened against the 2022–2025 request lists (a weak rejection
-filter; ranges stay close to the priors; not a calibration). The result set is the formal one (design
-v14, frozen). Its main view starts with no standing local APS line, as today. It also includes a variant in which
-PW4/PW5's local line must pass the same approval chain as PW2 (view only; not runnable in the page) and
+filter; ranges stay close to the priors; not a calibration). Its main view starts with no standing local APS line, as today. The result set also includes the approval variant, in which
+the PW4/PW5 local line must pass the same approval chain as PW2 (view only; not runnable in the page), and
 the rule-finding (PRIM) conditions. None of the shares are probabilities of real outcomes: "money within
 5 years" and "steps reached" are shares of runs; "did better than the status quo" is the share of
 parameter sets that installed more within ten years than the status quo with the same set. Pathway PW5 (design rule) runs, but its rule is inferred: the hardware-change rate and the
 APS add-on budget are assumptions (shown as a note via `config.json`). PW1's last step (Director
 reallocation) is a hypothetical fallback. Many-run comparisons appear only when the result set's model fingerprint equals the
 fingerprint of the model files the browser actually loaded (`scripts/fingerprint.py`).
+
+## Replication package
+
+The full replication package — ODD+D model description, TRACE record, STRESS-ABS checklist, all 98
+parameters with sources, experiment code, input data, summary results and a one-command reproduction
+script — is in [`replication/`](replication/) (start with [`replication/README.md`](replication/README.md);
+web view at <https://allenchen-xingan.github.io/sf-aps-simulator/replication/>). The page in this
+repository runs the same model files as the package (`model/abm/SOURCE.txt` records their checksums).
 
 ## Run locally
 
@@ -50,16 +57,17 @@ node tests/e2e.mjs                    # headless browser + accessibility
 | `config.json` | Display flags, e.g. pathways whose results are withheld |
 | `scripts/` | `rebuild.sh` (sync model and results → tests → demos), `vendor_pyodide.sh` |
 | `tests/` | Consistency, replay and browser tests (below) |
-| `docs/data-contract.md` | Interface agreed between the model and the page |
+| `docs/data-contract.md` | Interface between the model and the page |
+| `replication/` | Replication package for the model (documentation, code, data, results) |
 
 After any model change: `./scripts/rebuild.sh` (needs `ABM_DIR` or a local `.abm-path` file naming the
 model folder; a Python venv with numpy 2.4.6 in `.venv`; Node with `npm install` in `tests/`).
 
 ## Tests
 
-| Test | Command | Last result (2026-10-27) |
+| Test | Command | Last result (2026-10-28) |
 |---|---|---|
-| **Consistency** — the browser runs the same Python files as the offline analysis. The report records the model fingerprint (model.py + params.py + inputs.json) and both runtimes; the page shows a pass only if that fingerprint equals the one the browser worker computes from the bytes it loaded. 67 fixed cases (every pathway × mechanism at defaults, 24 random parameter draws, one history-mode run) run in CPython and in Pyodide; every output and every event compared. Integers and strings equal; decimals within 1e-12 relative or 1e-9 absolute (a pass is not a bit-for-bit claim). The Pyodide side uses the same self-hosted runtime the page publishes, and the page also checks the runtime versions its worker loaded | `tests/run_consistency.sh` | CPython 3.14.8 vs Pyodide 314.0.7 (Python 3.14.2), numpy 2.4.6 both: **0 differences** over 19,857 events |
+| **Consistency** — the browser runs the same Python files as the offline analysis. The report records the model fingerprint (model.py + params.py + inputs.json) and both runtimes; the page shows a pass only if that fingerprint equals the one the browser worker computes from the bytes it loaded. 67 fixed cases (every pathway × mechanism at defaults, 24 random parameter draws, one history-mode run) run in CPython and in Pyodide; every output and every event compared. Integers and strings equal; decimals within 1e-12 relative or 1e-9 absolute (a pass is not a bit-for-bit claim). The Pyodide side uses the same self-hosted runtime the page publishes, and the page also checks the runtime versions its worker loaded | `tests/run_consistency.sh` | CPython 3.14.8 vs Pyodide 314.0.7 (Python 3.14.2), numpy 2.4.6 both: **0 differences** over 19,856 events |
 | **Replay** — the animation moves dots only from the event stream; replaying initial states + events must equal the model's own monthly stocks | `.venv/bin/python -I tests/test_replay.py` | 120 random runs, 14,400 months: **0 differences** |
 | **Browser + accessibility** — headless Chromium: model loads, animation plays, log and live announcements, compare mode by keyboard, pause/step, no console errors, phone width without horizontal scroll, axe-core WCAG 2.1 A/AA in light, dark and reduced-motion phone views | `node tests/e2e.mjs` | 32/32 checks pass (incl. actor cards by keyboard, a run started while the model loads, and the pathway table checked against the result file); axe: **0 violations** (light, dark, mobile). One item axe could not decide automatically (colour contrast of text over the chart band, in light and dark mode) — needs a manual check |
 
@@ -90,14 +98,15 @@ Scenario exploration, not prediction; rules are set by people; many ranges are i
 request list only, San Francisco only; injury crashes only (benefits understated); history fit rests on
 very few funding events. Pressure, a named owner and crew capacity act in the model only through the
 chance of starting an application or a monthly cap, so their small sensitivity reflects the model, not
-their real-world importance. The live model and the result set share one fingerprint (the result set was produced by the frozen
-model; the current `model.py` adds the approval switch, off by default and bit-identical when off) —
-the About section shows both. Many-run comparisons cover runs with no standing line at the start; with
-that switch on, the page hides them.
+their real-world importance. The live model and the result set share one fingerprint; the About section
+shows both. Many-run comparisons cover runs with no standing line at the start; with the approval switch
+on, the page hides them.
 
 ## AI assistance
 
-Built with AI assistance (Anthropic's Claude): model code, simulations, tests and page; reviewed by a second AI model.
+The model code, simulations, tests and this page were developed by the author with the assistance of
+Anthropic's Claude models, under the author's design and direction. See `replication/README.md` for the
+full statement.
 
 ## Licences
 

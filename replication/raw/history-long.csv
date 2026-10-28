@@ -1,0 +1,1753 @@
+key,location,snapshot,state,score,rank,hin,status_raw
+03rdst|16thst,03rd Street / 16th Street,2020-01-03,-,,,,
+03rdst|16thst,03rd Street / 16th Street,2021-01-07,-,,,,
+03rdst|16thst,03rd Street / 16th Street,2021-12-07,-,,,,
+03rdst|16thst,03rd Street / 16th Street,2022-07-29,-,,,,
+03rdst|16thst,03rd Street / 16th Street,2023-01-03,-,,,,
+03rdst|16thst,03rd Street / 16th Street,2023-06-30,-,,,,
+03rdst|16thst,03rd Street / 16th Street,2024-02-20,C-candidate,65,high,Yes,Candidate for in-house APS
+03rdst|16thst,03rd Street / 16th Street,2024-08-21,C-candidate,65,high,Yes,Candidate forin-house APS
+03rdst|16thst,03rd Street / 16th Street,2025-02-21,C-candidate,65,high,Yes,Candidate forin-house APS
+03rdst|16thst,03rd Street / 16th Street,2025-08-08,C-candidate,65,high,Yes,Candidate for in-house APS
+03rdst|16thst,03rd Street / 16th Street,2026-01-29,C-candidate,65,high,Yes,Candidate for in-house APS
+03rdst|16thst,03rd Street / 16th Street,2026-06-30,C-candidate,65,high,No,Candidate for in-house APS
+03rdst|22ndst,03rd Street / 22nd Street,2020-01-03,-,,,,
+03rdst|22ndst,03rd Street / 22nd Street,2021-01-07,-,,,,
+03rdst|22ndst,03rd Street / 22nd Street,2021-12-07,-,,,,
+03rdst|22ndst,03rd Street / 22nd Street,2022-07-29,-,,,,
+03rdst|22ndst,03rd Street / 22nd Street,2023-01-03,-,,,,
+03rdst|22ndst,03rd Street / 22nd Street,2023-06-30,-,,,,
+03rdst|22ndst,03rd Street / 22nd Street,2024-02-20,C-candidate,58,high,Yes,Candidate for in-house APS
+03rdst|22ndst,03rd Street / 22nd Street,2024-08-21,C-candidate,58,high,Yes,Candidate forin-house APS
+03rdst|22ndst,03rd Street / 22nd Street,2025-02-21,C-candidate,58,high,Yes,Candidate forin-house APS
+03rdst|22ndst,03rd Street / 22nd Street,2025-08-08,C-candidate,58,high,Yes,Candidate for in-house APS
+03rdst|22ndst,03rd Street / 22nd Street,2026-01-29,C-candidate,58,high,Yes,Candidate for in-house APS
+03rdst|22ndst,03rd Street / 22nd Street,2026-06-30,C-candidate,58,high,No,Candidate for in-house APS
+03rdst|berry,03rdSt / Berry,2020-01-03,-,,,,
+03rdst|berry,03rdSt / Berry,2021-01-07,-,,,,
+03rdst|berry,03rdSt / Berry,2021-12-07,P,,,,
+03rdst|berry,03rdSt / Berry,2022-07-29,F-inhouse,61,high,Yes,Pending per funded in-house APS
+03rdst|berry,03rdSt / Berry,2023-01-03,F-inhouse,61,high,Yes,Pending per funded in-house APS
+03rdst|berry,03rdSt / Berry,2023-06-30,F-inhouse,61,high,Yes,Pendingperfundedin-houseAPS
+03rdst|berry,03rdSt / Berry,2024-02-20,INSTALLED,,,,
+03rdst|berry,03rdSt / Berry,2024-08-21,INSTALLED,,,,
+03rdst|berry,03rdSt / Berry,2025-02-21,INSTALLED,,,,
+03rdst|berry,03rdSt / Berry,2025-08-08,INSTALLED,,,,
+03rdst|berry,03rdSt / Berry,2026-01-29,INSTALLED,,,,
+03rdst|berry,03rdSt / Berry,2026-06-30,INSTALLED,,,,
+03rdst|channel,03rd Street / Channel,2020-01-03,P,,,,
+03rdst|channel,03rd Street / Channel,2021-01-07,P,,,,
+03rdst|channel,03rd Street / Channel,2021-12-07,P,,,,
+03rdst|channel,03rd Street / Channel,2022-07-29,F-signal,49,medium,Yes,Pending per funded signal project
+03rdst|channel,03rd Street / Channel,2023-01-03,F-signal,49,medium,Yes,Pending per funded signal project
+03rdst|channel,03rd Street / Channel,2023-06-30,F-signal,49,medium,Yes,Pendingperfundedsignalproject
+03rdst|channel,03rd Street / Channel,2024-02-20,F-signal,49,medium,Yes,Pending per funded signal project
+03rdst|channel,03rd Street / Channel,2024-08-21,F-signal,49,medium,Yes,Pending perfundedsignal project
+03rdst|channel,03rd Street / Channel,2025-02-21,F-signal,49,medium,Yes,Pending perfunded signal project
+03rdst|channel,03rd Street / Channel,2025-08-08,F-signal,49,medium,Yes,Pending per funded signal project
+03rdst|channel,03rd Street / Channel,2026-01-29,INSTALLED,,,,
+03rdst|channel,03rd Street / Channel,2026-06-30,INSTALLED,,,,
+03rdst|lane|yosemite,03rd Street / Lane / Yosemite,2020-01-03,-,,,,
+03rdst|lane|yosemite,03rd Street / Lane / Yosemite,2021-01-07,-,,,,
+03rdst|lane|yosemite,03rd Street / Lane / Yosemite,2021-12-07,-,,,,
+03rdst|lane|yosemite,03rd Street / Lane / Yosemite,2022-07-29,-,,,,
+03rdst|lane|yosemite,03rd Street / Lane / Yosemite,2023-01-03,-,,,,
+03rdst|lane|yosemite,03rd Street / Lane / Yosemite,2023-06-30,-,,,,
+03rdst|lane|yosemite,03rd Street / Lane / Yosemite,2024-02-20,-,,,,
+03rdst|lane|yosemite,03rd Street / Lane / Yosemite,2024-08-21,-,,,,
+03rdst|lane|yosemite,03rd Street / Lane / Yosemite,2025-02-21,-,,,,
+03rdst|lane|yosemite,03rd Street / Lane / Yosemite,2025-08-08,C-candidate,54,medium,Yes,Candidate for in-house APS
+03rdst|lane|yosemite,03rd Street / Lane / Yosemite,2026-01-29,C-candidate,54,medium,Yes,Candidate for in-house APS
+03rdst|lane|yosemite,03rd Street / Lane / Yosemite,2026-06-30,C-candidate,54,medium,Yes,Candidate for in-house APS
+03rdst|mckinnon,03rd Street / McKinnon,2020-01-03,-,,,,
+03rdst|mckinnon,03rd Street / McKinnon,2021-01-07,-,,,,
+03rdst|mckinnon,03rd Street / McKinnon,2021-12-07,-,,,,
+03rdst|mckinnon,03rd Street / McKinnon,2022-07-29,-,,,,
+03rdst|mckinnon,03rd Street / McKinnon,2023-01-03,-,,,,
+03rdst|mckinnon,03rd Street / McKinnon,2023-06-30,-,,,,
+03rdst|mckinnon,03rd Street / McKinnon,2024-02-20,-,,,,
+03rdst|mckinnon,03rd Street / McKinnon,2024-08-21,-,,,,
+03rdst|mckinnon,03rd Street / McKinnon,2025-02-21,-,,,,
+03rdst|mckinnon,03rd Street / McKinnon,2025-08-08,-,,,,
+03rdst|mckinnon,03rd Street / McKinnon,2026-01-29,-,,,,
+03rdst|mckinnon,03rd Street / McKinnon,2026-06-30,C-candidate,42,medium,Yes,Strong Candidate for in-house APS
+03rdst|northsouthmissionbay,03rd Street / North & South Mission Bay,2020-01-03,-,,,,
+03rdst|northsouthmissionbay,03rd Street / North & South Mission Bay,2021-01-07,-,,,,
+03rdst|northsouthmissionbay,03rd Street / North & South Mission Bay,2021-12-07,-,,,,
+03rdst|northsouthmissionbay,03rd Street / North & South Mission Bay,2022-07-29,-,,,,
+03rdst|northsouthmissionbay,03rd Street / North & South Mission Bay,2023-01-03,-,,,,
+03rdst|northsouthmissionbay,03rd Street / North & South Mission Bay,2023-06-30,-,,,,
+03rdst|northsouthmissionbay,03rd Street / North & South Mission Bay,2024-02-20,C-candidate,52,medium,Yes,Candidate for in-house APS
+03rdst|northsouthmissionbay,03rd Street / North & South Mission Bay,2024-08-21,C-candidate,52,medium,Yes,Candidate forin-house APS
+03rdst|northsouthmissionbay,03rd Street / North & South Mission Bay,2025-02-21,C-candidate,52,medium,Yes,Candidate forin-house APS
+03rdst|northsouthmissionbay,03rd Street / North & South Mission Bay,2025-08-08,C-candidate,52,medium,Yes,Candidate for in-house APS
+03rdst|northsouthmissionbay,03rd Street / North & South Mission Bay,2026-01-29,C-candidate,52,medium,Yes,Candidate for in-house APS
+03rdst|northsouthmissionbay,03rd Street / North & South Mission Bay,2026-06-30,C-candidate,52,medium,No,Candidate for in-house APS
+04thave|california,04th Ave / California,2020-01-03,P,,,,
+04thave|california,04th Ave / California,2021-01-07,P,,,,
+04thave|california,04th Ave / California,2021-12-07,P,,,,
+04thave|california,04th Ave / California,2022-07-29,F-inhouse,34,medium,Yes,Pending per funded in-house APS
+04thave|california,04th Ave / California,2023-01-03,INSTALLED,,,,
+04thave|california,04th Ave / California,2023-06-30,INSTALLED,,,,
+04thave|california,04th Ave / California,2024-02-20,INSTALLED,,,,
+04thave|california,04th Ave / California,2024-08-21,INSTALLED,,,,
+04thave|california,04th Ave / California,2025-02-21,INSTALLED,,,,
+04thave|california,04th Ave / California,2025-08-08,INSTALLED,,,,
+04thave|california,04th Ave / California,2026-01-29,INSTALLED,,,,
+04thave|california,04th Ave / California,2026-06-30,INSTALLED,,,,
+04thst|16thst,04th Street / 16th Street,2020-01-03,-,,,,
+04thst|16thst,04th Street / 16th Street,2021-01-07,-,,,,
+04thst|16thst,04th Street / 16th Street,2021-12-07,-,,,,
+04thst|16thst,04th Street / 16th Street,2022-07-29,-,,,,
+04thst|16thst,04th Street / 16th Street,2023-01-03,-,,,,
+04thst|16thst,04th Street / 16th Street,2023-06-30,-,,,,
+04thst|16thst,04th Street / 16th Street,2024-02-20,-,,,,
+04thst|16thst,04th Street / 16th Street,2024-08-21,-,,,,
+04thst|16thst,04th Street / 16th Street,2025-02-21,-,,,,
+04thst|16thst,04th Street / 16th Street,2025-08-08,-,,,,
+04thst|16thst,04th Street / 16th Street,2026-01-29,C-candidate,63,high,,Candidate for in-house APS
+04thst|16thst,04th Street / 16th Street,2026-06-30,C-candidate,63,high,No,Candidate for in-house APS
+04thst|brannan,04th St / Brannan,2020-01-03,-,,,,
+04thst|brannan,04th St / Brannan,2021-01-07,-,,,,
+04thst|brannan,04th St / Brannan,2021-12-07,P,,,,
+04thst|brannan,04th St / Brannan,2022-07-29,F-signal,34,medium,Yes,Pending per funded signal project
+04thst|brannan,04th St / Brannan,2023-01-03,INSTALLED,,,,
+04thst|brannan,04th St / Brannan,2023-06-30,INSTALLED,,,,
+04thst|brannan,04th St / Brannan,2024-02-20,INSTALLED,,,,
+04thst|brannan,04th St / Brannan,2024-08-21,INSTALLED,,,,
+04thst|brannan,04th St / Brannan,2025-02-21,INSTALLED,,,,
+04thst|brannan,04th St / Brannan,2025-08-08,INSTALLED,,,,
+04thst|brannan,04th St / Brannan,2026-01-29,INSTALLED,,,,
+04thst|brannan,04th St / Brannan,2026-06-30,INSTALLED,,,,
+04thst|bryant|i80offramp,04th St / Bryant / I -80 Offramp,2020-01-03,-,,,,
+04thst|bryant|i80offramp,04th St / Bryant / I -80 Offramp,2021-01-07,-,,,,
+04thst|bryant|i80offramp,04th St / Bryant / I -80 Offramp,2021-12-07,P,,,,
+04thst|bryant|i80offramp,04th St / Bryant / I -80 Offramp,2022-07-29,F-signal,60,high,Yes,Pending per funded signal project
+04thst|bryant|i80offramp,04th St / Bryant / I -80 Offramp,2023-01-03,INSTALLED,,,,
+04thst|bryant|i80offramp,04th St / Bryant / I -80 Offramp,2023-06-30,INSTALLED,,,,
+04thst|bryant|i80offramp,04th St / Bryant / I -80 Offramp,2024-02-20,INSTALLED,,,,
+04thst|bryant|i80offramp,04th St / Bryant / I -80 Offramp,2024-08-21,INSTALLED,,,,
+04thst|bryant|i80offramp,04th St / Bryant / I -80 Offramp,2025-02-21,INSTALLED,,,,
+04thst|bryant|i80offramp,04th St / Bryant / I -80 Offramp,2025-08-08,INSTALLED,,,,
+04thst|bryant|i80offramp,04th St / Bryant / I -80 Offramp,2026-01-29,INSTALLED,,,,
+04thst|bryant|i80offramp,04th St / Bryant / I -80 Offramp,2026-06-30,INSTALLED,,,,
+04thst|townsend,04th St / Townsend,2020-01-03,P,,,,
+04thst|townsend,04th St / Townsend,2021-01-07,P,,,,
+04thst|townsend,04th St / Townsend,2021-12-07,P,,,,
+04thst|townsend,04th St / Townsend,2022-07-29,F-signal,36,medium,Yes,Pending per funded signal project
+04thst|townsend,04th St / Townsend,2023-01-03,INSTALLED,,,,
+04thst|townsend,04th St / Townsend,2023-06-30,INSTALLED,,,,
+04thst|townsend,04th St / Townsend,2024-02-20,INSTALLED,,,,
+04thst|townsend,04th St / Townsend,2024-08-21,INSTALLED,,,,
+04thst|townsend,04th St / Townsend,2025-02-21,INSTALLED,,,,
+04thst|townsend,04th St / Townsend,2025-08-08,INSTALLED,,,,
+04thst|townsend,04th St / Townsend,2026-01-29,INSTALLED,,,,
+04thst|townsend,04th St / Townsend,2026-06-30,INSTALLED,,,,
+05thst|mission,05th Street / Mission,2020-01-03,P,,,,
+05thst|mission,05th Street / Mission,2021-01-07,P,,,,
+05thst|mission,05th Street / Mission,2021-12-07,P,,,,
+05thst|mission,05th Street / Mission,2022-07-29,F-signal,52,medium,Yes,Pending per funded signal project
+05thst|mission,05th Street / Mission,2023-01-03,F-signal,52,medium,Yes,Pending per funded signal project
+05thst|mission,05th Street / Mission,2023-06-30,F-signal,52,medium,Yes,Pendingperfundedsignalproject
+05thst|mission,05th Street / Mission,2024-02-20,F-signal,52,medium,Yes,Pending per funded signal project
+05thst|mission,05th Street / Mission,2024-08-21,F-signal,52,medium,Yes,Pending perfundedsignal project
+05thst|mission,05th Street / Mission,2025-02-21,F-signal,52,medium,Yes,Pending perfunded signal project
+05thst|mission,05th Street / Mission,2025-08-08,F-signal,52,medium,Yes,Pending per funded signal project
+05thst|mission,05th Street / Mission,2026-01-29,F-signal,52,medium,Yes,Pending per funded signal project
+05thst|mission,05th Street / Mission,2026-06-30,F-signal,52,medium,Yes,Pending per funded signal project
+06thave|fulton,06th Avenue / Fulton,2020-01-03,-,,,,
+06thave|fulton,06th Avenue / Fulton,2021-01-07,-,,,,
+06thave|fulton,06th Avenue / Fulton,2021-12-07,-,,,,
+06thave|fulton,06th Avenue / Fulton,2022-07-29,-,,,,
+06thave|fulton,06th Avenue / Fulton,2023-01-03,-,,,,
+06thave|fulton,06th Avenue / Fulton,2023-06-30,-,,,,
+06thave|fulton,06th Avenue / Fulton,2024-02-20,-,,,,
+06thave|fulton,06th Avenue / Fulton,2024-08-21,-,,,,
+06thave|fulton,06th Avenue / Fulton,2025-02-21,-,,,,
+06thave|fulton,06th Avenue / Fulton,2025-08-08,-,,,,
+06thave|fulton,06th Avenue / Fulton,2026-01-29,F-signal,,,No,Pending per funded signal project
+06thave|fulton,06th Avenue / Fulton,2026-06-30,F-signal,,,Yes,Pending per funded signal project
+06thave|irving,06th Avenue / Irving,2020-01-03,-,,,,
+06thave|irving,06th Avenue / Irving,2021-01-07,-,,,,
+06thave|irving,06th Avenue / Irving,2021-12-07,-,,,,
+06thave|irving,06th Avenue / Irving,2022-07-29,-,,,,
+06thave|irving,06th Avenue / Irving,2023-01-03,-,,,,
+06thave|irving,06th Avenue / Irving,2023-06-30,-,,,,
+06thave|irving,06th Avenue / Irving,2024-02-20,F-signal,32,medium,No,Pending per funded signal project
+06thave|irving,06th Avenue / Irving,2024-08-21,F-signal,32,medium,No,Pending perfunded signal project
+06thave|irving,06th Avenue / Irving,2025-02-21,F-signal,32,medium,No,Pending perfunded signal project
+06thave|irving,06th Avenue / Irving,2025-08-08,F-signal,32,medium,No,Pending per funded signal project
+06thave|irving,06th Avenue / Irving,2026-01-29,F-signal,32,medium,No,Pending per funded signal project
+06thave|irving,06th Avenue / Irving,2026-06-30,F-signal,32,medium,No,Pending per funded signal project
+06thst|bryant,06th Street / Bryant,2020-01-03,P,,,,
+06thst|bryant,06th Street / Bryant,2021-01-07,P,,,,
+06thst|bryant,06th Street / Bryant,2021-12-07,P,,,,
+06thst|bryant,06th Street / Bryant,2022-07-29,F-signal,37,medium,Yes,Pending per funded signal project
+06thst|bryant,06th Street / Bryant,2023-01-03,F-signal,37,medium,Yes,Pending per funded signal project
+06thst|bryant,06th Street / Bryant,2023-06-30,F-signal,37,medium,Yes,Pendingperfundedsignalproject
+06thst|bryant,06th Street / Bryant,2024-02-20,F-signal,37,medium,Yes,Pending per funded signal project
+06thst|bryant,06th Street / Bryant,2024-08-21,INSTALLED,,,,
+06thst|bryant,06th Street / Bryant,2025-02-21,INSTALLED,,,,
+06thst|bryant,06th Street / Bryant,2025-08-08,INSTALLED,,,,
+06thst|bryant,06th Street / Bryant,2026-01-29,INSTALLED,,,,
+06thst|bryant,06th Street / Bryant,2026-06-30,INSTALLED,,,,
+06thst|harrison,06th Street / Harrison,2020-01-03,P,,,,
+06thst|harrison,06th Street / Harrison,2021-01-07,P,,,,
+06thst|harrison,06th Street / Harrison,2021-12-07,P,,,,
+06thst|harrison,06th Street / Harrison,2022-07-29,F-signal,45,medium,Yes,Pending per funded signal project
+06thst|harrison,06th Street / Harrison,2023-01-03,F-signal,45,medium,Yes,Pending per funded signal project
+06thst|harrison,06th Street / Harrison,2023-06-30,F-signal,45,medium,Yes,Pendingperfundedsignalproject
+06thst|harrison,06th Street / Harrison,2024-02-20,F-signal,45,medium,Yes,Pending per funded signal project
+06thst|harrison,06th Street / Harrison,2024-08-21,F-signal,45,medium,Yes,Pending perfundedsignal project
+06thst|harrison,06th Street / Harrison,2025-02-21,F-signal,45,medium,Yes,Pending perfunded signal project
+06thst|harrison,06th Street / Harrison,2025-08-08,F-signal,45,medium,Yes,Pending per funded signal project
+06thst|harrison,06th Street / Harrison,2026-01-29,INSTALLED,,,,
+06thst|harrison,06th Street / Harrison,2026-06-30,INSTALLED,,,,
+06thst|howard,06th Street / Howard,2020-01-03,P,,,,
+06thst|howard,06th Street / Howard,2021-01-07,P,,,,
+06thst|howard,06th Street / Howard,2021-12-07,P,,,,
+06thst|howard,06th Street / Howard,2022-07-29,F-signal,46,medium,Yes,Pending per funded signal project
+06thst|howard,06th Street / Howard,2023-01-03,F-signal,46,medium,Yes,Pending per funded signal project
+06thst|howard,06th Street / Howard,2023-06-30,F-signal,46,medium,Yes,Pendingperfundedsignalproject
+06thst|howard,06th Street / Howard,2024-02-20,F-signal,46,medium,Yes,Pending per funded signal project
+06thst|howard,06th Street / Howard,2024-08-21,INSTALLED,,,,
+06thst|howard,06th Street / Howard,2025-02-21,INSTALLED,,,,
+06thst|howard,06th Street / Howard,2025-08-08,INSTALLED,,,,
+06thst|howard,06th Street / Howard,2026-01-29,INSTALLED,,,,
+06thst|howard,06th Street / Howard,2026-06-30,INSTALLED,,,,
+06thst|mission,06th Street / Mission,2020-01-03,P,,,,
+06thst|mission,06th Street / Mission,2021-01-07,P,,,,
+06thst|mission,06th Street / Mission,2021-12-07,P,,,,
+06thst|mission,06th Street / Mission,2022-07-29,F-signal,38,medium,Yes,Pending per funded signal project
+06thst|mission,06th Street / Mission,2023-01-03,F-signal,38,medium,Yes,Pending per funded signal project
+06thst|mission,06th Street / Mission,2023-06-30,F-signal,38,medium,Yes,Pendingperfundedsignalproject
+06thst|mission,06th Street / Mission,2024-02-20,F-signal,38,medium,Yes,Pending per funded signal project
+06thst|mission,06th Street / Mission,2024-08-21,INSTALLED,,,,
+06thst|mission,06th Street / Mission,2025-02-21,INSTALLED,,,,
+06thst|mission,06th Street / Mission,2025-08-08,INSTALLED,,,,
+06thst|mission,06th Street / Mission,2026-01-29,INSTALLED,,,,
+06thst|mission,06th Street / Mission,2026-06-30,INSTALLED,,,,
+07thave|kirkham,07th Avenue / Kirkham,2020-01-03,-,,,,
+07thave|kirkham,07th Avenue / Kirkham,2021-01-07,-,,,,
+07thave|kirkham,07th Avenue / Kirkham,2021-12-07,-,,,,
+07thave|kirkham,07th Avenue / Kirkham,2022-07-29,-,,,,
+07thave|kirkham,07th Avenue / Kirkham,2023-01-03,-,,,,
+07thave|kirkham,07th Avenue / Kirkham,2023-06-30,-,,,,
+07thave|kirkham,07th Avenue / Kirkham,2024-02-20,-,,,,
+07thave|kirkham,07th Avenue / Kirkham,2024-08-21,-,,,,
+07thave|kirkham,07th Avenue / Kirkham,2025-02-21,-,,,,
+07thave|kirkham,07th Avenue / Kirkham,2025-08-08,F-signal,,,No,Pending per funded signal project
+07thave|kirkham,07th Avenue / Kirkham,2026-01-29,INSTALLED,,,,
+07thave|kirkham,07th Avenue / Kirkham,2026-06-30,INSTALLED,,,,
+07thst|16thst|mississippi,07th Street / 16th St / Mississippi,2020-01-03,-,,,,
+07thst|16thst|mississippi,07th Street / 16th St / Mississippi,2021-01-07,-,,,,
+07thst|16thst|mississippi,07th Street / 16th St / Mississippi,2021-12-07,-,,,,
+07thst|16thst|mississippi,07th Street / 16th St / Mississippi,2022-07-29,-,,,,
+07thst|16thst|mississippi,07th Street / 16th St / Mississippi,2023-01-03,-,,,,
+07thst|16thst|mississippi,07th Street / 16th St / Mississippi,2023-06-30,-,,,,
+07thst|16thst|mississippi,07th Street / 16th St / Mississippi,2024-02-20,-,,,,
+07thst|16thst|mississippi,07th Street / 16th St / Mississippi,2024-08-21,-,,,,
+07thst|16thst|mississippi,07th Street / 16th St / Mississippi,2025-02-21,-,,,,
+07thst|16thst|mississippi,07th Street / 16th St / Mississippi,2025-08-08,-,,,,
+07thst|16thst|mississippi,07th Street / 16th St / Mississippi,2026-01-29,C-candidate,56,high,No,Candidate for in-house APS
+07thst|16thst|mississippi,07th Street / 16th St / Mississippi,2026-06-30,C-candidate,56,high,No,Candidate for in-house APS
+07thst|berry|missionbay,07thSt / Berry / MissionBay,2020-01-03,-,,,,
+07thst|berry|missionbay,07thSt / Berry / MissionBay,2021-01-07,-,,,,
+07thst|berry|missionbay,07thSt / Berry / MissionBay,2021-12-07,P,,,,
+07thst|berry|missionbay,07thSt / Berry / MissionBay,2022-07-29,F-inhouse,68,high,Yes,Pending per funded in-house APS
+07thst|berry|missionbay,07thSt / Berry / MissionBay,2023-01-03,F-inhouse,68,high,Yes,Pending per funded in-house APS
+07thst|berry|missionbay,07thSt / Berry / MissionBay,2023-06-30,F-inhouse,68,high,No,Pendingperfundedin-houseAPS
+07thst|berry|missionbay,07thSt / Berry / MissionBay,2024-02-20,INSTALLED,,,,
+07thst|berry|missionbay,07thSt / Berry / MissionBay,2024-08-21,INSTALLED,,,,
+07thst|berry|missionbay,07thSt / Berry / MissionBay,2025-02-21,INSTALLED,,,,
+07thst|berry|missionbay,07thSt / Berry / MissionBay,2025-08-08,INSTALLED,,,,
+07thst|berry|missionbay,07thSt / Berry / MissionBay,2026-01-29,INSTALLED,,,,
+07thst|berry|missionbay,07thSt / Berry / MissionBay,2026-06-30,INSTALLED,,,,
+07thst|bryant,07th St / Bryant,2020-01-03,P,,,,
+07thst|bryant,07th St / Bryant,2021-01-07,P,,,,
+07thst|bryant,07th St / Bryant,2021-12-07,P,,,,
+07thst|bryant,07th St / Bryant,2022-07-29,INSTALLED,,,,
+07thst|bryant,07th St / Bryant,2023-01-03,INSTALLED,,,,
+07thst|bryant,07th St / Bryant,2023-06-30,INSTALLED,,,,
+07thst|bryant,07th St / Bryant,2024-02-20,INSTALLED,,,,
+07thst|bryant,07th St / Bryant,2024-08-21,INSTALLED,,,,
+07thst|bryant,07th St / Bryant,2025-02-21,INSTALLED,,,,
+07thst|bryant,07th St / Bryant,2025-08-08,INSTALLED,,,,
+07thst|bryant,07th St / Bryant,2026-01-29,INSTALLED,,,,
+07thst|bryant,07th St / Bryant,2026-06-30,INSTALLED,,,,
+07thst|harrison,07th St / Harrison,2020-01-03,P,,,,
+07thst|harrison,07th St / Harrison,2021-01-07,INSTALLED,,,,
+07thst|harrison,07th St / Harrison,2021-12-07,INSTALLED,,,,
+07thst|harrison,07th St / Harrison,2022-07-29,INSTALLED,,,,
+07thst|harrison,07th St / Harrison,2023-01-03,INSTALLED,,,,
+07thst|harrison,07th St / Harrison,2023-06-30,INSTALLED,,,,
+07thst|harrison,07th St / Harrison,2024-02-20,INSTALLED,,,,
+07thst|harrison,07th St / Harrison,2024-08-21,INSTALLED,,,,
+07thst|harrison,07th St / Harrison,2025-02-21,INSTALLED,,,,
+07thst|harrison,07th St / Harrison,2025-08-08,INSTALLED,,,,
+07thst|harrison,07th St / Harrison,2026-01-29,INSTALLED,,,,
+07thst|harrison,07th St / Harrison,2026-06-30,INSTALLED,,,,
+07thst|howard,07th St / Howard,2020-01-03,P,,,,
+07thst|howard,07th St / Howard,2021-01-07,P,,,,
+07thst|howard,07th St / Howard,2021-12-07,INSTALLED,,,,
+07thst|howard,07th St / Howard,2022-07-29,INSTALLED,,,,
+07thst|howard,07th St / Howard,2023-01-03,INSTALLED,,,,
+07thst|howard,07th St / Howard,2023-06-30,INSTALLED,,,,
+07thst|howard,07th St / Howard,2024-02-20,INSTALLED,,,,
+07thst|howard,07th St / Howard,2024-08-21,INSTALLED,,,,
+07thst|howard,07th St / Howard,2025-02-21,INSTALLED,,,,
+07thst|howard,07th St / Howard,2025-08-08,INSTALLED,,,,
+07thst|howard,07th St / Howard,2026-01-29,INSTALLED,,,,
+07thst|howard,07th St / Howard,2026-06-30,INSTALLED,,,,
+07thst|mission,07th St / Mission,2020-01-03,P,,,,
+07thst|mission,07th St / Mission,2021-01-07,P,,,,
+07thst|mission,07th St / Mission,2021-12-07,P,,,,
+07thst|mission,07th St / Mission,2022-07-29,F-inhouse,49,medium,Yes,Pending per funded in-house APS
+07thst|mission,07th St / Mission,2023-01-03,INSTALLED,,,,
+07thst|mission,07th St / Mission,2023-06-30,INSTALLED,,,,
+07thst|mission,07th St / Mission,2024-02-20,INSTALLED,,,,
+07thst|mission,07th St / Mission,2024-08-21,INSTALLED,,,,
+07thst|mission,07th St / Mission,2025-02-21,INSTALLED,,,,
+07thst|mission,07th St / Mission,2025-08-08,INSTALLED,,,,
+07thst|mission,07th St / Mission,2026-01-29,INSTALLED,,,,
+07thst|mission,07th St / Mission,2026-06-30,INSTALLED,,,,
+08thave|fulton,08th Avenue / Fulton,2020-01-03,-,,,,
+08thave|fulton,08th Avenue / Fulton,2021-01-07,-,,,,
+08thave|fulton,08th Avenue / Fulton,2021-12-07,-,,,,
+08thave|fulton,08th Avenue / Fulton,2022-07-29,-,,,,
+08thave|fulton,08th Avenue / Fulton,2023-01-03,-,,,,
+08thave|fulton,08th Avenue / Fulton,2023-06-30,C-candidate,50,medium,Yes,Candidateforin-houseAPS
+08thave|fulton,08th Avenue / Fulton,2024-02-20,C-candidate,50,medium,Yes,Candidate for in-house APS
+08thave|fulton,08th Avenue / Fulton,2024-08-21,C-candidate,50,medium,Yes,Candidate forin-house APS
+08thave|fulton,08th Avenue / Fulton,2025-02-21,C-candidate,50,medium,Yes,Candidate forin-house APS
+08thave|fulton,08th Avenue / Fulton,2025-08-08,C-candidate,50,medium,Yes,Candidate for in-house APS
+08thave|fulton,08th Avenue / Fulton,2026-01-29,C-candidate,50,medium,Yes,Candidate for in-house APS
+08thave|fulton,08th Avenue / Fulton,2026-06-30,C-candidate,50,medium,Yes,Candidate for in-house APS
+08thst|brannan,08thSt / Brannan,2020-01-03,-,,,,
+08thst|brannan,08thSt / Brannan,2021-01-07,-,,,,
+08thst|brannan,08thSt / Brannan,2021-12-07,P,,,,
+08thst|brannan,08thSt / Brannan,2022-07-29,F-inhouse,48,medium,Yes,Pending per funded in-house APS
+08thst|brannan,08thSt / Brannan,2023-01-03,F-inhouse,48,medium,Yes,Pending per funded in-house APS
+08thst|brannan,08thSt / Brannan,2023-06-30,F-inhouse,48,medium,Yes,Pendingperfundedin-houseAPS
+08thst|brannan,08thSt / Brannan,2024-02-20,INSTALLED,,,,
+08thst|brannan,08thSt / Brannan,2024-08-21,INSTALLED,,,,
+08thst|brannan,08thSt / Brannan,2025-02-21,INSTALLED,,,,
+08thst|brannan,08thSt / Brannan,2025-08-08,INSTALLED,,,,
+08thst|brannan,08thSt / Brannan,2026-01-29,INSTALLED,,,,
+08thst|brannan,08thSt / Brannan,2026-06-30,INSTALLED,,,,
+08thst|bryant,08th St / Bryant,2020-01-03,-,,,,
+08thst|bryant,08th St / Bryant,2021-01-07,-,,,,
+08thst|bryant,08th St / Bryant,2021-12-07,P,,,,
+08thst|bryant,08th St / Bryant,2022-07-29,INSTALLED,,,,
+08thst|bryant,08th St / Bryant,2023-01-03,INSTALLED,,,,
+08thst|bryant,08th St / Bryant,2023-06-30,INSTALLED,,,,
+08thst|bryant,08th St / Bryant,2024-02-20,INSTALLED,,,,
+08thst|bryant,08th St / Bryant,2024-08-21,INSTALLED,,,,
+08thst|bryant,08th St / Bryant,2025-02-21,INSTALLED,,,,
+08thst|bryant,08th St / Bryant,2025-08-08,INSTALLED,,,,
+08thst|bryant,08th St / Bryant,2026-01-29,INSTALLED,,,,
+08thst|bryant,08th St / Bryant,2026-06-30,INSTALLED,,,,
+08thst|mission,08th St / Mission,2020-01-03,P,,,,
+08thst|mission,08th St / Mission,2021-01-07,P,,,,
+08thst|mission,08th St / Mission,2021-12-07,INSTALLED,,,,
+08thst|mission,08th St / Mission,2022-07-29,INSTALLED,,,,
+08thst|mission,08th St / Mission,2023-01-03,INSTALLED,,,,
+08thst|mission,08th St / Mission,2023-06-30,INSTALLED,,,,
+08thst|mission,08th St / Mission,2024-02-20,INSTALLED,,,,
+08thst|mission,08th St / Mission,2024-08-21,INSTALLED,,,,
+08thst|mission,08th St / Mission,2025-02-21,INSTALLED,,,,
+08thst|mission,08th St / Mission,2025-08-08,INSTALLED,,,,
+08thst|mission,08th St / Mission,2026-01-29,INSTALLED,,,,
+08thst|mission,08th St / Mission,2026-06-30,INSTALLED,,,,
+09thst|101offramp|bryant,09th Street / Bryant / 101 Off -Ramp,2020-01-03,-,,,,
+09thst|101offramp|bryant,09th Street / Bryant / 101 Off -Ramp,2021-01-07,-,,,,
+09thst|101offramp|bryant,09th Street / Bryant / 101 Off -Ramp,2021-12-07,-,,,,
+09thst|101offramp|bryant,09th Street / Bryant / 101 Off -Ramp,2022-07-29,-,,,,
+09thst|101offramp|bryant,09th Street / Bryant / 101 Off -Ramp,2023-01-03,F-signal,n/a,n/a,n/a,Pending per funded signal project
+09thst|101offramp|bryant,09th Street / Bryant / 101 Off -Ramp,2023-06-30,F-signal,,,Yes,Pendingperfundedsignalproject
+09thst|101offramp|bryant,09th Street / Bryant / 101 Off -Ramp,2024-02-20,F-signal,,,Yes,Pending per funded signal project
+09thst|101offramp|bryant,09th Street / Bryant / 101 Off -Ramp,2024-08-21,F-signal,,,Yes,Pending perfunded signal project
+09thst|101offramp|bryant,09th Street / Bryant / 101 Off -Ramp,2025-02-21,F-signal,,,Yes,Pending perfunded signal project
+09thst|101offramp|bryant,09th Street / Bryant / 101 Off -Ramp,2025-08-08,F-signal,,,Yes,Pending per funded signal project
+09thst|101offramp|bryant,09th Street / Bryant / 101 Off -Ramp,2026-01-29,INSTALLED,,,,
+09thst|101offramp|bryant,09th Street / Bryant / 101 Off -Ramp,2026-06-30,INSTALLED,,,,
+10thave|fulton,10th Avenue / Fulton,2020-01-03,-,,,,
+10thave|fulton,10th Avenue / Fulton,2021-01-07,-,,,,
+10thave|fulton,10th Avenue / Fulton,2021-12-07,-,,,,
+10thave|fulton,10th Avenue / Fulton,2022-07-29,-,,,,
+10thave|fulton,10th Avenue / Fulton,2023-01-03,-,,,,
+10thave|fulton,10th Avenue / Fulton,2023-06-30,-,,,,
+10thave|fulton,10th Avenue / Fulton,2024-02-20,C-candidate,46,medium,Yes,Candidate for in-house APS
+10thave|fulton,10th Avenue / Fulton,2024-08-21,C-candidate,46,medium,Yes,Candidate forin-house APS
+10thave|fulton,10th Avenue / Fulton,2025-02-21,C-candidate,46,medium,Yes,Candidate forin-house APS
+10thave|fulton,10th Avenue / Fulton,2025-08-08,C-candidate,46,medium,Yes,Candidate for in-house APS
+10thave|fulton,10th Avenue / Fulton,2026-01-29,C-candidate,46,medium,Yes,Candidate for in-house APS
+10thave|fulton,10th Avenue / Fulton,2026-06-30,C-candidate,46,medium,Yes,Candidate for in-house APS
+10thst|fell|market|polk,10th Street / Fell / Market / Polk,2020-01-03,-,,,,
+10thst|fell|market|polk,10th Street / Fell / Market / Polk,2021-01-07,-,,,,
+10thst|fell|market|polk,10th Street / Fell / Market / Polk,2021-12-07,-,,,,
+10thst|fell|market|polk,10th Street / Fell / Market / Polk,2022-07-29,-,,,,
+10thst|fell|market|polk,10th Street / Fell / Market / Polk,2023-01-03,-,,,,
+10thst|fell|market|polk,10th Street / Fell / Market / Polk,2023-06-30,-,,,,
+10thst|fell|market|polk,10th Street / Fell / Market / Polk,2024-02-20,-,,,,
+10thst|fell|market|polk,10th Street / Fell / Market / Polk,2024-08-21,-,,,,
+10thst|fell|market|polk,10th Street / Fell / Market / Polk,2025-02-21,-,,,,
+10thst|fell|market|polk,10th Street / Fell / Market / Polk,2025-08-08,-,,,,
+10thst|fell|market|polk,10th Street / Fell / Market / Polk,2026-01-29,C-candidate,49,medium,Yes,Candidate for in-house APS
+10thst|fell|market|polk,10th Street / Fell / Market / Polk,2026-06-30,F-inhouse,49,medium,Yes,Pending per funded in-house APS
+11thst|howard,11th Street / Howard,2020-01-03,-,,,,
+11thst|howard,11th Street / Howard,2021-01-07,-,,,,
+11thst|howard,11th Street / Howard,2021-12-07,-,,,,
+11thst|howard,11th Street / Howard,2022-07-29,-,,,,
+11thst|howard,11th Street / Howard,2023-01-03,F-signal,n/a,n/a,n/a,Pending per funded signal project
+11thst|howard,11th Street / Howard,2023-06-30,F-signal,,,Yes,Pendingperfundedsignalproject
+11thst|howard,11th Street / Howard,2024-02-20,F-signal,,,Yes,Pending per funded signal project
+11thst|howard,11th Street / Howard,2024-08-21,F-signal,,,Yes,Pending perfunded signal project
+11thst|howard,11th Street / Howard,2025-02-21,F-signal,,,Yes,Pending perfunded signal project
+11thst|howard,11th Street / Howard,2025-08-08,F-signal,,,Yes,Pending per funded signal project
+11thst|howard,11th Street / Howard,2026-01-29,F-signal,,,Yes,Pending per funded signal project
+11thst|howard,11th Street / Howard,2026-06-30,F-signal,,,Yes,Pending per funded signal project
+12thst|mission|southvanness,12th St / Mission / South Van Ness,2020-01-03,P,,,,
+12thst|mission|southvanness,12th St / Mission / South Van Ness,2021-01-07,P,,,,
+12thst|mission|southvanness,12th St / Mission / South Van Ness,2021-12-07,P,,,,
+12thst|mission|southvanness,12th St / Mission / South Van Ness,2022-07-29,-,,,,
+12thst|mission|southvanness,12th St / Mission / South Van Ness,2023-01-03,-,,,,
+12thst|mission|southvanness,12th St / Mission / South Van Ness,2023-06-30,-,,,,
+12thst|mission|southvanness,12th St / Mission / South Van Ness,2024-02-20,-,,,,
+12thst|mission|southvanness,12th St / Mission / South Van Ness,2024-08-21,-,,,,
+12thst|mission|southvanness,12th St / Mission / South Van Ness,2025-02-21,-,,,,
+12thst|mission|southvanness,12th St / Mission / South Van Ness,2025-08-08,-,,,,
+12thst|mission|southvanness,12th St / Mission / South Van Ness,2026-01-29,-,,,,
+12thst|mission|southvanness,12th St / Mission / South Van Ness,2026-06-30,-,,,,
+13thst|duboce|mission|otis,13th Street / Duboce / Mission / Otis,2020-01-03,P,,,,
+13thst|duboce|mission|otis,13th Street / Duboce / Mission / Otis,2021-01-07,P,,,,
+13thst|duboce|mission|otis,13th Street / Duboce / Mission / Otis,2021-12-07,P,,,,
+13thst|duboce|mission|otis,13th Street / Duboce / Mission / Otis,2022-07-29,F-signal,59,high,Yes,Pending per funded signal project
+13thst|duboce|mission|otis,13th Street / Duboce / Mission / Otis,2023-01-03,F-signal,59,high,Yes,Pending per funded signal project
+13thst|duboce|mission|otis,13th Street / Duboce / Mission / Otis,2023-06-30,F-signal,59,high,Yes,Pendingperfundedsignalproject
+13thst|duboce|mission|otis,13th Street / Duboce / Mission / Otis,2024-02-20,F-signal,59,high,Yes,Pending per funded signal project
+13thst|duboce|mission|otis,13th Street / Duboce / Mission / Otis,2024-08-21,F-signal,59,high,Yes,Pending perfundedsignal project
+13thst|duboce|mission|otis,13th Street / Duboce / Mission / Otis,2025-02-21,F-signal,59,high,Yes,Pending perfunded signal project
+13thst|duboce|mission|otis,13th Street / Duboce / Mission / Otis,2025-08-08,F-signal,59,high,Yes,Pending per funded signal project
+13thst|duboce|mission|otis,13th Street / Duboce / Mission / Otis,2026-01-29,F-signal,59,high,Yes,Pending per funded signal project
+13thst|duboce|mission|otis,13th Street / Duboce / Mission / Otis,2026-06-30,F-signal,59,high,Yes,Pending per funded signal project
+13thst|folsom,13th Street / Folsom,2020-01-03,-,,,,
+13thst|folsom,13th Street / Folsom,2021-01-07,-,,,,
+13thst|folsom,13th Street / Folsom,2021-12-07,P,,,,
+13thst|folsom,13th Street / Folsom,2022-07-29,N-funding,27,low,Yes,Funding needed for new poles
+13thst|folsom,13th Street / Folsom,2023-01-03,F-signal,27,low,Yes,Pending per funded signal project
+13thst|folsom,13th Street / Folsom,2023-06-30,F-signal,27,low,Yes,Pendingperfundedsignalproject
+13thst|folsom,13th Street / Folsom,2024-02-20,F-signal,27,low,Yes,Pending per funded signal project
+13thst|folsom,13th Street / Folsom,2024-08-21,F-signal,27,low,Yes,Pending perfundedsignal project
+13thst|folsom,13th Street / Folsom,2025-02-21,F-signal,27,low,Yes,Pending perfunded signal project
+13thst|folsom,13th Street / Folsom,2025-08-08,F-signal,27,low,Yes,Pending per funded signal project
+13thst|folsom,13th Street / Folsom,2026-01-29,F-signal,27,low,Yes,Pending per funded signal project
+13thst|folsom,13th Street / Folsom,2026-06-30,F-signal,27,low,Yes,Pending per funded signal project
+13thst|harrison,13th Street / Harrison,2020-01-03,-,,,,
+13thst|harrison,13th Street / Harrison,2021-01-07,-,,,,
+13thst|harrison,13th Street / Harrison,2021-12-07,P,,,,
+13thst|harrison,13th Street / Harrison,2022-07-29,N-funding,28,low,Yes,Funding needed for new poles
+13thst|harrison,13th Street / Harrison,2023-01-03,N-funding,28,low,Yes,Funding needed for new poles
+13thst|harrison,13th Street / Harrison,2023-06-30,N-funding,28,low,Yes,Fundingneededfornewpoles
+13thst|harrison,13th Street / Harrison,2024-02-20,N-funding,28,low,Yes,Funding needed for newpoles
+13thst|harrison,13th Street / Harrison,2024-08-21,N-funding,28,low,Yes,Funding needed fornewpoles
+13thst|harrison,13th Street / Harrison,2025-02-21,N-funding,28,low,Yes,Funding needed fornewpoles
+13thst|harrison,13th Street / Harrison,2025-08-08,N-funding,28,low,Yes,Funding needed for newpoles
+13thst|harrison,13th Street / Harrison,2026-01-29,N-funding,28,low,Yes,Funding needed for newpoles
+13thst|harrison,13th Street / Harrison,2026-06-30,N-funding,28,low,Yes,Funding needed for newpoles
+13thst|southvanness,13th Street / South Van Ness,2020-01-03,P,,,,
+13thst|southvanness,13th Street / South Van Ness,2021-01-07,P,,,,
+13thst|southvanness,13th Street / South Van Ness,2021-12-07,P,,,,
+13thst|southvanness,13th Street / South Van Ness,2022-07-29,F-signal,43,medium,Yes,Pending per funded signal project
+13thst|southvanness,13th Street / South Van Ness,2023-01-03,F-signal,43,medium,Yes,Pending per funded signal project
+13thst|southvanness,13th Street / South Van Ness,2023-06-30,F-signal,43,medium,Yes,Pendingperfundedsignalproject
+13thst|southvanness,13th Street / South Van Ness,2024-02-20,F-signal,43,medium,Yes,Pending per funded signal project
+13thst|southvanness,13th Street / South Van Ness,2024-08-21,F-signal,43,medium,Yes,Pending perfundedsignal project
+13thst|southvanness,13th Street / South Van Ness,2025-02-21,F-signal,43,medium,Yes,Pending perfunded signal project
+13thst|southvanness,13th Street / South Van Ness,2025-08-08,F-signal,43,medium,Yes,Pending per funded signal project
+13thst|southvanness,13th Street / South Van Ness,2026-01-29,F-signal,43,medium,Yes,Pending per funded signal project
+13thst|southvanness,13th Street / South Van Ness,2026-06-30,F-signal,43,medium,Yes,Pending per funded signal project
+14thst|guerrero,14thSt / Guerrero,2020-01-03,P,,,,
+14thst|guerrero,14thSt / Guerrero,2021-01-07,P,,,,
+14thst|guerrero,14thSt / Guerrero,2021-12-07,P,,,,
+14thst|guerrero,14thSt / Guerrero,2022-07-29,F-inhouse,19,low,Yes,Pending per funded in-house APS
+14thst|guerrero,14thSt / Guerrero,2023-01-03,F-inhouse,19,low,Yes,Pending per funded in-house APS
+14thst|guerrero,14thSt / Guerrero,2023-06-30,F-inhouse,19,low,Yes,Pendingperfundedin-houseAPS
+14thst|guerrero,14thSt / Guerrero,2024-02-20,INSTALLED,,,,
+14thst|guerrero,14thSt / Guerrero,2024-08-21,INSTALLED,,,,
+14thst|guerrero,14thSt / Guerrero,2025-02-21,INSTALLED,,,,
+14thst|guerrero,14thSt / Guerrero,2025-08-08,INSTALLED,,,,
+14thst|guerrero,14thSt / Guerrero,2026-01-29,INSTALLED,,,,
+14thst|guerrero,14thSt / Guerrero,2026-06-30,INSTALLED,,,,
+15thst|church,15th Street / Church,2020-01-03,-,,,,
+15thst|church,15th Street / Church,2021-01-07,-,,,,
+15thst|church,15th Street / Church,2021-12-07,-,,,,
+15thst|church,15th Street / Church,2022-07-29,-,,,,
+15thst|church,15th Street / Church,2023-01-03,C-candidate,26,low,Yes,Candidate for in-house APS
+15thst|church,15th Street / Church,2023-06-30,C-candidate,26,low,No,Candidateforin-houseAPS
+15thst|church,15th Street / Church,2024-02-20,C-candidate,26,low,No,Candidate for in-house APS
+15thst|church,15th Street / Church,2024-08-21,C-candidate,26,low,No,Candidate for in-house APS
+15thst|church,15th Street / Church,2025-02-21,C-candidate,26,low,No,Candidate forin-house APS
+15thst|church,15th Street / Church,2025-08-08,C-candidate,26,low,No,Candidate for in-house APS
+15thst|church,15th Street / Church,2026-01-29,C-candidate,26,low,No,Candidate for in-house APS
+15thst|church,15th Street / Church,2026-06-30,C-candidate,26,low,No,Candidate for in-house APS
+15thst|guerrero,15thSt / Guerrero,2020-01-03,P,,,,
+15thst|guerrero,15thSt / Guerrero,2021-01-07,P,,,,
+15thst|guerrero,15thSt / Guerrero,2021-12-07,P,,,,
+15thst|guerrero,15thSt / Guerrero,2022-07-29,F-inhouse,30,low,Yes,Pending per funded in-house APS
+15thst|guerrero,15thSt / Guerrero,2023-01-03,F-inhouse,30,low,Yes,Pending per funded in-house APS
+15thst|guerrero,15thSt / Guerrero,2023-06-30,F-inhouse,30,low,Yes,Pendingperfundedin-houseAPS
+15thst|guerrero,15thSt / Guerrero,2024-02-20,INSTALLED,,,,
+15thst|guerrero,15thSt / Guerrero,2024-08-21,INSTALLED,,,,
+15thst|guerrero,15thSt / Guerrero,2025-02-21,INSTALLED,,,,
+15thst|guerrero,15thSt / Guerrero,2025-08-08,INSTALLED,,,,
+15thst|guerrero,15thSt / Guerrero,2026-01-29,INSTALLED,,,,
+15thst|guerrero,15thSt / Guerrero,2026-06-30,INSTALLED,,,,
+15thst|market|sanchez,15th St / Market / Sanchez,2020-01-03,P,,,,
+15thst|market|sanchez,15th St / Market / Sanchez,2021-01-07,P,,,,
+15thst|market|sanchez,15th St / Market / Sanchez,2021-12-07,P,,,,
+15thst|market|sanchez,15th St / Market / Sanchez,2022-07-29,F-signal,53,medium,Yes,Pending per funded signal project
+15thst|market|sanchez,15th St / Market / Sanchez,2023-01-03,INSTALLED,,,,
+15thst|market|sanchez,15th St / Market / Sanchez,2023-06-30,INSTALLED,,,,
+15thst|market|sanchez,15th St / Market / Sanchez,2024-02-20,INSTALLED,,,,
+15thst|market|sanchez,15th St / Market / Sanchez,2024-08-21,INSTALLED,,,,
+15thst|market|sanchez,15th St / Market / Sanchez,2025-02-21,INSTALLED,,,,
+15thst|market|sanchez,15th St / Market / Sanchez,2025-08-08,INSTALLED,,,,
+15thst|market|sanchez,15th St / Market / Sanchez,2026-01-29,INSTALLED,,,,
+15thst|market|sanchez,15th St / Market / Sanchez,2026-06-30,INSTALLED,,,,
+15thst|valencia,15th Street / Valencia,2020-01-03,-,,,,
+15thst|valencia,15th Street / Valencia,2021-01-07,-,,,,
+15thst|valencia,15th Street / Valencia,2021-12-07,-,,,,
+15thst|valencia,15th Street / Valencia,2022-07-29,-,,,,
+15thst|valencia,15th Street / Valencia,2023-01-03,-,,,,
+15thst|valencia,15th Street / Valencia,2023-06-30,-,,,,
+15thst|valencia,15th Street / Valencia,2024-02-20,C-candidate,45,medium,Yes,Candidate for in-house APS
+15thst|valencia,15th Street / Valencia,2024-08-21,C-candidate,45,medium,Yes,Candidate forin-house APS
+15thst|valencia,15th Street / Valencia,2025-02-21,C-candidate,45,medium,Yes,Candidate forin-house APS
+15thst|valencia,15th Street / Valencia,2025-08-08,C-candidate,45,medium,Yes,Candidate for in-house APS
+15thst|valencia,15th Street / Valencia,2026-01-29,C-candidate,45,medium,Yes,Candidate for in-house APS
+15thst|valencia,15th Street / Valencia,2026-06-30,C-candidate,45,medium,Yes,Candidate for in-house APS
+16thst|church,16th Street / Church,2020-01-03,P,,,,
+16thst|church,16th Street / Church,2021-01-07,P,,,,
+16thst|church,16th Street / Church,2021-12-07,P,,,,
+16thst|church,16th Street / Church,2022-07-29,F-signal,40,medium,Yes,Pending per funded signal project
+16thst|church,16th Street / Church,2023-01-03,F-signal,40,medium,Yes,Pending per funded signal project
+16thst|church,16th Street / Church,2023-06-30,F-signal,40,medium,Yes,Pendingperfundedsignalproject
+16thst|church,16th Street / Church,2024-02-20,F-signal,40,medium,Yes,Pending per funded signal project
+16thst|church,16th Street / Church,2024-08-21,F-signal,40,medium,Yes,Pending perfundedsignal project
+16thst|church,16th Street / Church,2025-02-21,F-signal,40,medium,Yes,Pending perfunded signal project
+16thst|church,16th Street / Church,2025-08-08,F-signal,40,medium,Yes,Pending per funded signal project
+16thst|church,16th Street / Church,2026-01-29,F-signal,40,medium,Yes,Pending per funded signal project
+16thst|church,16th Street / Church,2026-06-30,F-signal,40,medium,No,Pending per funded signal project
+16thst|dolores,16th Street / Dolores,2020-01-03,P,,,,
+16thst|dolores,16th Street / Dolores,2021-01-07,P,,,,
+16thst|dolores,16th Street / Dolores,2021-12-07,P,,,,
+16thst|dolores,16th Street / Dolores,2022-07-29,F-signal,35,medium,Yes,Pending per funded signal project
+16thst|dolores,16th Street / Dolores,2023-01-03,F-signal,35,medium,Yes,Pending per funded signal project
+16thst|dolores,16th Street / Dolores,2023-06-30,F-signal,35,medium,Yes,Pendingperfundedsignalproject
+16thst|dolores,16th Street / Dolores,2024-02-20,F-signal,35,medium,Yes,Pending per funded signal project
+16thst|dolores,16th Street / Dolores,2024-08-21,F-signal,35,medium,Yes,Pending perfundedsignal project
+16thst|dolores,16th Street / Dolores,2025-02-21,F-signal,35,medium,Yes,Pending perfunded signal project
+16thst|dolores,16th Street / Dolores,2025-08-08,F-signal,35,medium,Yes,Pending per funded signal project
+16thst|dolores,16th Street / Dolores,2026-01-29,F-signal,35,medium,Yes,Pending per funded signal project
+16thst|dolores,16th Street / Dolores,2026-06-30,F-signal,35,medium,Yes,Pending per funded signal project
+16thst|market|noe,16th St / Market / Noe,2020-01-03,P,,,,
+16thst|market|noe,16th St / Market / Noe,2021-01-07,P,,,,
+16thst|market|noe,16th St / Market / Noe,2021-12-07,P,,,,
+16thst|market|noe,16th St / Market / Noe,2022-07-29,F-signal,53,medium,Yes,Pending per funded signal project
+16thst|market|noe,16th St / Market / Noe,2023-01-03,INSTALLED,,,,
+16thst|market|noe,16th St / Market / Noe,2023-06-30,INSTALLED,,,,
+16thst|market|noe,16th St / Market / Noe,2024-02-20,INSTALLED,,,,
+16thst|market|noe,16th St / Market / Noe,2024-08-21,INSTALLED,,,,
+16thst|market|noe,16th St / Market / Noe,2025-02-21,INSTALLED,,,,
+16thst|market|noe,16th St / Market / Noe,2025-08-08,INSTALLED,,,,
+16thst|market|noe,16th St / Market / Noe,2026-01-29,INSTALLED,,,,
+16thst|market|noe,16th St / Market / Noe,2026-06-30,INSTALLED,,,,
+16thst|owens,16th Street / Owens,2020-01-03,-,,,,
+16thst|owens,16th Street / Owens,2021-01-07,-,,,,
+16thst|owens,16th Street / Owens,2021-12-07,-,,,,
+16thst|owens,16th Street / Owens,2022-07-29,-,,,,
+16thst|owens,16th Street / Owens,2023-01-03,-,,,,
+16thst|owens,16th Street / Owens,2023-06-30,-,,,,
+16thst|owens,16th Street / Owens,2024-02-20,C-candidate,67,high,No,Candidate for in-house APS
+16thst|owens,16th Street / Owens,2024-08-21,C-candidate,67,high,No,Candidate for in-house APS
+16thst|owens,16th Street / Owens,2025-02-21,C-candidate,67,high,No,Candidate forin-house APS
+16thst|owens,16th Street / Owens,2025-08-08,C-candidate,67,high,No,Candidate for in-house APS
+16thst|owens,16th Street / Owens,2026-01-29,C-candidate,67,high,No,Candidate for in-house APS
+16thst|owens,16th Street / Owens,2026-06-30,C-candidate,67,high,No,Candidate for in-house APS
+17thst|church,17th Street / Church,2020-01-03,-,,,,
+17thst|church,17th Street / Church,2021-01-07,-,,,,
+17thst|church,17th Street / Church,2021-12-07,-,,,,
+17thst|church,17th Street / Church,2022-07-29,-,,,,
+17thst|church,17th Street / Church,2023-01-03,-,,,,
+17thst|church,17th Street / Church,2023-06-30,-,,,,
+17thst|church,17th Street / Church,2024-02-20,-,,,,
+17thst|church,17th Street / Church,2024-08-21,-,,,,
+17thst|church,17th Street / Church,2025-02-21,-,,,,
+17thst|church,17th Street / Church,2025-08-08,N-funding,34,medium,Yes,Funding needed for full upgrade
+17thst|church,17th Street / Church,2026-01-29,N-funding,34,medium,Yes,Funding needed for full upgrade
+17thst|church,17th Street / Church,2026-06-30,N-funding,34,medium,Yes,Funding needed for full upgrade
+18thst|dolores,18th St / Dolores,2020-01-03,P,,,,
+18thst|dolores,18th St / Dolores,2021-01-07,P,,,,
+18thst|dolores,18th St / Dolores,2021-12-07,P,,,,
+18thst|dolores,18th St / Dolores,2022-07-29,INSTALLED,,,,
+18thst|dolores,18th St / Dolores,2023-01-03,INSTALLED,,,,
+18thst|dolores,18th St / Dolores,2023-06-30,INSTALLED,,,,
+18thst|dolores,18th St / Dolores,2024-02-20,INSTALLED,,,,
+18thst|dolores,18th St / Dolores,2024-08-21,INSTALLED,,,,
+18thst|dolores,18th St / Dolores,2025-02-21,INSTALLED,,,,
+18thst|dolores,18th St / Dolores,2025-08-08,INSTALLED,,,,
+18thst|dolores,18th St / Dolores,2026-01-29,INSTALLED,,,,
+18thst|dolores,18th St / Dolores,2026-06-30,INSTALLED,,,,
+18thst|guerrero,18th St / Guerrero,2020-01-03,P,,,,
+18thst|guerrero,18th St / Guerrero,2021-01-07,P,,,,
+18thst|guerrero,18th St / Guerrero,2021-12-07,P,,,,
+18thst|guerrero,18th St / Guerrero,2022-07-29,F-inhouse,32,medium,Yes,Pending per funded in-house APS
+18thst|guerrero,18th St / Guerrero,2023-01-03,F-inhouse,32,medium,Yes,Pending per funded in-house APS
+18thst|guerrero,18th St / Guerrero,2023-06-30,INSTALLED,,,,
+18thst|guerrero,18th St / Guerrero,2024-02-20,INSTALLED,,,,
+18thst|guerrero,18th St / Guerrero,2024-08-21,INSTALLED,,,,
+18thst|guerrero,18th St / Guerrero,2025-02-21,INSTALLED,,,,
+18thst|guerrero,18th St / Guerrero,2025-08-08,INSTALLED,,,,
+18thst|guerrero,18th St / Guerrero,2026-01-29,INSTALLED,,,,
+18thst|guerrero,18th St / Guerrero,2026-06-30,INSTALLED,,,,
+18thst|mission,18th St / Mission,2020-01-03,P,,,,
+18thst|mission,18th St / Mission,2021-01-07,P,,,,
+18thst|mission,18th St / Mission,2021-12-07,P,,,,
+18thst|mission,18th St / Mission,2022-07-29,INSTALLED,,,,
+18thst|mission,18th St / Mission,2023-01-03,INSTALLED,,,,
+18thst|mission,18th St / Mission,2023-06-30,INSTALLED,,,,
+18thst|mission,18th St / Mission,2024-02-20,INSTALLED,,,,
+18thst|mission,18th St / Mission,2024-08-21,INSTALLED,,,,
+18thst|mission,18th St / Mission,2025-02-21,INSTALLED,,,,
+18thst|mission,18th St / Mission,2025-08-08,INSTALLED,,,,
+18thst|mission,18th St / Mission,2026-01-29,INSTALLED,,,,
+18thst|mission,18th St / Mission,2026-06-30,INSTALLED,,,,
+18thst|valencia,18th St / Valencia,2020-01-03,P,,,,
+18thst|valencia,18th St / Valencia,2021-01-07,P,,,,
+18thst|valencia,18th St / Valencia,2021-12-07,P,,,,
+18thst|valencia,18th St / Valencia,2022-07-29,F-inhouse,34,medium,Yes,Pending per funded in-house APS
+18thst|valencia,18th St / Valencia,2023-01-03,F-inhouse,34,medium,Yes,Pending per funded in-house APS
+18thst|valencia,18th St / Valencia,2023-06-30,INSTALLED,,,,
+18thst|valencia,18th St / Valencia,2024-02-20,INSTALLED,,,,
+18thst|valencia,18th St / Valencia,2024-08-21,INSTALLED,,,,
+18thst|valencia,18th St / Valencia,2025-02-21,INSTALLED,,,,
+18thst|valencia,18th St / Valencia,2025-08-08,INSTALLED,,,,
+18thst|valencia,18th St / Valencia,2026-01-29,INSTALLED,,,,
+18thst|valencia,18th St / Valencia,2026-06-30,INSTALLED,,,,
+19thave|kirkham,19th Avenue / Kirkham,2020-01-03,P,,,,
+19thave|kirkham,19th Avenue / Kirkham,2021-01-07,P,,,,
+19thave|kirkham,19th Avenue / Kirkham,2021-12-07,P,,,,
+19thave|kirkham,19th Avenue / Kirkham,2022-07-29,F-signal,32,medium,--,Pending per funded signal project
+19thave|kirkham,19th Avenue / Kirkham,2023-01-03,F-signal,32,medium,--,Pending per funded signal project
+19thave|kirkham,19th Avenue / Kirkham,2023-06-30,F-signal,32,medium,No,Pendingperfundedsignalproject
+19thave|kirkham,19th Avenue / Kirkham,2024-02-20,F-signal,32,medium,No,Pending per funded signal project
+19thave|kirkham,19th Avenue / Kirkham,2024-08-21,F-signal,32,medium,No,Pending perfunded signal project
+19thave|kirkham,19th Avenue / Kirkham,2025-02-21,F-signal,32,medium,No,Pending perfunded signal project
+19thave|kirkham,19th Avenue / Kirkham,2025-08-08,F-signal,32,medium,No,Pending per funded signal project
+19thave|kirkham,19th Avenue / Kirkham,2026-01-29,F-signal,32,medium,No,Pending per funded signal project
+19thave|kirkham,19th Avenue / Kirkham,2026-06-30,INSTALLED,,,,
+19thave|santiago,19th Avenue / Santiago,2020-01-03,P,,,,
+19thave|santiago,19th Avenue / Santiago,2021-01-07,P,,,,
+19thave|santiago,19th Avenue / Santiago,2021-12-07,P,,,,
+19thave|santiago,19th Avenue / Santiago,2022-07-29,F-signal,46,medium,Yes,Pending per funded signal project
+19thave|santiago,19th Avenue / Santiago,2023-01-03,F-signal,46,medium,Yes,Pending per funded signal project
+19thave|santiago,19th Avenue / Santiago,2023-06-30,F-signal,46,medium,Yes,Pendingperfundedsignalproject
+19thave|santiago,19th Avenue / Santiago,2024-02-20,F-signal,46,medium,Yes,Pending per funded signal project
+19thave|santiago,19th Avenue / Santiago,2024-08-21,F-signal,46,medium,Yes,Pending perfundedsignal project
+19thave|santiago,19th Avenue / Santiago,2025-02-21,F-signal,46,medium,Yes,Pending perfunded signal project
+19thave|santiago,19th Avenue / Santiago,2025-08-08,F-signal,46,medium,Yes,Pending per funded signal project
+19thave|santiago,19th Avenue / Santiago,2026-01-29,F-signal,46,medium,Yes,Pending per funded signal project
+19thave|santiago,19th Avenue / Santiago,2026-06-30,INSTALLED,,,,
+19thst|guerrero,19th St / Guerrero,2020-01-03,P,,,,
+19thst|guerrero,19th St / Guerrero,2021-01-07,P,,,,
+19thst|guerrero,19th St / Guerrero,2021-12-07,P,,,,
+19thst|guerrero,19th St / Guerrero,2022-07-29,INSTALLED,,,,
+19thst|guerrero,19th St / Guerrero,2023-01-03,INSTALLED,,,,
+19thst|guerrero,19th St / Guerrero,2023-06-30,INSTALLED,,,,
+19thst|guerrero,19th St / Guerrero,2024-02-20,INSTALLED,,,,
+19thst|guerrero,19th St / Guerrero,2024-08-21,INSTALLED,,,,
+19thst|guerrero,19th St / Guerrero,2025-02-21,INSTALLED,,,,
+19thst|guerrero,19th St / Guerrero,2025-08-08,INSTALLED,,,,
+19thst|guerrero,19th St / Guerrero,2026-01-29,INSTALLED,,,,
+19thst|guerrero,19th St / Guerrero,2026-06-30,INSTALLED,,,,
+19thst|mission,19th St / Mission,2020-01-03,P,,,,
+19thst|mission,19th St / Mission,2021-01-07,P,,,,
+19thst|mission,19th St / Mission,2021-12-07,P,,,,
+19thst|mission,19th St / Mission,2022-07-29,INSTALLED,,,,
+19thst|mission,19th St / Mission,2023-01-03,INSTALLED,,,,
+19thst|mission,19th St / Mission,2023-06-30,INSTALLED,,,,
+19thst|mission,19th St / Mission,2024-02-20,INSTALLED,,,,
+19thst|mission,19th St / Mission,2024-08-21,INSTALLED,,,,
+19thst|mission,19th St / Mission,2025-02-21,INSTALLED,,,,
+19thst|mission,19th St / Mission,2025-08-08,INSTALLED,,,,
+19thst|mission,19th St / Mission,2026-01-29,INSTALLED,,,,
+19thst|mission,19th St / Mission,2026-06-30,INSTALLED,,,,
+19thst|valencia,19th St / Valencia,2020-01-03,P,,,,
+19thst|valencia,19th St / Valencia,2021-01-07,P,,,,
+19thst|valencia,19th St / Valencia,2021-12-07,P,,,,
+19thst|valencia,19th St / Valencia,2022-07-29,F-inhouse,35,medium,Yes,Pending per funded in-house APS
+19thst|valencia,19th St / Valencia,2023-01-03,F-inhouse,35,medium,Yes,Pending per funded in-house APS
+19thst|valencia,19th St / Valencia,2023-06-30,INSTALLED,,,,
+19thst|valencia,19th St / Valencia,2024-02-20,INSTALLED,,,,
+19thst|valencia,19th St / Valencia,2024-08-21,INSTALLED,,,,
+19thst|valencia,19th St / Valencia,2025-02-21,INSTALLED,,,,
+19thst|valencia,19th St / Valencia,2025-08-08,INSTALLED,,,,
+19thst|valencia,19th St / Valencia,2026-01-29,INSTALLED,,,,
+19thst|valencia,19th St / Valencia,2026-06-30,INSTALLED,,,,
+22ndst|mission,22nd Street / Mission,2020-01-03,-,,,,
+22ndst|mission,22nd Street / Mission,2021-01-07,-,,,,
+22ndst|mission,22nd Street / Mission,2021-12-07,-,,,,
+22ndst|mission,22nd Street / Mission,2022-07-29,-,,,,
+22ndst|mission,22nd Street / Mission,2023-01-03,-,,,,
+22ndst|mission,22nd Street / Mission,2023-06-30,-,,,,
+22ndst|mission,22nd Street / Mission,2024-02-20,-,,,,
+22ndst|mission,22nd Street / Mission,2024-08-21,-,,,,
+22ndst|mission,22nd Street / Mission,2025-02-21,-,,,,
+22ndst|mission,22nd Street / Mission,2025-08-08,C-candidate,40,medium,Yes,Candidate for in-house APS
+22ndst|mission,22nd Street / Mission,2026-01-29,C-candidate,40,medium,Yes,Candidate for in-house APS
+22ndst|mission,22nd Street / Mission,2026-06-30,C-candidate,40,medium,Yes,Candidate for in-house APS
+22ndst|valencia,22nd Street / Valencia,2020-01-03,-,,,,
+22ndst|valencia,22nd Street / Valencia,2021-01-07,-,,,,
+22ndst|valencia,22nd Street / Valencia,2021-12-07,-,,,,
+22ndst|valencia,22nd Street / Valencia,2022-07-29,-,,,,
+22ndst|valencia,22nd Street / Valencia,2023-01-03,-,,,,
+22ndst|valencia,22nd Street / Valencia,2023-06-30,-,,,,
+22ndst|valencia,22nd Street / Valencia,2024-02-20,-,,,,
+22ndst|valencia,22nd Street / Valencia,2024-08-21,-,,,,
+22ndst|valencia,22nd Street / Valencia,2025-02-21,-,,,,
+22ndst|valencia,22nd Street / Valencia,2025-08-08,C-candidate,45,medium,Yes,Candidate for in-house APS
+22ndst|valencia,22nd Street / Valencia,2026-01-29,C-candidate,45,medium,Yes,Candidate for in-house APS
+22ndst|valencia,22nd Street / Valencia,2026-06-30,C-candidate,45,medium,Yes,Candidate for in-house APS
+24thst|castro,24th St / Castro,2020-01-03,P,,,,
+24thst|castro,24th St / Castro,2021-01-07,P,,,,
+24thst|castro,24th St / Castro,2021-12-07,P,,,,
+24thst|castro,24th St / Castro,2022-07-29,F-inhouse,41,medium,--,Pending per funded in-house APS
+24thst|castro,24th St / Castro,2023-01-03,INSTALLED,,,,
+24thst|castro,24th St / Castro,2023-06-30,INSTALLED,,,,
+24thst|castro,24th St / Castro,2024-02-20,INSTALLED,,,,
+24thst|castro,24th St / Castro,2024-08-21,INSTALLED,,,,
+24thst|castro,24th St / Castro,2025-02-21,INSTALLED,,,,
+24thst|castro,24th St / Castro,2025-08-08,INSTALLED,,,,
+24thst|castro,24th St / Castro,2026-01-29,INSTALLED,,,,
+24thst|castro,24th St / Castro,2026-06-30,INSTALLED,,,,
+25thave|lincoln,25th Avenue / Lincoln,2020-01-03,-,,,,
+25thave|lincoln,25th Avenue / Lincoln,2021-01-07,P,,,,
+25thave|lincoln,25th Avenue / Lincoln,2021-12-07,P,,,,
+25thave|lincoln,25th Avenue / Lincoln,2022-07-29,N-funding,52,medium,--,Funding needed for full upgrade
+25thave|lincoln,25th Avenue / Lincoln,2023-01-03,N-funding,52,medium,--,Funding needed for full upgrade
+25thave|lincoln,25th Avenue / Lincoln,2023-06-30,N-funding,52,medium,Yes,Fundingneededforfullupgrade
+25thave|lincoln,25th Avenue / Lincoln,2024-02-20,N-funding,52,medium,Yes,Funding needed for full upgrade
+25thave|lincoln,25th Avenue / Lincoln,2024-08-21,N-funding,52,medium,Yes,Funding needed forfull upgrade
+25thave|lincoln,25th Avenue / Lincoln,2025-02-21,N-funding,52,medium,Yes,Funding needed forfull upgrade
+25thave|lincoln,25th Avenue / Lincoln,2025-08-08,N-funding,52,medium,Yes,Funding needed for full upgrade
+25thave|lincoln,25th Avenue / Lincoln,2026-01-29,N-funding,52,medium,Yes,Funding needed for full upgrade
+25thave|lincoln,25th Avenue / Lincoln,2026-06-30,F-signal,52,medium,No,Pending per funded signal project
+30thave|geary,30th Ave / Geary,2020-01-03,P,,,,
+30thave|geary,30th Ave / Geary,2021-01-07,P,,,,
+30thave|geary,30th Ave / Geary,2021-12-07,P,,,,
+30thave|geary,30th Ave / Geary,2022-07-29,INSTALLED,,,,
+30thave|geary,30th Ave / Geary,2023-01-03,INSTALLED,,,,
+30thave|geary,30th Ave / Geary,2023-06-30,INSTALLED,,,,
+30thave|geary,30th Ave / Geary,2024-02-20,INSTALLED,,,,
+30thave|geary,30th Ave / Geary,2024-08-21,INSTALLED,,,,
+30thave|geary,30th Ave / Geary,2025-02-21,INSTALLED,,,,
+30thave|geary,30th Ave / Geary,2025-08-08,INSTALLED,,,,
+30thave|geary,30th Ave / Geary,2026-01-29,INSTALLED,,,,
+30thave|geary,30th Ave / Geary,2026-06-30,INSTALLED,,,,
+30thave|lincoln,30th Avenue / Lincoln,2020-01-03,-,,,,
+30thave|lincoln,30th Avenue / Lincoln,2021-01-07,-,,,,
+30thave|lincoln,30th Avenue / Lincoln,2021-12-07,-,,,,
+30thave|lincoln,30th Avenue / Lincoln,2022-07-29,-,,,,
+30thave|lincoln,30th Avenue / Lincoln,2023-01-03,-,,,,
+30thave|lincoln,30th Avenue / Lincoln,2023-06-30,-,,,,
+30thave|lincoln,30th Avenue / Lincoln,2024-02-20,-,,,,
+30thave|lincoln,30th Avenue / Lincoln,2024-08-21,-,,,,
+30thave|lincoln,30th Avenue / Lincoln,2025-02-21,C-candidate,60,high,Yes,Strong Candidate forin-house APS
+30thave|lincoln,30th Avenue / Lincoln,2025-08-08,C-candidate,60,high,Yes,Strong Candidate for in-house APS
+30thave|lincoln,30th Avenue / Lincoln,2026-01-29,C-candidate,60,high,Yes,Strong Candidate for in-house APS
+30thave|lincoln,30th Avenue / Lincoln,2026-06-30,C-candidate,60,high,Yes,Strong Candidate for in-house APS
+alemany|santarosa,Alemany / Santa Rosa,2020-01-03,P,,,,
+alemany|santarosa,Alemany / Santa Rosa,2021-01-07,P,,,,
+alemany|santarosa,Alemany / Santa Rosa,2021-12-07,P,,,,
+alemany|santarosa,Alemany / Santa Rosa,2022-07-29,N-funding,29,low,Yes,Funding needed for full upgrade
+alemany|santarosa,Alemany / Santa Rosa,2023-01-03,N-funding,29,low,Yes,Funding needed for full upgrade
+alemany|santarosa,Alemany / Santa Rosa,2023-06-30,N-funding,29,low,Yes,Fundingneededforfullupgrade
+alemany|santarosa,Alemany / Santa Rosa,2024-02-20,N-funding,29,low,Yes,Funding needed for full upgrade
+alemany|santarosa,Alemany / Santa Rosa,2024-08-21,N-funding,29,low,Yes,Funding needed forfull upgrade
+alemany|santarosa,Alemany / Santa Rosa,2025-02-21,N-funding,29,low,Yes,Funding needed forfull upgrade
+alemany|santarosa,Alemany / Santa Rosa,2025-08-08,N-funding,29,low,Yes,Funding needed for full upgrade
+alemany|santarosa,Alemany / Santa Rosa,2026-01-29,N-funding,29,low,Yes,Funding needed for full upgrade
+alemany|santarosa,Alemany / Santa Rosa,2026-06-30,N-funding,29,low,Yes,Funding needed for full upgrade
+alemany|seneca,Alemany / Seneca,2020-01-03,P,,,,
+alemany|seneca,Alemany / Seneca,2021-01-07,P,,,,
+alemany|seneca,Alemany / Seneca,2021-12-07,P,,,,
+alemany|seneca,Alemany / Seneca,2022-07-29,N-funding,40,medium,--,Funding needed for full upgrade Funding needed for full upgrade
+alemany|seneca,Alemany / Seneca,2023-01-03,N-funding,40,medium,--,Funding needed for new poles
+alemany|seneca,Alemany / Seneca,2023-06-30,N-funding,40,medium,Yes,Fundingneededfornewpoles
+alemany|seneca,Alemany / Seneca,2024-02-20,N-funding,40,medium,Yes,Funding needed for newpoles
+alemany|seneca,Alemany / Seneca,2024-08-21,N-funding,40,medium,Yes,Funding needed fornewpoles
+alemany|seneca,Alemany / Seneca,2025-02-21,N-funding,40,medium,Yes,Funding needed fornewpoles
+alemany|seneca,Alemany / Seneca,2025-08-08,N-funding,40,medium,Yes,Funding needed for newpoles
+alemany|seneca,Alemany / Seneca,2026-01-29,N-funding,40,medium,Yes,Funding needed for newpoles
+alemany|seneca,Alemany / Seneca,2026-06-30,N-funding,40,medium,Yes,Funding needed for newpoles
+bayshore|leland,Bayshore / Leland,2020-01-03,P,,,,
+bayshore|leland,Bayshore / Leland,2021-01-07,P,,,,
+bayshore|leland,Bayshore / Leland,2021-12-07,P,,,,
+bayshore|leland,Bayshore / Leland,2022-07-29,INSTALLED,,,,
+bayshore|leland,Bayshore / Leland,2023-01-03,INSTALLED,,,,
+bayshore|leland,Bayshore / Leland,2023-06-30,INSTALLED,,,,
+bayshore|leland,Bayshore / Leland,2024-02-20,INSTALLED,,,,
+bayshore|leland,Bayshore / Leland,2024-08-21,INSTALLED,,,,
+bayshore|leland,Bayshore / Leland,2025-02-21,INSTALLED,,,,
+bayshore|leland,Bayshore / Leland,2025-08-08,INSTALLED,,,,
+bayshore|leland,Bayshore / Leland,2026-01-29,INSTALLED,,,,
+bayshore|leland,Bayshore / Leland,2026-06-30,INSTALLED,,,,
+bay|kearny,Bay / Kearny,2020-01-03,P,,,,
+bay|kearny,Bay / Kearny,2021-01-07,P,,,,
+bay|kearny,Bay / Kearny,2021-12-07,P,,,,
+bay|kearny,Bay / Kearny,2022-07-29,INSTALLED,,,,
+bay|kearny,Bay / Kearny,2023-01-03,INSTALLED,,,,
+bay|kearny,Bay / Kearny,2023-06-30,INSTALLED,,,,
+bay|kearny,Bay / Kearny,2024-02-20,INSTALLED,,,,
+bay|kearny,Bay / Kearny,2024-08-21,INSTALLED,,,,
+bay|kearny,Bay / Kearny,2025-02-21,INSTALLED,,,,
+bay|kearny,Bay / Kearny,2025-08-08,INSTALLED,,,,
+bay|kearny,Bay / Kearny,2026-01-29,INSTALLED,,,,
+bay|kearny,Bay / Kearny,2026-06-30,INSTALLED,,,,
+bay|laguna,Bay / Laguna,2020-01-03,-,,,,
+bay|laguna,Bay / Laguna,2021-01-07,-,,,,
+bay|laguna,Bay / Laguna,2021-12-07,-,,,,
+bay|laguna,Bay / Laguna,2022-07-29,-,,,,
+bay|laguna,Bay / Laguna,2023-01-03,-,,,,
+bay|laguna,Bay / Laguna,2023-06-30,-,,,,
+bay|laguna,Bay / Laguna,2024-02-20,-,,,,
+bay|laguna,Bay / Laguna,2024-08-21,N-funding,70,high,No,Funding needed for full upgrade
+bay|laguna,Bay / Laguna,2025-02-21,N-funding,70,high,No,Funding needed forfull upgrade
+bay|laguna,Bay / Laguna,2025-08-08,N-funding,70,high,No,Funding needed for full upgrade
+bay|laguna,Bay / Laguna,2026-01-29,N-funding,70,high,No,Funding needed for full upgrade
+bay|laguna,Bay / Laguna,2026-06-30,N-funding,70,high,Yes,Funding needed for full upgrade
+bay|mason,Bay / Mason,2020-01-03,-,,,,
+bay|mason,Bay / Mason,2021-01-07,-,,,,
+bay|mason,Bay / Mason,2021-12-07,-,,,,
+bay|mason,Bay / Mason,2022-07-29,-,,,,
+bay|mason,Bay / Mason,2023-01-03,-,,,,
+bay|mason,Bay / Mason,2023-06-30,-,,,,
+bay|mason,Bay / Mason,2024-02-20,-,,,,
+bay|mason,Bay / Mason,2024-08-21,-,,,,
+bay|mason,Bay / Mason,2025-02-21,-,,,,
+bay|mason,Bay / Mason,2025-08-08,-,,,,
+bay|mason,Bay / Mason,2026-01-29,C-candidate,39,medium,Yes,Candidate for in-house APS
+bay|mason,Bay / Mason,2026-06-30,C-candidate,39,medium,Yes,Candidate for in-house APS
+bay|octavia,Bay / Octavia,2020-01-03,P,,,,
+bay|octavia,Bay / Octavia,2021-01-07,P,,,,
+bay|octavia,Bay / Octavia,2021-12-07,P,,,,
+bay|octavia,Bay / Octavia,2022-07-29,N-funding,32,medium,--,Funding needed for full upgrade [from txt]
+bay|octavia,Bay / Octavia,2023-01-03,N-funding,32,medium,--,Funding needed for full upgrade
+bay|octavia,Bay / Octavia,2023-06-30,N-funding,32,medium,Yes,Fundingneededforfullupgrade
+bay|octavia,Bay / Octavia,2024-02-20,N-funding,32,medium,Yes,Funding needed for full upgrade
+bay|octavia,Bay / Octavia,2024-08-21,N-funding,32,medium,Yes,Funding needed forfull upgrade
+bay|octavia,Bay / Octavia,2025-02-21,N-funding,32,medium,Yes,Funding needed forfull upgrade
+bay|octavia,Bay / Octavia,2025-08-08,N-funding,32,medium,Yes,Funding needed for full upgrade
+bay|octavia,Bay / Octavia,2026-01-29,N-funding,32,medium,Yes,Funding needed for full upgrade
+bay|octavia,Bay / Octavia,2026-06-30,N-funding,32,medium,No,Funding needed for full upgrade
+beale|mission,Beale / Mission,2020-01-03,P,,,,
+beale|mission,Beale / Mission,2021-01-07,INSTALLED,,,,
+beale|mission,Beale / Mission,2021-12-07,INSTALLED,,,,
+beale|mission,Beale / Mission,2022-07-29,INSTALLED,,,,
+beale|mission,Beale / Mission,2023-01-03,INSTALLED,,,,
+beale|mission,Beale / Mission,2023-06-30,INSTALLED,,,,
+beale|mission,Beale / Mission,2024-02-20,INSTALLED,,,,
+beale|mission,Beale / Mission,2024-08-21,INSTALLED,,,,
+beale|mission,Beale / Mission,2025-02-21,INSTALLED,,,,
+beale|mission,Beale / Mission,2025-08-08,INSTALLED,,,,
+beale|mission,Beale / Mission,2026-01-29,INSTALLED,,,,
+beale|mission,Beale / Mission,2026-06-30,INSTALLED,,,,
+brazil|mission|norton,Brazil / Mission / Norton,2020-01-03,P,,,,
+brazil|mission|norton,Brazil / Mission / Norton,2021-01-07,P,,,,
+brazil|mission|norton,Brazil / Mission / Norton,2021-12-07,P,,,,
+brazil|mission|norton,Brazil / Mission / Norton,2022-07-29,C-candidate,37,medium,Yes,Candidate for in-house APS
+brazil|mission|norton,Brazil / Mission / Norton,2023-01-03,C-candidate,37,medium,Yes,Candidate for in-house APS
+brazil|mission|norton,Brazil / Mission / Norton,2023-06-30,C-candidate,37,medium,Yes,Candidateforin-houseAPS
+brazil|mission|norton,Brazil / Mission / Norton,2024-02-20,C-candidate,37,medium,Yes,Candidate for in-house APS
+brazil|mission|norton,Brazil / Mission / Norton,2024-08-21,C-candidate,37,medium,Yes,Candidate forin-house APS
+brazil|mission|norton,Brazil / Mission / Norton,2025-02-21,C-candidate,37,medium,Yes,Candidate forin-house APS
+brazil|mission|norton,Brazil / Mission / Norton,2025-08-08,C-candidate,37,medium,Yes,Candidate for in-house APS
+brazil|mission|norton,Brazil / Mission / Norton,2026-01-29,C-candidate,37,medium,Yes,Candidate for in-house APS
+brazil|mission|norton,Brazil / Mission / Norton,2026-06-30,F-signal,37,medium,Yes,Pending per funded signal project
+broadway|stockton,Broadway / Stockton,2020-01-03,P,,,,
+broadway|stockton,Broadway / Stockton,2021-01-07,P,,,,
+broadway|stockton,Broadway / Stockton,2021-12-07,P,,,,
+broadway|stockton,Broadway / Stockton,2022-07-29,N-funding,36,medium,Yes,Funding needed for full upgrade Funding needed for full upgrade
+broadway|stockton,Broadway / Stockton,2023-01-03,N-funding,36,medium,Yes,Funding needed for full upgrade
+broadway|stockton,Broadway / Stockton,2023-06-30,N-funding,36,medium,Yes,Fundingneededforfullupgrade
+broadway|stockton,Broadway / Stockton,2024-02-20,N-funding,36,medium,Yes,Funding needed for full upgrade
+broadway|stockton,Broadway / Stockton,2024-08-21,N-funding,36,medium,Yes,Funding needed forfull upgrade
+broadway|stockton,Broadway / Stockton,2025-02-21,N-funding,36,medium,Yes,Funding needed forfull upgrade
+broadway|stockton,Broadway / Stockton,2025-08-08,N-funding,36,medium,Yes,Funding needed for full upgrade
+broadway|stockton,Broadway / Stockton,2026-01-29,N-funding,36,medium,Yes,Funding needed for full upgrade
+broadway|stockton,Broadway / Stockton,2026-06-30,N-funding,36,medium,Yes,Funding needed for full upgrade
+brotherhoood|lakemerced,Brotherhoood / Lake Merced,2020-01-03,-,,,,
+brotherhoood|lakemerced,Brotherhoood / Lake Merced,2021-01-07,-,,,,
+brotherhoood|lakemerced,Brotherhoood / Lake Merced,2021-12-07,-,,,,
+brotherhoood|lakemerced,Brotherhoood / Lake Merced,2022-07-29,-,,,,
+brotherhoood|lakemerced,Brotherhoood / Lake Merced,2023-01-03,-,,,,
+brotherhoood|lakemerced,Brotherhoood / Lake Merced,2023-06-30,-,,,,
+brotherhoood|lakemerced,Brotherhoood / Lake Merced,2024-02-20,-,,,,
+brotherhoood|lakemerced,Brotherhoood / Lake Merced,2024-08-21,-,,,,
+brotherhoood|lakemerced,Brotherhoood / Lake Merced,2025-02-21,C-candidate,65,high,No,Strong Candidate forin-house APS
+brotherhoood|lakemerced,Brotherhoood / Lake Merced,2025-08-08,C-candidate,65,high,no,Strong Candidate for in-house APS
+brotherhoood|lakemerced,Brotherhoood / Lake Merced,2026-01-29,C-candidate,65,high,no,Strong Candidate for in-house APS
+brotherhoood|lakemerced,Brotherhoood / Lake Merced,2026-06-30,C-candidate,65,high,Yes,Strong Candidate for in-house APS
+buchanan|post,Buchanan / Post,2020-01-03,P,,,,
+buchanan|post,Buchanan / Post,2021-01-07,P,,,,
+buchanan|post,Buchanan / Post,2021-12-07,P,,,,
+buchanan|post,Buchanan / Post,2022-07-29,INSTALLED,,,,
+buchanan|post,Buchanan / Post,2023-01-03,INSTALLED,,,,
+buchanan|post,Buchanan / Post,2023-06-30,INSTALLED,,,,
+buchanan|post,Buchanan / Post,2024-02-20,INSTALLED,,,,
+buchanan|post,Buchanan / Post,2024-08-21,INSTALLED,,,,
+buchanan|post,Buchanan / Post,2025-02-21,INSTALLED,,,,
+buchanan|post,Buchanan / Post,2025-08-08,INSTALLED,,,,
+buchanan|post,Buchanan / Post,2026-01-29,INSTALLED,,,,
+buchanan|post,Buchanan / Post,2026-06-30,INSTALLED,,,,
+buchanan|sutter,Buchanan / Sutter,2020-01-03,P,,,,
+buchanan|sutter,Buchanan / Sutter,2021-01-07,P,,,,
+buchanan|sutter,Buchanan / Sutter,2021-12-07,P,,,,
+buchanan|sutter,Buchanan / Sutter,2022-07-29,N-funding,42,medium,--,Funding needed for full upgrade [from txt]
+buchanan|sutter,Buchanan / Sutter,2023-01-03,N-funding,42,medium,--,Funding needed for full upgrade
+buchanan|sutter,Buchanan / Sutter,2023-06-30,N-funding,42,medium,No,Fundingneededforfullupgrade
+buchanan|sutter,Buchanan / Sutter,2024-02-20,N-funding,42,medium,No,Funding needed for full upgrade
+buchanan|sutter,Buchanan / Sutter,2024-08-21,N-funding,42,medium,No,Funding needed for full upgrade
+buchanan|sutter,Buchanan / Sutter,2025-02-21,N-funding,42,medium,No,Funding needed forfull upgrade
+buchanan|sutter,Buchanan / Sutter,2025-08-08,N-funding,42,medium,No,Funding needed for full upgrade
+buchanan|sutter,Buchanan / Sutter,2026-01-29,N-funding,42,medium,No,Funding needed for full upgrade
+buchanan|sutter,Buchanan / Sutter,2026-06-30,N-funding,42,medium,No,Funding needed for full upgrade
+bush|grant,Bush / Grant,2020-01-03,-,,,,
+bush|grant,Bush / Grant,2021-01-07,-,,,,
+bush|grant,Bush / Grant,2021-12-07,-,,,,
+bush|grant,Bush / Grant,2022-07-29,-,,,,
+bush|grant,Bush / Grant,2023-01-03,-,,,,
+bush|grant,Bush / Grant,2023-06-30,-,,,,
+bush|grant,Bush / Grant,2024-02-20,C-candidate,49,medium,No,Candidate for in-house APS
+bush|grant,Bush / Grant,2024-08-21,C-candidate,49,medium,No,Candidate for in-house APS
+bush|grant,Bush / Grant,2025-02-21,C-candidate,49,medium,No,Candidate forin-house APS
+bush|grant,Bush / Grant,2025-08-08,C-candidate,49,medium,No,Candidate for in-house APS
+bush|grant,Bush / Grant,2026-01-29,C-candidate,49,medium,No,Candidate for in-house APS
+bush|grant,Bush / Grant,2026-06-30,C-candidate,49,medium,Yes,Candidate for in-house APS
+bush|kearny,Bush / Kearny,2020-01-03,-,,,,
+bush|kearny,Bush / Kearny,2021-01-07,-,,,,
+bush|kearny,Bush / Kearny,2021-12-07,-,,,,
+bush|kearny,Bush / Kearny,2022-07-29,C-candidate,42,medium,Yes,Strong Candidate for in-house APS Strong Candidate for in-house APS
+bush|kearny,Bush / Kearny,2023-01-03,C-candidate,42,medium,Yes,Strong Candidate for in-house APS
+bush|kearny,Bush / Kearny,2023-06-30,F-inhouse,42,medium,Yes,Pendingperfundedin-houseAPS
+bush|kearny,Bush / Kearny,2024-02-20,INSTALLED,,,,
+bush|kearny,Bush / Kearny,2024-08-21,INSTALLED,,,,
+bush|kearny,Bush / Kearny,2025-02-21,INSTALLED,,,,
+bush|kearny,Bush / Kearny,2025-08-08,INSTALLED,,,,
+bush|kearny,Bush / Kearny,2026-01-29,INSTALLED,,,,
+bush|kearny,Bush / Kearny,2026-06-30,INSTALLED,,,,
+bush|montgomery,Bush / Montgomery,2020-01-03,-,,,,
+bush|montgomery,Bush / Montgomery,2021-01-07,-,,,,
+bush|montgomery,Bush / Montgomery,2021-12-07,-,,,,
+bush|montgomery,Bush / Montgomery,2022-07-29,C-candidate,37,medium,Yes,Strong Candidate for in-house APS [from txt]
+bush|montgomery,Bush / Montgomery,2023-01-03,C-candidate,37,medium,Yes,Strong Candidate for in-house APS
+bush|montgomery,Bush / Montgomery,2023-06-30,C-candidate,37,medium,Yes,StrongCandidateforin-houseAPS
+bush|montgomery,Bush / Montgomery,2024-02-20,C-candidate,37,medium,Yes,Strong Candidate for in-house APS
+bush|montgomery,Bush / Montgomery,2024-08-21,C-candidate,37,medium,Yes,StrongCandidate for in-house APS
+bush|montgomery,Bush / Montgomery,2025-02-21,C-candidate,37,medium,Yes,Strong Candidate forin-house APS
+bush|montgomery,Bush / Montgomery,2025-08-08,C-candidate,37,medium,Yes,Strong Candidate for in-house APS
+bush|montgomery,Bush / Montgomery,2026-01-29,C-candidate,37,medium,Yes,Strong Candidate for in-house APS
+bush|montgomery,Bush / Montgomery,2026-06-30,C-candidate,37,medium,Yes,Strong Candidate for in-house APS
+bush|powell,Bush / Powell,2020-01-03,P,,,,
+bush|powell,Bush / Powell,2021-01-07,P,,,,
+bush|powell,Bush / Powell,2021-12-07,P,,,,
+bush|powell,Bush / Powell,2022-07-29,F-inhouse,31,medium,Yes,Pending per funded in-house APS
+bush|powell,Bush / Powell,2023-01-03,F-inhouse,31,medium,Yes,Pending per funded in-house APS
+bush|powell,Bush / Powell,2023-06-30,F-inhouse,31,medium,No,Pendingperfundedin-houseAPS
+bush|powell,Bush / Powell,2024-02-20,F-inhouse,31,medium,No,Pending per funded in-house APS
+bush|powell,Bush / Powell,2024-08-21,INSTALLED,,,,
+bush|powell,Bush / Powell,2025-02-21,INSTALLED,,,,
+bush|powell,Bush / Powell,2025-08-08,INSTALLED,,,,
+bush|powell,Bush / Powell,2026-01-29,INSTALLED,,,,
+bush|powell,Bush / Powell,2026-06-30,INSTALLED,,,,
+bush|sansome,Bush / Sansome,2020-01-03,P,,,,
+bush|sansome,Bush / Sansome,2021-01-07,P,,,,
+bush|sansome,Bush / Sansome,2021-12-07,P,,,,
+bush|sansome,Bush / Sansome,2022-07-29,INSTALLED,,,,
+bush|sansome,Bush / Sansome,2023-01-03,INSTALLED,,,,
+bush|sansome,Bush / Sansome,2023-06-30,INSTALLED,,,,
+bush|sansome,Bush / Sansome,2024-02-20,INSTALLED,,,,
+bush|sansome,Bush / Sansome,2024-08-21,INSTALLED,,,,
+bush|sansome,Bush / Sansome,2025-02-21,INSTALLED,,,,
+bush|sansome,Bush / Sansome,2025-08-08,INSTALLED,,,,
+bush|sansome,Bush / Sansome,2026-01-29,INSTALLED,,,,
+bush|sansome,Bush / Sansome,2026-06-30,INSTALLED,,,,
+california|cherry|jordan,California / Cherry / Jordan,2020-01-03,-,,,,
+california|cherry|jordan,California / Cherry / Jordan,2021-01-07,-,,,,
+california|cherry|jordan,California / Cherry / Jordan,2021-12-07,-,,,,
+california|cherry|jordan,California / Cherry / Jordan,2022-07-29,-,,,,
+california|cherry|jordan,California / Cherry / Jordan,2023-01-03,-,,,,
+california|cherry|jordan,California / Cherry / Jordan,2023-06-30,-,,,,
+california|cherry|jordan,California / Cherry / Jordan,2024-02-20,C-candidate,66,high,No,Candidate for in-house APS
+california|cherry|jordan,California / Cherry / Jordan,2024-08-21,C-candidate,66,high,No,Candidate for in-house APS
+california|cherry|jordan,California / Cherry / Jordan,2025-02-21,C-candidate,66,high,No,Candidate forin-house APS
+california|cherry|jordan,California / Cherry / Jordan,2025-08-08,C-candidate,66,high,No,Candidate for in-house APS
+california|cherry|jordan,California / Cherry / Jordan,2026-01-29,C-candidate,66,high,No,Candidate for in-house APS
+california|cherry|jordan,California / Cherry / Jordan,2026-06-30,C-candidate,66,high,Yes,Candidate for in-house APS
+california|drumm,California / Drumm,2020-01-03,P,,,,
+california|drumm,California / Drumm,2021-01-07,P,,,,
+california|drumm,California / Drumm,2021-12-07,P,,,,
+california|drumm,California / Drumm,2022-07-29,F-signal,39,medium,--,Pending per funded signal project
+california|drumm,California / Drumm,2023-01-03,N-funding,39,medium,--,Funding needed for full upgrade
+california|drumm,California / Drumm,2023-06-30,N-funding,39,medium,No,Fundingneededforfullupgrade
+california|drumm,California / Drumm,2024-02-20,N-funding,39,medium,No,Funding needed for full upgrade
+california|drumm,California / Drumm,2024-08-21,N-funding,39,medium,No,Funding needed for full upgrade
+california|drumm,California / Drumm,2025-02-21,N-funding,39,medium,No,Funding needed forfull upgrade
+california|drumm,California / Drumm,2025-08-08,N-funding,39,medium,No,Funding needed for full upgrade
+california|drumm,California / Drumm,2026-01-29,N-funding,39,medium,No,Funding needed for full upgrade
+california|drumm,California / Drumm,2026-06-30,N-funding,39,medium,Yes,Funding needed for full upgrade
+california|fillmore,California / Fillmore,2020-01-03,P,,,,
+california|fillmore,California / Fillmore,2021-01-07,P,,,,
+california|fillmore,California / Fillmore,2021-12-07,P,,,,
+california|fillmore,California / Fillmore,2022-07-29,N-funding,26,low,Yes,Funding needed for full upgrade
+california|fillmore,California / Fillmore,2023-01-03,N-funding,26,low,Yes,Funding needed for full upgrade
+california|fillmore,California / Fillmore,2023-06-30,N-funding,26,low,No,Fundingneededforfullupgrade
+california|fillmore,California / Fillmore,2024-02-20,N-funding,26,low,No,Funding needed for full upgrade
+california|fillmore,California / Fillmore,2024-08-21,N-funding,26,low,No,Funding needed for full upgrade
+california|fillmore,California / Fillmore,2025-02-21,N-funding,26,low,No,Funding needed forfull upgrade
+california|fillmore,California / Fillmore,2025-08-08,N-funding,26,low,No,Funding needed for full upgrade
+california|fillmore,California / Fillmore,2026-01-29,N-funding,26,low,No,Funding needed for full upgrade
+california|fillmore,California / Fillmore,2026-06-30,N-funding,26,low,No,Funding needed for full upgrade
+california|gough,California / Gough,2020-01-03,P,,,,
+california|gough,California / Gough,2021-01-07,INSTALLED,,,,
+california|gough,California / Gough,2021-12-07,INSTALLED,,,,
+california|gough,California / Gough,2022-07-29,INSTALLED,,,,
+california|gough,California / Gough,2023-01-03,INSTALLED,,,,
+california|gough,California / Gough,2023-06-30,INSTALLED,,,,
+california|gough,California / Gough,2024-02-20,INSTALLED,,,,
+california|gough,California / Gough,2024-08-21,INSTALLED,,,,
+california|gough,California / Gough,2025-02-21,INSTALLED,,,,
+california|gough,California / Gough,2025-08-08,INSTALLED,,,,
+california|gough,California / Gough,2026-01-29,INSTALLED,,,,
+california|gough,California / Gough,2026-06-30,INSTALLED,,,,
+california|grant,California / Grant,2020-01-03,-,,,,
+california|grant,California / Grant,2021-01-07,-,,,,
+california|grant,California / Grant,2021-12-07,-,,,,
+california|grant,California / Grant,2022-07-29,-,,,,
+california|grant,California / Grant,2023-01-03,-,,,,
+california|grant,California / Grant,2023-06-30,-,,,,
+california|grant,California / Grant,2024-02-20,C-candidate,47,medium,Yes,Candidate for in-house APS
+california|grant,California / Grant,2024-08-21,C-candidate,47,medium,Yes,Candidate forin-house APS
+california|grant,California / Grant,2025-02-21,C-candidate,47,medium,Yes,Candidate forin-house APS
+california|grant,California / Grant,2025-08-08,C-candidate,47,medium,Yes,Candidate for in-house APS
+california|grant,California / Grant,2026-01-29,C-candidate,47,medium,Yes,Candidate for in-house APS
+california|grant,California / Grant,2026-06-30,C-candidate,47,medium,Yes,Candidate for in-house APS
+california|maple|parker,California / Maple / Parker,2020-01-03,-,,,,
+california|maple|parker,California / Maple / Parker,2021-01-07,-,,,,
+california|maple|parker,California / Maple / Parker,2021-12-07,-,,,,
+california|maple|parker,California / Maple / Parker,2022-07-29,-,,,,
+california|maple|parker,California / Maple / Parker,2023-01-03,-,,,,
+california|maple|parker,California / Maple / Parker,2023-06-30,-,,,,
+california|maple|parker,California / Maple / Parker,2024-02-20,C-candidate,66,high,No,Candidate for in-house APS
+california|maple|parker,California / Maple / Parker,2024-08-21,C-candidate,66,high,No,Candidate for in-house APS
+california|maple|parker,California / Maple / Parker,2025-02-21,C-candidate,66,high,No,Candidate forin-house APS
+california|maple|parker,California / Maple / Parker,2025-08-08,C-candidate,66,high,No,Candidate for in-house APS
+california|maple|parker,California / Maple / Parker,2026-01-29,C-candidate,66,high,No,Candidate for in-house APS
+california|maple|parker,California / Maple / Parker,2026-06-30,C-candidate,66,high,No,Candidate for in-house APS
+california|presidio,California / Presidio,2020-01-03,P,,,,
+california|presidio,California / Presidio,2021-01-07,P,,,,
+california|presidio,California / Presidio,2021-12-07,P,,,,
+california|presidio,California / Presidio,2022-07-29,F-signal,43,medium,--,Pending per funded signal project
+california|presidio,California / Presidio,2023-01-03,F-signal,43,medium,--,Pending per funded signal project
+california|presidio,California / Presidio,2023-06-30,F-signal,43,medium,Yes,Pendingperfundedsignalproject
+california|presidio,California / Presidio,2024-02-20,F-signal,43,medium,Yes,Pending per funded signal project
+california|presidio,California / Presidio,2024-08-21,F-signal,43,medium,Yes,Pending perfundedsignal project
+california|presidio,California / Presidio,2025-02-21,F-signal,43,medium,Yes,Pending perfunded signal project
+california|presidio,California / Presidio,2025-08-08,F-signal,43,medium,Yes,Pending per funded signal project
+california|presidio,California / Presidio,2026-01-29,INSTALLED,,,,
+california|presidio,California / Presidio,2026-06-30,INSTALLED,,,,
+california|steiner,California / Steiner,2020-01-03,P,,,,
+california|steiner,California / Steiner,2021-01-07,P,,,,
+california|steiner,California / Steiner,2021-12-07,P,,,,
+california|steiner,California / Steiner,2022-07-29,N-funding,35,medium,--,Funding needed for full upgrade Funding needed for full upgrade
+california|steiner,California / Steiner,2023-01-03,N-funding,35,medium,--,Funding needed for full upgrade
+california|steiner,California / Steiner,2023-06-30,N-funding,35,medium,No,Fundingneededforfullupgrade Fundingneededforfullupgrade
+california|steiner,California / Steiner,2024-02-20,N-funding,35,medium,No,Funding needed for full upgrade
+california|steiner,California / Steiner,2024-08-21,N-funding,35,medium,No,Funding needed for full upgrade
+california|steiner,California / Steiner,2025-02-21,N-funding,35,medium,No,Funding needed forfull upgrade
+california|steiner,California / Steiner,2025-08-08,N-funding,35,medium,No,Funding needed for full upgrade
+california|steiner,California / Steiner,2026-01-29,N-funding,35,medium,No,Funding needed for full upgrade
+california|steiner,California / Steiner,2026-06-30,N-funding,35,medium,No,Funding needed for full upgrade
+california|stockton,California / Stockton,2020-01-03,-,,,,
+california|stockton,California / Stockton,2021-01-07,-,,,,
+california|stockton,California / Stockton,2021-12-07,-,,,,
+california|stockton,California / Stockton,2022-07-29,-,,,,
+california|stockton,California / Stockton,2023-01-03,-,,,,
+california|stockton,California / Stockton,2023-06-30,-,,,,
+california|stockton,California / Stockton,2024-02-20,C-candidate,44,medium,Yes,Candidate for in-house APS
+california|stockton,California / Stockton,2024-08-21,C-candidate,44,medium,Yes,Candidate forin-house APS
+california|stockton,California / Stockton,2025-02-21,C-candidate,44,medium,Yes,Candidate forin-house APS
+california|stockton,California / Stockton,2025-08-08,C-candidate,44,medium,Yes,Candidate for in-house APS
+california|stockton,California / Stockton,2026-01-29,C-candidate,44,medium,Yes,Candidate for in-house APS
+california|stockton,California / Stockton,2026-06-30,C-candidate,44,medium,Yes,Candidate for in-house APS
+california|vanness,California / Van Ness,2020-01-03,P,,,,
+california|vanness,California / Van Ness,2021-01-07,P,,,,
+california|vanness,California / Van Ness,2021-12-07,P,,,,
+california|vanness,California / Van Ness,2022-07-29,INSTALLED,,,,
+california|vanness,California / Van Ness,2023-01-03,INSTALLED,,,,
+california|vanness,California / Van Ness,2023-06-30,INSTALLED,,,,
+california|vanness,California / Van Ness,2024-02-20,INSTALLED,,,,
+california|vanness,California / Van Ness,2024-08-21,INSTALLED,,,,
+california|vanness,California / Van Ness,2025-02-21,INSTALLED,,,,
+california|vanness,California / Van Ness,2025-08-08,INSTALLED,,,,
+california|vanness,California / Van Ness,2026-01-29,INSTALLED,,,,
+california|vanness,California / Van Ness,2026-06-30,INSTALLED,,,,
+cargo|mendell,Cargo / Mendell,2020-01-03,-,,,,
+cargo|mendell,Cargo / Mendell,2021-01-07,-,,,,
+cargo|mendell,Cargo / Mendell,2021-12-07,P,,,,
+cargo|mendell,Cargo / Mendell,2022-07-29,N-funding,43,medium,--,Funding needed for full upgrade [from txt]
+cargo|mendell,Cargo / Mendell,2023-01-03,N-funding,43,medium,--,Funding needed for full upgrade
+cargo|mendell,Cargo / Mendell,2023-06-30,N-funding,43,medium,No,Funding needed for full upgrade [from txt]
+cargo|mendell,Cargo / Mendell,2024-02-20,N-funding,43,medium,No,Funding needed for full upgrade
+cargo|mendell,Cargo / Mendell,2024-08-21,N-funding,43,medium,No,Funding needed for full upgrade
+cargo|mendell,Cargo / Mendell,2025-02-21,N-funding,43,medium,No,Funding needed forfull upgrade
+cargo|mendell,Cargo / Mendell,2025-08-08,N-funding,43,medium,No,Funding needed for full upgrade
+cargo|mendell,Cargo / Mendell,2026-01-29,N-funding,43,medium,No,Funding needed for full upgrade
+cargo|mendell,Cargo / Mendell,2026-06-30,N-funding,43,medium,No,Funding needed for full upgrade
+cesarchavez|folsom,Cesar Chavez / Folsom,2020-01-03,-,,,,
+cesarchavez|folsom,Cesar Chavez / Folsom,2021-01-07,-,,,,
+cesarchavez|folsom,Cesar Chavez / Folsom,2021-12-07,-,,,,
+cesarchavez|folsom,Cesar Chavez / Folsom,2022-07-29,-,,,,
+cesarchavez|folsom,Cesar Chavez / Folsom,2023-01-03,-,,,,
+cesarchavez|folsom,Cesar Chavez / Folsom,2023-06-30,-,,,,
+cesarchavez|folsom,Cesar Chavez / Folsom,2024-02-20,-,,,,
+cesarchavez|folsom,Cesar Chavez / Folsom,2024-08-21,-,,,,
+cesarchavez|folsom,Cesar Chavez / Folsom,2025-02-21,-,,,,
+cesarchavez|folsom,Cesar Chavez / Folsom,2025-08-08,-,,,,
+cesarchavez|folsom,Cesar Chavez / Folsom,2026-01-29,-,,,,
+cesarchavez|folsom,Cesar Chavez / Folsom,2026-06-30,C-candidate,44,medium,Yes,Candidate for in-house APS
+clay|drumm,Clay / Drumm,2020-01-03,-,,,,
+clay|drumm,Clay / Drumm,2021-01-07,-,,,,
+clay|drumm,Clay / Drumm,2021-12-07,-,,,,
+clay|drumm,Clay / Drumm,2022-07-29,-,,,,
+clay|drumm,Clay / Drumm,2023-01-03,-,,,,
+clay|drumm,Clay / Drumm,2023-06-30,-,,,,
+clay|drumm,Clay / Drumm,2024-02-20,C-candidate,48,medium,No,Candidate for in-house APS
+clay|drumm,Clay / Drumm,2024-08-21,C-candidate,48,medium,No,Candidate for in-house APS
+clay|drumm,Clay / Drumm,2025-02-21,C-candidate,48,medium,No,Candidate forin-house APS
+clay|drumm,Clay / Drumm,2025-08-08,C-candidate,48,medium,No,Candidate for in-house APS
+clay|drumm,Clay / Drumm,2026-01-29,C-candidate,48,medium,No,Candidate for in-house APS
+clay|drumm,Clay / Drumm,2026-06-30,C-candidate,48,medium,No,Candidate for in-house APS
+columbus|greenwich|mason,Columbus / Greenwich / Mason,2020-01-03,-,,,,
+columbus|greenwich|mason,Columbus / Greenwich / Mason,2021-01-07,-,,,,
+columbus|greenwich|mason,Columbus / Greenwich / Mason,2021-12-07,P,,,,
+columbus|greenwich|mason,Columbus / Greenwich / Mason,2022-07-29,F-inhouse,48,medium,Yes,Pending per funded in-house APS
+columbus|greenwich|mason,Columbus / Greenwich / Mason,2023-01-03,F-inhouse,48,medium,Yes,Pending per funded in-house APS
+columbus|greenwich|mason,Columbus / Greenwich / Mason,2023-06-30,F-inhouse,48,medium,Yes,Pendingperfundedin-houseAPS
+columbus|greenwich|mason,Columbus / Greenwich / Mason,2024-02-20,INSTALLED,,,,
+columbus|greenwich|mason,Columbus / Greenwich / Mason,2024-08-21,INSTALLED,,,,
+columbus|greenwich|mason,Columbus / Greenwich / Mason,2025-02-21,INSTALLED,,,,
+columbus|greenwich|mason,Columbus / Greenwich / Mason,2025-08-08,INSTALLED,,,,
+columbus|greenwich|mason,Columbus / Greenwich / Mason,2026-01-29,INSTALLED,,,,
+columbus|greenwich|mason,Columbus / Greenwich / Mason,2026-06-30,INSTALLED,,,,
+columbus|lombard|newell,Columbus / Lombard / Newell,2020-01-03,-,,,,
+columbus|lombard|newell,Columbus / Lombard / Newell,2021-01-07,-,,,,
+columbus|lombard|newell,Columbus / Lombard / Newell,2021-12-07,P,,,,
+columbus|lombard|newell,Columbus / Lombard / Newell,2022-07-29,N-funding,46,medium,Yes,Funding needed for new poles
+columbus|lombard|newell,Columbus / Lombard / Newell,2023-01-03,N-funding,46,medium,Yes,Funding needed for new poles
+columbus|lombard|newell,Columbus / Lombard / Newell,2023-06-30,N-funding,46,medium,Yes,Fundingneededfornewpoles Fundingneededfornewpoles
+columbus|lombard|newell,Columbus / Lombard / Newell,2024-02-20,N-funding,46,medium,Yes,Funding needed for newpoles
+columbus|lombard|newell,Columbus / Lombard / Newell,2024-08-21,N-funding,46,medium,Yes,Funding needed fornewpoles
+columbus|lombard|newell,Columbus / Lombard / Newell,2025-02-21,N-funding,46,medium,Yes,Funding needed fornewpoles
+columbus|lombard|newell,Columbus / Lombard / Newell,2025-08-08,N-funding,46,medium,Yes,Funding needed for newpoles
+columbus|lombard|newell,Columbus / Lombard / Newell,2026-01-29,N-funding,46,medium,Yes,Funding needed for newpoles
+columbus|lombard|newell,Columbus / Lombard / Newell,2026-06-30,N-funding,46,medium,Yes,Funding needed for newpoles
+columbus|union,Columbus / Union,2020-01-03,-,,,,
+columbus|union,Columbus / Union,2021-01-07,-,,,,
+columbus|union,Columbus / Union,2021-12-07,-,,,,
+columbus|union,Columbus / Union,2022-07-29,-,,,,
+columbus|union,Columbus / Union,2023-01-03,-,,,,
+columbus|union,Columbus / Union,2023-06-30,-,,,,
+columbus|union,Columbus / Union,2024-02-20,C-candidate,46,medium,Yes,Candidate for in-house APS
+columbus|union,Columbus / Union,2024-08-21,C-candidate,46,medium,Yes,Candidate forin-house APS
+columbus|union,Columbus / Union,2025-02-21,C-candidate,46,medium,Yes,Candidate forin-house APS
+columbus|union,Columbus / Union,2025-08-08,C-candidate,46,medium,Yes,Candidate for in-house APS
+columbus|union,Columbus / Union,2026-01-29,C-candidate,46,medium,Yes,Candidate for in-house APS
+columbus|union,Columbus / Union,2026-06-30,C-candidate,46,medium,Yes,Candidate for in-house APS
+cyrilmagnin|eddy,Cyril Magnin / Eddy,2020-01-03,P,,,,
+cyrilmagnin|eddy,Cyril Magnin / Eddy,2021-01-07,P,,,,
+cyrilmagnin|eddy,Cyril Magnin / Eddy,2021-12-07,P,,,,
+cyrilmagnin|eddy,Cyril Magnin / Eddy,2022-07-29,F-signal,36,medium,Yes,Pending per funded signal project
+cyrilmagnin|eddy,Cyril Magnin / Eddy,2023-01-03,N-funding,36,medium,Yes,Funding needed for new poles
+cyrilmagnin|eddy,Cyril Magnin / Eddy,2023-06-30,N-funding,36,medium,Yes,Funding needed for new poles [from txt]
+cyrilmagnin|eddy,Cyril Magnin / Eddy,2024-02-20,N-funding,36,medium,Yes,Funding needed for newpoles
+cyrilmagnin|eddy,Cyril Magnin / Eddy,2024-08-21,N-funding,36,medium,Yes,Funding needed fornewpoles
+cyrilmagnin|eddy,Cyril Magnin / Eddy,2025-02-21,N-funding,36,medium,Yes,Funding needed fornewpoles
+cyrilmagnin|eddy,Cyril Magnin / Eddy,2025-08-08,N-funding,36,medium,Yes,Funding needed for newpoles
+cyrilmagnin|eddy,Cyril Magnin / Eddy,2026-01-29,N-funding,36,medium,Yes,Funding needed for newpoles
+cyrilmagnin|eddy,Cyril Magnin / Eddy,2026-06-30,N-funding,36,medium,Yes,Funding needed for newpoles
+danvers|market,Danvers / Market,2020-01-03,P,,,,
+danvers|market,Danvers / Market,2021-01-07,P,,,,
+danvers|market,Danvers / Market,2021-12-07,P,,,,
+danvers|market,Danvers / Market,2022-07-29,INSTALLED,,,,
+danvers|market,Danvers / Market,2023-01-03,INSTALLED,,,,
+danvers|market,Danvers / Market,2023-06-30,INSTALLED,,,,
+danvers|market,Danvers / Market,2024-02-20,INSTALLED,,,,
+danvers|market,Danvers / Market,2024-08-21,INSTALLED,,,,
+danvers|market,Danvers / Market,2025-02-21,INSTALLED,,,,
+danvers|market,Danvers / Market,2025-08-08,INSTALLED,,,,
+danvers|market,Danvers / Market,2026-01-29,INSTALLED,,,,
+danvers|market,Danvers / Market,2026-06-30,INSTALLED,,,,
+diamond|monterey|sanjoseofframp,Diamond / Monterey / San Jose Off -Ramp,2020-01-03,-,,,,
+diamond|monterey|sanjoseofframp,Diamond / Monterey / San Jose Off -Ramp,2021-01-07,P,,,,
+diamond|monterey|sanjoseofframp,Diamond / Monterey / San Jose Off -Ramp,2021-12-07,P,,,,
+diamond|monterey|sanjoseofframp,Diamond / Monterey / San Jose Off -Ramp,2022-07-29,F-inhouse,46,medium,--,Pending per funded in-house APS
+diamond|monterey|sanjoseofframp,Diamond / Monterey / San Jose Off -Ramp,2023-01-03,INSTALLED,,,,
+diamond|monterey|sanjoseofframp,Diamond / Monterey / San Jose Off -Ramp,2023-06-30,INSTALLED,,,,
+diamond|monterey|sanjoseofframp,Diamond / Monterey / San Jose Off -Ramp,2024-02-20,INSTALLED,,,,
+diamond|monterey|sanjoseofframp,Diamond / Monterey / San Jose Off -Ramp,2024-08-21,INSTALLED,,,,
+diamond|monterey|sanjoseofframp,Diamond / Monterey / San Jose Off -Ramp,2025-02-21,INSTALLED,,,,
+diamond|monterey|sanjoseofframp,Diamond / Monterey / San Jose Off -Ramp,2025-08-08,INSTALLED,,,,
+diamond|monterey|sanjoseofframp,Diamond / Monterey / San Jose Off -Ramp,2026-01-29,INSTALLED,,,,
+diamond|monterey|sanjoseofframp,Diamond / Monterey / San Jose Off -Ramp,2026-06-30,INSTALLED,,,,
+dolores|randall|sanjoseonramp,Dolores / Randall / San Jose On Ramp,2020-01-03,P,,,,
+dolores|randall|sanjoseonramp,Dolores / Randall / San Jose On Ramp,2021-01-07,P,,,,
+dolores|randall|sanjoseonramp,Dolores / Randall / San Jose On Ramp,2021-12-07,P,,,,
+dolores|randall|sanjoseonramp,Dolores / Randall / San Jose On Ramp,2022-07-29,F-inhouse,42,medium,Yes,Pending per funded in-house APS
+dolores|randall|sanjoseonramp,Dolores / Randall / San Jose On Ramp,2023-01-03,F-inhouse,42,medium,Yes,Pending per funded in-house APS
+dolores|randall|sanjoseonramp,Dolores / Randall / San Jose On Ramp,2023-06-30,INSTALLED,,,,
+dolores|randall|sanjoseonramp,Dolores / Randall / San Jose On Ramp,2024-02-20,INSTALLED,,,,
+dolores|randall|sanjoseonramp,Dolores / Randall / San Jose On Ramp,2024-08-21,INSTALLED,,,,
+dolores|randall|sanjoseonramp,Dolores / Randall / San Jose On Ramp,2025-02-21,INSTALLED,,,,
+dolores|randall|sanjoseonramp,Dolores / Randall / San Jose On Ramp,2025-08-08,INSTALLED,,,,
+dolores|randall|sanjoseonramp,Dolores / Randall / San Jose On Ramp,2026-01-29,INSTALLED,,,,
+dolores|randall|sanjoseonramp,Dolores / Randall / San Jose On Ramp,2026-06-30,INSTALLED,,,,
+dwight|paul|sanbruno,Dwight / Paul / San Bruno,2020-01-03,P,,,,
+dwight|paul|sanbruno,Dwight / Paul / San Bruno,2021-01-07,P,,,,
+dwight|paul|sanbruno,Dwight / Paul / San Bruno,2021-12-07,P,,,,
+dwight|paul|sanbruno,Dwight / Paul / San Bruno,2022-07-29,INSTALLED,,,,
+dwight|paul|sanbruno,Dwight / Paul / San Bruno,2023-01-03,INSTALLED,,,,
+dwight|paul|sanbruno,Dwight / Paul / San Bruno,2023-06-30,INSTALLED,,,,
+dwight|paul|sanbruno,Dwight / Paul / San Bruno,2024-02-20,INSTALLED,,,,
+dwight|paul|sanbruno,Dwight / Paul / San Bruno,2024-08-21,INSTALLED,,,,
+dwight|paul|sanbruno,Dwight / Paul / San Bruno,2025-02-21,INSTALLED,,,,
+dwight|paul|sanbruno,Dwight / Paul / San Bruno,2025-08-08,INSTALLED,,,,
+dwight|paul|sanbruno,Dwight / Paul / San Bruno,2026-01-29,INSTALLED,,,,
+dwight|paul|sanbruno,Dwight / Paul / San Bruno,2026-06-30,INSTALLED,,,,
+eddy|fillmore,Eddy / Fillmore,2020-01-03,-,,,,
+eddy|fillmore,Eddy / Fillmore,2021-01-07,-,,,,
+eddy|fillmore,Eddy / Fillmore,2021-12-07,-,,,,
+eddy|fillmore,Eddy / Fillmore,2022-07-29,F-signal,n/a,n/a,Yes,Pending per funded signal project
+eddy|fillmore,Eddy / Fillmore,2023-01-03,F-signal,n/a,n/a,Yes,Pending per funded signal project
+eddy|fillmore,Eddy / Fillmore,2023-06-30,F-signal,,,Yes,Pendingperfundedsignalproject
+eddy|fillmore,Eddy / Fillmore,2024-02-20,F-signal,,,Yes,Pending per funded signal project
+eddy|fillmore,Eddy / Fillmore,2024-08-21,F-signal,,,Yes,Pending perfunded signal project
+eddy|fillmore,Eddy / Fillmore,2025-02-21,F-signal,,,Yes,Pending perfunded signal project
+eddy|fillmore,Eddy / Fillmore,2025-08-08,F-signal,,,Yes,Pending per funded signal project
+eddy|fillmore,Eddy / Fillmore,2026-01-29,F-signal,,,Yes,Pending per funded signal project
+eddy|fillmore,Eddy / Fillmore,2026-06-30,F-signal,,,Yes,Pending per funded signal project
+eddy|hyde,Eddy / Hyde,2020-01-03,-,,,,
+eddy|hyde,Eddy / Hyde,2021-01-07,-,,,,
+eddy|hyde,Eddy / Hyde,2021-12-07,-,,,,
+eddy|hyde,Eddy / Hyde,2022-07-29,C-candidate,43,medium,Yes,Strong Candidate for in-house APS Strong Candidate for in-house APS
+eddy|hyde,Eddy / Hyde,2023-01-03,C-candidate,43,medium,Yes,Strong Candidate for in-house APS
+eddy|hyde,Eddy / Hyde,2023-06-30,C-candidate,43,medium,Yes,StrongCandidateforin-houseAPS
+eddy|hyde,Eddy / Hyde,2024-02-20,C-candidate,43,medium,Yes,Strong Candidate for in-house APS
+eddy|hyde,Eddy / Hyde,2024-08-21,C-candidate,43,medium,Yes,StrongCandidate for in-house APS
+eddy|hyde,Eddy / Hyde,2025-02-21,C-candidate,43,medium,Yes,Strong Candidate forin-house APS
+eddy|hyde,Eddy / Hyde,2025-08-08,C-candidate,43,medium,Yes,Strong Candidate for in-house APS
+eddy|hyde,Eddy / Hyde,2026-01-29,C-candidate,43,medium,Yes,Strong Candidate for in-house APS
+eddy|hyde,Eddy / Hyde,2026-06-30,C-candidate,43,medium,Yes,Strong Candidate for in-house APS
+eddy|laguna,Eddy / Laguna,2020-01-03,-,,,,
+eddy|laguna,Eddy / Laguna,2021-01-07,-,,,,
+eddy|laguna,Eddy / Laguna,2021-12-07,-,,,,
+eddy|laguna,Eddy / Laguna,2022-07-29,-,,,,
+eddy|laguna,Eddy / Laguna,2023-01-03,-,,,,
+eddy|laguna,Eddy / Laguna,2023-06-30,-,,,,
+eddy|laguna,Eddy / Laguna,2024-02-20,-,,,,
+eddy|laguna,Eddy / Laguna,2024-08-21,-,,,,
+eddy|laguna,Eddy / Laguna,2025-02-21,-,,,,
+eddy|laguna,Eddy / Laguna,2025-08-08,-,,,,
+eddy|laguna,Eddy / Laguna,2026-01-29,-,,,,
+eddy|laguna,Eddy / Laguna,2026-06-30,C-candidate,41,medium,Yes,Strong Candidate for in-house APS
+ellis|hyde,Ellis / Hyde,2020-01-03,-,,,,
+ellis|hyde,Ellis / Hyde,2021-01-07,-,,,,
+ellis|hyde,Ellis / Hyde,2021-12-07,-,,,,
+ellis|hyde,Ellis / Hyde,2022-07-29,C-candidate,43,medium,Yes,Strong Candidate for in-house APS [from txt]
+ellis|hyde,Ellis / Hyde,2023-01-03,F-inhouse,43,medium,Yes,Pending per funded in-house APS
+ellis|hyde,Ellis / Hyde,2023-06-30,F-inhouse,43,medium,Yes,Pendingperfundedin-houseAPS
+ellis|hyde,Ellis / Hyde,2024-02-20,INSTALLED,,,,
+ellis|hyde,Ellis / Hyde,2024-08-21,INSTALLED,,,,
+ellis|hyde,Ellis / Hyde,2025-02-21,INSTALLED,,,,
+ellis|hyde,Ellis / Hyde,2025-08-08,INSTALLED,,,,
+ellis|hyde,Ellis / Hyde,2026-01-29,INSTALLED,,,,
+ellis|hyde,Ellis / Hyde,2026-06-30,INSTALLED,,,,
+ellis|powell,Ellis / Powell,2020-01-03,P,,,,
+ellis|powell,Ellis / Powell,2021-01-07,P,,,,
+ellis|powell,Ellis / Powell,2021-12-07,P,,,,
+ellis|powell,Ellis / Powell,2022-07-29,F-signal,52,medium,Yes,Pending per funded signal project
+ellis|powell,Ellis / Powell,2023-01-03,F-signal,52,medium,Yes,Pending per funded signal project
+ellis|powell,Ellis / Powell,2023-06-30,F-signal,52,medium,Yes,Pendingperfundedsignalproject
+ellis|powell,Ellis / Powell,2024-02-20,F-signal,52,medium,Yes,Pending per funded signal project
+ellis|powell,Ellis / Powell,2024-08-21,F-signal,52,medium,Yes,Pending perfundedsignal project
+ellis|powell,Ellis / Powell,2025-02-21,F-signal,52,medium,Yes,Pending perfunded signal project
+ellis|powell,Ellis / Powell,2025-08-08,F-signal,52,medium,Yes,Pending per funded signal project
+ellis|powell,Ellis / Powell,2026-01-29,F-signal,52,medium,Yes,Pending per funded signal project
+ellis|powell,Ellis / Powell,2026-06-30,F-signal,52,medium,Yes,Pending per funded signal project
+excelsior|mission,Excelsior / Mission,2020-01-03,P,,,,
+excelsior|mission,Excelsior / Mission,2021-01-07,P,,,,
+excelsior|mission,Excelsior / Mission,2021-12-07,P,,,,
+excelsior|mission,Excelsior / Mission,2022-07-29,N-funding,34,medium,Yes,Funding needed for new poles
+excelsior|mission,Excelsior / Mission,2023-01-03,N-funding,34,medium,Yes,Funding needed for new poles
+excelsior|mission,Excelsior / Mission,2023-06-30,N-funding,34,medium,No,Fundingneededfornewpoles
+excelsior|mission,Excelsior / Mission,2024-02-20,N-funding,34,medium,No,Funding needed for newpoles
+excelsior|mission,Excelsior / Mission,2024-08-21,N-funding,34,medium,No,Fundingneeded fornewpoles
+excelsior|mission,Excelsior / Mission,2025-02-21,N-funding,34,medium,No,Funding needed fornewpoles
+excelsior|mission,Excelsior / Mission,2025-08-08,N-funding,34,medium,No,Funding needed for newpoles
+excelsior|mission,Excelsior / Mission,2026-01-29,C-candidate,34,medium,No,Candidate for in-house APS
+excelsior|mission,Excelsior / Mission,2026-06-30,F-signal,34,medium,Yes,Pending per funded signal project
+fair|mission|valencia,Fair / Mission / Valencia,2020-01-03,-,,,,
+fair|mission|valencia,Fair / Mission / Valencia,2021-01-07,-,,,,
+fair|mission|valencia,Fair / Mission / Valencia,2021-12-07,-,,,,
+fair|mission|valencia,Fair / Mission / Valencia,2022-07-29,-,,,,
+fair|mission|valencia,Fair / Mission / Valencia,2023-01-03,-,,,,
+fair|mission|valencia,Fair / Mission / Valencia,2023-06-30,-,,,,
+fair|mission|valencia,Fair / Mission / Valencia,2024-02-20,C-candidate,46,medium,Yes,Strong Candidate for in-house APS
+fair|mission|valencia,Fair / Mission / Valencia,2024-08-21,C-candidate,46,medium,Yes,StrongCandidate for in-house APS
+fair|mission|valencia,Fair / Mission / Valencia,2025-02-21,C-candidate,46,medium,Yes,Strong Candidate forin-house APS
+fair|mission|valencia,Fair / Mission / Valencia,2025-08-08,C-candidate,46,medium,Yes,Strong Candidate for in-house APS
+fair|mission|valencia,Fair / Mission / Valencia,2026-01-29,C-candidate,46,medium,Yes,Strong Candidate for in-house APS
+fair|mission|valencia,Fair / Mission / Valencia,2026-06-30,C-candidate,46,medium,Yes,Strong Candidate for in-house APS
+faxon|ocean,Faxon / Ocean,2020-01-03,-,,,,
+faxon|ocean,Faxon / Ocean,2021-01-07,-,,,,
+faxon|ocean,Faxon / Ocean,2021-12-07,-,,,,
+faxon|ocean,Faxon / Ocean,2022-07-29,-,,,,
+faxon|ocean,Faxon / Ocean,2023-01-03,-,,,,
+faxon|ocean,Faxon / Ocean,2023-06-30,-,,,,
+faxon|ocean,Faxon / Ocean,2024-02-20,-,,,,
+faxon|ocean,Faxon / Ocean,2024-08-21,-,,,,
+faxon|ocean,Faxon / Ocean,2025-02-21,-,,,,
+faxon|ocean,Faxon / Ocean,2025-08-08,C-candidate,45,medium,Yes,Candidate for in-house APS
+faxon|ocean,Faxon / Ocean,2026-01-29,C-candidate,45,medium,Yes,Candidate for in-house APS
+faxon|ocean,Faxon / Ocean,2026-06-30,C-candidate,45,medium,Yes,Candidate for in-house APS
+fillmore|geary,Fillmore / Geary,2020-01-03,-,,,,
+fillmore|geary,Fillmore / Geary,2021-01-07,-,,,,
+fillmore|geary,Fillmore / Geary,2021-12-07,P,,,,
+fillmore|geary,Fillmore / Geary,2022-07-29,N-funding,38,medium,--,Funding needed for full upgrade
+fillmore|geary,Fillmore / Geary,2023-01-03,N-funding,38,medium,--,Funding needed for full upgrade
+fillmore|geary,Fillmore / Geary,2023-06-30,N-funding,38,medium,Yes,Fundingneededforfullupgrade
+fillmore|geary,Fillmore / Geary,2024-02-20,N-funding,38,medium,Yes,Funding needed for full upgrade
+fillmore|geary,Fillmore / Geary,2024-08-21,N-funding,38,medium,Yes,Funding needed forfull upgrade
+fillmore|geary,Fillmore / Geary,2025-02-21,N-funding,38,medium,Yes,Funding needed forfull upgrade
+fillmore|geary,Fillmore / Geary,2025-08-08,N-funding,38,medium,Yes,Funding needed for full upgrade
+fillmore|geary,Fillmore / Geary,2026-01-29,N-funding,38,medium,Yes,Funding needed for full upgrade
+fillmore|geary,Fillmore / Geary,2026-06-30,N-funding,38,medium,No,Funding needed for full upgrade
+front|sacramento,Front / Sacramento,2020-01-03,P,,,,
+front|sacramento,Front / Sacramento,2021-01-07,P,,,,
+front|sacramento,Front / Sacramento,2021-12-07,P,,,,
+front|sacramento,Front / Sacramento,2022-07-29,F-inhouse,29,low,--,Pending per funded in-house APS
+front|sacramento,Front / Sacramento,2023-01-03,F-inhouse,29,low,--,Pending per funded in-house APS
+front|sacramento,Front / Sacramento,2023-06-30,F-inhouse,29,low,No,Pendingperfundedin-houseAPS
+front|sacramento,Front / Sacramento,2024-02-20,INSTALLED,,,,
+front|sacramento,Front / Sacramento,2024-08-21,INSTALLED,,,,
+front|sacramento,Front / Sacramento,2025-02-21,INSTALLED,,,,
+front|sacramento,Front / Sacramento,2025-08-08,INSTALLED,,,,
+front|sacramento,Front / Sacramento,2026-01-29,INSTALLED,,,,
+front|sacramento,Front / Sacramento,2026-06-30,INSTALLED,,,,
+fulton|masonic,Fulton / Masonic,2020-01-03,-,,,,
+fulton|masonic,Fulton / Masonic,2021-01-07,-,,,,
+fulton|masonic,Fulton / Masonic,2021-12-07,-,,,,
+fulton|masonic,Fulton / Masonic,2022-07-29,C-candidate,39,medium,Yes,Strong Candidate for in-house APS
+fulton|masonic,Fulton / Masonic,2023-01-03,C-candidate,39,medium,Yes,Strong Candidate for in-house APS
+fulton|masonic,Fulton / Masonic,2023-06-30,C-candidate,39,medium,Yes,StrongCandidateforin-houseAPS
+fulton|masonic,Fulton / Masonic,2024-02-20,C-candidate,39,medium,Yes,Strong Candidate for in-house APS
+fulton|masonic,Fulton / Masonic,2024-08-21,C-candidate,39,medium,Yes,StrongCandidate for in-house APS
+fulton|masonic,Fulton / Masonic,2025-02-21,C-candidate,39,medium,Yes,Strong Candidate forin-house APS
+fulton|masonic,Fulton / Masonic,2025-08-08,C-candidate,39,medium,Yes,Strong Candidate for in-house APS
+fulton|masonic,Fulton / Masonic,2026-01-29,C-candidate,39,medium,Yes,Strong Candidate for in-house APS
+fulton|masonic,Fulton / Masonic,2026-06-30,C-candidate,39,medium,Yes,Strong Candidate for in-house APS
+geary|stanyan,Geary / Stanyan,2020-01-03,-,,,,
+geary|stanyan,Geary / Stanyan,2021-01-07,-,,,,
+geary|stanyan,Geary / Stanyan,2021-12-07,-,,,,
+geary|stanyan,Geary / Stanyan,2022-07-29,-,,,,
+geary|stanyan,Geary / Stanyan,2023-01-03,-,,,,
+geary|stanyan,Geary / Stanyan,2023-06-30,C-candidate,44,medium,Yes,Candidateforin-houseAPS
+geary|stanyan,Geary / Stanyan,2024-02-20,C-candidate,44,medium,Yes,Candidate for in-house APS
+geary|stanyan,Geary / Stanyan,2024-08-21,C-candidate,44,medium,Yes,Candidate forin-house APS
+geary|stanyan,Geary / Stanyan,2025-02-21,C-candidate,44,medium,Yes,Candidate forin-house APS
+geary|stanyan,Geary / Stanyan,2025-08-08,C-candidate,44,medium,Yes,Candidate for in-house APS
+geary|stanyan,Geary / Stanyan,2026-01-29,C-candidate,44,medium,Yes,Candidate for in-house APS
+geary|stanyan,Geary / Stanyan,2026-06-30,C-candidate,44,medium,Yes,Candidate for in-house APS
+glenview|portola,Glenview / Portola,2020-01-03,P,,,,
+glenview|portola,Glenview / Portola,2021-01-07,P,,,,
+glenview|portola,Glenview / Portola,2021-12-07,P,,,,
+glenview|portola,Glenview / Portola,2022-07-29,INSTALLED,,,,
+glenview|portola,Glenview / Portola,2023-01-03,INSTALLED,,,,
+glenview|portola,Glenview / Portola,2023-06-30,INSTALLED,,,,
+glenview|portola,Glenview / Portola,2024-02-20,INSTALLED,,,,
+glenview|portola,Glenview / Portola,2024-08-21,INSTALLED,,,,
+glenview|portola,Glenview / Portola,2025-02-21,INSTALLED,,,,
+glenview|portola,Glenview / Portola,2025-08-08,INSTALLED,,,,
+glenview|portola,Glenview / Portola,2026-01-29,INSTALLED,,,,
+glenview|portola,Glenview / Portola,2026-06-30,INSTALLED,,,,
+goldengate|hyde,Golden Gate / Hyde,2020-01-03,-,,,,
+goldengate|hyde,Golden Gate / Hyde,2021-01-07,-,,,,
+goldengate|hyde,Golden Gate / Hyde,2021-12-07,-,,,,
+goldengate|hyde,Golden Gate / Hyde,2022-07-29,F-inhouse,n/a,n/a,Yes,Pending per funded in-house APS
+goldengate|hyde,Golden Gate / Hyde,2023-01-03,F-inhouse,n/a,n/a,Yes,Pending per funded in-house APS
+goldengate|hyde,Golden Gate / Hyde,2023-06-30,F-inhouse,,,Yes,Pendingperfundedin-houseAPS
+goldengate|hyde,Golden Gate / Hyde,2024-02-20,F-inhouse,,,Yes,Pending per funded in-house APS
+goldengate|hyde,Golden Gate / Hyde,2024-08-21,INSTALLED,,,,
+goldengate|hyde,Golden Gate / Hyde,2025-02-21,INSTALLED,,,,
+goldengate|hyde,Golden Gate / Hyde,2025-08-08,INSTALLED,,,,
+goldengate|hyde,Golden Gate / Hyde,2026-01-29,INSTALLED,,,,
+goldengate|hyde,Golden Gate / Hyde,2026-06-30,INSTALLED,,,,
+goldengate|larkin,Golden Gate / Larkin,2020-01-03,P,,,,
+goldengate|larkin,Golden Gate / Larkin,2021-01-07,P,,,,
+goldengate|larkin,Golden Gate / Larkin,2021-12-07,P,,,,
+goldengate|larkin,Golden Gate / Larkin,2022-07-29,F-inhouse,36,medium,Yes,Pending per funded in-house APS
+goldengate|larkin,Golden Gate / Larkin,2023-01-03,F-inhouse,36,medium,Yes,Pending per funded in-house APS
+goldengate|larkin,Golden Gate / Larkin,2023-06-30,F-inhouse,36,medium,Yes,Pendingperfundedin-houseAPS
+goldengate|larkin,Golden Gate / Larkin,2024-02-20,F-inhouse,36,medium,Yes,Pending per funded in-house APS
+goldengate|larkin,Golden Gate / Larkin,2024-08-21,F-inhouse,36,medium,Yes,Pendingperfunded in-house APS
+goldengate|larkin,Golden Gate / Larkin,2025-02-21,F-inhouse,36,medium,Yes,Pending perfunded in-house APS
+goldengate|larkin,Golden Gate / Larkin,2025-08-08,F-inhouse,36,medium,Yes,Pending per funded in-house APS
+goldengate|larkin,Golden Gate / Larkin,2026-01-29,F-inhouse,36,medium,Yes,Pending per funded in-house APS
+goldengate|larkin,Golden Gate / Larkin,2026-06-30,F-inhouse,36,medium,Yes,Pending per funded in-house APS
+goldengate|leavenworth,Golden Gate / Leavenworth,2020-01-03,P,,,,
+goldengate|leavenworth,Golden Gate / Leavenworth,2021-01-07,P,,,,
+goldengate|leavenworth,Golden Gate / Leavenworth,2021-12-07,P,,,,
+goldengate|leavenworth,Golden Gate / Leavenworth,2022-07-29,F-signal,50,medium,Yes,Pending per funded signal project
+goldengate|leavenworth,Golden Gate / Leavenworth,2023-01-03,F-signal,50,medium,Yes,Pending per funded signal project
+goldengate|leavenworth,Golden Gate / Leavenworth,2023-06-30,F-signal,50,medium,Yes,Pendingperfundedsignalproject
+goldengate|leavenworth,Golden Gate / Leavenworth,2024-02-20,C-candidate,50,medium,Yes,Candidate for in-house APS
+goldengate|leavenworth,Golden Gate / Leavenworth,2024-08-21,C-candidate,50,medium,Yes,Candidate forin-house APS
+goldengate|leavenworth,Golden Gate / Leavenworth,2025-02-21,C-candidate,50,medium,Yes,Candidate forin-house APS
+goldengate|leavenworth,Golden Gate / Leavenworth,2025-08-08,C-candidate,50,medium,Yes,Candidate for in-house APS
+goldengate|leavenworth,Golden Gate / Leavenworth,2026-01-29,C-candidate,50,medium,Yes,Candidate for in-house APS
+goldengate|leavenworth,Golden Gate / Leavenworth,2026-06-30,C-candidate,50,medium,Yes,Candidate for in-house APS
+goldengate|masonic,GoldenGate / Masonic,2020-01-03,P,,,,
+goldengate|masonic,GoldenGate / Masonic,2021-01-07,P,,,,
+goldengate|masonic,GoldenGate / Masonic,2021-12-07,P,,,,
+goldengate|masonic,GoldenGate / Masonic,2022-07-29,F-inhouse,20,low,Yes,Pending per funded in-house APS
+goldengate|masonic,GoldenGate / Masonic,2023-01-03,F-inhouse,20,low,Yes,Pending per funded in-house APS
+goldengate|masonic,GoldenGate / Masonic,2023-06-30,F-inhouse,20,low,No,Pendingperfundedin-houseAPS
+goldengate|masonic,GoldenGate / Masonic,2024-02-20,INSTALLED,,,,
+goldengate|masonic,GoldenGate / Masonic,2024-08-21,INSTALLED,,,,
+goldengate|masonic,GoldenGate / Masonic,2025-02-21,INSTALLED,,,,
+goldengate|masonic,GoldenGate / Masonic,2025-08-08,INSTALLED,,,,
+goldengate|masonic,GoldenGate / Masonic,2026-01-29,INSTALLED,,,,
+goldengate|masonic,GoldenGate / Masonic,2026-06-30,INSTALLED,,,,
+gough|mccoppin|otis,Gough / McCoppin / Otis,2020-01-03,P,,,,
+gough|mccoppin|otis,Gough / McCoppin / Otis,2021-01-07,P,,,,
+gough|mccoppin|otis,Gough / McCoppin / Otis,2021-12-07,P,,,,
+gough|mccoppin|otis,Gough / McCoppin / Otis,2022-07-29,F-signal,51,medium,--,Pending per funded signal project
+gough|mccoppin|otis,Gough / McCoppin / Otis,2023-01-03,F-signal,51,medium,--,Pending per funded signal project
+gough|mccoppin|otis,Gough / McCoppin / Otis,2023-06-30,INSTALLED,,,,
+gough|mccoppin|otis,Gough / McCoppin / Otis,2024-02-20,INSTALLED,,,,
+gough|mccoppin|otis,Gough / McCoppin / Otis,2024-08-21,INSTALLED,,,,
+gough|mccoppin|otis,Gough / McCoppin / Otis,2025-02-21,INSTALLED,,,,
+gough|mccoppin|otis,Gough / McCoppin / Otis,2025-08-08,INSTALLED,,,,
+gough|mccoppin|otis,Gough / McCoppin / Otis,2026-01-29,INSTALLED,,,,
+gough|mccoppin|otis,Gough / McCoppin / Otis,2026-06-30,INSTALLED,,,,
+greathighway|lincoln,Great Highway / Lincoln,2020-01-03,-,,,,
+greathighway|lincoln,Great Highway / Lincoln,2021-01-07,-,,,,
+greathighway|lincoln,Great Highway / Lincoln,2021-12-07,-,,,,
+greathighway|lincoln,Great Highway / Lincoln,2022-07-29,-,,,,
+greathighway|lincoln,Great Highway / Lincoln,2023-01-03,-,,,,
+greathighway|lincoln,Great Highway / Lincoln,2023-06-30,-,,,,
+greathighway|lincoln,Great Highway / Lincoln,2024-02-20,-,,,,
+greathighway|lincoln,Great Highway / Lincoln,2024-08-21,-,,,,
+greathighway|lincoln,Great Highway / Lincoln,2025-02-21,F-signal,,,No,Pending perfunded signal project
+greathighway|lincoln,Great Highway / Lincoln,2025-08-08,F-signal,,,No,Pending per funded signal project
+greathighway|lincoln,Great Highway / Lincoln,2026-01-29,F-signal,,,No,Pending per funded signal project
+greathighway|lincoln,Great Highway / Lincoln,2026-06-30,F-signal,,,Yes,Pending per funded signal project
+harrison|main,Harrison / Main,2020-01-03,P,,,,
+harrison|main,Harrison / Main,2021-01-07,P,,,,
+harrison|main,Harrison / Main,2021-12-07,P,,,,
+harrison|main,Harrison / Main,2022-07-29,F-signal,41,medium,Yes,Pending per funded signal project
+harrison|main,Harrison / Main,2023-01-03,F-signal,41,medium,Yes,Pending per funded signal project
+harrison|main,Harrison / Main,2023-06-30,F-signal,41,medium,Yes,Pendingperfundedsignalproject
+harrison|main,Harrison / Main,2024-02-20,F-signal,41,medium,Yes,Pending per funded signal project
+harrison|main,Harrison / Main,2024-08-21,F-signal,41,medium,Yes,Pending perfundedsignal project
+harrison|main,Harrison / Main,2025-02-21,F-signal,41,medium,Yes,Pending perfunded signal project
+harrison|main,Harrison / Main,2025-08-08,F-signal,41,medium,Yes,Pending per funded signal project
+harrison|main,Harrison / Main,2026-01-29,F-signal,41,medium,Yes,Pending per funded signal project
+harrison|main,Harrison / Main,2026-06-30,F-signal,41,medium,No,Pending per funded signal project
+hernandez|woodside,Hernandez / Woodside,2020-01-03,-,,,,
+hernandez|woodside,Hernandez / Woodside,2021-01-07,-,,,,
+hernandez|woodside,Hernandez / Woodside,2021-12-07,-,,,,
+hernandez|woodside,Hernandez / Woodside,2022-07-29,-,,,,
+hernandez|woodside,Hernandez / Woodside,2023-01-03,-,,,,
+hernandez|woodside,Hernandez / Woodside,2023-06-30,-,,,,
+hernandez|woodside,Hernandez / Woodside,2024-02-20,-,,,,
+hernandez|woodside,Hernandez / Woodside,2024-08-21,-,,,,
+hernandez|woodside,Hernandez / Woodside,2025-02-21,-,,,,
+hernandez|woodside,Hernandez / Woodside,2025-08-08,-,,,,
+hernandez|woodside,Hernandez / Woodside,2026-01-29,N-funding,65,high,No,Funding needed for newCountdown Signals
+hernandez|woodside,Hernandez / Woodside,2026-06-30,N-funding,65,high,No,Funding needed for newCountdown Signals
+howth|ocean,Howth / Ocean,2020-01-03,P,,,,
+howth|ocean,Howth / Ocean,2021-01-07,INSTALLED,,,,
+howth|ocean,Howth / Ocean,2021-12-07,INSTALLED,,,,
+howth|ocean,Howth / Ocean,2022-07-29,INSTALLED,,,,
+howth|ocean,Howth / Ocean,2023-01-03,INSTALLED,,,,
+howth|ocean,Howth / Ocean,2023-06-30,INSTALLED,,,,
+howth|ocean,Howth / Ocean,2024-02-20,INSTALLED,,,,
+howth|ocean,Howth / Ocean,2024-08-21,INSTALLED,,,,
+howth|ocean,Howth / Ocean,2025-02-21,INSTALLED,,,,
+howth|ocean,Howth / Ocean,2025-08-08,INSTALLED,,,,
+howth|ocean,Howth / Ocean,2026-01-29,INSTALLED,,,,
+howth|ocean,Howth / Ocean,2026-06-30,INSTALLED,,,,
+hyde|turk,Hyde / Turk,2020-01-03,-,,,,
+hyde|turk,Hyde / Turk,2021-01-07,-,,,,
+hyde|turk,Hyde / Turk,2021-12-07,-,,,,
+hyde|turk,Hyde / Turk,2022-07-29,F-inhouse,n/a,n/a,Yes,Pending per funded in-house APS
+hyde|turk,Hyde / Turk,2023-01-03,F-inhouse,n/a,n/a,Yes,Pending per funded in-house APS
+hyde|turk,Hyde / Turk,2023-06-30,INSTALLED,,,,
+hyde|turk,Hyde / Turk,2024-02-20,INSTALLED,,,,
+hyde|turk,Hyde / Turk,2024-08-21,INSTALLED,,,,
+hyde|turk,Hyde / Turk,2025-02-21,INSTALLED,,,,
+hyde|turk,Hyde / Turk,2025-08-08,INSTALLED,,,,
+hyde|turk,Hyde / Turk,2026-01-29,INSTALLED,,,,
+hyde|turk,Hyde / Turk,2026-06-30,INSTALLED,,,,
+jones|market|mcallister,Jones / Market / McAllister,2020-01-03,P,,,,
+jones|market|mcallister,Jones / Market / McAllister,2021-01-07,P,,,,
+jones|market|mcallister,Jones / Market / McAllister,2021-12-07,P,,,,
+jones|market|mcallister,Jones / Market / McAllister,2022-07-29,F-signal,60,high,Yes,Pending per funded signal project
+jones|market|mcallister,Jones / Market / McAllister,2023-01-03,F-signal,60,high,Yes,Pending per funded signal project
+jones|market|mcallister,Jones / Market / McAllister,2023-06-30,F-signal,60,high,Yes,Pendingperfundedsignalproject
+jones|market|mcallister,Jones / Market / McAllister,2024-02-20,F-signal,60,high,Yes,Pending per funded signal project
+jones|market|mcallister,Jones / Market / McAllister,2024-08-21,F-signal,60,high,Yes,Pending perfundedsignal project
+jones|market|mcallister,Jones / Market / McAllister,2025-02-21,F-signal,60,high,Yes,Pending perfunded signal project
+jones|market|mcallister,Jones / Market / McAllister,2025-08-08,F-signal,60,high,Yes,Pending per funded signal project
+jones|market|mcallister,Jones / Market / McAllister,2026-01-29,F-signal,60,high,Yes,Pending per funded signal project
+jones|market|mcallister,Jones / Market / McAllister,2026-06-30,F-signal,60,high,Yes,Pending per funded signal project
+judah|sunset,Judah / Sunset,2020-01-03,P,,,,
+judah|sunset,Judah / Sunset,2021-01-07,P,,,,
+judah|sunset,Judah / Sunset,2021-12-07,P,,,,
+judah|sunset,Judah / Sunset,2022-07-29,INSTALLED,,,,
+judah|sunset,Judah / Sunset,2023-01-03,INSTALLED,,,,
+judah|sunset,Judah / Sunset,2023-06-30,INSTALLED,,,,
+judah|sunset,Judah / Sunset,2024-02-20,INSTALLED,,,,
+judah|sunset,Judah / Sunset,2024-08-21,INSTALLED,,,,
+judah|sunset,Judah / Sunset,2025-02-21,INSTALLED,,,,
+judah|sunset,Judah / Sunset,2025-08-08,INSTALLED,,,,
+judah|sunset,Judah / Sunset,2026-01-29,INSTALLED,,,,
+judah|sunset,Judah / Sunset,2026-06-30,INSTALLED,,,,
+laguna|pine,Laguna / Pine,2020-01-03,P,,,,
+laguna|pine,Laguna / Pine,2021-01-07,P,,,,
+laguna|pine,Laguna / Pine,2021-12-07,P,,,,
+laguna|pine,Laguna / Pine,2022-07-29,F-inhouse,30,low,Yes,Pending per funded in-house APS
+laguna|pine,Laguna / Pine,2023-01-03,F-inhouse,30,low,Yes,Pending per funded in-house APS
+laguna|pine,Laguna / Pine,2023-06-30,F-inhouse,30,low,No,Pendingperfundedin-houseAPS
+laguna|pine,Laguna / Pine,2024-02-20,INSTALLED,,,,
+laguna|pine,Laguna / Pine,2024-08-21,INSTALLED,,,,
+laguna|pine,Laguna / Pine,2025-02-21,INSTALLED,,,,
+laguna|pine,Laguna / Pine,2025-08-08,INSTALLED,,,,
+laguna|pine,Laguna / Pine,2026-01-29,INSTALLED,,,,
+laguna|pine,Laguna / Pine,2026-06-30,INSTALLED,,,,
+lee|ocean,Lee / Ocean,2020-01-03,P,,,,
+lee|ocean,Lee / Ocean,2021-01-07,P,,,,
+lee|ocean,Lee / Ocean,2021-12-07,P,,,,
+lee|ocean,Lee / Ocean,2022-07-29,INSTALLED,,,,
+lee|ocean,Lee / Ocean,2023-01-03,INSTALLED,,,,
+lee|ocean,Lee / Ocean,2023-06-30,INSTALLED,,,,
+lee|ocean,Lee / Ocean,2024-02-20,INSTALLED,,,,
+lee|ocean,Lee / Ocean,2024-08-21,INSTALLED,,,,
+lee|ocean,Lee / Ocean,2025-02-21,INSTALLED,,,,
+lee|ocean,Lee / Ocean,2025-08-08,INSTALLED,,,,
+lee|ocean,Lee / Ocean,2026-01-29,INSTALLED,,,,
+lee|ocean,Lee / Ocean,2026-06-30,INSTALLED,,,,
+masonic|turk,Masonic / Turk,2020-01-03,P,,,,
+masonic|turk,Masonic / Turk,2021-01-07,P,,,,
+masonic|turk,Masonic / Turk,2021-12-07,P,,,,
+masonic|turk,Masonic / Turk,2022-07-29,INSTALLED,,,,
+masonic|turk,Masonic / Turk,2023-01-03,INSTALLED,,,,
+masonic|turk,Masonic / Turk,2023-06-30,INSTALLED,,,,
+masonic|turk,Masonic / Turk,2024-02-20,INSTALLED,,,,
+masonic|turk,Masonic / Turk,2024-08-21,INSTALLED,,,,
+masonic|turk,Masonic / Turk,2025-02-21,INSTALLED,,,,
+masonic|turk,Masonic / Turk,2025-08-08,INSTALLED,,,,
+masonic|turk,Masonic / Turk,2026-01-29,INSTALLED,,,,
+masonic|turk,Masonic / Turk,2026-06-30,INSTALLED,,,,
+mason|union,Mason / Union,2020-01-03,-,,,,
+mason|union,Mason / Union,2021-01-07,-,,,,
+mason|union,Mason / Union,2021-12-07,P,,,,
+mason|union,Mason / Union,2022-07-29,N-funding,48,medium,--,Funding needed for full upgrade
+mason|union,Mason / Union,2023-01-03,N-funding,48,medium,--,Funding needed for full upgrade
+mason|union,Mason / Union,2023-06-30,N-funding,48,medium,No,Fundingneededforfullupgrade
+mason|union,Mason / Union,2024-02-20,N-funding,48,medium,No,Funding needed for full upgrade
+mason|union,Mason / Union,2024-08-21,N-funding,48,medium,No,Funding needed for full upgrade
+mason|union,Mason / Union,2025-02-21,N-funding,48,medium,No,Funding needed forfull upgrade
+mason|union,Mason / Union,2025-08-08,N-funding,48,medium,No,Funding needed for full upgrade
+mason|union,Mason / Union,2026-01-29,N-funding,48,medium,No,Funding needed for full upgrade
+mason|union,Mason / Union,2026-06-30,N-funding,48,medium,No,Funding needed for full upgrade
+mission|ocean,Mission / Ocean,2020-01-03,P,,,,
+mission|ocean,Mission / Ocean,2021-01-07,P,,,,
+mission|ocean,Mission / Ocean,2021-12-07,P,,,,
+mission|ocean,Mission / Ocean,2022-07-29,C-candidate,37,medium,Yes,Candidate for in-house APS
+mission|ocean,Mission / Ocean,2023-01-03,C-candidate,37,medium,Yes,Candidate for in-house APS
+mission|ocean,Mission / Ocean,2023-06-30,C-candidate,37,medium,Yes,Candidateforin-houseAPS
+mission|ocean,Mission / Ocean,2024-02-20,C-candidate,37,medium,Yes,Candidate for in-house APS
+mission|ocean,Mission / Ocean,2024-08-21,C-candidate,37,medium,Yes,Candidate forin-house APS
+mission|ocean,Mission / Ocean,2025-02-21,C-candidate,37,medium,Yes,Candidate forin-house APS
+mission|ocean,Mission / Ocean,2025-08-08,C-candidate,37,medium,Yes,Candidate for in-house APS
+mission|ocean,Mission / Ocean,2026-01-29,C-candidate,37,medium,Yes,Candidate for in-house APS
+mission|ocean,Mission / Ocean,2026-06-30,F-signal,37,medium,Yes,Pending per funded signal project
+mission|persia,Mission / Persia,2020-01-03,P,,,,
+mission|persia,Mission / Persia,2021-01-07,P,,,,
+mission|persia,Mission / Persia,2021-12-07,P,,,,
+mission|persia,Mission / Persia,2022-07-29,N-funding,32,medium,Yes,Funding needed for new poles
+mission|persia,Mission / Persia,2023-01-03,N-funding,32,medium,Yes,Funding needed for new poles
+mission|persia,Mission / Persia,2023-06-30,N-funding,32,medium,Yes,Fundingneededfornewpoles
+mission|persia,Mission / Persia,2024-02-20,N-funding,32,medium,Yes,Funding needed for newpoles
+mission|persia,Mission / Persia,2024-08-21,N-funding,32,medium,Yes,Funding needed fornewpoles
+mission|persia,Mission / Persia,2025-02-21,N-funding,32,medium,Yes,Funding needed fornewpoles
+mission|persia,Mission / Persia,2025-08-08,N-funding,32,medium,Yes,Funding needed for newpoles
+mission|persia,Mission / Persia,2026-01-29,C-candidate,32,medium,Yes,Candidate for in-house APS
+mission|persia,Mission / Persia,2026-06-30,F-signal,32,medium,Yes,Pending per funded signal project
+mission|richland,Mission / Richland,2020-01-03,P,,,,
+mission|richland,Mission / Richland,2021-01-07,P,,,,
+mission|richland,Mission / Richland,2021-12-07,P,,,,
+mission|richland,Mission / Richland,2022-07-29,INSTALLED,,,,
+mission|richland,Mission / Richland,2023-01-03,INSTALLED,,,,
+mission|richland,Mission / Richland,2023-06-30,INSTALLED,,,,
+mission|richland,Mission / Richland,2024-02-20,INSTALLED,,,,
+mission|richland,Mission / Richland,2024-08-21,INSTALLED,,,,
+mission|richland,Mission / Richland,2025-02-21,INSTALLED,,,,
+mission|richland,Mission / Richland,2025-08-08,INSTALLED,,,,
+mission|richland,Mission / Richland,2026-01-29,INSTALLED,,,,
+mission|richland,Mission / Richland,2026-06-30,INSTALLED,,,,
+mission|silver,Mission / Silver,2020-01-03,P,,,,
+mission|silver,Mission / Silver,2021-01-07,P,,,,
+mission|silver,Mission / Silver,2021-12-07,P,,,,
+mission|silver,Mission / Silver,2022-07-29,C-candidate,43,medium,Yes,Candidate for in-house APS
+mission|silver,Mission / Silver,2023-01-03,C-candidate,43,medium,Yes,Candidate for in-house APS
+mission|silver,Mission / Silver,2023-06-30,C-candidate,43,medium,Yes,Candidateforin-houseAPS
+mission|silver,Mission / Silver,2024-02-20,C-candidate,43,medium,Yes,Candidate for in-house APS
+mission|silver,Mission / Silver,2024-08-21,C-candidate,43,medium,Yes,Candidate forin-house APS
+mission|silver,Mission / Silver,2025-02-21,C-candidate,43,medium,Yes,Candidate forin-house APS
+mission|silver,Mission / Silver,2025-08-08,C-candidate,43,medium,Yes,Candidate for in-house APS Candidate for in-house APS
+mission|silver,Mission / Silver,2026-01-29,C-candidate,43,medium,Yes,Candidate for in-house APS
+mission|silver,Mission / Silver,2026-06-30,F-signal,43,medium,Yes,Pending per funded signal project
+mission|spear,Mission / Spear,2020-01-03,P,,,,
+mission|spear,Mission / Spear,2021-01-07,P,,,,
+mission|spear,Mission / Spear,2021-12-07,INSTALLED,,,,
+mission|spear,Mission / Spear,2022-07-29,INSTALLED,,,,
+mission|spear,Mission / Spear,2023-01-03,INSTALLED,,,,
+mission|spear,Mission / Spear,2023-06-30,INSTALLED,,,,
+mission|spear,Mission / Spear,2024-02-20,INSTALLED,,,,
+mission|spear,Mission / Spear,2024-08-21,INSTALLED,,,,
+mission|spear,Mission / Spear,2025-02-21,INSTALLED,,,,
+mission|spear,Mission / Spear,2025-08-08,INSTALLED,,,,
+mission|spear,Mission / Spear,2026-01-29,INSTALLED,,,,
+mission|spear,Mission / Spear,2026-06-30,INSTALLED,,,,
+ocean|victoria,Ocean / Victoria,2020-01-03,P,,,,
+ocean|victoria,Ocean / Victoria,2021-01-07,INSTALLED,,,,
+ocean|victoria,Ocean / Victoria,2021-12-07,INSTALLED,,,,
+ocean|victoria,Ocean / Victoria,2022-07-29,INSTALLED,,,,
+ocean|victoria,Ocean / Victoria,2023-01-03,INSTALLED,,,,
+ocean|victoria,Ocean / Victoria,2023-06-30,INSTALLED,,,,
+ocean|victoria,Ocean / Victoria,2024-02-20,INSTALLED,,,,
+ocean|victoria,Ocean / Victoria,2024-08-21,INSTALLED,,,,
+ocean|victoria,Ocean / Victoria,2025-02-21,INSTALLED,,,,
+ocean|victoria,Ocean / Victoria,2025-08-08,INSTALLED,,,,
+ocean|victoria,Ocean / Victoria,2026-01-29,INSTALLED,,,,
+ocean|victoria,Ocean / Victoria,2026-06-30,INSTALLED,,,,
+octavia|page,Octavia / Page,2020-01-03,-,,,,
+octavia|page,Octavia / Page,2021-01-07,-,,,,
+octavia|page,Octavia / Page,2021-12-07,-,,,,
+octavia|page,Octavia / Page,2022-07-29,-,,,,
+octavia|page,Octavia / Page,2023-01-03,-,,,,
+octavia|page,Octavia / Page,2023-06-30,-,,,,
+octavia|page,Octavia / Page,2024-02-20,C-candidate,35,medium,No,Candidate for in-house APS
+octavia|page,Octavia / Page,2024-08-21,C-candidate,35,medium,No,Candidate for in-house APS
+octavia|page,Octavia / Page,2025-02-21,C-candidate,35,medium,No,Candidate forin-house APS
+octavia|page,Octavia / Page,2025-08-08,C-candidate,35,medium,No,Candidate for in-house APS [from txt]
+octavia|page,Octavia / Page,2026-01-29,C-candidate,35,medium,No,Candidate for in-house APS
+octavia|page,Octavia / Page,2026-06-30,C-candidate,35,medium,Yes,Candidate for in-house APS
+pacific|polk,Pacific / Polk,2020-01-03,P,,,,
+pacific|polk,Pacific / Polk,2021-01-07,INSTALLED,,,,
+pacific|polk,Pacific / Polk,2021-12-07,INSTALLED,,,,
+pacific|polk,Pacific / Polk,2022-07-29,INSTALLED,,,,
+pacific|polk,Pacific / Polk,2023-01-03,INSTALLED,,,,
+pacific|polk,Pacific / Polk,2023-06-30,INSTALLED,,,,
+pacific|polk,Pacific / Polk,2024-02-20,INSTALLED,,,,
+pacific|polk,Pacific / Polk,2024-08-21,INSTALLED,,,,
+pacific|polk,Pacific / Polk,2025-02-21,INSTALLED,,,,
+pacific|polk,Pacific / Polk,2025-08-08,INSTALLED,,,,
+pacific|polk,Pacific / Polk,2026-01-29,INSTALLED,,,,
+pacific|polk,Pacific / Polk,2026-06-30,INSTALLED,,,,
+parker|turk,Parker / Turk,2020-01-03,P,,,,
+parker|turk,Parker / Turk,2021-01-07,P,,,,
+parker|turk,Parker / Turk,2021-12-07,P,,,,
+parker|turk,Parker / Turk,2022-07-29,N-funding,32,medium,--,Funding needed for full upgrade
+parker|turk,Parker / Turk,2023-01-03,N-funding,32,medium,--,Funding needed for full upgrade
+parker|turk,Parker / Turk,2023-06-30,N-funding,32,medium,No,Fundingneededforfullupgrade
+parker|turk,Parker / Turk,2024-02-20,N-funding,32,medium,No,Funding needed for full upgrade
+parker|turk,Parker / Turk,2024-08-21,N-funding,32,medium,No,Funding needed for full upgrade
+parker|turk,Parker / Turk,2025-02-21,N-funding,32,medium,No,Funding needed forfull upgrade
+parker|turk,Parker / Turk,2025-08-08,N-funding,32,medium,No,Funding needed for full upgrade
+parker|turk,Parker / Turk,2026-01-29,N-funding,32,medium,No,Funding needed for full upgrade
+parker|turk,Parker / Turk,2026-06-30,N-funding,32,medium,No,Funding needed for full upgrade
+polk|union,Polk / Union,2020-01-03,-,,,,
+polk|union,Polk / Union,2021-01-07,-,,,,
+polk|union,Polk / Union,2021-12-07,-,,,,
+polk|union,Polk / Union,2022-07-29,-,,,,
+polk|union,Polk / Union,2023-01-03,-,,,,
+polk|union,Polk / Union,2023-06-30,C-candidate,39,medium,No,Candidateforin-houseAPS
+polk|union,Polk / Union,2024-02-20,C-candidate,39,medium,No,Candidate for in-house APS
+polk|union,Polk / Union,2024-08-21,C-candidate,39,medium,No,Candidate for in-house APS
+polk|union,Polk / Union,2025-02-21,C-candidate,39,medium,No,Candidate forin-house APS
+polk|union,Polk / Union,2025-08-08,C-candidate,39,medium,No,Candidate for in-house APS
+polk|union,Polk / Union,2026-01-29,C-candidate,39,medium,No,Candidate for in-house APS
+polk|union,Polk / Union,2026-06-30,C-candidate,39,medium,No,Candidate for in-house APS
+powell|sutter,Powell / Sutter,2020-01-03,P,,,,
+powell|sutter,Powell / Sutter,2021-01-07,P,,,,
+powell|sutter,Powell / Sutter,2021-12-07,INSTALLED,,,,
+powell|sutter,Powell / Sutter,2022-07-29,INSTALLED,,,,
+powell|sutter,Powell / Sutter,2023-01-03,INSTALLED,,,,
+powell|sutter,Powell / Sutter,2023-06-30,INSTALLED,,,,
+powell|sutter,Powell / Sutter,2024-02-20,INSTALLED,,,,
+powell|sutter,Powell / Sutter,2024-08-21,INSTALLED,,,,
+powell|sutter,Powell / Sutter,2025-02-21,INSTALLED,,,,
+powell|sutter,Powell / Sutter,2025-08-08,INSTALLED,,,,
+powell|sutter,Powell / Sutter,2026-01-29,INSTALLED,,,,
+powell|sutter,Powell / Sutter,2026-06-30,INSTALLED,,,,
+stockton|sutter,Stockton / Sutter,2020-01-03,-,,,,
+stockton|sutter,Stockton / Sutter,2021-01-07,-,,,,
+stockton|sutter,Stockton / Sutter,2021-12-07,P,,,,
+stockton|sutter,Stockton / Sutter,2022-07-29,F-signal,56,high,Yes,Pending per funded signal project
+stockton|sutter,Stockton / Sutter,2023-01-03,F-signal,56,high,Yes,Pending per funded signal project
+stockton|sutter,Stockton / Sutter,2023-06-30,F-signal,56,high,No,Pendingperfundedsignalproject
+stockton|sutter,Stockton / Sutter,2024-02-20,F-signal,56,high,No,Pending per funded signal project
+stockton|sutter,Stockton / Sutter,2024-08-21,F-signal,56,high,No,Pending perfunded signal project
+stockton|sutter,Stockton / Sutter,2025-02-21,F-signal,56,high,No,Pending perfunded signal project
+stockton|sutter,Stockton / Sutter,2025-08-08,F-signal,56,high,No,Pending per funded signal project
+stockton|sutter,Stockton / Sutter,2026-01-29,F-signal,56,high,No,Pending per funded signal project
+stockton|sutter,Stockton / Sutter,2026-06-30,F-signal,56,high,Yes,Pending per funded signal project
+sunset|taraval,Sunset / Taraval,2020-01-03,P,,,,
+sunset|taraval,Sunset / Taraval,2021-01-07,P,,,,
+sunset|taraval,Sunset / Taraval,2021-12-07,P,,,,
+sunset|taraval,Sunset / Taraval,2022-07-29,F-inhouse,27,low,Yes,Pending per funded in-house APS
+sunset|taraval,Sunset / Taraval,2023-01-03,F-inhouse,27,low,Yes,Pending per funded in-house APS
+sunset|taraval,Sunset / Taraval,2023-06-30,F-inhouse,27,low,No,Pendingperfundedin-houseAPS
+sunset|taraval,Sunset / Taraval,2024-02-20,F-inhouse,27,low,No,Pending per funded in-house APS
+sunset|taraval,Sunset / Taraval,2024-08-21,INSTALLED,,,,
+sunset|taraval,Sunset / Taraval,2025-02-21,INSTALLED,,,,
+sunset|taraval,Sunset / Taraval,2025-08-08,INSTALLED,,,,
+sunset|taraval,Sunset / Taraval,2026-01-29,INSTALLED,,,,
+sunset|taraval,Sunset / Taraval,2026-06-30,INSTALLED,,,,
+union|vanness,Union / Van Ness,2020-01-03,P,,,,
+union|vanness,Union / Van Ness,2021-01-07,P,,,,
+union|vanness,Union / Van Ness,2021-12-07,P,,,,
+union|vanness,Union / Van Ness,2022-07-29,INSTALLED,,,,
+union|vanness,Union / Van Ness,2023-01-03,INSTALLED,,,,
+union|vanness,Union / Van Ness,2023-06-30,INSTALLED,,,,
+union|vanness,Union / Van Ness,2024-02-20,INSTALLED,,,,
+union|vanness,Union / Van Ness,2024-08-21,INSTALLED,,,,
+union|vanness,Union / Van Ness,2025-02-21,INSTALLED,,,,
+union|vanness,Union / Van Ness,2025-08-08,INSTALLED,,,,
+union|vanness,Union / Van Ness,2026-01-29,INSTALLED,,,,
+union|vanness,Union / Van Ness,2026-06-30,INSTALLED,,,,

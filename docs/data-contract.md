@@ -1,6 +1,6 @@
-# Data contract: ABM ↔ web simulator (v1, agreed with abm 2026-10-26)
+# Data contract: ABM ↔ web simulator
 
-Owner of the model: `abm` session. Owner of the site: `web` session.
+The model is maintained in the research repository (published as `replication/code/`); the site holds a copy.
 The site never edits model files; it copies them in at build time (`scripts/sync_model.sh`).
 
 ## 1. Live mode (browser runs the model)
@@ -33,7 +33,7 @@ What the site needs from `abm/model/`:
 }
 ```
 
-### 1a. Event stream (drives the network animation — added 2026-10-26)
+### 1a. Event stream (drives the network animation)
 
 Every interaction the model executes is one event, emitted in the month it happens, in execution order:
 
@@ -47,7 +47,7 @@ Every interaction the model executes is one event, emitted in the month it happe
 | `state_changes` | optional `[{"key", "from", "to"}]` so the swimlane view moves dots without re-deriving rules |
 | `detail` | short English fragment, no names of people |
 
-Node ids (agreed with abm, = 02 design):
+Node ids (as in the model design):
 
 | id | kind | label |
 |---|---|---|
@@ -62,19 +62,19 @@ Node ids (agreed with abm, = 02 design):
 | `D1` | actor | External enforcement |
 | `HSIP` `PROPL` `GF` `SS4A` `PARENT` `MDC` | venue | HSIP call · Prop L EP17 · General Fund/CIP · SS4A · parent signal project · Mayor's Disability Council |
 
-Extra actions (abm): `prep_abort`, `topup`, `partner_delay`, `batch_fund` (right after `approve`/`allocate`).
+Extra actions: `prep_abort`, `topup`, `partner_delay`, `batch_fund` (right after `approve`/`allocate`).
 Floats: PCG64 stream is stable across numpy versions; libm may differ in the last bit, so decimals compare within 1e-12 relative or 1e-9 absolute (`math.isclose`), integers and text exactly.
-`meta.json` also carries `design_version` (02 version) and `mechanisms`.
+`meta.json` also carries `design_version` (a short description of the design) and `mechanisms`.
 
 A switch `emit_events=True` (default False for batch speed) is fine.
 
 ## 2. Batch mode (pre-computed results the site browses)
 
-Please write to `abm/results/web/` (any of these may be marked preliminary):
+The model exports to `results/web/`:
 
 | File | Content |
 |---|---|
-| `meta.json` | `model_version` (git short hash or date), `status`: `"preliminary"`/`"final"`, run date, N param sets, R replicates, seed set |
+| `meta.json` | `model_version` (git short hash or date), `status`, run date, N param sets, R replicates, seed set |
 | `params.json` | `param_schema()` output (same as live mode) |
 | `runs.csv` (or `.json`) | one row per (param set × pathway × mechanism): sampled params + replicate-mean outputs (`installed_5y`, `coverage_10y`, `P_money_flows_5y`, `recovery_time` median, censored share). Keep ≤ ~20 MB total; drop to a sample if bigger |
 | `quantiles.json` | per pathway (× switch 2×2): monthly p10/p50/p90 of `I_cum` and stocks |
@@ -83,7 +83,7 @@ Please write to `abm/results/web/` (any of these may be marked preliminary):
 | `robustness.json` | ranking table: positive-effect vs zero-effect columns, share better than PW0, max regret |
 | `fit.json` (optional) | E1 acceptance rate per mechanism × prior width; H1 holdout pass/fail |
 
-## 3. Consistency test (updated after codex round 2)
+## 3. Consistency test
 
 Entry point: `tests/run_consistency.sh` (CPython side `tests/py_side.py`, Pyodide side `tests/pyodide_side.mjs`,
 comparison `tests/compare.py`, shared cases `tests/cases.py`). 67 fixed cases: every pathway × mechanism at
@@ -96,6 +96,6 @@ accessibility checks.
 `meta.json` of the result set must carry the same `model_fingerprint`, computed when the set is run;
 the page hides many-run comparisons when it differs from the loaded model.
 
-## 4. Wording limits (from writing brief / stats report)
+## 4. Wording limits
 
 Site text says "scenario exploration", "under these rules", "conditional on"; never "predict", "prove", "forecast".

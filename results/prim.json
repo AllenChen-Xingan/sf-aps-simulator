@@ -1,5 +1,5 @@
 {
- "label": "preliminary \u00b7 uncalibrated \u00b7 scenario projections, not forecasts",
+ "label": "uncalibrated \u00b7 scenario projections, not forecasts",
  "status": "computed (all sw_line values, positive priors; corrected rule extraction, model/posthoc.py)",
  "outcome": "money flows within 5 years in at least half of 20 replicates",
  "boxes": {
@@ -132,135 +132,8 @@
   ],
   "PW1": [
    {
-    "coverage_test": 0.5015948963317385,
-    "density_test": 0.9767080745341615,
-    "rules": [
-     {
-      "high": 1.0,
-      "low": 0.5,
-      "param": "sw_line",
-      "trimmed_share_of_range": 0.5
-     },
-     {
-      "high": 0.49943759707489344,
-      "low": 0.04750890254520114,
-      "param": "aps_share",
-      "trimmed_share_of_range": 0.095
-     },
-     {
-      "high": 0.9476945397891501,
-      "low": 0.001061860782143751,
-      "param": "q_pipe",
-      "trimmed_share_of_range": 0.052
-     }
-    ],
-    "split": 0
-   },
-   {
-    "coverage_test": 0.4744466800804829,
-    "density_test": 0.9841402337228714,
-    "rules": [
-     {
-      "high": 1.0,
-      "low": 0.5,
-      "param": "sw_line",
-      "trimmed_share_of_range": 0.5
-     },
-     {
-      "high": 0.4999500927673691,
-      "low": 0.07231290757549945,
-      "param": "aps_share",
-      "trimmed_share_of_range": 0.144
-     },
-     {
-      "high": 0.9476945397891501,
-      "low": 0.001061860782143751,
-      "param": "q_pipe",
-      "trimmed_share_of_range": 0.052
-     }
-    ],
-    "split": 1
-   },
-   {
-    "coverage_test": 0.5153225806451613,
-    "density_test": 0.9755725190839695,
-    "rules": [
-     {
-      "high": 1.0,
-      "low": 0.5,
-      "param": "sw_line",
-      "trimmed_share_of_range": 0.5
-     },
-     {
-      "high": 0.49954111078945684,
-      "low": 0.04724941888791137,
-      "param": "aps_share",
-      "trimmed_share_of_range": 0.094
-     },
-     {
-      "high": 0.9526589350294088,
-      "low": 0.001061860782143751,
-      "param": "q_pipe",
-      "trimmed_share_of_range": 0.047
-     }
-    ],
-    "split": 2
-   },
-   {
-    "coverage_test": 0.473328025477707,
-    "density_test": 0.9867219917012449,
-    "rules": [
-     {
-      "high": 1.0,
-      "low": 0.5,
-      "param": "sw_line",
-      "trimmed_share_of_range": 0.5
-     },
-     {
-      "high": 0.4999500927673691,
-      "low": 0.07326474730256655,
-      "param": "aps_share",
-      "trimmed_share_of_range": 0.146
-     },
-     {
-      "high": 0.9476945397891501,
-      "low": 0.001061860782143751,
-      "param": "q_pipe",
-      "trimmed_share_of_range": 0.052
-     }
-    ],
-    "split": 3
-   },
-   {
-    "coverage_test": 0.4705648369132856,
-    "density_test": 0.990787269681742,
-    "rules": [
-     {
-      "high": 1.0,
-      "low": 0.5,
-      "param": "sw_line",
-      "trimmed_share_of_range": 0.5
-     },
-     {
-      "high": 0.4999500927673691,
-      "low": 0.08498117914811765,
-      "param": "aps_share",
-      "trimmed_share_of_range": 0.169
-     },
-     {
-      "high": 0.9593398568734836,
-      "low": 0.002962385670090652,
-      "param": "q_ramp",
-      "trimmed_share_of_range": 0.041
-     }
-    ],
-    "split": 4
-   }
-  ],
-  "PW2": [
-   {
-    "coverage_test": 0.5240686479698619,
-    "density_test": 0.9682907965970611,
+    "coverage_test": 0.48978805394990366,
+    "density_test": 0.982985305491106,
     "rules": [
      {
       "high": 1.0,
@@ -284,8 +157,8 @@
     "split": 0
    },
    {
-    "coverage_test": 0.49325463743676223,
-    "density_test": 0.974188176519567,
+    "coverage_test": 0.4602559131446297,
+    "density_test": 0.9866999168744804,
     "rules": [
      {
       "high": 1.0,
@@ -295,9 +168,136 @@
      },
      {
       "high": 0.4999500927673691,
-      "low": 0.07125549576960373,
+      "low": 0.07154455243037283,
       "param": "aps_share",
-      "trimmed_share_of_range": 0.142
+      "trimmed_share_of_range": 0.143
+     },
+     {
+      "high": 0.9500566551480208,
+      "low": 0.001061860782143751,
+      "param": "q_pipe",
+      "trimmed_share_of_range": 0.05
+     }
+    ],
+    "split": 1
+   },
+   {
+    "coverage_test": 0.4724592707525213,
+    "density_test": 0.9878345498783455,
+    "rules": [
+     {
+      "high": 1.0,
+      "low": 0.5,
+      "param": "sw_line",
+      "trimmed_share_of_range": 0.5
+     },
+     {
+      "high": 0.49954111078945684,
+      "low": 0.07199534132671753,
+      "param": "aps_share",
+      "trimmed_share_of_range": 0.144
+     },
+     {
+      "high": 0.9526589350294088,
+      "low": 0.001061860782143751,
+      "param": "q_pipe",
+      "trimmed_share_of_range": 0.047
+     }
+    ],
+    "split": 2
+   },
+   {
+    "coverage_test": 0.47889485801995396,
+    "density_test": 0.983451536643026,
+    "rules": [
+     {
+      "high": 1.0,
+      "low": 0.5,
+      "param": "sw_line",
+      "trimmed_share_of_range": 0.5
+     },
+     {
+      "high": 0.4999500927673691,
+      "low": 0.04959679839296391,
+      "param": "aps_share",
+      "trimmed_share_of_range": 0.099
+     },
+     {
+      "high": 0.9440496520411213,
+      "low": 0.001061860782143751,
+      "param": "q_pipe",
+      "trimmed_share_of_range": 0.056
+     }
+    ],
+    "split": 3
+   },
+   {
+    "coverage_test": 0.4583333333333333,
+    "density_test": 0.9875311720698254,
+    "rules": [
+     {
+      "high": 1.0,
+      "low": 0.5,
+      "param": "sw_line",
+      "trimmed_share_of_range": 0.5
+     },
+     {
+      "high": 0.4999500927673691,
+      "low": 0.08753031494095907,
+      "param": "aps_share",
+      "trimmed_share_of_range": 0.175
+     },
+     {
+      "high": 0.9476945397891501,
+      "low": 0.001061860782143751,
+      "param": "q_pipe",
+      "trimmed_share_of_range": 0.052
+     }
+    ],
+    "split": 4
+   }
+  ],
+  "PW2": [
+   {
+    "coverage_test": 0.5087150385083097,
+    "density_test": 0.9706109822119103,
+    "rules": [
+     {
+      "high": 1.0,
+      "low": 0.5,
+      "param": "sw_line",
+      "trimmed_share_of_range": 0.5
+     },
+     {
+      "high": 0.49943759707489344,
+      "low": 0.04750890254520114,
+      "param": "aps_share",
+      "trimmed_share_of_range": 0.095
+     },
+     {
+      "high": 0.9510068964533187,
+      "low": 0.001061860782143751,
+      "param": "q_pipe",
+      "trimmed_share_of_range": 0.049
+     }
+    ],
+    "split": 0
+   },
+   {
+    "coverage_test": 0.47481722177091795,
+    "density_test": 0.9757929883138564,
+    "rules": [
+     {
+      "high": 1.0,
+      "low": 0.5,
+      "param": "sw_line",
+      "trimmed_share_of_range": 0.5
+     },
+     {
+      "high": 0.4999500927673691,
+      "low": 0.07231290757549945,
+      "param": "aps_share",
+      "trimmed_share_of_range": 0.144
      },
      {
       "high": 0.9476945397891501,
@@ -309,8 +309,8 @@
     "split": 1
    },
    {
-    "coverage_test": 0.5363365915852104,
-    "density_test": 0.9633587786259542,
+    "coverage_test": 0.5149897330595482,
+    "density_test": 0.9638739431206764,
     "rules": [
      {
       "high": 1.0,
@@ -325,17 +325,17 @@
       "trimmed_share_of_range": 0.094
      },
      {
-      "high": 0.9526589350294088,
+      "high": 0.9510068964533187,
       "low": 0.001061860782143751,
       "param": "q_pipe",
-      "trimmed_share_of_range": 0.047
+      "trimmed_share_of_range": 0.049
      }
     ],
     "split": 2
    },
    {
-    "coverage_test": 0.496,
-    "density_test": 0.9800332778702163,
+    "coverage_test": 0.4812550937245314,
+    "density_test": 0.9808970099667774,
     "rules": [
      {
       "high": 1.0,
@@ -350,17 +350,17 @@
       "trimmed_share_of_range": 0.147
      },
      {
-      "high": 0.9476945397891501,
+      "high": 0.9500566551480208,
       "low": 0.001061860782143751,
       "param": "q_pipe",
-      "trimmed_share_of_range": 0.052
+      "trimmed_share_of_range": 0.05
      }
     ],
     "split": 3
    },
    {
-    "coverage_test": 0.5349417637271214,
-    "density_test": 0.9683734939759037,
+    "coverage_test": 0.5024174053182917,
+    "density_test": 0.9795758051846033,
     "rules": [
      {
       "high": 1.0,
@@ -370,9 +370,9 @@
      },
      {
       "high": 0.4999500927673691,
-      "low": 0.045383023058467406,
+      "low": 0.06537706704284774,
       "param": "aps_share",
-      "trimmed_share_of_range": 0.09
+      "trimmed_share_of_range": 0.13
      },
      {
       "high": 0.9476945397891501,
@@ -513,33 +513,33 @@
   ],
   "PW4": [
    {
-    "coverage_test": 0.7458131745441012,
-    "density_test": 0.9970149253731343,
+    "coverage_test": 0.6758569299552906,
+    "density_test": 0.9972512369433755,
     "rules": [
      {
       "high": 0.49943759707489344,
-      "low": 0.09167923295283986,
+      "low": 0.12950753333787932,
       "param": "aps_share",
-      "trimmed_share_of_range": 0.183
+      "trimmed_share_of_range": 0.259
      },
      {
-      "high": 0.9510068964533187,
+      "high": 0.886730368656097,
       "low": 0.001061860782143751,
       "param": "q_pipe",
-      "trimmed_share_of_range": 0.049
+      "trimmed_share_of_range": 0.113
      },
      {
-      "high": 0.8944781406833318,
+      "high": 0.9173115341955873,
       "low": 0.002962385670090652,
       "param": "q_ramp",
-      "trimmed_share_of_range": 0.106
+      "trimmed_share_of_range": 0.083
      }
     ],
     "split": 0
    },
    {
-    "coverage_test": 0.7745794392523364,
-    "density_test": 0.9932885906040269,
+    "coverage_test": 0.77311868214152,
+    "density_test": 0.9932659932659933,
     "rules": [
      {
       "high": 0.4999500927673691,
@@ -554,17 +554,17 @@
       "trimmed_share_of_range": 0.05
      },
      {
-      "high": 0.9146069359843699,
+      "high": 0.9131150613086505,
       "low": 0.002962385670090652,
       "param": "q_ramp",
-      "trimmed_share_of_range": 0.086
+      "trimmed_share_of_range": 0.087
      }
     ],
     "split": 1
    },
    {
-    "coverage_test": 0.8013493253373314,
-    "density_test": 0.9944186046511628,
+    "coverage_test": 0.8083270817704427,
+    "density_test": 0.9935454126325496,
     "rules": [
      {
       "high": 0.49954111078945684,
@@ -573,22 +573,22 @@
       "trimmed_share_of_range": 0.182
      },
      {
-      "high": 0.9510068964533187,
+      "high": 0.8937025825248841,
       "low": 0.001061860782143751,
       "param": "q_pipe",
-      "trimmed_share_of_range": 0.049
+      "trimmed_share_of_range": 0.106
      },
      {
-      "high": 0.9245081255279788,
+      "high": 0.9641225536634467,
       "low": 0.002962385670090652,
       "param": "q_ramp",
-      "trimmed_share_of_range": 0.076
+      "trimmed_share_of_range": 0.036
      }
     ],
     "split": 2
    },
    {
-    "coverage_test": 0.8011980531636091,
+    "coverage_test": 0.8017984263769202,
     "density_test": 0.9921186833565137,
     "rules": [
      {
@@ -613,7 +613,7 @@
     "split": 3
    },
    {
-    "coverage_test": 0.6871967151922359,
+    "coverage_test": 0.6879671150971599,
     "density_test": 0.9978319783197832,
     "rules": [
      {
@@ -640,14 +640,14 @@
   ],
   "PW5": [
    {
-    "coverage_test": 0.7346938775510204,
-    "density_test": 0.9933396764985728,
+    "coverage_test": 0.7787742899850523,
+    "density_test": 0.9904942965779467,
     "rules": [
      {
       "high": 0.49943759707489344,
-      "low": 0.0915863436828318,
+      "low": 0.09093591943759033,
       "param": "aps_share",
-      "trimmed_share_of_range": 0.183
+      "trimmed_share_of_range": 0.182
      },
      {
       "high": 0.9510068964533187,
@@ -665,95 +665,20 @@
     "split": 0
    },
    {
-    "coverage_test": 0.7577247191011236,
-    "density_test": 0.9930971007823286,
+    "coverage_test": 0.7736842105263158,
+    "density_test": 0.98989898989899,
     "rules": [
      {
       "high": 0.4999500927673691,
-      "low": 0.07195506392239316,
+      "low": 0.09167923295283986,
       "param": "aps_share",
-      "trimmed_share_of_range": 0.144
+      "trimmed_share_of_range": 0.183
      },
      {
-      "high": 0.9476945397891501,
+      "high": 0.9500566551480208,
       "low": 0.001061860782143751,
       "param": "q_pipe",
-      "trimmed_share_of_range": 0.052
-     },
-     {
-      "high": 0.9146069359843699,
-      "low": 0.002962385670090652,
-      "param": "q_ramp",
-      "trimmed_share_of_range": 0.086
-     }
-    ],
-    "split": 1
-   },
-   {
-    "coverage_test": 0.6545261669024045,
-    "density_test": 0.9973060344827587,
-    "rules": [
-     {
-      "high": 0.49954111078945684,
-      "low": 0.11338529180093643,
-      "param": "aps_share",
-      "trimmed_share_of_range": 0.227
-     },
-     {
-      "high": 0.8958558853389793,
-      "low": 0.001061860782143751,
-      "param": "q_pipe",
-      "trimmed_share_of_range": 0.104
-     },
-     {
-      "high": 0.8944781406833318,
-      "low": 0.002962385670090652,
-      "param": "q_ramp",
-      "trimmed_share_of_range": 0.106
-     }
-    ],
-    "split": 2
-   },
-   {
-    "coverage_test": 0.7550805886475123,
-    "density_test": 0.9949215143120961,
-    "rules": [
-     {
-      "high": 0.4999500927673691,
-      "low": 0.07360693570575196,
-      "param": "aps_share",
-      "trimmed_share_of_range": 0.147
-     },
-     {
-      "high": 0.9476945397891501,
-      "low": 0.001061860782143751,
-      "param": "q_pipe",
-      "trimmed_share_of_range": 0.052
-     },
-     {
-      "high": 0.9173115341955873,
-      "low": 0.002962385670090652,
-      "param": "q_ramp",
-      "trimmed_share_of_range": 0.083
-     }
-    ],
-    "split": 3
-   },
-   {
-    "coverage_test": 0.7248251748251748,
-    "density_test": 0.9956772334293948,
-    "rules": [
-     {
-      "high": 0.4999500927673691,
-      "low": 0.0908656957799477,
-      "param": "aps_share",
-      "trimmed_share_of_range": 0.181
-     },
-     {
-      "high": 0.9510068964533187,
-      "low": 0.001061860782143751,
-      "param": "q_pipe",
-      "trimmed_share_of_range": 0.049
+      "trimmed_share_of_range": 0.05
      },
      {
       "high": 0.9131150613086505,
@@ -762,13 +687,88 @@
       "trimmed_share_of_range": 0.087
      }
     ],
+    "split": 1
+   },
+   {
+    "coverage_test": 0.7265536723163842,
+    "density_test": 0.9922839506172839,
+    "rules": [
+     {
+      "high": 0.49954111078945684,
+      "low": 0.11204441289012587,
+      "param": "aps_share",
+      "trimmed_share_of_range": 0.224
+     },
+     {
+      "high": 0.889777746483428,
+      "low": 0.001061860782143751,
+      "param": "q_pipe",
+      "trimmed_share_of_range": 0.11
+     },
+     {
+      "high": 0.9219074078721423,
+      "low": 0.002962385670090652,
+      "param": "q_ramp",
+      "trimmed_share_of_range": 0.078
+     }
+    ],
+    "split": 2
+   },
+   {
+    "coverage_test": 0.801649793775778,
+    "density_test": 0.9907321594068582,
+    "rules": [
+     {
+      "high": 0.4999500927673691,
+      "low": 0.0739959157633701,
+      "param": "aps_share",
+      "trimmed_share_of_range": 0.147
+     },
+     {
+      "high": 0.9500566551480208,
+      "low": 0.001061860782143751,
+      "param": "q_pipe",
+      "trimmed_share_of_range": 0.05
+     },
+     {
+      "high": 0.9146069359843699,
+      "low": 0.002962385670090652,
+      "param": "q_ramp",
+      "trimmed_share_of_range": 0.086
+     }
+    ],
+    "split": 3
+   },
+   {
+    "coverage_test": 0.7060357675111774,
+    "density_test": 0.9978936282253817,
+    "rules": [
+     {
+      "high": 0.4999500927673691,
+      "low": 0.10757394854955657,
+      "param": "aps_share",
+      "trimmed_share_of_range": 0.215
+     },
+     {
+      "high": 0.9476945397891501,
+      "low": 0.001061860782143751,
+      "param": "q_pipe",
+      "trimmed_share_of_range": 0.052
+     },
+     {
+      "high": 0.8796486139386868,
+      "low": 0.002962385670090652,
+      "param": "q_ramp",
+      "trimmed_share_of_range": 0.121
+     }
+    ],
     "split": 4
    }
   ],
   "PW6": [
    {
-    "coverage_test": 0.8270150901729849,
-    "density_test": 0.951715374841169,
+    "coverage_test": 0.8294862248696947,
+    "density_test": 0.9436679373146971,
     "rules": [
      {
       "high": 0.49943759707489344,
@@ -792,14 +792,14 @@
     "split": 0
    },
    {
-    "coverage_test": 0.8137651821862348,
-    "density_test": 0.9563148788927336,
+    "coverage_test": 0.8180126535169334,
+    "density_test": 0.9494600431965443,
     "rules": [
      {
       "high": 0.4999500927673691,
-      "low": 0.0721172336286833,
+      "low": 0.07154455243037283,
       "param": "aps_share",
-      "trimmed_share_of_range": 0.144
+      "trimmed_share_of_range": 0.143
      },
      {
       "high": 0.9476945397891501,
@@ -817,14 +817,14 @@
     "split": 1
    },
    {
-    "coverage_test": 0.833701250919794,
-    "density_test": 0.9565217391304348,
+    "coverage_test": 0.8782576321667908,
+    "density_test": 0.9439775910364145,
     "rules": [
      {
       "high": 0.49954111078945684,
-      "low": 0.0697354489501803,
+      "low": 0.04724941888791137,
       "param": "aps_share",
-      "trimmed_share_of_range": 0.139
+      "trimmed_share_of_range": 0.094
      },
      {
       "high": 0.9510068964533187,
@@ -842,48 +842,48 @@
     "split": 2
    },
    {
-    "coverage_test": 0.8071979434447301,
-    "density_test": 0.95690030474532,
+    "coverage_test": 0.8081936685288641,
+    "density_test": 0.9451219512195121,
     "rules": [
      {
       "high": 0.4999500927673691,
-      "low": 0.0729758569338192,
+      "low": 0.04959679839296391,
       "param": "aps_share",
-      "trimmed_share_of_range": 0.145
+      "trimmed_share_of_range": 0.099
      },
      {
-      "high": 0.9476945397891501,
+      "high": 0.9500566551480208,
       "low": 0.001061860782143751,
       "param": "q_pipe",
-      "trimmed_share_of_range": 0.052
+      "trimmed_share_of_range": 0.05
      },
      {
-      "high": 0.960557362879582,
+      "high": 0.9146069359843699,
       "low": 0.002962385670090652,
       "param": "q_ramp",
-      "trimmed_share_of_range": 0.039
+      "trimmed_share_of_range": 0.086
      }
     ],
     "split": 3
    },
    {
-    "coverage_test": 0.7764361507500914,
-    "density_test": 0.9632319564230595,
+    "coverage_test": 0.8287620459599704,
+    "density_test": 0.9531116794543905,
     "rules": [
      {
       "high": 0.4999500927673691,
-      "low": 0.0663734835135674,
+      "low": 0.06690760438102977,
       "param": "aps_share",
-      "trimmed_share_of_range": 0.132
+      "trimmed_share_of_range": 0.133
      },
      {
-      "high": 0.8839838324699913,
+      "high": 0.9500566551480208,
       "low": 0.001061860782143751,
       "param": "q_pipe",
-      "trimmed_share_of_range": 0.116
+      "trimmed_share_of_range": 0.05
      },
      {
-      "high": 0.9549465183824698,
+      "high": 0.955468685377924,
       "low": 0.002962385670090652,
       "param": "q_ramp",
       "trimmed_share_of_range": 0.045

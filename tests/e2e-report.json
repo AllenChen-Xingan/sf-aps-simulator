@@ -23,7 +23,7 @@
   {
    "name": "in-browser model loads",
    "pass": true,
-   "info": "1.3 s"
+   "info": "3.8 s"
   },
   {
    "name": "log lines name their link",
@@ -68,7 +68,7 @@
   {
    "name": "consistency verified against the loaded model files and runtime",
    "pass": true,
-   "info": "passed for the model files and runtime loaded here (fingerprint 7b9c9beda614; Py"
+   "info": "passed for the model files and runtime loaded here (fingerprint e0f4869e2c32; Py"
   },
   {
    "name": "pathway table matches the result file, variant rows included",
@@ -165,7 +165,7 @@
  "axe": {
   "light": {
    "violations": [],
-   "passes": 31,
+   "passes": 32,
    "incomplete": [
     "color-contrast"
    ]

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>APS Pathways ABM: Replication Package</title>
+<meta name="description" content="Replication package for an agent-based model of funding and coordination pathways for accessible pedestrian signals in San Francisco: code, ODD+D description, TRACE record, parameters, input data and results.">
+<style>
+:root {
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #555555; --rule: #d6d6d6; --link: #0b4f9c; --code-bg: #f3f3f3;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #141414; --fg: #e8e8e8; --muted: #a8a8a8; --rule: #3a3a3a; --link: #8cb8f0; --code-bg: #222222; }
+}
+:root[data-theme="dark"] { --bg: #141414; --fg: #e8e8e8; --muted: #a8a8a8; --rule: #3a3a3a; --link: #8cb8f0; --code-bg: #222222; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.6 Georgia, "Times New Roman", serif; }
+main { max-width: 46rem; margin: 0 auto; padding: 2.5rem 16px 4rem; }
+h1 { font-size: 1.6rem; line-height: 1.3; margin: 0 0 .5rem; }
+h2 { font-size: 1.15rem; margin: 2.2rem 0 .6rem; border-bottom: 1px solid var(--rule); padding-bottom: .25rem; }
+p, li { margin: .5rem 0; }
+.byline { color: var(--muted); margin: 0 0 1.5rem; }
+a { color: var(--link); }
+a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+code { font-family: Menlo, Consolas, monospace; font-size: .88em; background: var(--code-bg); padding: .05em .3em; border-radius: 3px; overflow-wrap: anywhere; }
+pre { background: var(--code-bg); padding: .8rem 1rem; overflow-x: auto; font-size: .85rem; line-height: 1.45; }
+pre code { background: none; padding: 0; }
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: .95rem; }
+th, td { text-align: left; vertical-align: top; padding: .45rem .6rem .45rem 0; border-bottom: 1px solid var(--rule); }
+th { font-weight: bold; }
+td:first-child { white-space: nowrap; padding-right: 1rem; }
+.actions { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; margin: 1rem 0; }
+.note { color: var(--muted); font-size: .92rem; }
+footer { border-top: 1px solid var(--rule); margin-top: 3rem; padding-top: 1rem; color: var(--muted); font-size: .9rem; }
+</style>
+</head>
+<body>
+<main>
+<h1>Funding and coordination pathways for accessible pedestrian signals in San Francisco: an agent-based model</h1>
+<p class="byline">Replication package &middot; Allen Chen &middot; 2026</p>
+
+<p>This package contains the code, documentation, input data and results of an agent-based model (ABM) that compares how San Francisco could convert pending requests for accessible pedestrian signals (APS) into funded installations. The model follows the 76 crossings pending in June 2026, and new requests, month by month for ten years. Seven pathways (current practice and six alternatives) are compared under six alternative explanations of the observed stall, across 1,000 combinations of uncertain parameters with 20 replicates each. It is a scenario comparison under deep uncertainty, not a forecast.</p>
+
+<p>The documentation follows the ODD protocol, second update (Grimm et al., 2020), with the ODD+D extension for human decision-making (M&uuml;ller et al., 2013); the TRACE framework for documenting development, testing and analysis (Grimm et al., 2014); and the STRESS-ABS reporting checklist (Monks et al., 2019).</p>
+
+<div class="actions">
+  <a href="https://github.com/AllenChen-Xingan/sf-aps-simulator/archive/refs/heads/main.zip">Download the package (zip of the repository)</a>
+  <a href="https://github.com/AllenChen-Xingan/sf-aps-simulator/tree/main/replication">Browse the files on GitHub</a>
+  <a href="../">Interactive simulator</a>
+</div>
+<p class="note">The zip contains the whole repository; the replication package is the folder <code>replication/</code>.</p>
+
+<h2>1. Contents</h2>
+<div class="table-wrap"><table>
+<caption class="note" style="text-align:left;caption-side:bottom;padding-top:.4rem">Each link opens the rendered file on GitHub.</caption>
+<thead><tr><th scope="col">Path</th><th scope="col">Contents</th></tr></thead>
+<tbody>
+<tr><td><a href="https://github.com/AllenChen-Xingan/sf-aps-simulator/blob/main/replication/README.md"><code>README.md</code></a></td><td>Overview, contents, reproduction, versions and checksums, licence and citation</td></tr>
+<tr><td><a href="https://github.com/AllenChen-Xingan/sf-aps-simulator/blob/main/replication/MODEL_CARD.md"><code>MODEL_CARD.md</code></a></td><td>Intended use, uses the model is not suited to, structure in XLRM form, main results and limitations</td></tr>
+<tr><td><a href="https://github.com/AllenChen-Xingan/sf-aps-simulator/blob/main/replication/docs/ODD%2BD.md"><code>docs/ODD+D.md</code></a></td><td>Full model description following the ODD protocol with the ODD+D extension: every state variable, schedule and submodel, with code locations</td></tr>
+<tr><td><a href="https://github.com/AllenChen-Xingan/sf-aps-simulator/blob/main/replication/docs/TRACE.md"><code>docs/TRACE.md</code></a></td><td>Development, testing and analysis record following TRACE</td></tr>
+<tr><td><a href="https://github.com/AllenChen-Xingan/sf-aps-simulator/blob/main/replication/docs/experiment-protocol.md"><code>docs/experiment-protocol.md</code></a></td><td>Experimental protocol: checksums, seeds, criteria, experiments E0&ndash;E4</td></tr>
+<tr><td><a href="https://github.com/AllenChen-Xingan/sf-aps-simulator/blob/main/replication/docs/results.md"><code>docs/results.md</code></a></td><td>All results, with the results file behind every number</td></tr>
+<tr><td><a href="https://github.com/AllenChen-Xingan/sf-aps-simulator/blob/main/replication/docs/parameters.md"><code>docs/parameters.md</code></a>, <a href="https://github.com/AllenChen-Xingan/sf-aps-simulator/blob/main/replication/data/parameters.csv"><code>data/parameters.csv</code></a></td><td>All 98 parameters: range, default, unit, settings where active, source category and source</td></tr>
+<tr><td><a href="https://github.com/AllenChen-Xingan/sf-aps-simulator/blob/main/replication/docs/data-dictionary.md"><code>docs/data-dictionary.md</code></a></td><td>Input files, fields, provenance and processing</td></tr>
+<tr><td><a href="https://github.com/AllenChen-Xingan/sf-aps-simulator/blob/main/replication/docs/actors-and-evidence.md"><code>docs/actors-and-evidence.md</code></a></td><td>Evidence base for every actor, relationship and rule, with public sources</td></tr>
+<tr><td><a href="https://github.com/AllenChen-Xingan/sf-aps-simulator/blob/main/replication/docs/STRESS-ABS.md"><code>docs/STRESS-ABS.md</code></a></td><td>STRESS-ABS reporting checklist mapped to this package</td></tr>
+<tr><td><a href="https://github.com/AllenChen-Xingan/sf-aps-simulator/blob/main/replication/docs/reproducibility.md"><code>docs/reproducibility.md</code></a></td><td>Environment, verification checks, rerun comparison, hardware and run times</td></tr>
+<tr><td><a href="https://github.com/AllenChen-Xingan/sf-aps-simulator/blob/main/replication/docs/references.md"><code>docs/references.md</code></a></td><td>All references (APA 7)</td></tr>
+<tr><td><a href="https://github.com/AllenChen-Xingan/sf-aps-simulator/tree/main/replication/code"><code>code/</code></a></td><td>Model and experiment code (Python) and input data</td></tr>
+<tr><td><a href="https://github.com/AllenChen-Xingan/sf-aps-simulator/tree/main/replication/environment"><code>environment/</code></a></td><td>Python version and pinned dependencies</td></tr>
+<tr><td><a href="https://github.com/AllenChen-Xingan/sf-aps-simulator/tree/main/replication/results"><code>results/</code></a></td><td>Summary results of every experiment, figures and the adversarial-review records</td></tr>
+<tr><td><a href="https://github.com/AllenChen-Xingan/sf-aps-simulator/blob/main/replication/reproduce.sh"><code>reproduce.sh</code></a></td><td>One-command reproduction</td></tr>
+<tr><td><a href="https://github.com/AllenChen-Xingan/sf-aps-simulator/blob/main/replication/SHA256SUMS"><code>SHA256SUMS</code></a></td><td>Checksums of every file in the package</td></tr>
+</tbody>
+</table></div>
+
+<h2>2. Reproducing the results</h2>
+<p>Requirements: Python (version in <code>environment/python-version.txt</code>), a POSIX shell, and about 4.5 hours on 8 CPU cores for the full set of experiments. From the <code>replication/</code> folder:</p>
+<pre><code>./reproduce.sh --quick      # environment, checksums, self-tests, baseline check and one sensitivity cell
+./reproduce.sh              # all main experiments, compared field by field with results/
+./reproduce.sh --e4-full    # additionally reruns the complete sensitivity analysis</code></pre>
+<p>The script builds a fresh virtual environment from the pinned dependencies, runs each experiment in a working copy and compares every regenerated summary with the files in <code>results/</code>. Details and measured run times are in <code>docs/reproducibility.md</code>.</p>
+
+<h2>3. Versions</h2>
+<p>Combined fingerprint (SHA-256) of the model, parameter and input files:<br><code>e0f4869e2c32e15f2f3b905a242bcbaa09f7102cf6aaf151acf3e2ac11dff18f</code>. File-level checksums are in <code>docs/experiment-protocol.md</code> and <code>SHA256SUMS</code>. The interactive simulator at the root of this site runs the same model files in the browser.</p>
+
+<h2>4. Licence and citation</h2>
+<p>Code: MIT licence. Documentation, data and results: CC BY 4.0. Citation metadata: <code>CITATION.cff</code>.</p>
+<p>Chen, A. (2026). <em>An agent-based model of funding and coordination pathways for accessible pedestrian signals in San Francisco</em> [Computer software and documentation]. https://allenchen-xingan.github.io/sf-aps-simulator/replication/</p>
+
+<footer>
+<p>Data sources are public documents and data sets, plus one interview with SFMTA staff cited as personal communication. The package contains no personal information.</p>
+</footer>
+</main>
+</body>
+</html>

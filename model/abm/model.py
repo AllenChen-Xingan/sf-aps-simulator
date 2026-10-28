@@ -1,4 +1,5 @@
-"""SF APS request channel: scenario model (design 02, version 4). STATUS: dev, priors not calibrated.
+"""SF APS request channel: scenario model (see docs/ODD+D.md).
+STATUS: priors not calibrated.
 
 Standard library + numpy only; no file reads at import. Entry point:
 
@@ -20,10 +21,10 @@ PATHWAYS = ['PW0', 'PW1', 'PW2', 'PW3', 'PW4', 'PW5', 'PW6']
 MECHANISMS = ['M-A', 'M-B1', 'M-B2', 'M-C1', 'M-C2', 'M-D']
 RANK = {'high': 0, 'medium': 1, 'low': 2}
 CC = {'KA': 2379000.0, 'B': 213000.0, 'C': 121000.0}       # LRSM 2026 App. D, signalized
-SG105_END = '2024-06'                                     # dedicated money exhausted (ledger 4.1)
-# Variant (04 §9, unfrozen 2026-10-27): PW4/PW5's standing local line must pass the same
+SG105_END = '2024-06'                                     # dedicated APS money exhausted (date undocumented; scanned in E1)
+# Approval variant: PW4/PW5's standing local line must pass the same
 # approval chain as PW2 (Prop L amendment q_veto/t_defer, then General Fund q_gf).
-# False reproduces the frozen model bit for bit (no extra random draws).
+# False adds no random draws (the variant path is not entered).
 LINE_APPROVAL = False
 HSIP_CYCLES = {'C13': 2026, 'C14': 2028, 'C15': 2030, 'C16': 2032, 'C17': 2034}
 
@@ -44,7 +45,7 @@ def load_inputs(path):
         return json.load(f)
 
 
-# ---------------------------------------------------------------- mechanism switches (design D3.2)
+# ---------------------------------------------------------------- mechanism switches
 def switches(mech):
     return {
         'owner_drop': mech in ('M-A', 'M-D'),
@@ -85,6 +86,7 @@ class Sim:
         self.fail_months = []
         self.overrun_checks = []
         self.hsip_awards = []           # months with an HSIP award (signpost for PW1)
+        self.rule_months = []           # months with a design-rule add-on (PW5)
         self.i_base = 0
         self.cost = {'SFMTA': 0.0, 'SFCTA': 0.0, 'Caltrans/HSIP': 0.0, 'refunds': 0.0}
         self.bank = 0.0                 # in-house crew capacity bank
@@ -354,8 +356,14 @@ class Sim:
     def _task_step(self, v):
         tk, t = self.tasks[v], self.now
         open_, deadline = self.window(v)
-        if tk['state'] == 'IDLE' and open_ and t >= tk['deflect_until']:
-            committed = tk['commit'] is not None and (v == 'LOCAL' or tk['commit'][0] == self.cycle_name())
+        committed = tk['commit'] is not None and (v == 'LOCAL' or tk['commit'][0] == self.cycle_name())
+        early = False
+        if v == 'HSIP' and committed and deadline is not None:
+            # a committed application starts early enough for all its instances to be ready by the deadline
+            n_inst = 1 if tk['commit'][1] == 'sg015' else 3
+            lead = math.ceil(self.p['d_prep'] + (n_inst - 1) * self.p['d_split'])
+            early = deadline - lead <= t < deadline
+        if tk['state'] == 'IDLE' and (open_ or early) and t >= tk['deflect_until']:
             if committed or self.rng.random() < self.p_start():
                 tk['state'], tk['ready'] = 'PREPARING', t + int(round(self.p['d_prep']))
                 tk['started'] = t
@@ -372,17 +380,24 @@ class Sim:
             else:
                 tk['state'] = 'IDLE'
                 self.ev('A2', v, 'miss_deadline')
+        if v == 'HSIP' and deadline is not None and t == deadline and committed and tk['commit'] is not None:
+            # a commitment not submitted this cycle rolls over to the next cycle (same bundle mode)
+            nxt = next((c for c, yr in HSIP_CYCLES.items() if yr > 2020 + t // 12), None)
+            tk['commit'] = (nxt, tk['commit'][1]) if nxt else None
         if tk['state'] == 'PREPARING' and not open_ and deadline is None:
             tk['state'] = 'IDLE'
 
     # ------------------------------------------------------------ local venue (Prop L EP17 / General Fund)
     def _local_decision(self):
-        if not getattr(self, 'local_submitted', False) and not self.line_on:
+        staff = getattr(self, 'local_submitted', False)
+        extra = getattr(self, 'one_time', 0)
+        if not staff and not self.line_on and extra <= 0:
             return
         self.local_submitted = False
-        amount = self.line_amount if self.line_on else self.p['a_local']
-        if getattr(self, 'one_time', 0) > 0:
-            amount += self.one_time
+        # status-quo money a_local only when staff submitted a local request; one-off money is added on its own
+        amount = self.line_amount if self.line_on else (self.p['a_local'] if staff else 0.0)
+        if extra > 0:
+            amount += extra
             self.one_time = 0
         cands = sorted([s for s in self.sites if s['state'] == 'C' and not s['blocked']],
                        key=lambda s: (RANK.get(s['rank'], 1), s['key']))
@@ -418,7 +433,7 @@ class Sim:
             d = int(round(p['t_defer']))
             self.pending_propl = (t + 3 + d, 'defer' if d > p['th_defer'] else 'pass')
 
-    # ------------------------------------------------------------ HSIP (design D3.3)
+    # ------------------------------------------------------------ HSIP
     def _site_bcr_parts(self, s, mode, cycle):
         """Return (annual benefit, cost, life, ok) for one site in one bundle mode."""
         p = self.p
@@ -479,7 +494,7 @@ class Sim:
         countermeasures in a group never exceeds 3 signalized-intersection types."""
         parts = []
         for s in self.sites:
-            if s['state'] != group or s.get('in_app'):
+            if s['state'] != group or s.get('in_app') or s['blocked']:   # blocked: not installable by any route
                 continue
             if mode == 'sg015' and not s.get('sg015'):
                 continue
@@ -539,13 +554,13 @@ class Sim:
             self._setaside(cyc)
 
     def _setaside(self, cyc):
-        """Pedestrian-crossing set-aside, total built from components (codex 02 round 13 #1):
+        """Pedestrian-crossing set-aside, total built from components:
         per site the eligible crossing items (new countdown heads SI18PB if missing, new LPI SI22PB if
         possible, otherwise a signalized crossing upgrade SI19PB) plus APS as extra work. APS must stay
         <= 20% of the summed project total; the total must stay <= $400k (HSIP <= $360k at 90%)."""
         p = self.p
         u = self.unit_cost()
-        cands = sorted([s for s in self.sites if s['state'] == 'C' and not s.get('in_app')],
+        cands = sorted([s for s in self.sites if s['state'] == 'C' and not s.get('in_app') and not s['blocked']],
                        key=lambda s: (RANK.get(s['rank'], 1), s['key']))
         chosen, items, aps = [], 0.0, 0.0
         for s in cands:
@@ -595,12 +610,16 @@ class Sim:
     def _agency_flagged(self):
         if not self._lrsp_valid():
             return True                      # local road safety plan not valid at review
-        if self.rng.random() < self.p['rho_flag']:
+        # agency-level red flag on other SF projects: drawn once per review month, shared by all applications
+        if getattr(self, '_rho_month', None) != self.now:
+            self._rho_month, self._rho_value = self.now, self.rng.random() < self.p['rho_flag']
+        if self._rho_value:
             return True
         for pr in self.projects:
-            if pr.get('flag_from') is not None and pr['flag_from'] <= self.now < pr.get('flag_to', 10 ** 6):
+            end = pr.get('end_at', 10 ** 6)  # a terminated project stops counting from its termination month
+            if pr.get('flag_from') is not None and pr['flag_from'] <= self.now < min(pr.get('flag_to', 10 ** 6), end):
                 return True
-            if pr['con_at'] - pr['cs'] > 60 and self.now >= pr['cs'] + 60:
+            if pr['cs'] + 60 <= self.now < min(pr['con_at'], end):   # five years without construction authorization
                 return True
         return False
 
@@ -634,6 +653,7 @@ class Sim:
                 self._new_project(a, cs)
                 self.fund_months.append(t)
                 self.hsip_awards.append(t)
+                self.hsip_sites_awarded = getattr(self, 'hsip_sites_awarded', 0) + len(a['sites'])
                 self.cost['Caltrans/HSIP'] += 0.9 * a['cost']
                 self.cost['SFMTA'] += 0.1 * a['cost']
                 self.cost['aps_extra_budget'] = self.cost.get('aps_extra_budget', 0.0) + a.get('aps_extra', 0.0)
@@ -677,6 +697,7 @@ class Sim:
 
     def _terminate(self, pr, why, to=None):
         pr['done'] = pr['terminated'] = True
+        pr['end_at'] = self.now
         ch = []
         for s in pr['sites']:
             if s['state'] in ('Fh', 'Fi'):
@@ -728,7 +749,7 @@ class Sim:
             self.fail('F-g', 'A2', 'HSIP', 'partner cancelled')
             return
         if t == pr.get('ext_end') and pr['con_at'] > t:
-            ch = self._terminate(pr, 'removed', 'C')
+            ch = self._terminate(pr, 'removed')        # crossings return to their state before the award
             self.cost['refunds'] += 0.1 * pr['cost']
             self.ev('A2', 'CT', 'return_funds', pr['sites'], ch, 'extension ran out')
             self.fail('F-d', 'CT', 'A2', 'extension expired without construction; removed')
@@ -738,7 +759,7 @@ class Sim:
                 pr['ext_end'] = t + int(round(p['t_ext']))   # one extension only
                 self.ev('CT', 'A2', 'extend', pr['sites'], detail=f"until {ms(pr['ext_end'])}")
             else:
-                ch = self._terminate(pr, 'removed', 'C')
+                ch = self._terminate(pr, 'removed')    # crossings return to their state before the award
                 self.cost['refunds'] += 0.1 * pr['cost']
                 self.ev('A2', 'CT', 'return_funds', pr['sites'], ch)
                 self.fail('F-d', 'CT', 'A2', 'removed at 5 years; funds returned')
@@ -754,7 +775,7 @@ class Sim:
                     s['via'], s['ready_at'] = 'hsip', t
                     self.ev('A2', 'A3', 'handoff', [s], [ch], 'construction authorized; joins in-house queue')
 
-    # ------------------------------------------------------------ pathway signposts (design D3.6)
+    # ------------------------------------------------------------ pathway signposts
     def _pathway_signposts(self):
         if self.history:
             return
@@ -763,18 +784,19 @@ class Sim:
         hsip_won = any(m >= self.t0 for m in self.hsip_awards)
         res = self._propl_due()
         if pw == 'PW1':
-            if node == 0 and t == mi('2027-05') and not hsip_won:
+            if node == 0 and t == mi('2027-05') and (not hsip_won or getattr(self, 'hsip_sites_awarded', 0) < 2):
                 self.pw_state['node'] = 1
                 self._node('C14_repack')
                 self.tasks['HSIP']['commit'] = ('C14', 'repack')
-            elif node == 1 and t == mi('2029-05') and not hsip_won:
+            elif node == 1 and t == mi('2029-05') and not any(m > self.pw_state['t_node'] for m in self.hsip_awards):
+                # no HSIP award since the Cycle 14 repack was adopted
                 self.pw_state['node'] = 2
                 self._node('PropL_amendment')
                 self._propl_amendment(t)
         if pw == 'PW2' and node == 0 and res == 'fail':
             self.pw_state['node'] = 1
             self._node('GF_request')
-            self.gf_try = t + (18 - t % 12) % 12 or 12
+            self.gf_try = t + ((18 - t % 12) % 12 or 12)   # next July strictly after t
         if pw in ('PW1', 'PW2') and res is not None:
             if res == 'pass':
                 self.line_on = True
@@ -786,7 +808,6 @@ class Sim:
                     self._node('Director_or_GF')
                     if self.rng.random() < p['q_dir']:
                         self.one_time = p['a_line']
-                        self.local_submitted = True
                         self.ev('DIR', 'A2', 'allocate', detail='Director 10% / SG000 reserve')
                     else:
                         self.fail('F-k', 'DIR', 'A2', 'reallocation not used for APS')
@@ -829,7 +850,6 @@ class Sim:
                         self._propl_amendment(t)
                 else:
                     self.one_time = getattr(self, 'one_time', 0) + p['a_sg017']
-                    self.local_submitted = True
                     self.ev('SFCTA', 'A2', 'approve', detail='SG017 allocation includes new APS (existing poles/conduit)')
             if node == 1 and res == 'pass':
                 self.line_on = True
@@ -837,7 +857,7 @@ class Sim:
                 self.fail('F-j', 'SFCTA', 'A2', 'Prop L amendment rejected or deferred')
                 self.pw_state['node'] = 2
                 self._node('GF_request')
-                self.gf_try = t + (18 - t % 12) % 12 or 12
+                self.gf_try = t + ((18 - t % 12) % 12 or 12)   # next July strictly after t
             if node == 2 and getattr(self, 'gf_try', None) == t:
                 self.gf_try = None
                 if self.rng.random() < p['q_gf']:
@@ -877,7 +897,7 @@ class Sim:
             else:
                 self.fail('F-j', 'SFCTA', 'A2', 'Prop L amendment rejected or deferred')
                 self._node('GF_request')
-                self.gf_try, self.line_app = t + (18 - t % 12) % 12 or 12, 'gf'
+                self.gf_try, self.line_app = t + ((18 - t % 12) % 12 or 12), 'gf'   # next July strictly after t
         elif st == 'gf' and getattr(self, 'gf_try', None) == t:
             self.gf_try = None
             if self.rng.random() < self.p['q_gf']:
@@ -907,7 +927,7 @@ class Sim:
             self.cost['SFMTA'] += c
             ch = self.move(s, 'Fi')
             s['via'], s['ready_at'] = 'design_rule', t
-            self.fund_months.append(t)
+            self.rule_months.append(t)          # not a request-channel batch award, so not in fund_months
             self.ev('A3', 'A2', 'rule_apply', [s], [ch], 'hardware change carries APS (design rule)')
 
     def _propl_due(self):
@@ -917,7 +937,7 @@ class Sim:
             return 'pass' if pp[1] == 'pass' else 'fail'
         return None
 
-    # ------------------------------------------------------------ delivery (design D3.4)
+    # ------------------------------------------------------------ delivery
     def _overruns(self):
         p = self.p
         keep = []
@@ -1003,7 +1023,9 @@ class Sim:
     def _summary(self, months, series, snaps):
         t5, t10 = self.t0 + 60, self.t0 + 120
         inst = [s for s in self.sites if s['installed'] is not None and s['installed'] >= self.t0]   # includes month 1
-        hp = [s for s in self.sites if s['rank'] == 'high']
+        # denominator: high-rank crossings listed before t0 + 60 and not already installed before t0
+        hp = [s for s in self.sites if s['rank'] == 'high' and (s['listed'] is None or s['listed'] < t5)
+              and not (s['installed'] is not None and s['installed'] < self.t0)]
         rec = None
         if self.fail_months:
             f0 = min(self.fail_months)

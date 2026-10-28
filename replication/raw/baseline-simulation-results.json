@@ -1,0 +1,424 @@
+{
+ "full_2022_2026": {
+  "counts": {
+   "Fi>I": 23,
+   "Fs>I": 16,
+   "C>Fi": 3,
+   "N>Fs": 2,
+   "C>Fs": 5,
+   "Fs>N": 2,
+   "N>C": 2,
+   "Fs>C": 1
+  },
+  "exposure_months": {
+   "C": 985.8,
+   "Fi": 311.0,
+   "Fs": 953.7,
+   "N": 858.8
+  },
+  "rate_per_year": {
+   "C>Fi": 0.037,
+   "C>Fs": 0.061,
+   "N>C": 0.028,
+   "N>Fs": 0.028,
+   "Fi>I": 0.888,
+   "Fs>C": 0.013,
+   "Fs>N": 0.025,
+   "Fs>I": 0.201
+  }
+ },
+ "early_2022_2024": {
+  "counts": {
+   "Fi>I": 20,
+   "Fs>I": 6,
+   "N>Fs": 1,
+   "C>Fi": 2,
+   "Fs>N": 2,
+   "Fs>C": 1
+  },
+  "exposure_months": {
+   "Fi": 273.7,
+   "Fs": 419.6,
+   "C": 160.0,
+   "N": 329.9
+  },
+  "rate_per_year": {
+   "C>Fi": 0.15,
+   "N>Fs": 0.036,
+   "Fi>I": 0.877,
+   "Fs>C": 0.029,
+   "Fs>N": 0.057,
+   "Fs>I": 0.172
+  }
+ },
+ "recent_2024_2026": {
+  "counts": {
+   "Fs>I": 10,
+   "C>Fi": 1,
+   "N>Fs": 1,
+   "C>Fs": 5,
+   "Fi>I": 3,
+   "N>C": 2
+  },
+  "exposure_months": {
+   "C": 825.8,
+   "Fs": 534.2,
+   "N": 529.0,
+   "Fi": 37.3
+  },
+  "rate_per_year": {
+   "C>Fi": 0.015,
+   "C>Fs": 0.073,
+   "N>C": 0.045,
+   "N>Fs": 0.023,
+   "Fi>I": 0.965,
+   "Fs>I": 0.225
+  }
+ },
+ "arrivals": {
+  "n": 41,
+  "per_month": 0.871,
+  "mix": {
+   "C": 32,
+   "Fs": 6,
+   "N": 3
+  }
+ },
+ "backtest": {
+  "out_of_sample: fit 2022-07..2024-02, predict 2024-02..2026-06": {
+   "observed": {
+    "installed": 13,
+    "C": 35,
+    "N": 18,
+    "Fi": 2,
+    "Fs": 21
+   },
+   "simulated": {
+    "installed": {
+     "median": 20.0,
+     "p10": 13,
+     "p90": 27
+    },
+    "C": {
+     "median": 27.0,
+     "p10": 19,
+     "p90": 35
+    },
+    "N": {
+     "median": 21.0,
+     "p10": 16,
+     "p90": 25
+    },
+    "Fi": {
+     "median": 4.0,
+     "p10": 1,
+     "p90": 9
+    },
+    "Fs": {
+     "median": 16.0,
+     "p10": 11,
+     "p90": 22
+    }
+   }
+  },
+  "in_sample: fit full era, replay 2022-07..2026-06": {
+   "observed": {
+    "installed": 39,
+    "C": 35,
+    "N": 18,
+    "Fi": 2,
+    "Fs": 21
+   },
+   "simulated": {
+    "installed": {
+     "median": 42.0,
+     "p10": 35,
+     "p90": 48
+    },
+    "C": {
+     "median": 34.0,
+     "p10": 29,
+     "p90": 40
+    },
+    "N": {
+     "median": 18.0,
+     "p10": 14,
+     "p90": 22
+    },
+    "Fi": {
+     "median": 2.0,
+     "p10": 0,
+     "p90": 4
+    },
+    "Fs": {
+     "median": 19.0,
+     "p10": 13,
+     "p90": 25
+    }
+   }
+  },
+  "in_sample: fit recent regime, replay 2024-02..2026-06": {
+   "observed": {
+    "installed": 13,
+    "C": 35,
+    "N": 18,
+    "Fi": 2,
+    "Fs": 21
+   },
+   "simulated": {
+    "installed": {
+     "median": 16.0,
+     "p10": 11,
+     "p90": 22
+    },
+    "C": {
+     "median": 35.0,
+     "p10": 30,
+     "p90": 39
+    },
+    "N": {
+     "median": 17.0,
+     "p10": 13,
+     "p90": 20
+    },
+    "Fi": {
+     "median": 1.0,
+     "p10": 0,
+     "p90": 3
+    },
+    "Fs": {
+     "median": 20.0,
+     "p10": 14,
+     "p90": 26
+    }
+   }
+  }
+ },
+ "scenarios": {
+  "S0 status quo (full-era rates)": {
+   "old_installed_5y": {
+    "median": 0.3223684210526316,
+    "p10": 0.23684210526315788,
+    "p90": 0.42105263157894735
+   },
+   "old_installed_10y": {
+    "median": 0.5263157894736842,
+    "p10": 0.40789473684210525,
+    "p90": 0.6447368421052632
+   },
+   "pending_at_5y": {
+    "median": 67.5,
+    "p10": 51,
+    "p90": 82
+   },
+   "new_median_wait_months": {
+    "median": 999.0,
+    "p10": 74,
+    "p90": 999
+   },
+   "actors_needed": []
+  },
+  "S0b status quo (recent regime, in-house stopped)": {
+   "old_installed_5y": {
+    "median": 0.34210526315789475,
+    "p10": 0.25,
+    "p90": 0.4473684210526316
+   },
+   "old_installed_10y": {
+    "median": 0.5657894736842105,
+    "p10": 0.4473684210526316,
+    "p90": 0.6842105263157895
+   },
+   "pending_at_5y": {
+    "median": 64.0,
+    "p10": 48,
+    "p90": 81
+   },
+   "new_median_wait_months": {
+    "median": 999.0,
+    "p10": 76,
+    "p90": 999
+   },
+   "actors_needed": []
+  },
+  "S1 restart in-house program: fund 25 C-candidates/yr (SG105 scale)": {
+   "old_installed_5y": {
+    "median": 0.7105263157894737,
+    "p10": 0.6052631578947368,
+    "p90": 0.7894736842105263
+   },
+   "old_installed_10y": {
+    "median": 0.8421052631578947,
+    "p10": 0.7631578947368421,
+    "p90": 0.9078947368421053
+   },
+   "pending_at_5y": {
+    "median": 16.0,
+    "p10": 10,
+    "p90": 24
+   },
+   "new_median_wait_months": {
+    "median": 18.0,
+    "p10": 12,
+    "p90": 30
+   },
+   "actors_needed": [
+    "SFMTA Signal Shop",
+    "SFMTA CIP / local funds (e.g. TNC tax, Prop L)"
+   ]
+  },
+  "S2 dedicated pole/contract funding: move 10 N/yr into signal projects": {
+   "old_installed_5y": {
+    "median": 0.4605263157894737,
+    "p10": 0.34210526315789475,
+    "p90": 0.5657894736842105
+   },
+   "old_installed_10y": {
+    "median": 0.6842105263157895,
+    "p10": 0.5657894736842105,
+    "p90": 0.8026315789473685
+   },
+   "pending_at_5y": {
+    "median": 52.0,
+    "p10": 37,
+    "p90": 69
+   },
+   "new_median_wait_months": {
+    "median": 999.0,
+    "p10": 67,
+    "p90": 999
+   },
+   "actors_needed": [
+    "SFMTA design",
+    "SFCTA / Caltrans HSIP funders",
+    "Public Works contracts"
+   ]
+  },
+  "S3 enforce 3-year clock after funding (Fs->I)": {
+   "old_installed_5y": {
+    "median": 0.4868421052631579,
+    "p10": 0.40789473684210525,
+    "p90": 0.5657894736842105
+   },
+   "old_installed_10y": {
+    "median": 0.6578947368421053,
+    "p10": 0.5526315789473685,
+    "p90": 0.7631578947368421
+   },
+   "pending_at_5y": {
+    "median": 51.0,
+    "p10": 37,
+    "p90": 66
+   },
+   "new_median_wait_months": {
+    "median": 85.0,
+    "p10": 51,
+    "p90": 999
+   },
+   "actors_needed": [
+    "SFMTA",
+    "Public Works",
+    "contractors",
+    "PG&E via SFPUC",
+    "Caltrans (state routes)"
+   ]
+  },
+  "S1-sens-a: in-house at half scale (12/yr)": {
+   "old_installed_5y": {
+    "median": 0.6973684210526315,
+    "p10": 0.5789473684210527,
+    "p90": 0.7763157894736842
+   },
+   "old_installed_10y": {
+    "median": 0.8421052631578947,
+    "p10": 0.7631578947368421,
+    "p90": 0.9210526315789473
+   },
+   "pending_at_5y": {
+    "median": 18.0,
+    "p10": 10,
+    "p90": 27
+   },
+   "new_median_wait_months": {
+    "median": 36.0,
+    "p10": 28,
+    "p90": 50
+   },
+   "actors_needed": "combination"
+  },
+  "S1-sens-b: 25/yr but in-house install rate halved (harder leftovers)": {
+   "old_installed_5y": {
+    "median": 0.6578947368421053,
+    "p10": 0.5263157894736842,
+    "p90": 0.7631578947368421
+   },
+   "old_installed_10y": {
+    "median": 0.8289473684210527,
+    "p10": 0.7236842105263158,
+    "p90": 0.9078947368421053
+   },
+   "pending_at_5y": {
+    "median": 19.0,
+    "p10": 11,
+    "p90": 32
+   },
+   "new_median_wait_months": {
+    "median": 26.0,
+    "p10": 17,
+    "p90": 48
+   },
+   "actors_needed": "combination"
+  },
+  "S4 = S1 + S3": {
+   "old_installed_5y": {
+    "median": 0.8157894736842105,
+    "p10": 0.7368421052631579,
+    "p90": 0.868421052631579
+   },
+   "old_installed_10y": {
+    "median": 0.8947368421052632,
+    "p10": 0.8289473684210527,
+    "p90": 0.9473684210526315
+   },
+   "pending_at_5y": {
+    "median": 11.0,
+    "p10": 5,
+    "p90": 18
+   },
+   "new_median_wait_months": {
+    "median": 15.0,
+    "p10": 10,
+    "p90": 25
+   },
+   "actors_needed": "combination"
+  },
+  "S5 = S1 + S2 + S3": {
+   "old_installed_5y": {
+    "median": 0.9736842105263158,
+    "p10": 0.9078947368421053,
+    "p90": 1.0
+   },
+   "old_installed_10y": {
+    "median": 1.0,
+    "p10": 0.9868421052631579,
+    "p90": 1.0
+   },
+   "pending_at_5y": {
+    "median": 0.0,
+    "p10": 0,
+    "p90": 3
+   },
+   "new_median_wait_months": {
+    "median": 14.0,
+    "p10": 9,
+    "p90": 23
+   },
+   "actors_needed": "combination"
+  }
+ },
+ "notes": [
+  "wait 999 = not installed within the 10-year horizon",
+  "start: 76 pending on 2026-06-30 list; arrivals ~Poisson at observed rate with observed status mix",
+  "capacity programs fund oldest-first; rates otherwise from the stated regime"
+ ]
+}

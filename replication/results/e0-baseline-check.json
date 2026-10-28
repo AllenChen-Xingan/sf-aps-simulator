@@ -1,0 +1,15 @@
+{
+ "seed": 146,
+ "ours": {
+  "median": 20.0,
+  "p10": 13,
+  "p90": 28
+ },
+ "reference_simulate_py": {
+  "median": 20.0,
+  "p10": 13,
+  "p90": 27
+ },
+ "observed": 13,
+ "match_within_tolerance": true
+}
