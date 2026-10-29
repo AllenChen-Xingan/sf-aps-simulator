@@ -48,7 +48,7 @@ def variant_keyed():
     import e3_variant as ev
     import model
     model.LINE_APPROVAL = True
-    sets = ev.frozen_sets()
+    sets = ev.base_sets()
     tasks = ev.make_tasks(sets, None, ev.VARIANT_PWS)
     rows = shard_rows(RES / '_shards' / 'e3-variant')
     assert len(rows) == len(tasks)

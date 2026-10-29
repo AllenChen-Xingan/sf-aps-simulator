@@ -44,8 +44,8 @@ Each script writes to `../results/` relative to its own location. `reproduce.sh`
 
 ```
 ./reproduce.sh --quick        # environment, checksums, self-tests, E0, one Morris cell (about 1.5 min)
-./reproduce.sh                # everything except the full sensitivity analysis (about [pending] h)
-./reproduce.sh --e4-full      # as above, with all of E4a and E4b (about [pending] h)
+./reproduce.sh                # everything except the full sensitivity analysis (about 1.3 h)
+./reproduce.sh --e4-full      # as above, with all of E4a and E4b (about 4 h)
 ./reproduce.sh --make-sums    # rewrite SHA256SUMS
 ```
 
@@ -57,7 +57,7 @@ Each regenerated JSON summary is compared with the distributed file by parsing b
 
 ### 4.1 Single sensitivity cells
 
-A complete E4 rerun takes about [pending] h (Section 7). The default run instead recomputes one cell of each analysis exactly as `code/experiments.py` builds it — the same unit-cube sample, the same replicate seeds and the same analysis seed — and compares every index:
+A complete E4 rerun takes about 2.8 h (Section 7). The default run instead recomputes one cell of each analysis exactly as `code/experiments.py` builds it — the same unit-cube sample, the same replicate seeds and the same analysis seed — and compares every index:
 
 - Morris, first pass, cell PW0 × M-A: 1,980 sample points (20 trajectories × 99 points) × 20 replicates; μ* and σ for all 98 parameters, compared with `results/e4-sensitivity/morris.json`.
 - Sobol, N = 256, cell PW0 × M-A with the default background: 3,584 sample points × 20 replicates; S1, ST and their confidence intervals for the screened parameters, compared with `results/e4-sensitivity/sobol.json`.
@@ -81,7 +81,8 @@ All checks were run on a copy of `code/` in a new virtual environment, with outp
 | Replay and rule checks | `python -I replay_check.py` | 10 s | Replay mismatches 0; installation reconciliation mismatches 0; all targeted rule tests pass |
 | E0 baseline | `python -I code/baseline.py` (from the package root) | 3 s | Output byte-identical to `results/e0-baseline-check.json`: median 20 installations, 10th–90th percentile 13–28; reference 20 and 13–27; within tolerance |
 | Approval switch off reproduces the main E3 runs | `python -I e3_variant.py --verify` | 6 s (part of the variant run) | 108 rebuilt tasks (PW0, PW4, PW5 × 6 settings × 2 controls × 3 combinations) vs the rows of `e3-pathways/runs.csv.gz`: 0 field differences |
-| Quick reproduction from a new environment | `./reproduce.sh --quick` | [pending] | [pending] |
+| Quick reproduction from a new environment | `./reproduce.sh --quick` (package root) | 71 s | All 10 steps pass: environment, checksums, both self-tests, E0 and one Morris cell; the Morris cell is byte-identical to the corresponding entries of `results/e4-sensitivity/morris.json` |
+| Single Sobol cell | `e4_cell.py` as called by `reproduce.sh` | 67 s | 3,584 sample points × 20 replicates; byte-identical to the corresponding entries of `results/e4-sensitivity/sobol.json` |
 
 ## 6. Main experiments
 
@@ -91,20 +92,32 @@ All experiments were run with master seed 146, 20 replicates per parameter combi
 |---|---|---|---|---|
 | E1 historical screening | `experiments.py e1` | 86,400 (48 months each) | 17 min | `results/e1-fit/fit-table.json` |
 | E2/E3 conditions for funding and pathway comparison, with the zero-direct-effect control | `experiments.py e23` | 84,000 (120 months each) | 53 min | `results/e2-prim/prim.json`, `results/e3-pathways/robustness.json` |
-| Approval variant | `e3_variant.py --verify` | 12,036 (combinations without a standing line; PW4, PW5 × 6 settings × 2 controls) | 8 min | `results/e3-variant/summary.json` |
+| Approval variant | `e3_variant.py --verify` | 12,036 (combinations without a standing line; PW4, PW5 × 6 settings × 2 controls) | 6 min | `results/e3-variant/summary.json` |
 | Secondary analyses | `posthoc.py` | — (no simulation) | 15 s | `results/e3-pathways/posthoc.json` |
-| Figures | `figures.py` | — | [pending] | `results/figures/` |
-| Web export | `final_export.py` | — | 26 s | `results/web/` |
-| E4a Morris, two passes | `experiments.py e4a` | 83,160 per pass | [pending] | `results/e4-sensitivity/morris.json` |
-| E4b Sobol, N = 256 and 512, with background checks | `experiments.py e4b` | [pending] | [pending] | `results/e4-sensitivity/sobol.json` |
+| Figures | `figures.py` | — | 2 s | `results/figures/` |
+| Web export | `final_export.py` | — | 24 s | `results/web/` |
+| E4a Morris, two passes | `experiments.py e4a` | 83,160 per pass | 77 min (both passes) | `results/e4-sensitivity/morris.json` |
+| E4b Sobol, N = 256 and 512, with background checks | `experiments.py e4b` | 78,848 (N = 256: 22 cells × 3,584) and 100,352 (N = 512: 14 cells × 7,168) | about 88 min of computation (see Section 7) | `results/e4-sensitivity/sobol.json` |
 
 The historical segment of the model (runs starting in July 2022, used only by E1) is unaffected by the model changes recorded in `docs/TRACE.md`: rerunning E1 with the final code reproduced all 86,400 task records, the fit table and the accepted parameter combinations byte for byte.
 
-[pending: field-by-field comparison of an independent rerun with the distributed results.]
+Checks completed against the distributed results: the quick reproduction from a new environment passed every step in 71 s; the single Morris and Sobol cells were byte-identical to the corresponding entries of `results/e4-sensitivity/`; the E1 rerun was byte-identical for all 86,400 task records; and with the approval switch off, 108 rebuilt main-run tasks showed no field differences. A full rerun of the default mode with field-by-field comparison is reported in Section 6.1.
+
+### 6.1 Independent rerun of the default mode
+
+In progress.
 
 ## 7. Time and hardware requirements
 
-[pending: measured durations; totals for `--quick`, the default run and `--e4-full`.]
+The totals below are sums of the step durations measured on the machine in Section 2 (Sections 5 and 6).
+
+| Mode | Main components | Total |
+|---|---|---|
+| `--quick` | environment, checks, E0, one Morris cell | 71 s (measured) |
+| default | quick steps, E1 (17 min), E2/E3 (53 min), approval variant (6 min), secondary analyses, figures, web export, one Sobol cell | about 1.3 h |
+| `--e4-full` | default without the single Sobol cell, plus E4a (77 min) and E4b (about 88 min) | about 4 h |
+
+The E4b duration is the computation time, estimated from the intervals between consecutive output shards; the run was interrupted by periods of system sleep, so its wall-clock time is not informative.
 
 Memory use is modest (under 1 GB per worker process). Raw outputs occupy about 0.7 GB of disk. On a machine with fewer cores, time scales roughly inversely with the number of worker processes; results do not depend on that number (Section 5, runner self-test).
 

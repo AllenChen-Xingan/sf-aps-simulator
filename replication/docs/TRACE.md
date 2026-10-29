@@ -205,7 +205,6 @@ The code was read line by line against the design specification to write `docs/O
 
 - The tests are scenario tests and assertions, not a unit-test suite with coverage measurement. Most run at default parameter values; the ceiling, set-aside and termination tests use sampled parameters.
 - The defects in Section 5.6 were not caught by any test; B1, for example, required a Prop L failure decided in July, which no test exercised. They were found by reading the code against its documentation. Tests that fix the month of each scheduled event, and tests per documented rule, would have caught most of them.
-- The 1,848-run identity comparison used a one-off script that is not distributed; the two compared files are distributed.
 - The model core was written to run also in a browser (Pyodide). This has not been verified for the distributed version.
 
 ## 6. Model output verification
@@ -250,7 +249,9 @@ The primary PRIM boxes have test density 0.939–0.995, and CART reaches test ac
 
 ### 7.4 Sensitivity analysis (E4)
 
-[Pending: Morris overlap and list, leading Sobol indices and their sums, and the fixed-background check, from `results/e4-sensitivity/`.]
+The two Morris passes share 10 of their top-12 parameters, so the pass-1 list was used for the Sobol analysis as specified (`docs/experiment-protocol.md` §7). Both lists are made up of the money behind a standing local line (`aps_share`, `a_line`, `sw_line`), site costs and their financing (`q_ramp`, `q_pipe`, `u0`, `k_cont`, `q_topup`, `g_cost`), the delivery of signal-project sites (`h_fs`, `pi_scope`, `fs5_parent`, `done3_real`) and the arrival of new requests (`lam_arr`). Because E4 samples the full prior ranges without historical screening, this ranking describes the model over its priors, not the screened combinations of E3.
+
+In the Sobol analysis of these 12 parameters, with all others at their defaults, the largest mean total indices at N = 512 belong to `aps_share` (0.330), `q_pipe` (0.217), `q_ramp` (0.190) and `sw_line` (0.180) (`docs/results.md`, Table 21). Within cells, the parameter with the largest total index is `sw_line` for PW0 in both settings and for PW3 in M-D, and `aps_share`, `q_pipe` or `q_ramp` in the other cells; in 8 of 14 cells its interval overlaps that of the second parameter (Table 22). Total indices sum to 1.467 and first-order indices to 0.732, so interactions are substantial, although replicate noise inflates both sums to an unknown extent. Fixing the other parameters at their 25th or 75th percentile instead of the default leaves the leading parameter unchanged in the four cells checked (Table 23). E4b is conditional on the fixed background and cannot show that the excluded parameters are unimportant.
 
 ### 7.5 Channels for accountability, pressure and capacity
 
@@ -283,7 +284,7 @@ In HSIP Cycle 12, the agency submitted an application in the same window in whic
 
 ### 8.3 Installation capacity
 
-A 2010 press release reported 116 APS installations over the preceding two and a half years, about 46 per year (SFMTA, 2010). The scope differs from the post-2010 request channel, so the comparison is qualitative: it weighs against an explanation in which the crews could never install quickly, and is consistent with the E4 result that crew capacity is not among the influential inputs when funding is the binding constraint.
+A 2010 press release reported 116 APS installations over the preceding two and a half years, about 46 per year (SFMTA, 2010). The scope differs from the post-2010 request channel, so the comparison is qualitative: it weighs against an explanation in which the crews could never install quickly, and is consistent with the E4 result that crew capacity (`k0`) is outside the leading twelve inputs in both Morris passes, while money and cost parameters lead (`docs/results.md`, Table 20).
 
 ### 8.4 Peer cities
 

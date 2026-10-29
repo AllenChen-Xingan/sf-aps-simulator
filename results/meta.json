@@ -5,7 +5,7 @@
  "model_fingerprint": "e0f4869e2c32e15f2f3b905a242bcbaa09f7102cf6aaf151acf3e2ac11dff18f",
  "produced_by_fingerprint": "e0f4869e2c32e15f2f3b905a242bcbaa09f7102cf6aaf151acf3e2ac11dff18f",
  "design_version": "base design with approval variant",
- "run_date": "2026-10-28",
+ "run_date": "2026-10-29",
  "n_param_sets": 461,
  "n_param_sets_by_mechanism": {
   "M-A": 518,

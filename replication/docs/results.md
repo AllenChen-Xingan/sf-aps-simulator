@@ -128,7 +128,7 @@ The primary E3 output pools combinations with and without a standing local line 
 | PW5 design standards (approval variant) | 91.8–95.2 | 93.6–96.9 | 46.9–63.1 | 46.6–54.8 |
 | PW4 crossing-specific allocation (approval variant) | 91.2–93.9 | 93.4–95.2 | 51.3–66.5 | 51.0–59.5 |
 
-*Sources:* base design: `results/e3-pathways/posthoc.json`, `by_sw_line.line0_status_quo["<pathway>|positive"]` and `["<pathway>|zero_direct"]`, fields `share_better` and `P_money`. Approval variant: `results/e3-variant/summary.json`, `table["<pathway>|positive"]` and `["<pathway>|zero_direct"]`, fields `share_better_than_PW0` and `P_money`. Combinations per setting: M-A 518, M-B1 517, M-B2 502, M-C1 483, M-C2 461, M-D 528 (`results/web/meta.json`, `n_param_sets_by_mechanism`; `results/e3-variant/summary.json`, `by_mech[...].n_sets`). The fields `frozen_share_better` and `frozen_P_money` of `results/e3-variant/summary.json` hold the base-design values of PW4 and PW5 for the same combinations and reproduce the corresponding rows of this table.
+*Sources:* base design: `results/e3-pathways/posthoc.json`, `by_sw_line.line0_status_quo["<pathway>|positive"]` and `["<pathway>|zero_direct"]`, fields `share_better` and `P_money`. Approval variant: `results/e3-variant/summary.json`, `table["<pathway>|positive"]` and `["<pathway>|zero_direct"]`, fields `share_better_than_PW0` and `P_money`. Combinations per setting: M-A 518, M-B1 517, M-B2 502, M-C1 483, M-C2 461, M-D 528 (`results/web/meta.json`, `n_param_sets_by_mechanism`; `results/e3-variant/summary.json`, `by_mech[...].n_sets`). The fields `base_share_better` and `base_P_money` of `results/e3-variant/summary.json` hold the base-design values of PW4 and PW5 for the same combinations and reproduce the corresponding rows of this table.
 
 **Table 8.** Outperforms PW0 (%), by setting. Main comparison, positive control.
 
@@ -386,11 +386,79 @@ E4 samples the full prior ranges without historical screening. It describes whic
 
 ### 7.1 E4a: Morris screening
 
-[Pending: `results/e4-sensitivity/morris.json`.]
+The two passes' top-12 lists share 10 parameters; the list used for E4b is given in `docs/experiment-protocol.md` §7 (source `results/e4-sensitivity/morris.json`, fields `top12_pass1`, `top12_pass2`, `overlap`, `chosen_for_sobol`, and `cells["<pathway>|<setting>"]["pass1"|"pass2"].mu_star`).
+
+**Table 20.** Rank by mean μ* (out of 98) of parameters that represent accountability, pressure, capacity and two funding thresholds.
+
+| Parameter | Meaning | Pass 1: rank (mean μ*) | Pass 2: rank (mean μ*) |
+|---|---|---|---|
+| `k0` | Internal crew capacity | 20 (2.52) | 67 (1.92) |
+| `c_final` | HSIP selection threshold | 22 (2.42) | 14 (3.14) |
+| `b_own` | Effect of a named owner on initiation | 24 (2.35) | 69 (1.91) |
+| `q_dir` | Probability of the hypothetical reallocation | 34 (2.10) | 43 (2.08) |
+| `b_spec` | Effect of a specified deadline on initiation | 51 (1.88) | 42 (2.08) |
+| `b_ov` | Effect of oversight on initiation | 54 (1.84) | 75 (1.86) |
+| `b_enf` | Effect of external enforcement on initiation | 69 (1.79) | 35 (2.16) |
+| `lam_press` | Advocacy pressure frequency | 82 (1.73) | 94 (1.68) |
+| `b_pr` | Effect of a pressure event on initiation | 97 (1.57) | 91 (1.73) |
+
+*Derivation:* mean of `cells[...]["pass<k>"].mu_star["<parameter>"]` over the 42 cells of `results/e4-sensitivity/morris.json`, ranked in decreasing order. μ* approximates the change in ten-year installations from moving a parameter across its range (protocol §8.1).
+
+None of these parameters is among the leading twelve in either pass. Below the leading twelve, ranks are unstable between passes (median absolute change in rank 18 places), so ranks in that region are not interpreted beyond "outside the leading twelve". Two reasons for the low position of accountability, pressure and capacity apply. First, the model gives them narrow channels: ownership, deadlines, oversight, pressure and enforcement act only on the probability of starting an application, and crew capacity is a monthly ceiling. Second, μ* is averaged over 42 cells, which dilutes parameters that act in only some settings. This is not evidence that these factors are unimportant in practice.
 
 ### 7.2 E4b: Sobol indices
 
-[Pending: `results/e4-sensitivity/sobol.json`.]
+**Table 21.** Total (ST) and first-order (S1) indices, simple mean over the 14 default-background cells (7 pathways × {M-A, M-D}).
+
+| Parameter | ST, N = 512 | S1, N = 512 | Mean of per-cell 95% half-widths of ST, N = 512 | ST, N = 256 | S1, N = 256 |
+|---|---|---|---|---|---|
+| `aps_share` | 0.330 | 0.146 | 0.068 | 0.329 | 0.148 |
+| `q_pipe` | 0.217 | 0.109 | 0.049 | 0.198 | 0.147 |
+| `q_ramp` | 0.190 | 0.109 | 0.044 | 0.204 | 0.128 |
+| `sw_line` | 0.180 | 0.109 | 0.048 | 0.194 | 0.107 |
+| `a_line` | 0.135 | 0.025 | 0.057 | 0.110 | 0.048 |
+| `lam_arr` | 0.116 | 0.068 | 0.025 | 0.106 | 0.066 |
+| `h_fs` | 0.106 | 0.073 | 0.024 | 0.108 | 0.079 |
+| `u0` | 0.061 | 0.008 | 0.014 | 0.059 | 0.016 |
+| `fs5_parent` | 0.050 | 0.040 | 0.010 | 0.053 | 0.051 |
+| `pi_scope` | 0.033 | 0.022 | 0.007 | 0.033 | 0.024 |
+| `q_topup` | 0.028 | 0.020 | 0.006 | 0.030 | 0.033 |
+| `k_cont` | 0.022 | 0.004 | 0.007 | 0.022 | −0.001 |
+| Sum | 1.467 | 0.732 | | 1.447 | 0.846 |
+
+*Derivation:* simple mean over the keys `"<pathway>|<M-A or M-D>|default"` of `results/e4-sensitivity/sobol.json`, `cells[...]["N512"|"N256"]`, fields `ST`, `S1`, `ST_conf`.
+
+**Table 22.** Parameters with the two largest total indices in each cell (N = 512, default background), with the 95% half-width of each.
+
+| Pathway | M-A: first | M-A: second | M-D: first | M-D: second |
+|---|---|---|---|---|
+| PW0 | `sw_line` 0.58 ± 0.17 | `aps_share` 0.24 ± 0.06 | `sw_line` 0.52 ± 0.12 | `aps_share` 0.26 ± 0.06 |
+| PW1 | `aps_share` 0.34 ± 0.07 | `q_pipe` 0.25 ± 0.06 | `aps_share` 0.35 ± 0.08 | `sw_line` 0.19 ± 0.05 |
+| PW2 | `aps_share` 0.41 ± 0.08 | `q_pipe` 0.27 ± 0.06 | `aps_share` 0.40 ± 0.08 | `q_pipe` 0.18 ± 0.04 |
+| PW3 | `q_pipe` 0.30 ± 0.06 | `aps_share` 0.29 ± 0.07 | `sw_line` 0.39 ± 0.10 | `aps_share` 0.29 ± 0.07 |
+| PW4 | `aps_share` 0.42 ± 0.08 | `q_pipe` 0.28 ± 0.06 | `aps_share` 0.41 ± 0.07 | `q_pipe` 0.18 ± 0.04 |
+| PW5 | `q_pipe` 0.33 ± 0.06 | `q_ramp` 0.33 ± 0.07 | `aps_share` 0.28 ± 0.05 | `q_pipe` 0.23 ± 0.04 |
+| PW6 | `aps_share` 0.36 ± 0.08 | `q_pipe` 0.27 ± 0.06 | `aps_share` 0.34 ± 0.07 | `q_pipe` 0.17 ± 0.04 |
+
+*Source:* `results/e4-sensitivity/sobol.json`, `cells["<pathway>|<setting>|default"]["N512"]`, fields `ST`, `ST_conf`. In 8 of 14 cells the intervals of the first and second parameter overlap, so the leading parameter in those cells is not determined.
+
+**Table 23.** Fixed-background check (N = 256): parameter with the largest total index.
+
+| Cell | Default background | 25th-percentile background | 75th-percentile background |
+|---|---|---|---|
+| PW0, M-A | `sw_line` (0.62) | `sw_line` (0.64) | `sw_line` (0.56) |
+| PW0, M-D | `sw_line` (0.56) | `sw_line` (0.61) | `sw_line` (0.49) |
+| PW4, M-A | `aps_share` (0.44) | `aps_share` (0.42) | `aps_share` (0.43) |
+| PW4, M-D | `aps_share` (0.39) | `aps_share` (0.42) | `aps_share` (0.36) |
+
+*Source:* `results/e4-sensitivity/sobol.json`, `cells["<pathway>|<setting>|default"|"p25"|"p75"]["N256"].ST`.
+
+**Reading.**
+
+1. The four parameters with the largest mean total index at N = 512 are `aps_share`, `q_pipe`, `q_ramp`, `sw_line` (0.330, 0.217, 0.190, 0.180).
+2. The mean index is an ordering aid only; averaging indices across cells has no variance-decomposition meaning. For example, the total index of `sw_line` ranges from 0.006 to 0.580 across the cells at N = 512. The per-cell confidence intervals in Table 21 are averages of per-cell half-widths and are not intervals for the mean index.
+3. Total indices sum to 1.467 and first-order indices to 0.732 at N = 512 (1.447 and 0.846 at N = 256), so interactions are substantial. Stochastic noise from the separate replicate seeds of each Saltelli row inflates both sums to an unknown extent.
+4. The fixed-background check was run for four cells, and Table 23 compares only their leading parameter: the leading parameter does not change between backgrounds in any of them.
 
 ## 8. LLM red team (methodological probe, not a result)
 

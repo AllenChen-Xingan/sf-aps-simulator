@@ -20,11 +20,11 @@ All checksums are SHA-256 of the file bytes.
 | `code/params.py` | `e83c1938cb73657070a3b03c031109c3651cf96bb1903bdd86c00464f9dc49d8` |
 | `code/data/inputs.json` | `f37b2885f630e8fe94d4ec9a690968e35b1ab7960f0aef5d141ff1a2218f0401` |
 | `code/experiments.py` | `3c96eaf7872ac9449e194225dbe455bd30d33d8a06779deffe4891edb5d0c862` |
-| `code/runner.py` | `fd1e6e28f8fdc1057f5b1ea82ed7d0f596dc5c356a618eb35ea6a9f06faa7673` |
+| `code/runner.py` | `a6aa9b70585d629513bab540fba2fcb7921d5f9c93e303b6cad16ff666a315fc` |
 | Combined model fingerprint | `e0f4869e2c32e15f2f3b905a242bcbaa09f7102cf6aaf151acf3e2ac11dff18f` |
 | Design specification on which the protocol was based (a working document, not distributed; superseded by `docs/ODD+D.md`) | `63391da637a5ecfc39109d3e9632a102de223ba7402977bc79240e0528906a8f` |
 
-The combined fingerprint is the SHA-256 of the three hexadecimal digests of `model.py`, `params.py` and `data/inputs.json`, joined in that order with a newline character (`code/final_export.py`, `code/e3_variant.py`). Recomputing it from the three digests above gives the value in the table. Since the criteria were fixed, `data/inputs.json` and `runner.py` are unchanged, and `params.py` and `experiments.py` have changed only in comments and documentation strings: their parameter values, sampling, criteria and analysis code are unchanged. Only the behaviour of `model.py` was changed (Section 9).
+The combined fingerprint is the SHA-256 of the three hexadecimal digests of `model.py`, `params.py` and `data/inputs.json`, joined in that order with a newline character (`code/final_export.py`, `code/e3_variant.py`). Recomputing it from the three digests above gives the value in the table. Since the criteria were fixed, `data/inputs.json` is unchanged, and `params.py`, `experiments.py` and `runner.py` have changed only in comments and documentation strings: their parameter values, sampling, seeding, criteria and analysis code are unchanged. Only the behaviour of `model.py` was changed (Section 9).
 
 ## 3. Seeds, replicates and execution
 
@@ -86,7 +86,33 @@ The parameter table has 98 rows: name, distribution type (uniform, discrete or s
 
 ## 7. E4b input list
 
-[Pending: the top-12 lists of both Morris passes, their overlap, the list used for E4b, and the mean μ* of each parameter in both passes, from `results/e4-sensitivity/morris.json`.]
+The two Morris passes (seeds 147 and 148) produced the following top-12 lists, ranked by μ* averaged over the 42 cells (source: `results/e4-sensitivity/morris.json`, fields `top12_pass1`, `top12_pass2`, `overlap`, `chosen_for_sobol`):
+
+- **Pass 1:** `aps_share`, `q_ramp`, `q_pipe`, `h_fs`, `sw_line`, `lam_arr`, `a_line`, `fs5_parent`, `k_cont`, `q_topup`, `pi_scope`, `u0`.
+- **Pass 2:** `q_pipe`, `aps_share`, `a_line`, `q_ramp`, `h_fs`, `sw_line`, `lam_arr`, `fs5_parent`, `u0`, `pi_scope`, `g_cost`, `done3_real`.
+
+The lists share 10 parameters. Under the stability rule (Section 5.4, item 2) the pass-1 list was therefore used for E4b, with k = 12.
+
+**Table 7.1.** Rank and mean μ* of the 14 parameters that appear in either list.
+
+| Parameter | Meaning | Pass 1: rank (mean μ*) | Pass 2: rank (mean μ*) |
+|---|---|---|---|
+| `aps_share` | APS share of a standing local line | 1 (14.73) | 2 (17.57) |
+| `q_ramp` | Probability that a site needs new curb ramps | 2 (14.21) | 4 (12.73) |
+| `q_pipe` | Probability that a site needs conduit work | 3 (13.04) | 1 (18.58) |
+| `h_fs` | Installation rate of signal-project sites | 4 (11.82) | 5 (12.27) |
+| `sw_line` | Switch: standing local line from the start | 5 (10.97) | 6 (10.17) |
+| `lam_arr` | Arrival rate of new requests | 6 (10.31) | 7 (9.44) |
+| `a_line` | Size of a standing local line | 7 (7.87) | 3 (14.33) |
+| `fs5_parent` | Switch: five signal-project sites have a parent project | 8 (6.25) | 8 (6.31) |
+| `k_cont` | Contingency share of planned cost | 9 (6.18) | 39 (2.11) |
+| `q_topup` | Probability that a funding gap receives a top-up | 10 (5.68) | 13 (4.25) |
+| `pi_scope` | Probability that a fold-in site is within its parent scope | 11 (5.32) | 10 (5.28) |
+| `u0` | Base APS unit cost | 12 (5.25) | 9 (5.33) |
+| `done3_real` | Switch: three sites with completed parent work are undelivered | 13 (4.50) | 12 (4.57) |
+| `g_cost` | Annual growth of the APS unit cost | 14 (3.27) | 11 (5.08) |
+
+*Note.* Mean μ* is the mean of `cells["<pathway>|<setting>"]["pass<k>"].mu_star["<parameter>"]` over the 42 cells, in ten-year installations (Section 8.1). Values for all 98 parameters, and σ, are in the same file. Ranks below the leading twelve are unstable between passes (for example `k_cont`, 9 and 39).
 
 ## 8. Notes on outputs and secondary analyses
 
@@ -96,7 +122,7 @@ SALib computes elementary effects on the unit cube and divides by the step Δ = 
 
 ### 8.2 Extraction of PRIM rules
 
-The function `prim_all` (`code/experiments.py`) decides whether a box dimension is restricted by comparing the box limits with the range of the full sample, whereas an unrestricted box limit equals the range of the training half. Nearly every dimension is therefore listed as restricted, and the list is then truncated to its first three entries in column order. The stored rule lists consequently omit binding restrictions (for example `sw_line`) and include near-full-range entries (for example `c_final`). The test-set coverage and density stored by `prim_all` are computed on the whole box, not on the truncated list, and describe the box correctly. `experiments.py` is not changed, so that its output remains reproducible as specified.
+The function `prim_all` (`code/experiments.py`) decides whether a box dimension is restricted by comparing the box limits with the range of the full sample, whereas an unrestricted box limit equals the range of the training half. Nearly every dimension is therefore listed as restricted, and the list is then truncated to its first three entries in column order. The stored rule lists consequently omit binding restrictions (for example `sw_line`) and include near-full-range entries (for example `c_final`). The test-set coverage and density stored by `prim_all` are computed on the whole box, not on the truncated list, and describe the box correctly. The analysis code of `experiments.py` is not changed, so that its output remains reproducible as specified.
 
 Corrected rules are computed by `code/posthoc.py` from the E3 runs, without new simulation. Two differences from the primary procedure must be noted:
 

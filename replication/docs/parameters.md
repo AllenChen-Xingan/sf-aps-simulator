@@ -187,18 +187,18 @@ Morris screening (Morris, 1991) used all 98 parameters, 20 trajectories, 4 level
 
 | Rank | Parameter | Group | Mean μ*, pass 1 | Mean μ*, pass 2 |
 |---|---|---|---|---|
-| 1 | `aps_share` | Prop L and General Fund | 14.91 | 17.81 |
-| 2 | `q_ramp` | Costs | 14.23 | 12.40 |
-| 3 | `q_pipe` | Costs | 13.03 | 18.03 |
-| 4 | `h_fs` | Construction and delivery | 11.72 | 12.32 |
-| 5 | `sw_line` | Scenario switches | 10.97 | 10.07 |
-| 6 | `lam_arr` | Arrivals | 10.33 | 9.36 |
-| 7 | `a_line` | Prop L and General Fund | 7.95 | 14.38 |
-| 8 | `k_cont` | Costs | 6.23 | 2.02 |
-| 9 | `fs5_parent` | Scenario switches | 6.23 | 6.30 |
-| 10 | `q_topup` | Costs | 5.56 | 4.22 |
-| 11 | `pi_scope` | Construction and delivery | 5.40 | 5.32 |
-| 12 | `u0` | Costs | 5.24 | 5.24 |
+| 1 | `aps_share` | Prop L and General Fund | 14.73 | 17.57 |
+| 2 | `q_ramp` | Costs | 14.21 | 12.73 |
+| 3 | `q_pipe` | Costs | 13.04 | 18.58 |
+| 4 | `h_fs` | Construction and delivery | 11.82 | 12.27 |
+| 5 | `sw_line` | Scenario switches | 10.97 | 10.17 |
+| 6 | `lam_arr` | Arrivals | 10.31 | 9.44 |
+| 7 | `a_line` | Prop L and General Fund | 7.87 | 14.33 |
+| 8 | `fs5_parent` | Scenario switches | 6.25 | 6.31 |
+| 9 | `k_cont` | Costs | 6.18 | 2.11 |
+| 10 | `q_topup` | Costs | 5.68 | 4.25 |
+| 11 | `pi_scope` | Construction and delivery | 5.32 | 5.28 |
+| 12 | `u0` | Costs | 5.25 | 5.33 |
 
 Ranking is by pass-1 μ* averaged over the 42 cells. Only in pass 2's top 12: `g_cost`, `done3_real`; only in pass 1's: `k_cont`, `q_topup`. SALib normalizes elementary effects by the unit-cube step, so μ* approximates the change in ten-year installations when a parameter moves across its full range; switches and continuous parameters are not directly comparable. None of the initiation coefficients (Section 7.1) appears in either list: within the sampled ranges, money and cost parameters dominate the outcome.
 

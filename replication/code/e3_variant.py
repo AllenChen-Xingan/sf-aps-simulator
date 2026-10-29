@@ -26,7 +26,7 @@ KEEP = ('P_money', 'coverage_10y', 'installed_5y')
 SRC = {'P_money': 'money_flows_5y'}                     # summary key behind each column, as in e23
 
 
-def frozen_sets():
+def base_sets():
     """Rebuild the E3 parameter sets exactly as experiments.e23 does (scale 1)."""
     acc = json.loads((RES / 'e1-fit' / 'accepted-sets.json').read_text())
     proj = [r['name'] for r in params.param_schema() if r['phase'] == 'projection']
@@ -44,7 +44,7 @@ def frozen_sets():
     return out
 
 
-def frozen_rows():
+def base_rows():
     with gzip.open(RES / 'e3-pathways' / 'runs.csv.gz', 'rt') as f:
         return {(r['pathway'], r['mechanism'], r['control'], int(r['set'])): r for r in csv.DictReader(f)}
 
@@ -93,22 +93,22 @@ def records(tasks, rows):
     return recs
 
 
-def verify(sets, frozen, out):
-    """With the switch off, rebuilt tasks must reproduce the frozen E3 rows exactly."""
+def verify(sets, main_rows, out):
+    """With the switch off, rebuilt tasks must reproduce the main E3 rows exactly."""
     tasks = [t for t in make_tasks(sets, 3, ['PW4', 'PW5', 'PW0'])]
     recs = records(tasks, run(tasks, out / '_shards-verify', False))
     bad = 0
     for r in recs:
-        f = frozen[(r['pathway'], r['mechanism'], r['control'], r['set'])]
+        f = main_rows[(r['pathway'], r['mechanism'], r['control'], r['set'])]
         for k in KEEP:
             if float(f[k]) != r[k]:
                 bad += 1
                 print('VERIFY DIFF', r['pathway'], r['mechanism'], r['control'], r['set'], k, f[k], r[k])
-    print(f'verify: {len(recs)} rebuilt tasks vs frozen E3 rows, {bad} field differences')
+    print(f'verify: {len(recs)} rebuilt tasks vs main E3 rows, {bad} field differences')
     return bad == 0
 
 
-def summarise(recs, frozen):
+def summarise(recs, main_rows):
     out = {}
     for ctl in ('positive', 'zero_direct'):
         for pw in VARIANT_PWS:
@@ -117,19 +117,19 @@ def summarise(recs, frozen):
                 rr = [r for r in recs if r['pathway'] == pw and r['control'] == ctl and r['mechanism'] == mech]
                 if not rr:
                     continue
-                base = [float(frozen[('PW0', mech, ctl, r['set'])]['coverage_10y']) for r in rr]
-                orig = [frozen[(pw, mech, ctl, r['set'])] for r in rr]
+                base = [float(main_rows[('PW0', mech, ctl, r['set'])]['coverage_10y']) for r in rr]
+                orig = [main_rows[(pw, mech, ctl, r['set'])] for r in rr]
                 per[mech] = {
                     'n_sets': len(rr),
                     'share_better_than_PW0': float(np.mean([r['coverage_10y'] > b for r, b in zip(rr, base)])),
                     'P_money': float(np.mean([r['P_money'] for r in rr])),
                     'median_cov10': float(np.median([r['coverage_10y'] for r in rr])),
-                    'frozen_share_better': float(np.mean([float(o['coverage_10y']) > b for o, b in zip(orig, base)])),
-                    'frozen_P_money': float(np.mean([float(o['P_money']) for o in orig]))}
+                    'base_share_better': float(np.mean([float(o['coverage_10y']) > b for o, b in zip(orig, base)])),
+                    'base_P_money': float(np.mean([float(o['P_money']) for o in orig]))}
             if per:
                 rng = lambda k: [min(v[k] for v in per.values()), max(v[k] for v in per.values())]
                 out[f'{pw}|{ctl}'] = {'by_mech': per, **{k: rng(k) for k in
-                                      ('share_better_than_PW0', 'P_money', 'frozen_share_better', 'frozen_P_money')}}
+                                      ('share_better_than_PW0', 'P_money', 'base_share_better', 'base_P_money')}}
     return out
 
 
@@ -140,8 +140,8 @@ def main():
     ap.add_argument('--out', default=str(RES / 'e3-variant'))
     a = ap.parse_args()
     out = Path(a.out)
-    sets, frozen = frozen_sets(), frozen_rows()
-    if a.verify and not verify(sets, frozen, out):
+    sets, main_rows = base_sets(), base_rows()
+    if a.verify and not verify(sets, main_rows, out):
         sys.exit(1)
     model.LINE_APPROVAL = True
     tasks = make_tasks(sets, a.limit, VARIANT_PWS)
@@ -160,7 +160,7 @@ def main():
         'note': 'Approval variant: PW4/PW5 standing line must pass Prop L amendment, then one GF request. '
                 'sw_line = 0 sets only; PW0 and main-run PW4/PW5 from results/e3-pathways/runs.csv.gz (same sets and seeds).',
         'model_fingerprint': fp, 'n_tasks': len(tasks), 'replicates': REPS, 'seconds': round(dt),
-        'table': summarise(recs, frozen)}, indent=1))
+        'table': summarise(recs, main_rows)}, indent=1))
 
 
 if __name__ == '__main__':
